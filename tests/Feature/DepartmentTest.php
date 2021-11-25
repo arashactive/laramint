@@ -13,7 +13,7 @@ class DepartmentTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_index_department()
     {
         $response = $this->get('/');
 
