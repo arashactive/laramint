@@ -50,10 +50,12 @@ class Department extends Component
         ModelsDepartment::find($this->modelId)->update($this->modelData());
         $this->modelFormVisible = false;
 
-        $this->dispatchBrowserEvent('event-notification', [
-            'eventName' => 'Updated Page',
-            'eventMessage' => 'There is a page (' . $this->modelId . ') that has been updated!',
+        $this->dispatchBrowserEvent('alert',[
+            'type'=>'info',
+            'message'=>'There is a department (' . $this->name . ') that has been updated!'
         ]);
+
+       
     }
 
      /**
@@ -67,10 +69,12 @@ class Department extends Component
         $this->modalConfirmDeleteVisible = false;
         $this->resetPage();
 
-        $this->dispatchBrowserEvent('event-notification', [
-            'eventName' => 'Deleted Page',
-            'eventMessage' => 'The page (' . $this->modelId . ') has been deleted!',
+        $this->dispatchBrowserEvent('alert',[
+            'type'=>'error',
+            'message'=>'There is a department that has been deleted!'
         ]);
+
+        
     }
 
 
