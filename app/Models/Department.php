@@ -9,5 +9,5 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $guird = [];
+    protected $guarded = [];
 }
