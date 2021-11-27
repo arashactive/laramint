@@ -17,29 +17,33 @@ class Department extends Component
     public $modelId;
     public $modelFormVisible = false;
 
-    public function createShowModel(){
+    public function createShowModel()
+    {
         $this->cleanVars();
         $this->modelFormVisible = true;
     }
 
-    public function closeModal(){
+    public function closeModal()
+    {
         $this->modelFormVisible = false;
     }
 
 
-    public function rules(){
+    public function rules()
+    {
         return [
             'name' => 'required',
         ];
     }
 
 
-    public function read(){
-        return ModelsDepartment::paginate(5);
+    public function read()
+    {
+        return ModelsDepartment::orderby('created_at', 'desc')->paginate(5);
     }
 
 
-     /**
+    /**
      * The update function.
      *
      * @return void
@@ -50,15 +54,13 @@ class Department extends Component
         ModelsDepartment::find($this->modelId)->update($this->modelData());
         $this->modelFormVisible = false;
 
-        $this->dispatchBrowserEvent('alert',[
-            'type'=>'info',
-            'message'=>'There is a department (' . $this->name . ') that has been updated!'
+        $this->dispatchBrowserEvent('alert', [
+            'type' => 'info',
+            'message' => 'There is a department (' . $this->name . ') that has been updated!'
         ]);
-
-       
     }
 
-     /**
+    /**
      * The delete function.
      *
      * @return void
@@ -69,16 +71,14 @@ class Department extends Component
         $this->modalConfirmDeleteVisible = false;
         $this->resetPage();
 
-        $this->dispatchBrowserEvent('alert',[
-            'type'=>'error',
-            'message'=>'There is a department that has been deleted!'
+        $this->dispatchBrowserEvent('alert', [
+            'type' => 'error',
+            'message' => 'There is a department that has been deleted!'
         ]);
-
-        
     }
 
 
-   /**
+    /**
      * Shows the form modal
      * in update mode.
      *
@@ -120,23 +120,25 @@ class Department extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-    public function create(){
+    public function create()
+    {
         $this->validate($this->rules());
         ModelsDepartment::create($this->modelData());
         $this->cleanVars();
         $this->closeModal();
-        
     }
 
 
-    public function modelData(){
+    public function modelData()
+    {
         return [
             'name' => $this->name,
             'description' => $this->description
         ];
     }
 
-    public function cleanVars(){
+    public function cleanVars()
+    {
         $this->name = null;
         $this->description = null;
         $this->modelId = null;
