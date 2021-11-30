@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Department;
 /*
@@ -27,4 +28,5 @@ Route::group(['middleware' => [
     })->name('dashboard');
 
     Route::get('/department', Department::class)->name('department');
+    Route::get('/courses', Course::class)->name('course');
 });

@@ -5,28 +5,32 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Livewire\Livewire;
 use Tests\TestCase;
+use App\Http\Livewire\Department;
+
 
 class DepartmentTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
      
-    
-    /**
-     * check status is 200
-     *
-     * @return void
-     */
-    public function test_index_department()
-    {
-
-        $userCreate = User::factory()->create();
-
-        $this->actingAs($user = User::factory()->create());
-
-        $response = $this->get('/department');
-        $response->assertStatus(200);
+    public function test_department_can_be_created(){
         
+        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+
+        Livewire::test(Department::class)
+                    ->set('name' , 'test department')
+                    ->set('description' , 'test description department')
+                    ->call('create')
+                    ->assertStatus(200);
+        
+        $this->get('/department')->assertSeeText('test department');      
+
+        $this->assertDatabaseCount('departments' , 1);
+        $this->assertDatabaseHas('departments' , [
+            'name' => 'test department',
+            'description' => 'test description department'
+        ]);
+
     }
 }

@@ -94,6 +94,10 @@
                                 </span>
                             @endif
                         </x-slot>
+                        
+
+                        
+
 
                         <x-slot name="content">
                             <!-- Account Management -->
@@ -217,7 +221,10 @@
                         <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
                     @endforeach
                 @endif
+            
             </div>
         </div>
     </div>
+
+    
 </nav>
