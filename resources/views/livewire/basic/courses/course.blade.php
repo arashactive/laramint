@@ -9,8 +9,10 @@
                     <x-jet-button wire:click="createShowModel">
                         {{ __('CREATE NEW Coruse') }}
                     </x-jet-button>
-                </div>
 
+                </div>
+                
+                
                 {{-- The data table --}}
                 <div class="flex flex-col">
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -81,74 +83,10 @@
                 
                 {{ $courses->links() }}
 
+        
 
-                <!-- Token Value Modal -->
-                <x-jet-dialog-modal wire:model="modelFormVisible">
-                    <x-slot name="title">
-                        {{ __('Create New course Form') }}
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <div class="mt-4">
-                            <x-jet-label for="name" value="{{ __('Name') }}" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="text" wire:model.debounce.800ms="name" />
-                            @error('name') <span class="error">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div class="mt-4">
-                            <x-jet-label for="department_id" value="{{ __('Department') }}" />
-                            <x-jet-input id="department_id" class="block mt-1 w-full" type="text" wire:model.debounce.800ms="department_id" />
-                            @error('department_id') <span class="error">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div class="mt-4">
-                            <x-jet-label for="desc" value="{{ __('Desc') }}" />
-                            <x-jet-input id="desc" class="block mt-1 w-full" type="text" wire:model.debounce.800ms="description" />
-                            @error('desc') <span class="error">{{ $message }}</span> @enderror
-                        </div>
-                    </x-slot>
-
-                    <x-slot name="footer">
-                        <x-jet-secondary-button wire:click="$set('modelFormVisible', false)" wire:loading.attr="disabled">
-                            {{ __('Close') }}
-                        </x-jet-secondary-button>
-
-                        @if ($modelId)
-                        <x-jet-button class="ml-2" wire:click="update" wire:loading.attr="disabled">
-                            {{ __('Update') }}
-                        </x-jet-danger-button>
-                    @else
-                        <x-jet-button class="ml-2" wire:click="create" wire:loading.attr="disabled">
-                            {{ __('Create') }}
-                        </x-jet-danger-button>
-                    @endif
-                    </x-slot>
-                </x-jet-dialog-modal>
-
-
-
-                {{-- The Delete Modal --}}
-
-                <x-jet-dialog-modal wire:model="modalConfirmDeleteVisible">
-                    <x-slot name="title">
-                        {{ __('Delete Page') }}
-                    </x-slot>
-
-                    <x-slot name="content">
-                        {{ __('Are you sure you want to delete this course? Once the department is deleted, all of its resources and data will be permanently deleted.') }}
-                    </x-slot>
-
-                    <x-slot name="footer">
-                        <x-jet-secondary-button wire:click="$toggle('modalConfirmDeleteVisible')" wire:loading.attr="disabled">
-                            {{ __('Nevermind') }}
-                        </x-jet-secondary-button>
-
-                        <x-jet-danger-button class="ml-2" wire:click="delete" wire:loading.attr="disabled">
-                            {{ __('Delete Page') }}
-                        </x-jet-danger-button>
-                    </x-slot>
-                </x-jet-dialog-modal>
             </div>
         </div>
     </div>
 </div>
+

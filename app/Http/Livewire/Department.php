@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 
 class Department extends Component
 {
-    use CrudTrait, WithPagination;
+    use  WithPagination;
 
     public $modalConfirmDeleteVisible = false;
     public $name;

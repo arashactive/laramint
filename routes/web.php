@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Livewire\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Department;
+use App\Http\Livewire\Pages\Contents\Courses\Course;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

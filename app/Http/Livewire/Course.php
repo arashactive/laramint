@@ -2,24 +2,50 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Livewire\Traits\InteractsWithModal;
 use App\Models\Course as ModelsCourse;
 use App\Models\Department;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Course extends Component
+class CourseTest extends Component
 {
-    use WithPagination;
-    
+    use WithPagination, InteractsWithModal;
+        
+    /**
+     * var modalConfirmDeleteVisible & default is false
+     */
     public $modalConfirmDeleteVisible = false;
+    
+    /**
+     * var name of course
+     */
     public $name;
+
+    /**
+     * var description
+     */
     public $description;
+
+    /**
+     * var department id
+     */
     public $department_id;
 
+    /**
+     * var modelId
+     */
     public $modelId;
+
+    /**
+     * var modelFormVisible default is false
+     */
     public $modelFormVisible = false;
 
     
+    public $listeners = ['modalVisible' => 'modalVisible'];
+
+
     /**
      * any rules for create and update
      *
@@ -34,6 +60,9 @@ class Course extends Component
         ];
     }
 
+
+
+
     /**
      * show Panel of creation
      *
@@ -42,15 +71,17 @@ class Course extends Component
     public function createShowModel()
     {
         $this->cleanVars();
-        $this->modelFormVisible = true;
+        
+        // $this->modelFormVisible = true;
+        
     }
-
 
      /**
      * close Panel of creation
      *
      * @return void
      */
+
     public function closeModal()
     {
         $this->modelFormVisible = false;
@@ -70,7 +101,12 @@ class Course extends Component
         $this->modelId = null;
     }
     
-
+    
+    /**
+     * modelData set value to field
+     *
+     * @return void
+     */
     public function modelData()
     {
         return [
@@ -79,6 +115,9 @@ class Course extends Component
             'department_id' => $this->department_id
         ];
     }
+
+
+
 
     /**
      * create function stores in database
@@ -92,6 +131,10 @@ class Course extends Component
         $this->cleanVars();
         $this->closeModal();
     }
+
+
+
+
 
     /**
      * Loads the model data
@@ -107,6 +150,9 @@ class Course extends Component
         $this->department_id = $data->department_id;
     }
 
+
+
+
     /**
      * Shows the form modal
      * in update mode.
@@ -121,6 +167,10 @@ class Course extends Component
         $this->modelFormVisible = true;
         $this->loadModel();
     }
+
+
+
+
     /**
      * The update function.
      *
@@ -139,6 +189,7 @@ class Course extends Component
     }
     
 
+
     /**
      * Shows the delete confirmation modal.
      *
@@ -151,6 +202,8 @@ class Course extends Component
 
         $this->modalConfirmDeleteVisible = true;
     }
+
+
 
     /**
      * The delete function.
@@ -191,6 +244,13 @@ class Course extends Component
         return Department::all();
     }
 
+
+        
+    /**
+     * render page to view
+     *
+     * @return void
+     */
     public function render()
     {
         
