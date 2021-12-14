@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticationController;
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+route::post('/register' , [AuthenticationController::class , 'register'])->name('register');
+route::post('/login' , [AuthenticationController::class , 'login'])->name("login");
+
+
+Route::group(['middleware' => [
+    'auth:sanctum', 'verified'
+]], function () {
+
+    Route::resource("/department" , DepartmentController::class);
+    
 });
+

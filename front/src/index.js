@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './index.css';
 import './components/_settings/fontawesome-free/css/all.min.css';
-
+require('dotenv').config()
 
 
 ReactDOM.render(

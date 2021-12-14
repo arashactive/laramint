@@ -1,63 +1,43 @@
 import React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
-import {Department} from '../../templates/pages'
+import { Routes, Route, Link } from "react-router-dom";
+import { Department, Login } from "../../templates/pages";
+import { Theme, Guest } from "../../templates/layout";
+import useToken from '../../templates/hooks/useToken';
 
-export default function  LoginRouters (){
+
+export default function LoginRouters() {
+
+  const { token, setToken } = useToken();
+  console.log(process.env);
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
   return (
+
     <div>
+      <Routes>
+        
+      <Route path="/login" element={<Guest />}>
+          <Route index element={<Login setToken={setToken} />} />
+          <Route path="login" element={<Login setToken={setToken} />} />
+        </Route>
+        
+        <Route path="/" element={<Theme />}>
+          <Route index element={<Home />} />
+          <Route path="department" element={<Department />} />
+          <Route path="dashboard" element={<Dashboard />} />
 
-    
-    <Routes>
-    <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="department" element={<Department />} />
-      <Route path="dashboard" element={<Dashboard />} />
-
-      {/* Using path="*"" means "match anything", so this route
+          {/* Using path="*"" means "match anything", so this route
             acts like a catch-all for URLs that we don't have explicit
             routes for. */}
-      <Route path="*" element={<NoMatch />} />
-    </Route>
-  </Routes>
-  </div>
-  );
-} 
-  
-
-function Layout() {
-  return (
-    <div>
-      {/* A "layout route" is a good place to put markup you want to
-          share across all the pages on your site, like navigation. */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/department">department</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <hr />
-
-      {/* An <Outlet> renders whatever child route is currently active,
-          so you can think about this <Outlet> as a placeholder for
-          the child routes we defined above. */}
-      <Outlet />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
+
+
 
 function Home() {
   return (
@@ -67,13 +47,6 @@ function Home() {
   );
 }
 
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
 
 function Dashboard() {
   return (
@@ -93,5 +66,3 @@ function NoMatch() {
     </div>
   );
 }
-
-
