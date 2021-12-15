@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DepartmentRequest;
+use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class DepartmentController extends Controller
 {
@@ -13,7 +16,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $departments = Department::paginate(config('PAGINATION'));
+        return view("contents.admin.department.index", compact("departments"));
     }
 
     /**
@@ -23,7 +27,8 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('contents.admin.department.create');
     }
 
     /**
@@ -32,9 +37,12 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartmentRequest $request)
     {
-        //
+       
+        Department::create($request->all());
+        return response()->redirectTo(URL::to('/department'));
+
     }
 
     /**
@@ -81,4 +89,6 @@ class DepartmentController extends Controller
     {
         //
     }
+
+
 }

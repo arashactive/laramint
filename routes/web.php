@@ -23,6 +23,14 @@ Route::get('/', function () {
 
 Route::middleware(['verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
+});
 
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes for only superAdmin Access
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['verified', 'role:Super-Admin'])->group(function () {
     Route::resource('department', DepartmentController::class);
 });

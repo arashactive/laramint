@@ -19,6 +19,8 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
+
+                @include('layouts.msg')
                 @yield('content')
             </div>
         </div>
