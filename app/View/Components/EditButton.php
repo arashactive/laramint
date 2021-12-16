@@ -6,14 +6,17 @@ use Illuminate\View\Component;
 
 class EditButton extends Component
 {
+    public $itemId;
+    public $path;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($itemId , $path)
     {
-        //
+        $this->itemId = $itemId;
+        $this->path = $path;
     }
 
     /**

@@ -14,14 +14,15 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a 
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $itemId }}').submit();"
                 class="btn btn-danger" href="delete.html">Delete</a>
             </div>
         </div>
     </div>
     </div>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+    <form id="delete-form-{{ $itemId }}" action="{{ route($path , $itemId) }}" method="POST">        
         @csrf
+        @method('delete')
     </form>
 </div>

@@ -8,15 +8,17 @@ class DeleteButton extends Component
 {
 
     public $itemId;
+    public $path;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($itemId)
+    public function __construct($itemId , $path)
     {
         $this->itemId = $itemId;
+        $this->path = $path;
     }
 
     /**

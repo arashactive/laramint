@@ -39,24 +39,24 @@
                                     <x-CheckUnCheck isChecked="{{ $department->is_published }}" />
                                 </td>
                                 <td>
-                                <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                    <x-EditButton />
-                                    <x-DeleteButton itemId="{{ $department->id }}" />
-                                    <x-ShowButton />
-                                    
-                                </div>
-                                    
+                                    <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
+                                        <x-EditButton itemId="{{ $department->id }}" path="department.edit" />
+                                        <x-DeleteButton itemId="{{ $department->id }}" path="department.destroy" />                                    
+                                    </div>
                                 </td>
                             </tr>
                         @empty
                             
-                        @endforelse
-                        
-                        
+                        @endforelse                        
                     </tbody>
                 </table>
-    
-    
+                
+                <hr/>
+                
+                <div class="text-center">
+                    {!! $departments->links() !!}
+                </div>
+
                 </div>
             </div>
         </div>

@@ -4,4 +4,4 @@
     </a>
 </div>
 
- <x-DeleteModal itemId="{{ $itemId }}"/> 
+ <x-DeleteModal itemId="{{ $itemId }}" path="{{ $path }}"/> 

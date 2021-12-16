@@ -16,7 +16,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::paginate(config('PAGINATION'));
+        $departments = Department::paginate(env('PAGINATION'));
         return view("contents.admin.department.index", compact("departments"));
     }
 
@@ -28,7 +28,7 @@ class DepartmentController extends Controller
     public function create()
     {
 
-        return view('contents.admin.department.create');
+        return view('contents.admin.department.form');
     }
 
     /**
@@ -41,20 +41,13 @@ class DepartmentController extends Controller
     {
        
         Department::create($request->all());
-        return response()->redirectTo(URL::to('/department'));
+        return redirect()
+            ->route("department.index")
+            ->with('success' , __('item created successfully'));
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -62,21 +55,28 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Department $department)
     {
-        //
+        
+        return view('contents.admin.department.form' , compact(
+            "department"
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Department $department)
     {
-        //
+        
+        $department->update($request->all());
+        return redirect()
+                ->route("department.index")
+                ->with('warning' , __('item updated successfully'));
     }
 
     /**
@@ -85,9 +85,12 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Department $department)
     {
-        //
+        $department->delete();
+        return redirect()
+                ->route("department.index")
+                ->with('danger' , __('item deleted successfully'));
     }
 
 

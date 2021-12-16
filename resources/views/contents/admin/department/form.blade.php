@@ -18,13 +18,18 @@
         <div class="card-body">
             <div class="text-center">
 
+                @if(isset($department))
+                    <form class="user" method="POST" action="{{ route('department.update' , $department->id) }}">                    
+                     @method('patch')
+                @else
+                    <form class="user" method="POST" action="{{ route('department.store') }}">
+                @endif
                 
-                <form class="user" method="POST" action="{{ route('department.store') }}">
                     @csrf
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <input name="title" type="text" class="form-control form-control-user" id="title"
-                                placeholder="Title">
+                                placeholder="Title" value="{{ $department->title ?? '' }}">
                             @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     {{ $message }}
@@ -33,7 +38,7 @@
                         </div>
                         <div class="col-sm-6">
                             <input name="image" type="text" class="form-control form-control-user" id="image"
-                                placeholder="Image">
+                                placeholder="Image" value="{{ $department->image ?? '' }}">
                             @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     {{ $message }}
@@ -43,7 +48,7 @@
                     </div>
                     <div class="form-group">
                         <textarea name="description" type="text" class="form-control form-control-user" id="description"
-                            placeholder="Description"></textarea>
+                            placeholder="Description">{{ $department->description ?? '' }}</textarea>
                         @error('description')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
@@ -54,7 +59,7 @@
                
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary btn-user btn-block"
-                            value="{{ __('Create') }}">
+                            value="{{ __('Save') }}">
                     </div>
                 </form>
 
