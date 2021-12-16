@@ -26,6 +26,9 @@ Route::middleware(['verified'])->group(function () {
 });
 
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes for only superAdmin Access

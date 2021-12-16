@@ -11,17 +11,9 @@
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">{{ __("Departments") }}</h6>
                 <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">{{ __("Department") }}</div>
-                        <a class="dropdown-item" href="{{ URL::to('/department') }}">Go Department</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ URL::to('/dashboard') }}">Go Dashboard</a>
-                    </div>
+
+                    <x-CreateButton path="{{ route('department.create') }}" />
+                    
                 </div>
             </div>
             <!-- Card Body -->
@@ -35,7 +27,7 @@
                         <th scope="col">#</th>
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("is_published") }}</th>
-                        <th scope="col">-</th>
+                        <th scope="col">{{ __("Action") }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,11 +35,17 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $department->title }}</td>
-                                <td>{{ $department->is_published }}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning btn-sm">
-                                        <span class="fa fa-edit"></span>
-                                    </a>
+                                    <x-CheckUnCheck isChecked="{{ $department->is_published }}" />
+                                </td>
+                                <td>
+                                <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
+                                    <x-EditButton />
+                                    <x-DeleteButton itemId="{{ $department->id }}" />
+                                    <x-ShowButton />
+                                    
+                                </div>
+                                    
                                 </td>
                             </tr>
                         @empty
