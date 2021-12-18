@@ -17,7 +17,7 @@ class DepartmentFactory extends Factory
         return [
             'title' => $this->faker->name(),
             'description' => $this->faker->text(),
-            'image' => '',
+            'image' => $this->faker->name(),
             'is_published' => true,
         ];
     }

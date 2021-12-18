@@ -2,98 +2,86 @@
 
 namespace Tests\Feature;
 
+use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use Tests\BaseTest;
 
-class DepartmentTest extends TestCase
+class DepartmentTest extends BaseTest
 {
-    use RefreshDatabase;
 
-
-    public function setUp() :void
+    protected function setUp() :void
     {
-        
         parent::setUp();
-
         $this->seed();
+
+        $this->setBaseRoute('department');
+        $this->setBaseModel('App\Models\Department');
+
         
-      
     }
 
+
+
     /**
-     * A basic test to response 200 status for department route.
+     * A basic test to check access level controller with without access to page
      *
      * @return void
      */
-    public function test_index_show()
+    public function test_acl()
     {
-        
-        $this->withoutExceptionHandling();
-        $user = User::find(1); // user with admin permission
-
-        $response = $this->actingAs($user)
-        ->get('/department');
-
-        $response->assertStatus(200);
-        $response->assertSee("Department");
+        $this->signIn(2);
+        $this->withOutAccessLevel();
     }
 
 
     /**
-     * A basic test to response 403 for forbidden access level.
+     * A basic test to validation is worked.
      *
      * @return void
      */
-    public function test_index_show_only_to_admin()
+    public function test_validation()
     {
-        $user = User::find(2); // user with teacher permission
-
-        $response = $this->actingAs($user)
-        ->get('/department');   
-        $response->assertForbidden();   
-    }
-
-    /**
-     * A basic test to response 403 for forbidden access level.
-     *
-     * @return void
-     */
-    public function test_create_show_only_admin()
-    {
-        $user = User::find(1); // user with teacher permission
-
-        $response = $this->actingAs($user)
-        ->get('/department/create');   
-        $response->assertStatus(200);
-        $response->assertSee("Department");
+        $this->setValidationRules((new DepartmentRequest())->rules());
+        $this->signIn();
+        $this->validation();
     }
 
 
+
     /**
-     * A basic test to response 403 for forbidden access level.
+     * A basic test to create form is worked correctly.
      *
      * @return void
      */
-    public function test_create_done_only_admin()
+    public function test_create_form()
     {
-        $department = Department::factory()->create();
-
-        $this->assertDatabaseHas('departments',['id'=> $department->id , 'title' => $department->title]);
+        $this->signIn();
+        $this->create();
     }
 
     /**
-     * A basic test to response 403 for forbidden access level.
+     * A basic test to update method with authenticated verfied.
      *
      * @return void
      */
-    public function test_create_forbidden_for_unauthenticated()
+    public function test_update_form()
     {
-        $department = Department::factory()->create();
+        $this->signIn();
+        $this->update();
+    }
 
-        $this->post('/department/create',$department->toArray())
-        ->assertStatus(405);   
+
+
+    /**
+     * A basic test to delete method and response correctly.
+     *
+     * @return void
+     */
+    public function test_delete_form()
+    {
+        $this->signIn();
+        $this->destroy();
     }
 
 

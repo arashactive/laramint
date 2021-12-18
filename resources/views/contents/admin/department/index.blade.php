@@ -52,7 +52,6 @@
                 </table>
                 
                 <hr/>
-                
                 <div class="text-center">
                     {!! $departments->links() !!}
                 </div>
