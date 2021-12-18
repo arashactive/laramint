@@ -36,7 +36,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $course->title }}</td>
-                                <td>{{ $course->department_id }}</td>
+                                <td>{{ $course->Department->title }}</td>
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $course->is_published }}" />
                                 </td>
