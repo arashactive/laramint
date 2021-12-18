@@ -2,19 +2,19 @@
 
 namespace Tests\Feature;
 
+
 use App\Http\Requests\DepartmentRequest;
 use Tests\BaseTest;
 
-class DepartmentTest extends BaseTest
+class CourseTest extends BaseTest
 {
-
     protected function setUp() :void
     {
         parent::setUp();
         $this->seed();
 
-        $this->setBaseRoute('department');
-        $this->setBaseModel('App\Models\Department');
+        $this->setBaseRoute('course');
+        $this->setBaseModel('App\Models\Course');
 
         
     }
@@ -81,6 +81,4 @@ class DepartmentTest extends BaseTest
         $this->signIn();
         $this->destroy();
     }
-
-
 }

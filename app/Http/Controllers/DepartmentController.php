@@ -27,7 +27,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-
+        
         return view('contents.admin.department.form');
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
@@ -36,4 +37,5 @@ Route::middleware(['verified'])->group(function () {
 */
 Route::middleware(['verified', 'role:Super-Admin'])->group(function () {
     Route::resource('department', DepartmentController::class);
+    Route::resource('course', CourseController::class);
 });

@@ -69,13 +69,15 @@ abstract class BaseTest extends TestCase
         $model = $this->base_model ?? $model;
 
         $attributes = !empty($attributes) ? $attributes : $model::factory()->make();
-
+        
         if (!auth()->user()) {
             $this->expectException(\Illuminate\Auth\AuthenticationException::class);
         }
 
         $this->post(route($route), $attributes->toArray())->assertRedirect();
-        $this->assertDatabaseHas('departments', ['title' => $attributes->title]);
+        
+        $this->assertDatabaseHas($model, ['title' => $attributes->title]);
+        
     }
 
 
@@ -94,7 +96,7 @@ abstract class BaseTest extends TestCase
         }
 
         $this->delete(route($route, $created->id))->assertRedirect();
-        $this->assertDatabaseMissing('departments', ['title' => $attributes->title]);
+        $this->assertDatabaseMissing($model, ['title' => $attributes->title]);
     }
 
     protected function update($attributes = [], $model = '', $route = '')
@@ -112,7 +114,7 @@ abstract class BaseTest extends TestCase
         }
 
         $this->put(route($route, $created->id), $attributes->toArray())->assertRedirect();
-        $this->assertDatabaseHas('departments', ['title' => $attributes->title]);
+        $this->assertDatabaseHas($model, ['title' => $attributes->title]);
     }
 
 

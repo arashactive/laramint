@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
             PermissionsSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
+        // \App\Models\Course::factory(10)->create();
     }
 }

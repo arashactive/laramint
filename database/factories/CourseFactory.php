@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class DepartmentFactory extends Factory
+class CourseFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,10 +15,11 @@ class DepartmentFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => $this->faker->unique()->name(),
             'description' => $this->faker->text(),
-            'image' => $this->faker->name(),
+            'image' => $this->faker->unique()->name(),
             'is_published' => true,
+            'department_id' => Department::factory(),
         ];
     }
 }
