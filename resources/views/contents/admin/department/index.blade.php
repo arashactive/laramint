@@ -34,7 +34,10 @@
                         @forelse ($departments as $department)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $department->title }}</td>
+                                <td>
+                                    {{ $department->title }} <br/>
+                                    
+                                </td>
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $department->is_published }}" />
                                 </td>

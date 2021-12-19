@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
+use Exception;
 
 class DepartmentController extends Controller
 {
@@ -85,10 +86,17 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        $department->delete();
-        return redirect()
-                ->route("department.index")
-                ->with('danger' , __('item deleted successfully'));
+        try{
+            $department->delete();
+            return redirect()
+                    ->route("department.index")
+                    ->with('danger' , __('item deleted successfully'));
+        }catch (\Exception $e){
+            return redirect()
+            ->route("department.index")
+            ->with('danger' , __('Delete is not Completed, Please check child of this department'));
+        }
+        
     }
 
 

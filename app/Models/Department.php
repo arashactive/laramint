@@ -12,5 +12,12 @@ class Department extends Model
     protected $guarded = [];
 
 
-  
+    public function Course(){
+        return $this->hasMany(Course::class);
+    }
+
+    public function Term(){
+        return $this->hasMany(Term::class);
+    }
+    
 }
