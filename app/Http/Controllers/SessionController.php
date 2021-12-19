@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DepartmentRequest;
-use App\Models\Department;
 
-class DepartmentController extends Controller
+use App\Http\Requests\SessionRequest;
+use App\Models\Session;
+
+class SessionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::paginate(env('PAGINATION'));
-        return view("contents.admin.department.index", compact("departments"));
+        $sessions = Session::paginate(env('PAGINATION'));
+        return view("contents.admin.session.index", compact("sessions"));
     }
 
     /**
@@ -26,7 +27,7 @@ class DepartmentController extends Controller
     public function create()
     {
         
-        return view('contents.admin.department.form');
+        return view('contents.admin.session.form');
     }
 
     /**
@@ -35,12 +36,12 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DepartmentRequest $request)
+    public function store(SessionRequest $request)
     {
        
-        Department::create($request->all());
+        Session::create($request->all());
         return redirect()
-            ->route("department.index")
+            ->route("session.index")
             ->with('success' , __('item created successfully'));
 
     }
@@ -53,11 +54,11 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Department $department)
+    public function edit(Session $session)
     {
         
-        return view('contents.admin.department.form' , compact(
-            "department"
+        return view('contents.admin.session.form' , compact(
+            "session"
         ));
     }
 
@@ -65,15 +66,14 @@ class DepartmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function update(DepartmentRequest $request, Department $department)
+    public function update(SessionRequest $request, Session $session)
     {
         
-        $department->update($request->all());
+        $session->update($request->all());
         return redirect()
-                ->route("department.index")
+                ->route("session.index")
                 ->with('warning' , __('item updated successfully'));
     }
 
@@ -83,11 +83,11 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Department $department)
+    public function destroy(Session $session)
     {
-        $department->delete();
+        $session->delete();
         return redirect()
-                ->route("department.index")
+                ->route("session.index")
                 ->with('danger' , __('item deleted successfully'));
     }
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,4 +41,5 @@ Route::middleware(['verified', 'role:Super-Admin'])->group(function () {
     Route::resource('department', DepartmentController::class);
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);
+    Route::resource('session', SessionController::class);
 });

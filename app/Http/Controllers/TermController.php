@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CourseRequest;
 use App\Http\Requests\TermRequest;
 use App\Models\Course;
 use App\Models\Department;

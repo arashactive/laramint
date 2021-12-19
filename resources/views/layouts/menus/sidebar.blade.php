@@ -40,6 +40,7 @@
                 <a class="collapse-item" href="{{ route('department.index') }}">{{ __('Department') }}</a>
                 <a class="collapse-item" href="{{ route('course.index') }}">{{ __('Course') }}</a>
                 <a class="collapse-item" href="{{ route('term.index') }}">{{ __('terms') }}</a>
+                <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
             </div>
         </div>
     </li>
