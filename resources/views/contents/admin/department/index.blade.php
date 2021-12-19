@@ -35,8 +35,11 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>
-                                    {{ $department->title }} <br/>
-                                    
+                                    {{ $department->title }} 
+                                    <div class="row text-center d-flex justify-content-center">
+                                        <x-buttons.pill name="terms" count="{{ $department->Term->count() }}" theme="dark" />
+                                        <x-buttons.pill name="course" count="{{ $department->Course->count() }}" theme="warning" />
+                                    </div>
                                 </td>
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $department->is_published }}" />

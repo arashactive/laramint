@@ -38,15 +38,26 @@ abstract class BaseTest extends TestCase
         $this->base_route = $base_route;
     }
 
+    
+    /**
+     * signIn method.
+     * 
+     * @return void
+     */
     protected function signIn($user = null)
     {
-        
+
         $user = $user ? User::find($user) : User::find($this->access_user);
         $this->actingAs($user);
         return $this;
     }
 
 
+    /**
+     * validation method.
+     * 
+     * @return void
+     */
     public function validation()
     {
 
@@ -61,6 +72,12 @@ abstract class BaseTest extends TestCase
         }
     }
 
+
+    /**
+     * create method.
+     * 
+     * @return void
+     */
     protected function create($attributes = [], $model = '', $route = '')
     {
         $this->withoutExceptionHandling();
@@ -69,18 +86,23 @@ abstract class BaseTest extends TestCase
         $model = $this->base_model ?? $model;
 
         $attributes = !empty($attributes) ? $attributes : $model::factory()->make();
-        
+
         if (!auth()->user()) {
             $this->expectException(\Illuminate\Auth\AuthenticationException::class);
         }
 
         $this->post(route($route), $attributes->toArray())->assertRedirect();
-        
+
         $this->assertDatabaseHas($model, ['title' => $attributes->title]);
-        
     }
 
 
+
+    /**
+     * delete method.
+     * 
+     * @return void
+     */
     protected function destroy($attributes = [], $model = '', $route = '')
     {
         $this->withoutExceptionHandling();
@@ -99,6 +121,13 @@ abstract class BaseTest extends TestCase
         $this->assertDatabaseMissing($model, ['title' => $attributes->title]);
     }
 
+
+    
+    /**
+     * update method.
+     * 
+     * @return void
+     */
     protected function update($attributes = [], $model = '', $route = '')
     {
         $this->withoutExceptionHandling();
@@ -118,6 +147,12 @@ abstract class BaseTest extends TestCase
     }
 
 
+    
+    /**
+     * withOutAccessLevel method.
+     * 
+     * @return void
+     */
     public function withOutAccessLevel($route = '')
     {
         $route = $this->base_route ? "{$this->base_route}.index" : $route;

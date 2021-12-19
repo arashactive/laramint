@@ -82,5 +82,17 @@ class DepartmentTest extends BaseTest
         $this->destroy();
     }
 
+    
+    /**
+     * A basic test to delete method and response correctly.
+     *
+     * @return void
+     */
+    public function test_delete_with_child_form()
+    {
+        $this->signIn();
+        $this->destroy();
+    }
+
 
 }
