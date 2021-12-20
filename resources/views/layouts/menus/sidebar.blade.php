@@ -29,18 +29,32 @@
 
     <!-- Nav Item - Admin Setup LMS -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#EducationCollapse"
+            aria-expanded="true" aria-controls="EducationCollapse">
             <i class="fas fa-fw fa-chalkboard-teacher"></i>
             <span>Education</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="EducationCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">First Step:</h6>
                 <a class="collapse-item" href="{{ route('department.index') }}">{{ __('Department') }}</a>
                 <a class="collapse-item" href="{{ route('course.index') }}">{{ __('Course') }}</a>
                 <a class="collapse-item" href="{{ route('term.index') }}">{{ __('terms') }}</a>
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Admin Setup LMS -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse"
+            aria-expanded="true" aria-controls="ACLCollapse">
+            <i class="fas fa-fw fa-users-cog"></i>
+            <span>ACL</span>
+        </a>
+        <div id="ACLCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('user.index') }}">{{ __('User') }}</a>
             </div>
         </div>
     </li>
