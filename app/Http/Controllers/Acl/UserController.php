@@ -7,9 +7,11 @@ use App\Http\Requests\DepartmentRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Role;
 use App\Models\User;
+use App\traits\SyncPermissions;
 
 class UserController extends Controller
 {
+    use SyncPermissions;
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+
         return view('contents.admin.acl.user.form');
     }
 
@@ -40,8 +42,9 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        
-        User::create($request->all());
+
+        $user = User::create($request->except('roles'));
+        $this->syncPermissions($request, $user);
         return redirect()
             ->route("user.index")
             ->with('success', __('item created successfully'));
@@ -71,8 +74,9 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
-        
-        $user->update($request->all());
+
+        $user->update($request->except('roles'));
+        $this->syncPermissions($request, $user);
         return redirect()
             ->route("user.index")
             ->with('warning', __('item updated successfully'));
@@ -97,4 +101,6 @@ class UserController extends Controller
                 ->with('danger', __('Delete is not Completed, Please check child of this user'));
         }
     }
+
+    
 }

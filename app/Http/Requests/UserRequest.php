@@ -34,8 +34,9 @@ class UserRequest extends FormRequest
                 'string',
                 'email',
                 'max:255',
-                Rule::unique(User::class),
+                Rule::unique(User::class)->ignore($this->user),
                 'password' => $this->passwordRules(),
+                'roles' => 'required'
             ],
         ];
     }

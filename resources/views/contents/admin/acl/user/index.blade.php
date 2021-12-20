@@ -27,6 +27,7 @@
                         <th scope="col">#</th>
                         <th scope="col">{{ __("name") }}</th>
                         <th scope="col">{{ __("email") }}</th>
+                        <th scope="col">{{ __("Roles") }}</th>
                         <th scope="col">{{ __("Action") }}</th>
                         </tr>
                     </thead>
@@ -39,6 +40,13 @@
                                 </td>
                                 <td>
                                     {{ $user->email }}
+                                </td>
+                                <td>
+                                    @forelse ($user->Roles as $role)
+                                    <x-buttons.pill name="role {{ $loop->iteration }}" count="{{ $role->name }}" theme="light" />
+                                    @empty
+                                        
+                                    @endforelse
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
