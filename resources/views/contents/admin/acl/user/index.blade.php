@@ -43,7 +43,7 @@
                                 </td>
                                 <td>
                                     @forelse ($user->Roles as $role)
-                                    <x-buttons.pill name="role {{ $loop->iteration }}" count="{{ $role->name }}" theme="light" />
+                                    <x-buttons.pill name="role {{ $loop->iteration }}" count="{{ $role->name }}" theme="secondary" />
                                     @empty
                                         
                                     @endforelse

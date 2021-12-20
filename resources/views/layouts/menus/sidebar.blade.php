@@ -36,10 +36,11 @@
         </a>
         <div id="EducationCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">First Step:</h6>
+                <h6 class="collapse-header">{{ __('First Step:') }}</h6>
                 <a class="collapse-item" href="{{ route('department.index') }}">{{ __('Department') }}</a>
                 <a class="collapse-item" href="{{ route('course.index') }}">{{ __('Course') }}</a>
                 <a class="collapse-item" href="{{ route('term.index') }}">{{ __('terms') }}</a>
+                <h6 class="collapse-header">{{ __('Second Step:') }}</h6>
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
             </div>
         </div>
