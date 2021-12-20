@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Acl;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DepartmentRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\Role;
 use App\Models\User;
 
 class UserController extends Controller
@@ -39,15 +40,14 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-       
+        
         User::create($request->all());
         return redirect()
             ->route("user.index")
-            ->with('success' , __('item created successfully'));
-
+            ->with('success', __('item created successfully'));
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -57,8 +57,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        
-        return view('contents.admin.acl.user.form' , compact(
+        return view('contents.admin.acl.user.form', compact(
             "user"
         ));
     }
@@ -75,8 +74,8 @@ class UserController extends Controller
         
         $user->update($request->all());
         return redirect()
-                ->route("user.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("user.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
@@ -87,18 +86,15 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        try{
+        try {
             $user->delete();
             return redirect()
-                    ->route("user.index")
-                    ->with('danger' , __('item deleted successfully'));
-        }catch (\Exception $e){
+                ->route("user.index")
+                ->with('danger', __('item deleted successfully'));
+        } catch (\Exception $e) {
             return redirect()
-            ->route("user.index")
-            ->with('danger' , __('Delete is not Completed, Please check child of this user'));
+                ->route("user.index")
+                ->with('danger', __('Delete is not Completed, Please check child of this user'));
         }
-        
     }
-
-
 }
