@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
@@ -42,4 +43,6 @@ Route::middleware(['verified', 'role:Super-Admin'])->group(function () {
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);
     Route::resource('session', SessionController::class);
+
+    Route::resource('user' , UserController::class);
 });

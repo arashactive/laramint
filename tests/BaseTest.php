@@ -38,7 +38,7 @@ abstract class BaseTest extends TestCase
         $this->base_route = $base_route;
     }
 
-    
+
     /**
      * signIn method.
      * 
@@ -58,15 +58,23 @@ abstract class BaseTest extends TestCase
      * 
      * @return void
      */
-    public function validation()
+    public function validation($attributes = [])
     {
-
+        
         foreach ($this->validation_rules as $key => $rule) {
-            if (strpos($rule, 'required') !== false) {
+            
+            if (
+                !is_array($rule) && strpos($rule, 'required') !== false ||
+                (is_array($rule) && in_array('required', $rule))
+            ) {
+
                 $route = "{$this->base_route}.store";
                 $model = $this->base_model;
-                $attributes = $model::factory()->make()->toArray();
+
+                if (empty($attributes))
+                    $attributes = $model::factory()->make()->toArray();
                 $attributes[$key] = '';
+
                 $this->post(route($route), $attributes)->assertSessionHasErrors($key);
             }
         }
@@ -122,7 +130,7 @@ abstract class BaseTest extends TestCase
     }
 
 
-    
+
     /**
      * update method.
      * 
@@ -147,7 +155,7 @@ abstract class BaseTest extends TestCase
     }
 
 
-    
+
     /**
      * withOutAccessLevel method.
      * 
