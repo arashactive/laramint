@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
-use Spatie\Permission\Traits\HasRoles;
+ 
 
 class DepartmentController extends Controller
 {

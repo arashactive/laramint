@@ -17,6 +17,7 @@ class TermController extends Controller
      */
     public function index()
     {
+        $this->authorize('term.index');
         $terms = Term::paginate(env('PAGINATION'));
         
         return view("contents.admin.term.index", compact("terms"));
@@ -29,6 +30,7 @@ class TermController extends Controller
      */
     public function create()
     {
+        $this->authorize('term.create');
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.form', compact(
@@ -44,6 +46,7 @@ class TermController extends Controller
      */
     public function store(TermRequest $request)
     {
+        $this->authorize('term.create');
         Term::create($request->all());
         return redirect()
             ->route("term.index")
@@ -69,6 +72,7 @@ class TermController extends Controller
      */
     public function edit(Term $term)
     {
+        $this->authorize('term.edit');
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.form' , compact(
@@ -85,6 +89,7 @@ class TermController extends Controller
      */
     public function update(TermRequest $request, Term $term)
     {
+        $this->authorize('term.edit');
         $term->update($request->all());
         return redirect()
                 ->route("term.index")
@@ -99,6 +104,7 @@ class TermController extends Controller
      */
     public function destroy(Term $term)
     {
+        $this->authorize('term.delete');
         $term->delete();
         return redirect()
                 ->route("term.index")

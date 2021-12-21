@@ -8,6 +8,7 @@ use App\Models\Session;
 
 class SessionController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +16,7 @@ class SessionController extends Controller
      */
     public function index()
     {
+        $this->authorize('session.index');
         $sessions = Session::paginate(env('PAGINATION'));
         return view("contents.admin.session.index", compact("sessions"));
     }
@@ -26,7 +28,7 @@ class SessionController extends Controller
      */
     public function create()
     {
-        
+        $this->authorize('session.create');
         return view('contents.admin.session.form');
     }
 
@@ -38,7 +40,7 @@ class SessionController extends Controller
      */
     public function store(SessionRequest $request)
     {
-       
+        $this->authorize('session.create');
         Session::create($request->all());
         return redirect()
             ->route("session.index")
@@ -56,7 +58,7 @@ class SessionController extends Controller
      */
     public function edit(Session $session)
     {
-        
+        $this->authorize('session.edit');
         return view('contents.admin.session.form' , compact(
             "session"
         ));
@@ -70,7 +72,7 @@ class SessionController extends Controller
      */
     public function update(SessionRequest $request, Session $session)
     {
-        
+        $this->authorize('session.edit');
         $session->update($request->all());
         return redirect()
                 ->route("session.index")
@@ -85,6 +87,7 @@ class SessionController extends Controller
      */
     public function destroy(Session $session)
     {
+        $this->authorize('session.delete');
         $session->delete();
         return redirect()
                 ->route("session.index")

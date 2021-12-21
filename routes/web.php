@@ -46,9 +46,9 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('term', TermController::class);
     Route::resource('session', SessionController::class);
 
-    Route::resource('user' , UserController::class);
-    Route::resource('role', RoleController::class);
-    Route::resource('permission', PermissionController::class);
+    Route::resource('user' , UserController::class)->middleware('role:Super-Admin');
+    Route::resource('role', RoleController::class)->middleware('role:Super-Admin');
+    Route::resource('permission', PermissionController::class)->middleware('role:Super-Admin');
     Route::post('role/permission/{role}' , [RoleController::class , 'permission'])->name("role_permissions");
     
 });

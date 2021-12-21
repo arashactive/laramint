@@ -37,15 +37,25 @@
         <div id="EducationCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('First Step:') }}</h6>
-                <a class="collapse-item" href="{{ route('department.index') }}">{{ __('Department') }}</a>
+                @can('department.index')
+                    <a class="collapse-item" href="{{ route('department.index') }}">{{ __('Department') }}</a>
+                @endcan
+                @can('course.index')
                 <a class="collapse-item" href="{{ route('course.index') }}">{{ __('Course') }}</a>
+                @endcan
+                @can('term.index')
                 <a class="collapse-item" href="{{ route('term.index') }}">{{ __('terms') }}</a>
+                @endcan
+                
                 <h6 class="collapse-header">{{ __('Second Step:') }}</h6>
+                @can('session.index')
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
+                @endcan
             </div>
         </div>
     </li>
 
+    @role('Super-Admin')
     <!-- Nav Item - Admin Setup LMS -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse"
@@ -61,7 +71,7 @@
             </div>
         </div>
     </li>
-
+    @endrole
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

@@ -11,9 +11,9 @@
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">{{ __("Courses") }}</h6>
                 <div class="dropdown no-arrow">
-
+                    @can('course.create')
                     <x-CreateButton path="{{ route('course.create') }}" />
-                    
+                    @endcan
                 </div>
             </div>
             <!-- Card Body -->
@@ -28,7 +28,9 @@
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("is_published") }}</th>
+                        @can('course.update|course.delete')
                         <th scope="col">{{ __("Action") }}</th>
+                        @endcan
                         </tr>
                     </thead>
                     <tbody>
@@ -40,12 +42,18 @@
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $course->is_published }}" />
                                 </td>
+                                @can('course.update|course.delete')
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
+                                        @can('course.update')
                                         <x-EditButton itemId="{{ $course->id }}" path="course.edit" />
+                                        @endcan
+                                        @can('course.update')    
                                         <x-DeleteButton itemId="{{ $course->id }}" path="course.destroy" />                                    
+                                        @endcan
                                     </div>
                                 </td>
+                                @endcan
                             </tr>
                         @empty
                             
