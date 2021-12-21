@@ -25,10 +25,10 @@
                     <thead>
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ __("Title") }}</th>
-                        @can('session.update|session.delete')
+                        <th scope="col">{{ __("Title") }}</th>                        
+                        @if(Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
                         <th scope="col">{{ __("Action") }}</th>
-                        @endcan
+                        @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -36,10 +36,10 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $session->title }}</td>
-                                @can('session.update|session.delete')
+                                @if(Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                        @can('session.update')
+                                        @can('session.edit')
                                         <x-EditButton itemId="{{ $session->id }}" path="session.edit" />
                                         @endcan
 
@@ -48,7 +48,7 @@
                                         @endcan
                                     </div>
                                 </td>
-                                @endcan
+                                @endif
                             </tr>
                         @empty
                             

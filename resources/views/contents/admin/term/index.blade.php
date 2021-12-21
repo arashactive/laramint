@@ -30,10 +30,9 @@
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("Course") }}</th>
-                        <th scope="col">{{ __("is_published") }}</th>
-                        @can('term.update|term.delete')
+                        @if(Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                         <th scope="col">{{ __("Action") }}</th>
-                        @endcan
+                        @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -43,21 +42,19 @@
                                 <td>{{ $term->title  }}</td>
                                 <td>{{ $term->Department->title ?? '' }}</td>
                                 <td>{{ $term->Course->title ?? '' }}</td>
-                                <td>
-                                    <x-CheckUnCheck isChecked="{{ $term->is_published }}" />
-                                </td>
-                                @can('term.update|term.delete')
+                             
+                                @if(Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                        @can('term.update|term.delete')
+                                        @can('term.edit')
                                         <x-EditButton itemId="{{ $term->id }}" path="term.edit" />
                                         @endcan
-                                        @can('term.update|term.delete')
+                                        @can('term.delete')
                                         <x-DeleteButton itemId="{{ $term->id }}" path="term.destroy" />                                    
                                         @endcan
                                     </div>
                                 </td>
-                                @endcan
+                                @endif
                             </tr>
                         @empty
                             

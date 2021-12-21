@@ -28,9 +28,9 @@
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("is_published") }}</th>
-                        @can('course.update|course.delete')
+                        @if(Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
                         <th scope="col">{{ __("Action") }}</th>
-                        @endcan
+                        @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -42,18 +42,18 @@
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $course->is_published }}" />
                                 </td>
-                                @can('course.update|course.delete')
+                                @if(Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                        @can('course.update')
+                                        @can('course.edit')
                                         <x-EditButton itemId="{{ $course->id }}" path="course.edit" />
                                         @endcan
-                                        @can('course.update')    
+                                        @can('course.delete')    
                                         <x-DeleteButton itemId="{{ $course->id }}" path="course.destroy" />                                    
                                         @endcan
                                     </div>
                                 </td>
-                                @endcan
+                                @endif
                             </tr>
                         @empty
                             
