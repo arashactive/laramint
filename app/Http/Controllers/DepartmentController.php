@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
-use Exception;
+use Spatie\Permission\Traits\HasRoles;
 
 class DepartmentController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +16,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
+        $this->authorize('department.index');
         $departments = Department::paginate(env('PAGINATION'));
         return view("contents.admin.department.index", compact("departments"));
     }
@@ -26,7 +28,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        
+        $this->authorize('department.create');
         return view('contents.admin.department.form');
     }
 
@@ -38,7 +40,7 @@ class DepartmentController extends Controller
      */
     public function store(DepartmentRequest $request)
     {
-       
+        $this->authorize('department.create');
         Department::create($request->all());
         return redirect()
             ->route("department.index")
@@ -56,7 +58,7 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        
+        $this->authorize('department.edit');
         return view('contents.admin.department.form' , compact(
             "department"
         ));
@@ -71,7 +73,7 @@ class DepartmentController extends Controller
      */
     public function update(DepartmentRequest $request, Department $department)
     {
-        
+        $this->authorize('department.edit');
         $department->update($request->all());
         return redirect()
                 ->route("department.index")
@@ -86,6 +88,7 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
+        $this->authorize('department.delete');
         try{
             $department->delete();
             return redirect()

@@ -16,6 +16,7 @@ class CourseController extends Controller
      */
     public function index()
     {
+        $this->authorize('course.index');
         $courses = Course::paginate(env('PAGINATION'));
         return view("contents.admin.courses.index", compact("courses"));
     }
@@ -27,6 +28,7 @@ class CourseController extends Controller
      */
     public function create()
     {
+        $this->authorize('course.create');
         $departments = $this->getDepartmentsPluck();
         return view('contents.admin.courses.form', compact(
             'departments'
@@ -41,6 +43,7 @@ class CourseController extends Controller
      */
     public function store(CourseRequest $request)
     {
+        $this->authorize('course.create');
         Course::create($request->all());
         return redirect()
             ->route("course.index")
@@ -66,6 +69,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
+        $this->authorize('course.edit');
         $departments = $this->getDepartmentsPluck();
         return view('contents.admin.courses.form' , compact(
             "course" , "departments"
@@ -81,6 +85,7 @@ class CourseController extends Controller
      */
     public function update(CourseRequest $request, Course $course)
     {
+        $this->authorize('course.edit');
         $course->update($request->all());
         return redirect()
                 ->route("course.index")
@@ -95,6 +100,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
+        $this->authorize('course.delete');
         $course->delete();
         return redirect()
                 ->route("course.index")

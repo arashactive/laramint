@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Acl\PermissionController;
 use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\CourseController;
@@ -39,7 +40,7 @@ Route::middleware(['verified'])->group(function () {
 | Web Routes for only superAdmin Access
 |--------------------------------------------------------------------------
 */
-Route::middleware(['verified', 'role:Super-Admin'])->group(function () {
+Route::middleware(['verified'])->group(function () {
     Route::resource('department', DepartmentController::class);
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);
@@ -47,5 +48,7 @@ Route::middleware(['verified', 'role:Super-Admin'])->group(function () {
 
     Route::resource('user' , UserController::class);
     Route::resource('role', RoleController::class);
+    Route::resource('permission', PermissionController::class);
+    Route::post('role/permission/{role}' , [RoleController::class , 'permission'])->name("role_permissions");
     
 });

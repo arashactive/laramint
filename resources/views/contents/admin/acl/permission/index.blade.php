@@ -9,10 +9,10 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">{{ __("User") }}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ __("Permission") }}</h6>
                 <div class="dropdown no-arrow">
 
-                    <x-CreateButton path="{{ route('user.create') }}" />
+                    <x-CreateButton path="{{ route('permission.create') }}" />
                     
                 </div>
             </div>
@@ -26,32 +26,25 @@
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ __("name") }}</th>
-                        <th scope="col">{{ __("email") }}</th>
-                        <th scope="col">{{ __("Roles") }}</th>
+                        <th scope="col">{{ __("guard name") }}</th>
                         <th scope="col">{{ __("Action") }}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($users as $user)
+                        @forelse ($permissions as $permission)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>
-                                    {{ $user->name }} 
+                                    {{ $permission->name }} 
                                 </td>
                                 <td>
-                                    {{ $user->email }}
+                                    {{ $permission->guard_name }}
                                 </td>
-                                <td>
-                                    @forelse ($user->Roles as $role)
-                                    <x-buttons.pill name="role" count="{{ $role->name }}" theme="secondary" />
-                                    @empty
-                                        
-                                    @endforelse
-                                </td>
+                                
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                        <x-EditButton itemId="{{ $user->id }}" path="user.edit" />
-                                        <x-DeleteButton itemId="{{ $user->id }}" path="user.destroy" />                                    
+                                        <x-EditButton itemId="{{ $permission->id }}" path="permission.edit" />
+                                        <x-DeleteButton itemId="{{ $permission->id }}" path="permission.destroy" />                                    
                                     </div>
                                 </td>
                             </tr>
@@ -63,7 +56,7 @@
                 
                 <hr/>
                 <div class="text-center">
-                    {!! $users->links() !!}
+                    {!! $permissions->links() !!}
                 </div>
 
                 </div>

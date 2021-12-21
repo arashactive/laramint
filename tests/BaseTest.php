@@ -3,7 +3,7 @@
 namespace Tests;
 
 use App\Models\User;
-
+use Attribute;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -17,6 +17,8 @@ abstract class BaseTest extends TestCase
     protected $base_model = null;
     protected $validation_rules = null;
     protected $access_user = 1;
+
+    protected $field = 'title';
 
     protected function setAccessUser($access_user)
     {
@@ -36,6 +38,10 @@ abstract class BaseTest extends TestCase
     protected function setBaseRoute($base_route)
     {
         $this->base_route = $base_route;
+    }
+
+    protected function setField($field){
+        $this->field = $field;
     }
 
 
@@ -74,7 +80,7 @@ abstract class BaseTest extends TestCase
                 if (empty($attributes))
                     $attributes = $model::factory()->make()->toArray();
                 $attributes[$key] = '';
-
+                
                 $this->post(route($route), $attributes)->assertSessionHasErrors($key);
             }
         }
@@ -101,7 +107,7 @@ abstract class BaseTest extends TestCase
 
         $this->post(route($route), $attributes->toArray())->assertRedirect();
 
-        $this->assertDatabaseHas($model, ['title' => $attributes->title]);
+        $this->assertDatabaseHas($model, [$this->field => $attributes->{$this->field}]);
     }
 
 
@@ -126,7 +132,7 @@ abstract class BaseTest extends TestCase
         }
 
         $this->delete(route($route, $created->id))->assertRedirect();
-        $this->assertDatabaseMissing($model, ['title' => $attributes->title]);
+        $this->assertDatabaseMissing($model, [$this->field => $attributes->{$this->field}]);
     }
 
 
@@ -151,7 +157,7 @@ abstract class BaseTest extends TestCase
         }
 
         $this->put(route($route, $created->id), $attributes->toArray())->assertRedirect();
-        $this->assertDatabaseHas($model, ['title' => $attributes->title]);
+        $this->assertDatabaseHas($model, [$this->field => $attributes->{$this->field}]);
     }
 
 

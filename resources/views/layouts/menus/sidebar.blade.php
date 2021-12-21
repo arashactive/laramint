@@ -56,6 +56,8 @@
         <div id="ACLCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('user.index') }}">{{ __('User') }}</a>
+                <a class="collapse-item" href="{{ route('role.index') }}">{{ __('Role') }}</a>
+                <a class="collapse-item" href="{{ route('permission.index') }}">{{ __('Permission') }}</a>
             </div>
         </div>
     </li>

@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Http\Requests\DepartmentRequest;
+use App\Http\Requests\PermissionRequest;
 use Tests\BaseTest;
 
-class DepartmentTest extends BaseTest
+class PermissionTest extends BaseTest
 {
 
     protected function setUp() :void
@@ -13,8 +13,9 @@ class DepartmentTest extends BaseTest
         parent::setUp();
         $this->seed();
 
-        $this->setBaseRoute('department');
-        $this->setBaseModel('App\Models\Department');
+        $this->setBaseRoute('permission');
+        $this->setBaseModel('App\Models\Permission');
+        $this->setField('name');
 
         
     }
@@ -39,7 +40,7 @@ class DepartmentTest extends BaseTest
      */
     public function test_validation()
     {
-        $this->setValidationRules((new DepartmentRequest())->rules());
+        $this->setValidationRules((new PermissionRequest())->rules());
         $this->signIn();
         $this->validation();
     }

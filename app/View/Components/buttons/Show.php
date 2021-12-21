@@ -1,19 +1,22 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\buttons;
 
 use Illuminate\View\Component;
 
-class ShowButton extends Component
+class Show extends Component
 {
+    public $itemId;
+    public $path;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($itemId , $path)
     {
-        //
+        $this->itemId = $itemId;
+        $this->path = $path;
     }
 
     /**

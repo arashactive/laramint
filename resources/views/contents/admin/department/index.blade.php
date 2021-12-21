@@ -11,9 +11,9 @@
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">{{ __("Departments") }}</h6>
                 <div class="dropdown no-arrow">
-
+                    @can('department.create')
                     <x-CreateButton path="{{ route('department.create') }}" />
-                    
+                    @endcan
                 </div>
             </div>
             <!-- Card Body -->
@@ -27,7 +27,9 @@
                         <th scope="col">#</th>
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("is_published") }}</th>
+                        @can('department.update|department.delete')
                         <th scope="col">{{ __("Action") }}</th>
+                        @endcan
                         </tr>
                     </thead>
                     <tbody>
@@ -44,12 +46,18 @@
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $department->is_published }}" />
                                 </td>
+                                @can('department.update|department.delete')
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                        <x-EditButton itemId="{{ $department->id }}" path="department.edit" />
-                                        <x-DeleteButton itemId="{{ $department->id }}" path="department.destroy" />                                    
+                                        @can('department.update')
+                                            <x-EditButton itemId="{{ $department->id }}" path="department.edit" />
+                                        @endcan
+                                        @can('department.delete')
+                                            <x-DeleteButton itemId="{{ $department->id }}" path="department.destroy" />                                    
+                                        @endcan
                                     </div>
                                 </td>
+                                @endcan
                             </tr>
                         @empty
                             

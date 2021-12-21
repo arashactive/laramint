@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Acl;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DepartmentRequest;
 use App\Http\Requests\UserRequest;
-use App\Models\Role;
 use App\Models\User;
 use App\traits\SyncPermissions;
 
