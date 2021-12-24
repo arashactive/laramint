@@ -18,8 +18,8 @@ Admin Panel:
 
 - Session management => Completed
 - User Access Management => Completed
--           ** file manager => in progress **
-- Activity management => Feature
+- file manager => Completed
+- ** Activity management => In Progress **
 - Exam management => Feature
 - Gamification  => Feature
 - Ticket Managemnet => Feature
