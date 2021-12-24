@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -54,6 +54,22 @@
             </div>
         </div>
     </li>
+
+
+    @role('Super-Admin')
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse"
+            aria-expanded="true" aria-controls="ACLCollapse">
+            <i class="fas fa-fw fa-toolbox"></i>
+            <span>Tool Box</span>
+        </a>
+        <div id="ToolboxCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('file.index') }}">{{ __('Files') }}</a>
+            </div>
+        </div>
+    </li>
+    @endrole
 
     @role('Super-Admin')
     <!-- Nav Item - Admin Setup LMS -->

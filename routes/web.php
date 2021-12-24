@@ -6,6 +6,7 @@ use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
@@ -45,10 +46,14 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);
     Route::resource('session', SessionController::class);
+    Route::resource('file' , FileController::class);
+});
 
-    Route::resource('user' , UserController::class)->middleware('role:Super-Admin');
+
+// ACL Route
+Route::middleware(['verified'])->group(function () {
+    Route::resource('user', UserController::class)->middleware('role:Super-Admin');
     Route::resource('role', RoleController::class)->middleware('role:Super-Admin');
     Route::resource('permission', PermissionController::class)->middleware('role:Super-Admin');
-    Route::post('role/permission/{role}' , [RoleController::class , 'permission'])->name("role_permissions");
-    
+    Route::post('role/permission/{role}', [RoleController::class, 'permission'])->name("role_permissions");
 });
