@@ -12,13 +12,13 @@ This project is not completed and I'm working on it.
 ## Features
 
 Admin Panel:
-    - Department management => Completed
-    - Course management => Completed
-    - Term management => Completed
+- Department management => Completed
+- Course management => Completed
+- Term management => Completed
 
-    - Session management => Completed
-        - User Access Management => In progress
-
+- Session management => Completed
+- User Access Management => Completed
+    --- file manager => in progress
 - Activity management => Feature
 - Exam management => Feature
 - Gamification  => Feature
