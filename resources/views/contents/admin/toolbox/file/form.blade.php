@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-sm-6">
                             <input name="file" type="file" class="form-control form-control-user" id="file"
-                                placeholder="file" value="{{ $file->url ?? '' }}">
+                                placeholder="file" value="{{ $file->file ?? '' }}">
                             @error('file')
                                 <span class="invalid-feedback" role="alert">
                                     {{ $message }}

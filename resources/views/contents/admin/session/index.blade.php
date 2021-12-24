@@ -26,7 +26,7 @@
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ __("Title") }}</th>                        
-                        @if(Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
+                        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
                         </tr>
@@ -36,7 +36,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $session->title }}</td>
-                                @if(Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
+                                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
                                         @can('session.edit')

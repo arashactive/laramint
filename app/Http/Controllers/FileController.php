@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FileRequest;
 use App\Models\File;
+use App\traits\UploadFiles;
 
 class FileController extends Controller
 {
-
+    use UploadFiles;
     /**
      * Display a listing of the resource.
      *
@@ -50,12 +51,12 @@ class FileController extends Controller
 
     private function setData($request)
     {
-
+        $file = $request->file('file');
         return [
             'description' => $request->description,
-            'url' => '',
-            'file_size' => $request->file('file')->getSize(),
-            'file_type' => $request->file('file')->extension()
+            'file' => $this->upload($file, $file->extension()),
+            'file_size' => $file->getSize(),
+            'file_type' => $file->extension()
         ];
     }
 
@@ -83,6 +84,7 @@ class FileController extends Controller
     public function update(FileRequest $request, File $file)
     {
         $this->authorize('file.edit');
+        $this->delete($file->file); // remove old file from storage
         $file->update($this->setData($request));
         return redirect()
             ->route("file.index")
@@ -98,6 +100,7 @@ class FileController extends Controller
     public function destroy(File $file)
     {
         $this->authorize('file.delete');
+        $this->delete($file->file); // remove file from storage
         $file->delete();
         return redirect()
             ->route("file.index")

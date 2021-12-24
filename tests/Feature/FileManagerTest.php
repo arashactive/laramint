@@ -2,8 +2,7 @@
 
 namespace Tests\Feature;
 
-
-use App\Http\Requests\DepartmentRequest;
+use App\Http\Requests\FileRequest;
 use Tests\BaseTest;
 
 class FileManagerTest extends BaseTest
@@ -15,6 +14,7 @@ class FileManagerTest extends BaseTest
 
         $this->setBaseRoute('file');
         $this->setBaseModel('App\Models\File');
+       
     }
 
 
@@ -38,7 +38,7 @@ class FileManagerTest extends BaseTest
      */
     public function test_validation()
     {
-        $this->setValidationRules((new DepartmentRequest())->rules());
+        $this->setValidationRules((new FileRequest())->rules());
         $this->signIn();
         $this->validation();
     }
@@ -53,6 +53,7 @@ class FileManagerTest extends BaseTest
     public function test_create_form()
     {
         $this->signIn();
+        $this->setField('description');
         $this->create();
     }
 
@@ -64,6 +65,7 @@ class FileManagerTest extends BaseTest
     public function test_update_form()
     {
         $this->signIn();
+        $this->setField('description');
         $this->update();
     }
 

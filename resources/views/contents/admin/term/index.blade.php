@@ -30,7 +30,7 @@
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("Course") }}</th>
-                        @if(Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
+                        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
                         </tr>
@@ -43,7 +43,7 @@
                                 <td>{{ $term->Department->title ?? '' }}</td>
                                 <td>{{ $term->Course->title ?? '' }}</td>
                              
-                                @if(Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
+                                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
                                         @can('term.edit')
