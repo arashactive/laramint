@@ -3,6 +3,7 @@
 use App\Http\Controllers\Acl\PermissionController;
 use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
@@ -47,6 +48,7 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('term', TermController::class);
     Route::resource('session', SessionController::class);
     Route::resource('file' , FileController::class);
+    Route::resource('activity' , ActivityController::class);
 });
 
 
