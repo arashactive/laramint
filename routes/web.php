@@ -7,6 +7,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TermController;
@@ -49,6 +50,7 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('session', SessionController::class);
     Route::resource('file' , FileController::class);
     Route::resource('activity' , ActivityController::class);
+    Route::resource('document' , DocumentController::class);
 });
 
 

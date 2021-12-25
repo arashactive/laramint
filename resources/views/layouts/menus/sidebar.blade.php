@@ -51,6 +51,9 @@
                 @can('session.index')
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
                 @endcan
+                @can('document.index')
+                <a class="collapse-item" href="{{ route('document.index') }}">{{ __('document') }}</a>
+                @endcan
             </div>
         </div>
     </li>

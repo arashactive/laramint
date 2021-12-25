@@ -19,27 +19,39 @@ class PermissionsSeeder extends Seeder
         // Reset cached roles and permissions
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
+        $models = [
+            'department', 'course', 'session', 'term', 'file', 'document'
+        ];
 
-        // create permissions
-        Permission::create(['name' => 'edit departments']);
-        Permission::create(['name' => 'delete departments']);
-        Permission::create(['name' => 'publish departments']);
-        Permission::create(['name' => 'unpublish departments']);
+        foreach ($models as $model) {
+            // create permissions
+            Permission::create(['name' => $model . '.index']);
+            Permission::create(['name' => $model . '.create']);
+            Permission::create(['name' => $model . '.edit']);
+            Permission::create(['name' => $model . '.delete']);
+            Permission::create(['name' => $model . '.show']);
+        }
+
 
 
         $role1 = Role::create(['name' => 'Super-Admin']);
 
         // create roles and assign existing permissions
         $role2 = Role::create(['name' => 'supervisor']);
-        $role2->givePermissionTo('edit departments');
-        $role2->givePermissionTo('delete departments');
-        $role2->givePermissionTo('publish departments');
-        $role2->givePermissionTo('unpublish departments');
-
+        foreach( $models as $model){
+            $role2->givePermissionTo($model . '.index');
+            $role2->givePermissionTo($model . '.create');
+            $role2->givePermissionTo($model . '.edit');
+            $role2->givePermissionTo($model . '.show');
+        }
 
         // create roles and assign existing permissions
-        $role3 = Role::create(['name' => 'teacher']);
-        $role3->givePermissionTo('edit departments');
+        $role3 = Role::create(['name' => 'mentor']);
+        foreach( $models as $model){
+            $role3->givePermissionTo($model . '.index');
+            $role3->givePermissionTo($model . '.show');
+        }
+
 
 
         // create demo users
@@ -61,4 +73,6 @@ class PermissionsSeeder extends Seeder
         ]);
         $user->assignRole($role3);
     }
+
+
 }
