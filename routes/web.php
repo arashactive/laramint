@@ -48,9 +48,15 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);
     Route::resource('session', SessionController::class);
-    Route::resource('file' , FileController::class);
-    Route::resource('activity' , ActivityController::class);
-    Route::resource('document' , DocumentController::class);
+    Route::resource('file', FileController::class);
+    Route::resource('activity', ActivityController::class);
+    Route::resource('document', DocumentController::class);
+
+
+
+
+    // signle functions:
+    Route::get('/document/order/{file_id}/{move}', [DocumentController::class , 'orderChangeFiles'])->name("changeOrderFile");
 });
 
 

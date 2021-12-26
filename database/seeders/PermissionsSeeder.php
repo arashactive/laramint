@@ -32,6 +32,7 @@ class PermissionsSeeder extends Seeder
             Permission::create(['name' => $model . '.show']);
         }
 
+        Permission::create(['name' => 'document.order']);
 
 
         $role1 = Role::create(['name' => 'Super-Admin']);
@@ -44,6 +45,7 @@ class PermissionsSeeder extends Seeder
             $role2->givePermissionTo($model . '.edit');
             $role2->givePermissionTo($model . '.show');
         }
+        $role2->givePermissionTo('document.order');
 
         // create roles and assign existing permissions
         $role3 = Role::create(['name' => 'mentor']);

@@ -27,9 +27,10 @@
                     </p>
 
                     <hr/>
-
+                    
                     @forelse ($document->Files as $file)
-                        {{ $file->description }}
+                   
+                    <x-container.fileBox  :file="$file" :first="$loop->first" :last="$loop->last"></x-container.fileBox>
                     @empty
                         
                     @endforelse

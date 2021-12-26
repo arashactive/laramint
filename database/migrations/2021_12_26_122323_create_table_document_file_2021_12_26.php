@@ -13,7 +13,8 @@ class CreateTableDocumentFile20211226 extends Migration
      */
     public function up()
     {
-        Schema::create('document_file', function (Blueprint $table) {            
+        Schema::create('document_file', function (Blueprint $table) {     
+            $table->id();       
             $table->unsignedBigInteger('document_id');
             $table->foreign('document_id')->references('id')->on('documents');
             $table->unsignedBigInteger('file_id');

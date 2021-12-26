@@ -14,6 +14,9 @@ class Document extends Model
 
 
     public function Files(){
-        return $this->belongsToMany(File::class)->withPivot('order')->withTimestamps();
+        return $this->belongsToMany(File::class)
+                ->withPivot('order' , 'id')
+                ->orderBy('order')
+                ->withTimestamps();
     }
 }

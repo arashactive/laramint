@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DocumentRequest;
 use App\Models\Document;
+use App\Models\DocumentFile;
+use App\traits\Sequence;
 
 class DocumentController extends Controller
 {
+
+    use Sequence;
 
     /**
      * Display a listing of the resource.
@@ -43,8 +47,7 @@ class DocumentController extends Controller
         Document::create($request->all());
         return redirect()
             ->route("document.index")
-            ->with('success' , __('item created successfully'));
-
+            ->with('success', __('item created successfully'));
     }
 
 
@@ -57,7 +60,7 @@ class DocumentController extends Controller
     public function show(Document $document)
     {
         $this->authorize('document.show');
-        return view('contents.admin.document.show' , compact(
+        return view('contents.admin.document.show', compact(
             "document"
         ));
     }
@@ -71,7 +74,7 @@ class DocumentController extends Controller
     public function edit(Document $document)
     {
         $this->authorize('document.edit');
-        return view('contents.admin.document.form' , compact(
+        return view('contents.admin.document.form', compact(
             "document"
         ));
     }
@@ -88,8 +91,8 @@ class DocumentController extends Controller
         $this->authorize('document.edit');
         $document->update($request->all());
         return redirect()
-                ->route("document.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("document.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
@@ -101,18 +104,43 @@ class DocumentController extends Controller
     public function destroy(Document $activity)
     {
         $this->authorize('document.delete');
-        try{
+        try {
             $activity->delete();
             return redirect()
-                    ->route("document.index")
-                    ->with('danger' , __('item deleted successfully'));
-        }catch (\Exception $e){
+                ->route("document.index")
+                ->with('danger', __('item deleted successfully'));
+        } catch (\Exception $e) {
             return redirect()
-            ->route("document.index")
-            ->with('danger' , __('Delete is not Completed, Please check child of this document'));
+                ->route("document.index")
+                ->with('danger', __('Delete is not Completed, Please check child of this document'));
         }
-        
     }
 
 
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function orderChangeFiles($file_id, $move)
+    {
+        $this->authorize('document.order');
+        $from = DocumentFile::findorfail($file_id);
+
+        $move_parameters = [
+            'up' => '<',
+            'down' => '>'
+        ];
+
+        $to = DocumentFile::where('document_id', $from->document_id)
+            ->where('order', (string)$move_parameters[$move], $from->order)
+            ->first();
+
+
+        $this->changeOrder($from, $to);
+
+        return redirect()->back();
+    }
 }
