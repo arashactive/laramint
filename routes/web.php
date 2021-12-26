@@ -56,7 +56,7 @@ Route::middleware(['verified'])->group(function () {
 
 
     // signle functions:
-    Route::get('/document/order/{file_id}/{move}', [DocumentController::class , 'orderChangeFiles'])->name("changeOrderFile");
+    Route::get('/document/order/{from}/{move}', [DocumentController::class , 'orderChangeFiles'])->name("changeOrderFile");
 });
 
 

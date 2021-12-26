@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DocumentRequest;
 use App\Models\Document;
 use App\Models\DocumentFile;
+use App\Models\File;
 use App\traits\Sequence;
 
 class DocumentController extends Controller
@@ -60,8 +61,10 @@ class DocumentController extends Controller
     public function show(Document $document)
     {
         $this->authorize('document.show');
+        $files = File::orderby('updated_at', 'desc')->paginate(env('PAGINATION'));
         return view('contents.admin.document.show', compact(
-            "document"
+            "document",
+            "files"
         ));
     }
 
@@ -124,10 +127,9 @@ class DocumentController extends Controller
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */
-    public function orderChangeFiles($file_id, $move)
+    public function orderChangeFiles(DocumentFile $from, $move)
     {
         $this->authorize('document.order');
-        $from = DocumentFile::findorfail($file_id);
 
         $move_parameters = [
             'up' => '<',
@@ -137,7 +139,6 @@ class DocumentController extends Controller
         $to = DocumentFile::where('document_id', $from->document_id)
             ->where('order', (string)$move_parameters[$move], $from->order)
             ->first();
-
 
         $this->changeOrder($from, $to);
 
