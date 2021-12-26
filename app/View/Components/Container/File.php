@@ -7,16 +7,24 @@ use Illuminate\View\Component;
 class File extends Component
 {
     public $file = null;
-
+    public $first = null;
+    public $last = null;
+    public $delete = null;
+    public $add = null;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($file )
+    public function __construct($file , $first , $last , $delete , $add )
     {
         $this->file = $file;
+        $this->first = $first;
+        $this->last = $last;
+        $this->delete = $delete;
+        $this->add = $add;
+        
     }
 
     /**

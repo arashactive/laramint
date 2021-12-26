@@ -30,7 +30,16 @@
                     
                     @forelse ($document->Files as $file)
                    
-                    <x-container.fileBox  :file="$file" :first="$loop->first" :last="$loop->last"></x-container.fileBox>
+                    <x-container.File  
+                    :file="$file" 
+                    :first="$loop->first" 
+                    :last="$loop->last"
+                    :delete="route('deleteFileDocument' ,[
+                        'document' => $document->id ,
+                        'file' => $file->id 
+                    ])"
+                    :add="false">
+                    </x-container.File>
                     @empty
                         
                     @endforelse
@@ -55,7 +64,18 @@
             <div class="card-body">
                 <div class="text-center">
                     @forelse ($files as $file)
-                    <x-container.File  :file="$file"></x-container.fileBox>
+                    
+                    <x-container.File  
+                    :file="$file" 
+                    :first="$loop->first" 
+                    :last="$loop->last"
+                    :delete="false"
+                    :add="route('addFileToDocument' ,[
+                        'document' => $document->id ,
+                        'file' => $file->id 
+                    ])">
+                    </x-container.File>
+
                     @empty
                         
                     @endforelse

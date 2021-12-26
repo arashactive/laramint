@@ -135,13 +135,44 @@ class DocumentController extends Controller
             'up' => '<',
             'down' => '>'
         ];
-
+        
         $to = DocumentFile::where('document_id', $from->document_id)
             ->where('order', (string)$move_parameters[$move], $from->order)
             ->first();
 
         $this->changeOrder($from, $to);
 
+        return redirect()->back();
+    }
+
+
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function addFileToDocument(Document $document, File $file)
+    {
+        
+        $document->Files()->attach($file , 
+            ['order' => $document->Files()->max('order') + 1]);
+        return redirect()->back();
+    }
+    
+    
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteFileAsDocument(Document $document, File $file)
+    {
+        
+        $document->Files()->detach($file);
         return redirect()->back();
     }
 }

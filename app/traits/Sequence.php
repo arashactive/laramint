@@ -3,6 +3,7 @@
 
 namespace App\traits;
 
+
 trait Sequence
 {
 
@@ -24,4 +25,6 @@ trait Sequence
             return false;
         }
     }
+
+
 }
