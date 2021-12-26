@@ -1,7 +1,8 @@
+
 # Mint ( LMS + GAMIFICATION )
 ## _Learning every thing with fun and game_
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+website: [Laramint.com](https://laramint.com)
 
 This project is not completed and I'm working on it. 
 
