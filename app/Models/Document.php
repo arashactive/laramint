@@ -11,4 +11,9 @@ class Document extends Model
 
 
     protected $guarded = [];
+
+
+    public function Files(){
+        return $this->belongsToMany(File::class)->withPivot('order')->withTimestamps();
+    }
 }

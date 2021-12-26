@@ -26,6 +26,9 @@
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ __("Title") }}</th>
+                        @can('document.show')
+                        <th scope="col">{{ __("files") }}</th>
+                        @endcan
                         @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['department.edit' , 'department.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
@@ -39,6 +42,12 @@
                                     {{ $document->title }} 
                                 </td>
                               
+                                 @can('document.show')
+                                 <td>           
+                                 <x-buttons.show itemId="{{ $document->id }}" path="document.show" />                                    
+                                 </td>
+                                 @endcan
+
                                 @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['department.edit' , 'department.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
@@ -47,9 +56,6 @@
                                         @endcan
                                         @can('document.delete')
                                             <x-DeleteButton itemId="{{ $document->id }}" path="document.destroy" />                                    
-                                        @endcan
-                                        @can('document.show')
-                                            <x-DeleteButton itemId="{{ $document->id }}" path="document.show" />                                    
                                         @endcan
                                     </div>
                                 </td>

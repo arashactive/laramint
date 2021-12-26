@@ -47,7 +47,20 @@ class DocumentController extends Controller
 
     }
 
-    
+
+    /**
+     * Show the form for showing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Document $document)
+    {
+        $this->authorize('document.show');
+        return view('contents.admin.document.show' , compact(
+            "document"
+        ));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -55,7 +68,7 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Document $activity)
+    public function edit(Document $document)
     {
         $this->authorize('document.edit');
         return view('contents.admin.document.form' , compact(
