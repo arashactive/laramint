@@ -61,10 +61,8 @@ class DocumentController extends Controller
     public function show(Document $document)
     {
         $this->authorize('document.show');
-        $files = File::orderby('updated_at', 'desc')->paginate(env('PAGINATION'));
         return view('contents.admin.document.show', compact(
-            "document",
-            "files"
+            "document"
         ));
     }
 

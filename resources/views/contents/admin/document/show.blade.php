@@ -63,22 +63,9 @@
             <!-- Card Body -->
             <div class="card-body">
                 <div class="text-center">
-                    @forelse ($files as $file)
-                    
-                    <x-container.File  
-                    :file="$file" 
-                    :first="$loop->first" 
-                    :last="$loop->last"
-                    :delete="false"
-                    :add="route('addFileToDocument' ,[
-                        'document' => $document->id ,
-                        'file' => $file->id 
-                    ])">
-                    </x-container.File>
-
-                    @empty
-                        
-                    @endforelse
+                    <x-container.FileManager 
+                    :document="$document" 
+                    route="addFileToDocument"/>
                 </div>
             </div>
         </div>
