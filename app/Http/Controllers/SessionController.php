@@ -49,6 +49,19 @@ class SessionController extends Controller
     }
 
     
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Session $session)
+    {
+        $this->authorize('session.edit');
+        return view('contents.admin.session.show' , compact(
+            "session"
+        ));
+    }
 
     /**
      * Show the form for editing the specified resource.

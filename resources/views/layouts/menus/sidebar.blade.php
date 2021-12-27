@@ -51,15 +51,13 @@
                 @can('session.index')
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
                 @endcan
-                @can('document.index')
-                <a class="collapse-item" href="{{ route('document.index') }}">{{ __('document') }}</a>
-                @endcan
+               
             </div>
         </div>
     </li>
 
 
-    @role('Super-Admin')
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse"
             aria-expanded="true" aria-controls="ACLCollapse">
@@ -68,11 +66,18 @@
         </a>
         <div id="ToolboxCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
+                @can('file.index')
                 <a class="collapse-item" href="{{ route('file.index') }}">{{ __('Files') }}</a>
+                @endcan
+                @can('document.index')
+                <a class="collapse-item" href="{{ route('document.index') }}">{{ __('document') }}</a>
+                @endcan
             </div>
+            
         </div>
+        
     </li>
-    @endrole
+    
 
     @role('Super-Admin')
     <!-- Nav Item - Admin Setup LMS -->

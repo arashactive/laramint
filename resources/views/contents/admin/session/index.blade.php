@@ -25,7 +25,10 @@
                     <thead>
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ __("Title") }}</th>                        
+                        <th scope="col">{{ __("Title") }}</th>  
+                        @can('session.show')
+                        <th scope="col">{{ __("Show") }}</th>  
+                        @endcan                     
                         @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
@@ -36,6 +39,11 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $session->title }}</td>
+                                @can('session.show')
+                                <td>
+                                    <x-buttons.show itemId="{{ $session->id }}" path="session.show" />
+                                </td>
+                                @endcan
                                 @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['session.edit' , 'session.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
