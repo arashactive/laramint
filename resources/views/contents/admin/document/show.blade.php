@@ -63,9 +63,10 @@
             <!-- Card Body -->
             <div class="card-body">
                 <div class="text-center">
-                    <x-container.FileManager 
-                    :document="$document" 
-                    route="addFileToDocument"/>
+                    @livewire('container.show-files', [
+                        'route' => 'addFileToDocument',
+                        'document' => $document->id
+                    ])
                 </div>
             </div>
         </div>

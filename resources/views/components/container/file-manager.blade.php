@@ -12,7 +12,7 @@
         </div>
         
     </form>    
-    <span>{{ $search }}</span>
+    
     @forelse ($files as $file)
                     
         <x-container.File  
