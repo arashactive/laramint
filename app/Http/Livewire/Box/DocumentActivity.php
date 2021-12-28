@@ -2,15 +2,19 @@
 
 namespace App\Http\Livewire\Box;
 
+use App\Models\Document;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class DocumentActivity extends Component
 {
 
-    
-
+    use WithPagination;
     public function render()
     {
-        return view('livewire.box.document-activity');
+        $documents =  Document::paginate(20);
+        return view('livewire.box.document-activity' , compact([
+            'documents'
+        ]));
     }
 }

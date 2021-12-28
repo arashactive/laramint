@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class ShowFiles extends Component
 {
+    
 
     public $search = '';
 

@@ -43,7 +43,25 @@
             <!-- Card Body -->
             <div class="card-body">
                 <div class="text-center">
-                    @livewire('container.activities-panel')
+                    <div class="row">
+
+                        <div class="col-xl-6 col-sm-12 mb-4">
+                            
+                            @livewire('box.document-activity')
+                            
+                            
+                        </div>
+                
+                
+                        <div class="col-xl-6 col-sm-12 mb-4">
+                            
+                            @livewire('box.quiz-activity')
+                            
+                            
+                        </div>
+                
+                        
+                   </div>
                 </div>
             </div>
         </div>
