@@ -46,15 +46,14 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                            <x-forms.DropDown model="Department" name="department_id" selected="{{ $term->department_id ?? '0' }}" />
-                        </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                           <x-forms.DropDown model="Course" name="course_id" selected="{{ $term->course_id ?? '0' }}" />
-                        </div>
-                       
-                    </div>
+                    
+                    
+                    @livewire('forms.department-course-drop-down', [
+                        'department_id' => $term->department_id ?? null ,
+                        'course_id' => $term->course_id ?? null
+                    ])
+
+
                     <div class="form-group">
                         <textarea name="description" type="text" class="form-control form-control-user" id="description"
                             placeholder="Description">{{ $term->description ?? '' }}</textarea>
