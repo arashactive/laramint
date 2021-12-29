@@ -10,17 +10,24 @@
     
     <hr/>
 
-    @forelse ($files as $file)         
-        <x-container.File  
-        :file="$file" 
-        :first="$loop->first" 
-        :last="$loop->last"
-        :delete="false"
-        :add="route($route ,[
-            'document' => $document ,
-            'file' => $file->id 
-        ])">
-        </x-container.File>
+    @forelse ($files as $file)   
+    
+        <x-box.item
+        :title="$file->description">
+            
+            @slot('theme')
+                {{ 'bg-dark' }}
+            @endslot
+
+            @slot('add')
+                {{ route($route ,[
+                    'document' => $document ,
+                    'file' => $file->id 
+                ]) }}
+            @endslot
+
+        </x-box.item>
+
 
     @empty
         

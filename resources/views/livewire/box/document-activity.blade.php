@@ -33,31 +33,17 @@
            <div class="modal-body">
                
                 @forelse ($documents as $document)
-                <div class="row">
-                    <div class="col-12 mb-4">
-                        <div class="card bg-primary text-white shadow">
-                            <div class="card-body text-left">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-uppercase mb-1">
-                                            {{  $document->title }}
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a href=""
-                                            class="btn btn-circle btn-success">
-                                            <i class="fas fa-plus text-dark-300"></i>
-                                        </a>
-                                        <a class="btn btn-circle btn-light">
-                                            <i class="fas fa-file text-dark-300"></i>
-                                        </a>
-                                    </div>
-                                </div>
                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                <x-box.item  
+                :title="$document->title">
+                @slot('add')
+                {{ URL::to('/test') }}   
+                @endslot
+
+               
+                </x-container.File>
+                
                 @empty
                     
                 @endforelse

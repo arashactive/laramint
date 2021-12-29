@@ -167,10 +167,10 @@ class DocumentController extends Controller
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */
-    public function deleteFileAsDocument(Document $document, File $file)
+    public function deleteFileAsDocument(DocumentFile $documentFile)
     {
         
-        $document->Files()->detach($file);
+        $documentFile->delete();
         return redirect()->back();
     }
 }

@@ -29,19 +29,27 @@
                     <hr/>
                     
                     @forelse ($document->Files as $file)
-                   
-                    <x-container.File  
-                    :file="$file" 
-                    :first="$loop->first" 
-                    :last="$loop->last"
-                    :delete="route('deleteFileDocument' ,[
-                        'document' => $document->id ,
-                        'file' => $file->id 
-                    ])"
-                    :add="false">
-                    </x-container.File>
-                    @empty
-                        
+                    
+                    <x-box.item
+                    :title="$file->description">
+                    @if(!$loop->first)
+                        @slot('up')
+                            {{ route('changeOrderFile' , ['from' => $file->pivot->id , 'move' => 'up' ]) }}
+                        @endslot
+                    @endif
+                    @if(!$loop->last)
+                        @slot('down')
+                            {{ route('changeOrderFile' , ['from' => $file->pivot->id , 'move' => 'down' ]) }}
+                        @endslot
+                    @endif
+                
+                    @slot('delete')
+                        {{ route('deleteFileDocument' ,['documentFile' => $file->pivot->id ]) }}
+                    @endslot
+                
+                    </x-box.item>
+                    
+                    @empty  
                     @endforelse
                 </div>
             </div>
