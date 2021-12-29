@@ -54,26 +54,35 @@ class PermissionsSeeder extends Seeder
             $role3->givePermissionTo($model . '.show');
         }
 
-
+        // create roles and assign existing permissions
+        $role4 = Role::create(['name' => 'student']);
+        $role4->givePermissionTo('document.order');
+       
 
         // create demo users
         $user = \App\Models\User::factory()->create([
             'name' => 'Arash Dehghani',
-            'email' => 'arash@mint.org',
+            'email' => 'arash@mint.com',
         ]);
         $user->assignRole($role1);
 
         $user = \App\Models\User::factory()->create([
             'name' => 'mr.Mosavi',
-            'email' => 'mosavi@mint.org',
+            'email' => 'mosavi@mint.com',
         ]);
         $user->assignRole($role2);
 
         $user = \App\Models\User::factory()->create([
             'name' => 'Ali Dehghani',
-            'email' => 'ali@mint.org',
+            'email' => 'ali@mint.com',
         ]);
         $user->assignRole($role3);
+
+        $user = \App\Models\User::factory()->create([
+            'name' => 'Student A1',
+            'email' => 'student_A1@mint.com',
+        ]);
+        $user->assignRole($role4);
     }
 
 

@@ -28,7 +28,6 @@ class DepartmentCourseDropDown extends Component
 
     public function render()
     {
-
         return view('livewire.forms.department-course-drop-down');
     }
 }
