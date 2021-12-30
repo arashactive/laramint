@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Http\Requests\ActivityRequest;
 use Tests\BaseTest;
 
 class ActivityTest extends BaseTest
