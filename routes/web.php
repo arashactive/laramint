@@ -59,6 +59,8 @@ Route::middleware(['verified'])->group(function () {
     Route::get('/document/order/{from}/{move}', [DocumentController::class , 'orderChangeFiles'])->name("changeOrderFile");
     Route::get('/document/file/add/{document}/{file}', [DocumentController::class , 'addFileToDocument'])->name("addFileToDocument");
     Route::get('/document/file/delete/{documentFile}', [DocumentController::class , 'deleteFileAsDocument'])->name("deleteFileDocument");
+    Route::get('/session/document/{session}/{active_id}', [SessionController::class , 'addDocumentToSession'])->name("addDocumentToSession");
+    Route::get('/session/order/{from}/{move}', [SessionController::class , 'changeOrderSessionable'])->name("changeOrderSessionable");
 });
 
 

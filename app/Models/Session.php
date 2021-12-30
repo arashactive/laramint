@@ -11,4 +11,17 @@ class Session extends Model
 
 
     protected $guarded = [];
+    
+ 
+
+    public function related()
+    {
+        return $this->hasMany(Sessionable::class, 'session_id')->orderBy('order');
+    }
+
+    public function documents()
+    {
+        return $this->morphedByMany(Document::class, 'sessionable')->withTimestamps();
+    }
+
 }

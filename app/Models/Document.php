@@ -13,10 +13,22 @@ class Document extends Model
     protected $guarded = [];
 
 
-    public function Files(){
+    public function Files()
+    {
         return $this->belongsToMany(File::class)
-                ->withPivot('order' , 'id')
-                ->orderBy('order')
-                ->withTimestamps();
+            ->withPivot('order', 'id')
+            ->orderBy('order')
+            ->withTimestamps();
+    }
+
+    
+    /**
+     * Sessions is pholymorph relationship
+     *
+     * @return void
+     */
+    public function Sessions()
+    {        
+        return $this->morphToMany(Session::class, 'activitable');
     }
 }

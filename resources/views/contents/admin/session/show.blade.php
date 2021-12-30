@@ -3,7 +3,7 @@
 
 @section("content")
 <div class="row">
-
+    
     <div class="col-6">
         <div class="card shadow mb-4 border-bottom-primary">
             <!-- Card Header - Dropdown -->
@@ -27,6 +27,32 @@
                     </p>
                     <hr/>
                      
+                     @forelse ($session->related as $activity)
+                       
+                       <x-box.item
+                            :title="$activity->model->title">
+
+                            @if(!$loop->first)
+                                @slot('up')
+                                    {{ route('changeOrderSessionable' , ['from' => $activity->id , 'move' => 'up' ]) }}
+                                @endslot
+                            @endif
+
+                            @if(!$loop->last)
+                                @slot('down')
+                                    {{ route('changeOrderSessionable' , ['from' => $activity->id , 'move' => 'down' ]) }}
+                                @endslot
+                            @endif
+
+                            @slot('delete')
+                            @endslot
+                        </x-box.item>
+                        
+                         
+                     @empty   
+                     @endforelse
+
+
                 </div>
             </div>
         </div>

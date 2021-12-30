@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\TDD;
 
-use App\Http\Requests\PermissionRequest;
+use App\Http\Requests\DocumentRequest;
 use Tests\BaseTest;
 
-class PermissionTest extends BaseTest
+class DocumentTest extends BaseTest
 {
 
     protected function setUp() :void
@@ -13,11 +13,9 @@ class PermissionTest extends BaseTest
         parent::setUp();
         $this->seed();
 
-        $this->setBaseRoute('permission');
-        $this->setBaseModel('App\Models\Permission');
-        $this->setField('name');
-
-        
+        $this->setBaseRoute('document');
+        $this->setBaseModel('App\Models\Document');
+ 
     }
 
 
@@ -40,7 +38,7 @@ class PermissionTest extends BaseTest
      */
     public function test_validation()
     {
-        $this->setValidationRules((new PermissionRequest())->rules());
+        $this->setValidationRules((new DocumentRequest())->rules());
         $this->signIn();
         $this->validation();
     }
@@ -77,18 +75,6 @@ class PermissionTest extends BaseTest
      * @return void
      */
     public function test_delete_form()
-    {
-        $this->signIn();
-        $this->destroy();
-    }
-
-    
-    /**
-     * A basic test to delete method and response correctly.
-     *
-     * @return void
-     */
-    public function test_delete_with_child_form()
     {
         $this->signIn();
         $this->destroy();

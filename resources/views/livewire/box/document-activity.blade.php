@@ -38,7 +38,10 @@
                 <x-box.item  
                 :title="$document->title">
                 @slot('add')
-                {{ URL::to('/test') }}   
+                {{ route('addDocumentToSession' , [
+                    'session' => 1,
+                    'active_id' => $document->id
+                ]) }}   
                 @endslot
 
                

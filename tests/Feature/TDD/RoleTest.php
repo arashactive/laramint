@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\TDD;
 
-use App\Http\Requests\DocumentRequest;
+use App\Http\Requests\RoleRequest;
 use Tests\BaseTest;
 
-class DocumentTest extends BaseTest
+class RoleTest extends BaseTest
 {
 
     protected function setUp() :void
@@ -13,9 +13,11 @@ class DocumentTest extends BaseTest
         parent::setUp();
         $this->seed();
 
-        $this->setBaseRoute('document');
-        $this->setBaseModel('App\Models\Document');
- 
+        $this->setBaseRoute('role');
+        $this->setBaseModel('App\Models\Role');
+        $this->setField('name');
+
+        
     }
 
 
@@ -38,7 +40,7 @@ class DocumentTest extends BaseTest
      */
     public function test_validation()
     {
-        $this->setValidationRules((new DocumentRequest())->rules());
+        $this->setValidationRules((new RoleRequest())->rules());
         $this->signIn();
         $this->validation();
     }
@@ -75,6 +77,18 @@ class DocumentTest extends BaseTest
      * @return void
      */
     public function test_delete_form()
+    {
+        $this->signIn();
+        $this->destroy();
+    }
+
+    
+    /**
+     * A basic test to delete method and response correctly.
+     *
+     * @return void
+     */
+    public function test_delete_with_child_form()
     {
         $this->signIn();
         $this->destroy();

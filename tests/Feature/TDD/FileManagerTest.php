@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\TDD;
 
-
-use App\Http\Requests\DepartmentRequest;
+use App\Http\Requests\FileRequest;
 use Tests\BaseTest;
 
-class CourseTest extends BaseTest
+class FileManagerTest extends BaseTest
 {
-    protected function setUp() :void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->seed();
 
-        $this->setBaseRoute('course');
-        $this->setBaseModel('App\Models\Course');
-
-        
+        $this->setBaseRoute('file');
+        $this->setBaseModel('App\Models\File');
+       
     }
 
 
@@ -40,7 +38,7 @@ class CourseTest extends BaseTest
      */
     public function test_validation()
     {
-        $this->setValidationRules((new DepartmentRequest())->rules());
+        $this->setValidationRules((new FileRequest())->rules());
         $this->signIn();
         $this->validation();
     }
@@ -55,6 +53,7 @@ class CourseTest extends BaseTest
     public function test_create_form()
     {
         $this->signIn();
+        $this->setField('description');
         $this->create();
     }
 
@@ -66,6 +65,7 @@ class CourseTest extends BaseTest
     public function test_update_form()
     {
         $this->signIn();
+        $this->setField('description');
         $this->update();
     }
 

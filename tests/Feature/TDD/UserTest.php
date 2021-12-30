@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\TDD;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;

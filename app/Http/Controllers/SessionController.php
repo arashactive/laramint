@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SessionRequest;
 use App\Models\Session;
+use App\Models\Sessionable;
+use App\traits\Sequence;
 
 class SessionController extends Controller
 {
+    use Sequence;
 
     /**
      * Display a listing of the resource.
@@ -107,5 +110,47 @@ class SessionController extends Controller
                 ->with('danger' , __('item deleted successfully'));
     }
 
+
+    /**
+     * Attach Document To Session
+     *
+     * @param  Session  $session
+     * @param  id  $active_id
+     * @return \Illuminate\Http\Response redirect
+     */
+    public function addDocumentToSession(Session $session , $active_id){        
+        
+        $session->Documents()->attach($active_id , 
+                ['order' => $session->Documents()->max('order') + 1]);
+        
+        return redirect()->back();
+    }
+
+
+
+    /**
+     * change the sequences of file belongs to Sessionable
+     *
+     * @param  Sessionable  $from
+     * @param  string  $move => up or down
+     * @return \Illuminate\Http\Response
+     */
+    public function changeOrderSessionable(Sessionable $from, $move)
+    {
+        $this->authorize('session.order');
+
+        $move_parameters = [
+            'up' => '<',
+            'down' => '>'
+        ];
+        
+        $to = Sessionable::where('session_id', $from->session_id)
+            ->where('order', (string)$move_parameters[$move], $from->order)
+            ->first();
+
+        $this->changeOrder($from, $to);
+
+        return redirect()->back();
+    }
 
 }

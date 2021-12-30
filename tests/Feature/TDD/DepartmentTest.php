@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\TDD;
 
-use App\Http\Requests\RoleRequest;
+use App\Http\Requests\DepartmentRequest;
 use Tests\BaseTest;
 
-class RoleTest extends BaseTest
+class DepartmentTest extends BaseTest
 {
 
     protected function setUp() :void
@@ -13,9 +13,8 @@ class RoleTest extends BaseTest
         parent::setUp();
         $this->seed();
 
-        $this->setBaseRoute('role');
-        $this->setBaseModel('App\Models\Role');
-        $this->setField('name');
+        $this->setBaseRoute('department');
+        $this->setBaseModel('App\Models\Department');
 
         
     }
@@ -40,7 +39,7 @@ class RoleTest extends BaseTest
      */
     public function test_validation()
     {
-        $this->setValidationRules((new RoleRequest())->rules());
+        $this->setValidationRules((new DepartmentRequest())->rules());
         $this->signIn();
         $this->validation();
     }
