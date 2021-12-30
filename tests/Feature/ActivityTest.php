@@ -25,7 +25,7 @@ class ActivityTest extends BaseTest
      */
     public function test_acl()
     {
-        $this->signIn(2);
+        $this->withOutPermissionUser();
         $this->withOutAccessLevel();
     }
 

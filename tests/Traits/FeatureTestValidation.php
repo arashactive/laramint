@@ -8,6 +8,26 @@ namespace Tests\Traits;
 trait FeatureTestValidation
 {
 
+
+    /**
+     * validation_rules
+     *
+     * @var undefined
+     */
+    protected $validation_rules = null;
+
+    /**
+     * setValidationRules
+     *
+     * @param  mixed $validation_rules
+     * @return Rule
+     */
+    protected function setValidationRules($validation_rules)
+    {
+        $this->validation_rules = $validation_rules;
+    }
+
+
     /**
      * validation method.
      * 

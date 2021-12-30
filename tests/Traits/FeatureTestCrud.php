@@ -7,6 +7,25 @@ namespace Tests\Traits;
  */
 trait FeatureTestCrud
 {
+
+    
+    /**
+     * field
+     *
+     * @var string
+     */
+    protected $field = 'title';   
+    
+    /**
+     * setField is default field of database to check it is true return or not
+     *
+     * @param  string $field = default 'title'
+     * @return string
+     */
+    protected function setField($field){
+        $this->field = $field;
+    }
+
     /**
      * create method.
      * 

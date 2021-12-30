@@ -40,7 +40,7 @@ class UserTest extends BaseTest
      */
     public function test_acl()
     {
-        $this->signIn(4);
+        $this->withOutPermissionUser();
         $this->withOutAccessLevel();
     }
 
