@@ -20,8 +20,9 @@ Admin Panel:
 - Session management => Completed
 - User Access Management => Completed
 - file manager => Completed
-- ** Activity management => In Progress **
-- Exam management => Feature
+- Activity management => Completed
+- Exam management => Completed
+- Question Managemnet => In Progress **
 - Gamification  => Feature
 - Ticket Managemnet => Feature
 - SMS & E-mail Marketing => Feature
