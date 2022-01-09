@@ -20,7 +20,7 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         $models = [
-            'department', 'course', 'session', 'term', 'file', 'document'
+            'department', 'course', 'session', 'term', 'file', 'document' , 'quiz'
         ];
 
         foreach ($models as $model) {

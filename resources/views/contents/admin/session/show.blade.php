@@ -30,7 +30,7 @@
                      @forelse ($session->related as $activity)
                        
                        <x-box.item
-                            :title="$activity->model->title">
+                            :title="$loop->iteration . '- ' .  $activity->model->title">
 
                             @if(!$loop->first)
                                 @slot('up')

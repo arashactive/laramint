@@ -51,6 +51,10 @@
                 @can('session.index')
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
                 @endcan
+
+                @can('quiz.index')
+                <a class="collapse-item" href="{{ route('quiz.index') }}">{{ __('quiz') }}</a>
+                @endcan
                
             </div>
         </div>
