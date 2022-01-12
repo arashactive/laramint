@@ -2,22 +2,17 @@
 
 namespace App\Http\Livewire\Factory\Question\TestQuestion;
 
-use Livewire\Component;
+use App\Http\Livewire\Factory\Question\QuestionComponents;
 
-class Create extends Component
+class Create extends QuestionComponents
 {
 
-    public $title, $description;
-    public $answers = ['' , '' , '' , ''];
+    public function mount(){
+        
+        if($this->question){
+            $this->setValueWithQuestion();
+        }
 
-    public function addNewAnswer(){
-        $this->answers[] = '';
-    }
-
-
-    public function removeAnswer($index){
-        unset($this->answers[$index]);
-        $this->answers = array_values($this->answers);
     }
 
     public function render()

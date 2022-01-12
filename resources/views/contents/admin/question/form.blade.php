@@ -18,7 +18,7 @@
         <div class="card-body">
             <div class="text-center">
 
-                @livewire('factory.render')
+                @livewire('factory.render' , ['question' => $question ?? ''])
 
             </div>
         </div>

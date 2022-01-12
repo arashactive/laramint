@@ -1,15 +1,13 @@
 <div class="row">
 
     <div class="col-md-6">
-    <select wire:model="questionType" class="form-control">
-        <option value="TestQuestion">Test</option>
-        <option value="TrueFalseQuestion">True and False</option>
-        <option value="MultipleQuestion">Multiple Choice</option>
-        <option value="EssayQuestion">Essay</option>
-        <option value="UploadFileQuestion">Upload File By Student</option>
-        <option value="ShortAnswerQuestion">Short Answer</option>
-        <option value="MatchingCaseQuestion">Matching</option>
-        <option value="VoiceRecordQuestion">Voice Record By student</option>
+    <select wire:model="questionTypeId" class="form-control">
+        @forelse ($questionTypes as $types)
+            <option value="{{ $types->id }}">{{ str_replace('Question' , '' ,  $types->title) }}</option>
+        @empty
+            
+        @endforelse
+
     </select>
     </div>
     <div class="col-md-6">
@@ -20,11 +18,8 @@
             <span class="text">create</span>
          </button>
     </div>
-   
-     
 
-    <hr />
     @if($component)
-      @livewire($component)
+      @livewire($component, ['questionTypeId' => $questionTypeId , 'question' => $question])
     @endif
 </div>

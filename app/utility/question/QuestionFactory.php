@@ -4,32 +4,18 @@ namespace App\utility\question;
 
 use App\utility\question\adabpter\TestQuestion;
 use Exception;
+use App\Models\questionType;
 
 class QuestionFactory
 {
-    protected static $listener = [
-        'TestQuestion' => 'TestQuestion',
-        'TrueFalseQuestion' => 'TrueFalseQuestion',
-        'MultipleQuestion' => 'MultipleQuestion',
-        'EssayQuestion' => 'EssayQuestion',
-        'UploadFileQuestion' => 'UploadFileQuestion',
-        'ShortAnswerQuestion' => 'ShortAnswerQuestion',
-        'MatchingCaseQuestion' => 'MatchingCaseQuestion',
-        'VoiceRecordQuestion' => 'VoiceRecordQuestion'
-    ];
 
-    protected static $question;
-
-    public static function Build($typeOfQuestion = '')
+    public static function Build($question_type_id)
     {
-        if (in_array($typeOfQuestion, self::$listener)) {
-            self::$question = $typeOfQuestion;
-            
-            $childQuestion = "App\\utility\\question\\adabpter\\" . $typeOfQuestion;
-            return new $childQuestion();
-
-        } else {
-            throw new \Exception('The Question type is not found');
-        }
+        $questionType = questionType::findorfail($question_type_id);
+        $childQuestion = "App\\utility\\question\\adabpter\\" . $questionType->title;
+        return new $childQuestion();
+    
+        throw new \Exception('The Question type is not found');
+    
     }
 }

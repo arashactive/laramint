@@ -4,6 +4,7 @@ namespace App\utility\question\adabpter;
 
 use App\utility\question\contract\QuestionAdabpterInterface;
 
+
 class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
     
@@ -13,4 +14,6 @@ class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
     {
         return parent::render(self::$className , 'create');
     }
+
+   
 }

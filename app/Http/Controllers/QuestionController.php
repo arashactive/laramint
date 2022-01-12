@@ -64,7 +64,10 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        //
+        $this->authorize('question.edit');
+        return view('contents.admin.question.form' , compact(
+            "question"
+        ));
     }
 
     /**

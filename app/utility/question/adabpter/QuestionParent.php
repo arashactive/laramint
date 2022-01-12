@@ -1,6 +1,7 @@
 <?php
 
 namespace App\utility\question\adabpter;
+use App\Models\Question;
 
 abstract class QuestionParent
 {
@@ -9,5 +10,9 @@ abstract class QuestionParent
         return "factory.question.{$questionType}.{$file}";
     }
 
+
+    public function store($id = [], $attributes){
+        return Question::updateOrCreate($id , $attributes);
+    }
 
 }
