@@ -24,6 +24,7 @@ class CreateQuizzesTable extends Migration
             $table->smallInteger('min_pass_score')->default(80);
             $table->enum('show_question' , ['StepByStep' , 'OnePage'])->default('StepByStep');
             $table->smallInteger('random_question')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -38,7 +38,8 @@
                         </div>
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <input name="attempt" type="number" class="form-control form-control-user" id="attempt"
-                                placeholder="Attempt" value="{{ $quiz->attempt ?? 'zero is unlimited...' }}">
+                            min="0" max="50"        
+                            placeholder="Attempt" value="{{ $quiz->attempt ?? 'zero is unlimited...' }}">
                             @error('attempt')
                                 <span class="invalid-feedback" role="alert">
                                     {{ $message }}
