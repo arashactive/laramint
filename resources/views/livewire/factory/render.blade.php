@@ -20,6 +20,6 @@
     </div>
 
     @if($component)
-      @livewire($component, ['questionTypeId' => $questionTypeId , 'question' => $question])
+      @livewire($component, ['questionTypeId' => $questionTypeId , 'question' => $question], key($component))
     @endif
 </div>

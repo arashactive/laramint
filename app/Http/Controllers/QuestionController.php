@@ -65,7 +65,7 @@ class QuestionController extends Controller
     public function edit(Question $question)
     {
         $this->authorize('question.edit');
-        return view('contents.admin.question.form' , compact(
+        return view('contents.admin.question.form', compact(
             "question"
         ));
     }
@@ -90,6 +90,11 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $this->authorize('question.delete');
+
+        $question->delete();
+        return redirect()
+            ->route("question.index")
+            ->with('danger', __('question deleted successfully'));
     }
 }

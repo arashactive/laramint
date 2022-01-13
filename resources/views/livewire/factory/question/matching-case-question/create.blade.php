@@ -2,7 +2,7 @@
 
     <div class="card shadow p-2">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">question:</h6>
+            <h6 class="m-0 font-weight-bold text-primary">question matching case:</h6>
         </div>
         <div class="card-body">
 

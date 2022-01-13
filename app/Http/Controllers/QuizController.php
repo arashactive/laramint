@@ -59,7 +59,10 @@ class QuizController extends Controller
      */
     public function show(Quiz $quiz)
     {
-        //
+        $this->authorize('quiz.edit');
+        return view('contents.admin.quiz.show' , compact(
+            "quiz"
+        ));
     }
 
     /**

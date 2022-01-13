@@ -32,6 +32,9 @@
                         <th scope="col">{{ __("theme") }}</th>
                         <th scope="col">{{ __("Mentor") }}</th>
                         <th scope="col">{{ __("Shuffle") }}</th>
+                        @can('quiz.show')
+                        <th scope="col">{{ __("questions") }}</th>  
+                        @endcan                     
                         
                         @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['quiz.edit' , 'quiz.delete']))
                         <th scope="col">{{ __("Action") }}</th>
@@ -64,7 +67,11 @@
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $quiz->is_shuffle }}" />
                                 </td>
-
+                                @can('quiz.show')
+                                <td>
+                                    <x-buttons.show itemId="{{ $quiz->id }}" path="quiz.show" />
+                                </td>
+                                @endcan
                                 @if(Auth::user()->hasRole('Super-Admin') 
                                 || Auth::user()->hasRole('Super-Admin') 
                                 || Auth::user()->hasAnyPermission(['quiz.edit' , 'quiz.delete']))
