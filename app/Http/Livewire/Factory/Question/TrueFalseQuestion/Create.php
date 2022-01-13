@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Factory\Question\TestQuestion;
+namespace App\Http\Livewire\Factory\Question\TrueFalseQuestion;
 
 use App\Http\Livewire\Factory\Question\QuestionComponents;
 
@@ -8,7 +8,7 @@ class Create extends QuestionComponents
 {
 
     public function mount(){
-        $this->answers = ['' , '' , '' , ''];
+        $this->answers = ['true' , 'false'];
         if($this->question){
             $this->setValueWithQuestion();
         }
@@ -17,6 +17,6 @@ class Create extends QuestionComponents
 
     public function render()
     {
-        return view('livewire.factory.question.test-question.create');
+        return view('livewire.factory.question.true-false-question.create');
     }
 }

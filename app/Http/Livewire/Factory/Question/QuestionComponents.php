@@ -9,7 +9,7 @@ class QuestionComponents extends Component
 {
     public $title, $question_body, $questionTypeId;
     public $question;
-    public $answers = ['' , '' , '' , ''];
+    public $answers;
     public $correctAnswer = [];
 
 

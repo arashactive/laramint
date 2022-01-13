@@ -25,9 +25,15 @@ class QuestionTest extends BaseTest
     public function test_create_form()
     {
         $this->signIn();
-        $route = 'question.create';
+        $route = 'question';
         
-        $this->assertSee('');
+        $response = $this->get(route($route. '.create'));
+        $response->assertStatus(200);
+
+        $response = $this->get(route($route. '.index'));
+        $response->assertStatus(200);
+
+
         
     }
 

@@ -1,5 +1,5 @@
 <div class="row">
-
+    
     <div class="col-md-6">
     <select wire:model="questionTypeId" class="form-control">
         @forelse ($questionTypes as $types)

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Livewire\Factory\Question\TestQuestion;
+namespace App\Http\Livewire\Factory\Question\MultipleQuestion;
 
 use App\Http\Livewire\Factory\Question\QuestionComponents;
 
 class Create extends QuestionComponents
 {
 
+    
     public function mount(){
         $this->answers = ['' , '' , '' , ''];
         if($this->question){
@@ -17,6 +18,6 @@ class Create extends QuestionComponents
 
     public function render()
     {
-        return view('livewire.factory.question.test-question.create');
+        return view('livewire.factory.question.multiple-question.create');
     }
 }
