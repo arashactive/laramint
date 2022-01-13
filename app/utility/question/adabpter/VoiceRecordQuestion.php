@@ -8,7 +8,7 @@ use App\utility\question\contract\QuestionAdabpterInterface;
 class VoiceRecordQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
     
-    private static $className = 'voirce-record-question';
+    private static $className = 'voice-record-question';
 
     public static function getCreateUpdateForm()
     {
