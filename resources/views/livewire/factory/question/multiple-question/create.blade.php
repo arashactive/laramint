@@ -20,7 +20,7 @@
             <label for="answer{{ $index }}">answer {{ $loop->iteration }}</label>
             <div class="row">
                 <div class="col-11">
-                    <input name="correctAnswer[]" value="{{ $index }}" wire:model="correctAnswer.{{ $index }}" class="form-check-input" type="checkbox">
+                    <input name="correctAnswer[]" value="answer-{{ $index }}" wire:model="correctAnswer.{{ $index }}" class="form-check-input" type="checkbox">
                     <input type="text" class="form-control" id="answer{{ $index }}" wire:model="answers.{{ $index }}">
                 </div>
                 <div class="col-1">

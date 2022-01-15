@@ -7,13 +7,14 @@ use App\Http\Livewire\Factory\Question\QuestionComponents;
 class Create extends QuestionComponents
 {
 
-    
-    public function mount(){
-        $this->answers = ['' , '' , '' , ''];
-        if($this->question){
+
+    public function mount()
+    {
+        $this->answers = ['', '', '', ''];
+        $this->correctAnswer = ['', '', '', ''];
+        if ($this->question) {
             $this->setValueWithQuestion();
         }
-
     }
 
     public function render()

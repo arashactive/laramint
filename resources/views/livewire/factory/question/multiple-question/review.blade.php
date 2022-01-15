@@ -10,9 +10,9 @@
             <h2>{{ $question_body }}</h2>
 
             @forelse($answers as $index => $answer)
-                <div class=" p-2 {{ $index == $correctAnswer[$index] ? " bg-gradient-success text-white" : '' }}">
+                <div class=" p-2 {{ 'answer-' . $index == $correctAnswer[$index] ? " bg-gradient-success text-white" : '' }}">
                 <div class="form-check">
-                    <input name="answer[]" {{ $index == $correctAnswer[$index] ? 'checked' : ''}} class="form-check-input" type="checkbox"  id="reviewAnswer{{ $index }}">
+                    <input name="answer[]" {{  'answer-'. $index ==  $correctAnswer[$index] ? 'checked' : ''}} class="form-check-input" type="checkbox"  id="reviewAnswer{{ $index }}">
                     <label class="form-check-label" for="reviewAnswer{{ $index }}">
                         {{ $answer }}
                     </label>
