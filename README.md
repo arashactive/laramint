@@ -43,6 +43,8 @@ Student Panel:
 
 Image of project:
 ![Mint Demo](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/imageQuiz.png)
+![Mint Demo](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/questions.png)
+![Mint Demo](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/sessionAttach.png)
 
 This Docs will be completed after finish the first version
 ![Mint Chart](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/MintImage.png)
