@@ -10,4 +10,13 @@ class Quiz extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+
+    public function Questions()
+    {
+        return $this->belongsToMany(Question::class)
+            ->withPivot('order', 'id' , 'score')
+            ->orderBy('order')
+            ->withTimestamps();
+    }
 }
