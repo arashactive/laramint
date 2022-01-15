@@ -5,7 +5,7 @@
             <h6 class="m-0 font-weight-bold text-primary">question test:</h6>
         </div>
         <div class="card-body">
-
+            
             <input type="hidden" wire:model="questionTypeId" />
             <div class="form-group">
                 <label for="titleofquestion">title of question</label>

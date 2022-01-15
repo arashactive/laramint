@@ -11,6 +11,7 @@ class QuestionComponents extends Component
     public $question;
     public $answers;
     public $correctAnswer = [];
+    public $quiz = null;
 
 
     public function addNewAnswer(){

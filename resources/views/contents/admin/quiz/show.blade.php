@@ -31,17 +31,17 @@
                     :title="$question->title">
                     @if(!$loop->first)
                         @slot('up')
-                            {{ route('changeOrderFile' , ['from' => $question->pivot->id , 'move' => 'up' ]) }}
+                            {{ route('orderChangeQuestion' , ['from' => $question->pivot->id , 'move' => 'up' ]) }}
                         @endslot
                     @endif
                     @if(!$loop->last)
                         @slot('down')
-                            {{ route('changeOrderFile' , ['from' => $question->pivot->id , 'move' => 'down' ]) }}
+                            {{ route('orderChangeQuestion' , ['from' => $question->pivot->id , 'move' => 'down' ]) }}
                         @endslot
                     @endif
                 
                     @slot('delete')
-                        {{ route('deleteFileDocument' ,['quizQuestionId' => $question->pivot->id ]) }}
+                        {{ route('deleteQuestionAsQuiz' ,['quizQuestion' => $question->pivot->id ]) }}
                     @endslot
                 
                     </x-box.item>
@@ -61,14 +61,17 @@
                 <h6 class="m-0 font-weight-bold text-primary">{{ __("Questions") }}</h6>
                 <div class="dropdown no-arrow">
                     <div class="dropdown no-arrow">
-                        
+                        <x-CreateButton path="{{ route('question.create'). '?quiz_id=' . $quiz->id }}" />
                     </div>
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="text-center">
-                    
+                    @livewire('container.show-questions', [
+                        'route' => 'addQuestionToQuiz',
+                        'quiz' => $quiz->id
+                    ])
                 </div>
             </div>
         </div>

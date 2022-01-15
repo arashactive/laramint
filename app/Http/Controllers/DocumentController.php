@@ -130,12 +130,13 @@ class DocumentController extends Controller
         $this->authorize('document.order');
 
         $move_parameters = [
-            'up' => '<',
-            'down' => '>'
+            'up' => ['char' => '<', 'order' => 'desc'],
+            'down' => ['char' => '>', 'order' => 'asc']
         ];
         
         $to = DocumentFile::where('document_id', $from->document_id)
-            ->where('order', (string)$move_parameters[$move], $from->order)
+            ->where('order', (string)$move_parameters[$move]['char'], $from->order)
+            ->orderby('order', (string)$move_parameters[$move]['order'])
             ->first();
 
         $this->changeOrder($from, $to);

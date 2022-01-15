@@ -12,6 +12,7 @@ class Render extends Component
     public $questionTypeId;
     public $component = '';
     public $question;
+    public $quiz = null;
 
     public function mount(){
         $this->questionTypeId = questionType::first()->id;

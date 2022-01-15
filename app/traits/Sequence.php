@@ -20,6 +20,8 @@ trait Sequence
 
             $from->save();
             $to->save();
+
+            
             return true;
         } else {
             return false;

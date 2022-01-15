@@ -17,8 +17,11 @@
         <!-- Card Body -->
         <div class="card-body">
             <div class="text-center">
-
-                @livewire('factory.render' , ['question' => $question ?? ''])
+                
+                @livewire('factory.render', [
+                    'question' => $question ?? '',
+                    'quiz' => $quiz
+                    ])
 
             </div>
         </div>

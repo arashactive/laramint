@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuizRequest;
+use App\Models\Question;
 use App\Models\Quiz;
+use App\Models\QuizQuestion;
+use App\traits\Sequence;
 
 class QuizController extends Controller
 {
+    use Sequence;
 
     protected $show_question = [
-        'StepByStep' , 'OnePage'
+        'StepByStep', 'OnePage'
     ];
 
     /**
@@ -33,7 +37,7 @@ class QuizController extends Controller
     {
         $this->authorize('quiz.create');
         $show_question = $this->show_question;
-        return view('contents.admin.quiz.form' , compact('show_question'));
+        return view('contents.admin.quiz.form', compact('show_question'));
     }
 
     /**
@@ -48,7 +52,7 @@ class QuizController extends Controller
         Quiz::create($request->all());
         return redirect()
             ->route("quiz.index")
-            ->with('success' , __('quiz created successfully'));
+            ->with('success', __('quiz created successfully'));
     }
 
     /**
@@ -60,7 +64,7 @@ class QuizController extends Controller
     public function show(Quiz $quiz)
     {
         $this->authorize('quiz.edit');
-        return view('contents.admin.quiz.show' , compact(
+        return view('contents.admin.quiz.show', compact(
             "quiz"
         ));
     }
@@ -75,8 +79,9 @@ class QuizController extends Controller
     {
         $this->authorize('quiz.edit');
         $show_question = $this->show_question;
-        return view('contents.admin.quiz.form' , compact(
-            "quiz" , "show_question"
+        return view('contents.admin.quiz.form', compact(
+            "quiz",
+            "show_question"
         ));
     }
 
@@ -92,8 +97,8 @@ class QuizController extends Controller
         $this->authorize('quiz.edit');
         $quiz->update($request->all());
         return redirect()
-                ->route("quiz.index")
-                ->with('warning' , __('quiz updated successfully'));
+            ->route("quiz.index")
+            ->with('warning', __('quiz updated successfully'));
     }
 
     /**
@@ -105,15 +110,76 @@ class QuizController extends Controller
     public function destroy(Quiz $quiz)
     {
         $this->authorize('quiz.delete');
-        try{
+        try {
             $quiz->delete();
             return redirect()
-                    ->route("quiz.index")
-                    ->with('danger' , __('item deleted successfully'));
-        }catch (\Exception $e){
+                ->route("quiz.index")
+                ->with('danger', __('item deleted successfully'));
+        } catch (\Exception $e) {
             return redirect()
-            ->route("quiz.index")
-            ->with('danger' , __('Delete is not Completed, Please check child of this quiz'));
+                ->route("quiz.index")
+                ->with('danger', __('Delete is not Completed, Please check child of this quiz'));
         }
+    }
+
+
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function orderChangeQuestion(QuizQuestion $from, $move)
+    {
+
+        $this->authorize('quiz.update');
+        $move_parameters = [
+            'up' => ['char' => '<', 'order' => 'desc'],
+            'down' => ['char' => '>', 'order' => 'asc']
+        ];
+
+
+        $to = QuizQuestion::where('quiz_id', $from->quiz_id)
+            ->where('order', (string)$move_parameters[$move]['char'], $from->order)
+            ->orderby('order', (string)$move_parameters[$move]['order'])
+            ->first();
+
+        $this->changeOrder($from, $to);
+
+        return redirect()->back();
+    }
+
+
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function addQuestionToQuiz(Quiz $quiz, Question $question)
+    {
+        $this->authorize('quiz.create');
+        $quiz->Questions()->attach(
+            $question,
+            ['order' => $quiz->Questions()->max('order') + 1]
+        );
+        return redirect()->back();
+    }
+
+
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteQuestionAsQuiz(QuizQuestion $quizQuestion)
+    {
+        $this->authorize('quiz.delete');
+        $quizQuestion->delete();
+        return redirect()->back();
     }
 }
