@@ -42,9 +42,9 @@ Student Panel:
 - Synchronize ( Adobe connect & BigBlueButton ) => Task Incompleted
 
 Image of project:
-![Mint Demo](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/imageQuiz.png)
-![Mint Demo](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/questions.png)
-![Mint Demo](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/sessionAttach.png)
+![quiz Managment lms](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/imageQuiz.png)
+![attach question to quiz](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/questions.png)
+![attach activities to session](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/sessionAttach.png)
 
 This Docs will be completed after finish the first version
 ![Mint Chart](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/MintImage.png)
