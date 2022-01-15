@@ -20,7 +20,7 @@
                 
                 @livewire('factory.render', [
                     'question' => $question ?? '',
-                    'quiz' => $quiz
+                    'quiz' => $quiz ?? null
                     ])
 
             </div>

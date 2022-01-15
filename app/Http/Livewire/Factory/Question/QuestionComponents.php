@@ -27,7 +27,9 @@ class QuestionComponents extends Component
 
     public function store(){
         
-        $question = QuestionFactory::build($this->questionTypeId)->store([
+        $question = QuestionFactory::build($this->questionTypeId)
+        ->setQuizId($this->quiz->id ?? null)
+        ->store([
                 'id' => $this->question->id ?? null
         ], [
             'title' => $this->title,
