@@ -46,7 +46,7 @@ Admin Panel:
 - Feedback Management => Feature
 
 Plugins: 
-- Rubrik
+- Rubrik => completed
 
 Student Panel:
 - Payment => Feature
