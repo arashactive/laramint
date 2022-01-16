@@ -4,9 +4,9 @@
 
 website: [Laramint.com](https://laramint.com)
 
-admin username and password: 
-username: arash.aspx@mint.com
-password: password
+- admin username and password: 
+- username: arash.aspx@mint.com
+- password: password
 
 
 for install:
