@@ -47,11 +47,10 @@ class SessionController extends Controller
         Session::create($request->all());
         return redirect()
             ->route("session.index")
-            ->with('success' , __('item created successfully'));
-
+            ->with('success', __('item created successfully'));
     }
 
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -61,7 +60,7 @@ class SessionController extends Controller
     public function show(Session $session)
     {
         $this->authorize('session.edit');
-        return view('contents.admin.session.show' , compact(
+        return view('contents.admin.session.show', compact(
             "session"
         ));
     }
@@ -75,7 +74,7 @@ class SessionController extends Controller
     public function edit(Session $session)
     {
         $this->authorize('session.edit');
-        return view('contents.admin.session.form' , compact(
+        return view('contents.admin.session.form', compact(
             "session"
         ));
     }
@@ -91,8 +90,8 @@ class SessionController extends Controller
         $this->authorize('session.edit');
         $session->update($request->all());
         return redirect()
-                ->route("session.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("session.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
@@ -106,8 +105,8 @@ class SessionController extends Controller
         $this->authorize('session.delete');
         $session->delete();
         return redirect()
-                ->route("session.index")
-                ->with('danger' , __('item deleted successfully'));
+            ->route("session.index")
+            ->with('danger', __('item deleted successfully'));
     }
 
 
@@ -118,11 +117,33 @@ class SessionController extends Controller
      * @param  id  $active_id
      * @return \Illuminate\Http\Response redirect
      */
-    public function addDocumentToSession(Session $session , $active_id){        
-        
-        $session->Documents()->attach($active_id , 
-                ['order' => $session->Documents()->max('order') + 1]);
-        
+    public function addDocumentToSession(Session $session, $active_id)
+    {
+
+        $session->Documents()->attach(
+            $active_id,
+            ['order' => $session->Documents()->max('order') + 1]
+        );
+
+        return redirect()->back();
+    }
+
+
+    /**
+     * Attach Document To Session
+     *
+     * @param  Session  $session
+     * @param  id  $quiz_id
+     * @return \Illuminate\Http\Response redirect
+     */
+    public function addQuizToSession(Session $session, $active_id)
+    {
+
+        $session->Quizes()->attach(
+            $active_id,
+            ['order' => $session->Quizes()->max('order') + 1]
+        );
+
         return redirect()->back();
     }
 
@@ -140,12 +161,13 @@ class SessionController extends Controller
         $this->authorize('session.order');
 
         $move_parameters = [
-            'up' => '<',
-            'down' => '>'
+            'up' => ['char' => '<', 'order' => 'desc'],
+            'down' => ['char' => '>', 'order' => 'asc']
         ];
-        
+
         $to = Sessionable::where('session_id', $from->session_id)
-            ->where('order', (string)$move_parameters[$move], $from->order)
+            ->where('order', (string)$move_parameters[$move]['char'], $from->order)
+            ->orderby('order', (string)$move_parameters[$move]['order'])
             ->first();
 
         $this->changeOrder($from, $to);
@@ -153,4 +175,11 @@ class SessionController extends Controller
         return redirect()->back();
     }
 
+
+    public function deleteActivityAsSession($session_id)
+    {
+        
+        Sessionable::findorfail($session_id)->delete();
+        return redirect()->back()->with('danger', 'activity is deleted');
+    }
 }

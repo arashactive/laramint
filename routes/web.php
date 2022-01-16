@@ -65,11 +65,14 @@ Route::middleware(['verified'])->group(function () {
     Route::get('/document/file/delete/{documentFile}', [DocumentController::class , 'deleteFileAsDocument'])->name("deleteFileDocument");
     Route::get('/session/document/{session}/{active_id}', [SessionController::class , 'addDocumentToSession'])->name("addDocumentToSession");
     Route::get('/session/order/{from}/{move}', [SessionController::class , 'changeOrderSessionable'])->name("changeOrderSessionable");
+    Route::get('/session/quiz/{session}/{active_id}', [SessionController::class , 'addQuizToSession'])->name("addQuizToSession");
+    Route::get('/session/delete/{session_id}', [SessionController::class , 'deleteActivityAsSession'])->name("deleteActivityAsSession");
 
     // Quiz Question Relationship
     Route::get('/quiz/order/{from}/{move}', [QuizController::class , 'orderChangeQuestion'])->name("orderChangeQuestion");
     Route::get('/quiz/question/add/{quiz}/{question}', [QuizController::class , 'addQuestionToQuiz'])->name("addQuestionToQuiz");
     Route::get('/quiz/question/delete/{quizQuestion}', [QuizController::class , 'deleteQuestionAsQuiz'])->name("deleteQuestionAsQuiz");
+    
 });
 
 

@@ -45,6 +45,7 @@
                             @endif
 
                             @slot('delete')
+                                {{ route('deleteActivityAsSession', $activity->id )}}
                             @endslot
                         </x-box.item>
                         

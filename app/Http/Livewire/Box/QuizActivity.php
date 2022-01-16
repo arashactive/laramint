@@ -2,19 +2,19 @@
 
 namespace App\Http\Livewire\Box;
 
+use App\Models\Quiz;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class QuizActivity extends Component
 {
-    public $box;
+    use WithPagination;
 
-    public function show($box)
-    {
-        $this->box = "Salam";
-    }
-    
     public function render()
     {
-        return view('livewire.box.quiz-activity');
+        $quizes =  Quiz::paginate();
+        return view('livewire.box.quiz-activity', compact([
+            'quizes'
+        ]));
     }
 }

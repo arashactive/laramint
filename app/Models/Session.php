@@ -24,4 +24,9 @@ class Session extends Model
         return $this->morphedByMany(Document::class, 'sessionable')->withTimestamps();
     }
 
+    public function Quizes()
+    {
+        return $this->morphedByMany(Quiz::class, 'sessionable')->withTimestamps();
+    }
+
 }
