@@ -59,6 +59,11 @@
                 @can('question.index')
                 <a class="collapse-item" href="{{ route('question.index') }}">{{ __('question') }}</a>
                 @endcan
+
+                <h6 class="collapse-header">{{ __('Third Step:') }}</h6>
+                @can('rubric.index')
+                <a class="collapse-item" href="{{ route('rubric.index') }}">{{ __('rubric') }}</a>
+                @endcan
                
             </div>
         </div>

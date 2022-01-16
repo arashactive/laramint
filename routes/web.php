@@ -11,6 +11,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\RubricController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,7 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('document', DocumentController::class);
     Route::resource('quiz', QuizController::class);
     Route::resource('question', QuestionController::class);
+    Route::resource('rubric', RubricController::class);
 
 
 
