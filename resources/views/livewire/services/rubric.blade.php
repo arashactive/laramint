@@ -44,7 +44,7 @@
     @empty 
     @endforelse
     
-    <button wire:click.prevent="create" class="btn btn-primary btn-icon-split float-left">
+    <button wire:click.prevent="store" class="btn btn-primary btn-icon-split float-left">
         <span class="icon text-white-50">
             {{ __("save") }}
         </span>

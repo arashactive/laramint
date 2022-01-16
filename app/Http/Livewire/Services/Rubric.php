@@ -58,7 +58,7 @@ class Rubric extends Component
         $this->bodies = array_values($this->bodies);
     }
 
-    public function create()
+    public function store()
     {
 
         $this->validate();
