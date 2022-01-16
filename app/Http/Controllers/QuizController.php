@@ -144,7 +144,7 @@ class QuizController extends Controller
             ->where('order', (string)$move_parameters[$move]['char'], $from->order)
             ->orderby('order', (string)$move_parameters[$move]['order'])
             ->first();
-
+        
         $this->changeOrder($from, $to);
 
         return redirect()->back();
