@@ -4,6 +4,20 @@
 
 website: [Laramint.com](https://laramint.com)
 
+admin username and password: 
+username: arash.aspx@mint.com
+password: password
+
+
+for install:
+- after download or clone project
+- command run: composer install
+- php artisan migrate --seed
+- php artisan key:generate
+
+note: please change .env file to your customize database
+
+
 This project is not completed and I'm working on it. 
 
 - Start project: 2021-11-19
