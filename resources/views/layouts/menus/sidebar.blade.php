@@ -64,6 +64,10 @@
                 @can('rubric.index')
                 <a class="collapse-item" href="{{ route('rubric.index') }}">{{ __('rubric') }}</a>
                 @endcan
+
+                @can('feedback.index')
+                <a class="collapse-item" href="{{ route('feedback.index') }}">{{ __('feedback') }}</a>
+                @endcan
                
             </div>
         </div>

@@ -10,7 +10,7 @@ class ShowQuestions extends Component
     public $search = '';
 
     public $route;
-    public $quiz;
+    public $parent;
 
     public function render()
     {

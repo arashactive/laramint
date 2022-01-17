@@ -21,7 +21,7 @@
 
             @slot('add')
                 {{ route($route ,[
-                    'quiz' => $quiz ,
+                    'parent' => $parent ,
                     'question' => $question->id 
                 ]) }}
             @endslot

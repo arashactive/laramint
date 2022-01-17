@@ -21,7 +21,7 @@ class PermissionsSeeder extends Seeder
 
         $models = [
             'department', 'course', 'session', 'term', 'file',
-            'document' , 'quiz' , 'question', 'rubric'
+            'document', 'quiz', 'question', 'rubric', 'feedback'
         ];
 
         foreach ($models as $model) {
@@ -40,7 +40,7 @@ class PermissionsSeeder extends Seeder
 
         // create roles and assign existing permissions
         $role2 = Role::create(['name' => 'supervisor']);
-        foreach( $models as $model){
+        foreach ($models as $model) {
             $role2->givePermissionTo($model . '.index');
             $role2->givePermissionTo($model . '.create');
             $role2->givePermissionTo($model . '.edit');
@@ -50,7 +50,7 @@ class PermissionsSeeder extends Seeder
 
         // create roles and assign existing permissions
         $role3 = Role::create(['name' => 'mentor']);
-        foreach( $models as $model){
+        foreach ($models as $model) {
             $role3->givePermissionTo($model . '.index');
             $role3->givePermissionTo($model . '.show');
         }
@@ -58,7 +58,7 @@ class PermissionsSeeder extends Seeder
         // create roles and assign existing permissions
         $role4 = Role::create(['name' => 'student']);
         $role4->givePermissionTo('document.order');
-       
+
 
         // create demo users
         $user = \App\Models\User::factory()->create([
@@ -85,6 +85,4 @@ class PermissionsSeeder extends Seeder
         ]);
         $user->assignRole($role4);
     }
-
-
 }

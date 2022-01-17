@@ -8,6 +8,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
@@ -57,6 +58,7 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('quiz', QuizController::class);
     Route::resource('question', QuestionController::class);
     Route::resource('rubric', RubricController::class);
+    Route::resource('feedback', FeedbackController::class);
 
 
 
@@ -72,8 +74,13 @@ Route::middleware(['verified'])->group(function () {
 
     // Quiz Question Relationship
     Route::get('/quiz/order/{from}/{move}', [QuizController::class , 'orderChangeQuestion'])->name("orderChangeQuestion");
-    Route::get('/quiz/question/add/{quiz}/{question}', [QuizController::class , 'addQuestionToQuiz'])->name("addQuestionToQuiz");
+    Route::get('/quiz/question/add/{parent}/{question}', [QuizController::class , 'addQuestionToQuiz'])->name("addQuestionToQuiz");
     Route::get('/quiz/question/delete/{quizQuestion}', [QuizController::class , 'deleteQuestionAsQuiz'])->name("deleteQuestionAsQuiz");
+    
+    // feedback question relationship
+    Route::get('/feedback/order/{from}/{move}', [FeedbackController::class , 'orderChangeQuestionFeedback'])->name("orderChangeQuestionFeedback");
+    Route::get('/feedback/question/add/{parent}/{question}', [FeedbackController::class , 'addQuestionToFeedback'])->name("addQuestionToFeedback");
+    Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class , 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
     
 });
 

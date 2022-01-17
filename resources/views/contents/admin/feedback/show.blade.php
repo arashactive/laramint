@@ -9,7 +9,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">{{ $quiz->title }}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ $feedback->title }}</h6>
                 <div class="dropdown no-arrow">
                     <div class="dropdown no-arrow">
                         <x-BackButton />
@@ -19,29 +19,29 @@
             <!-- Card Body -->
             <div class="card-body">
                 <p>
-                    {!! $quiz->description !!}
+                    {!! $feedback->description !!}
                 </p>
                 <div class="text-center">
                     
                     <hr/>
 
-                    @forelse ($quiz->Questions as $question)
+                    @forelse ($feedback->Questions as $question)
                     
                     <x-box.item
                     :title="$question->title">
                     @if(!$loop->first)
                         @slot('up')
-                            {{ route('orderChangeQuestion' , ['from' => $question->pivot->id , 'move' => 'up' ]) }}
+                            {{ route('orderChangeQuestionFeedback' , ['from' => $question->pivot->id , 'move' => 'up' ]) }}
                         @endslot
                     @endif
                     @if(!$loop->last)
                         @slot('down')
-                            {{ route('orderChangeQuestion' , ['from' => $question->pivot->id , 'move' => 'down' ]) }}
+                            {{ route('orderChangeQuestionFeedback' , ['from' => $question->pivot->id , 'move' => 'down' ]) }}
                         @endslot
                     @endif
                 
                     @slot('delete')
-                        {{ route('deleteQuestionAsQuiz' ,['quizQuestion' => $question->pivot->id ]) }}
+                        {{ route('deleteQuestionAsFeedback' ,['feedbackQuestion' => $question->pivot->id ]) }}
                     @endslot
                 
                     </x-box.item>
@@ -61,7 +61,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">{{ __("Questions") }}</h6>
                 <div class="dropdown no-arrow">
                     <div class="dropdown no-arrow">
-                        <x-CreateButton path="{{ route('question.create'). '?quiz_id=' . $quiz->id }}" />
+                        <x-CreateButton path="{{ route('question.create'). '?feedback_id=' . $feedback->id }}" />
                     </div>
                 </div>
             </div>
@@ -69,8 +69,8 @@
             <div class="card-body">
                 <div class="text-center">
                     @livewire('container.show-questions', [
-                        'route' => 'addQuestionToQuiz',
-                        'parent' => $quiz->id
+                        'route' => 'addQuestionToFeedback',
+                        'parent' => $feedback->id
                     ])
                 </div>
             </div>
