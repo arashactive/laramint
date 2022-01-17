@@ -9,6 +9,7 @@ class Feedback extends Model
 {
     use HasFactory;
 
+    public $color = 'success';
     protected $guarded;
 
     public function Questions()

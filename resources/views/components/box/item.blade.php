@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="col-12 mb-1">
-            <div class="card {{ isset($theme) && $theme ?  $theme : 'bg-primary'}} text-white shadow">
+            <div class="card border-left-{{ $color}} bg-light shadow">
                 <div class="card-body p-2 text-left">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -15,14 +15,14 @@
 
                             @if(isset($up) && $up)
                             <a href="{{ $up }}" 
-                                class="btn btn-circle btn-sm btn-light">
+                                class="btn btn-circle btn-sm btn-secondary">
                             <i class="fas fa-sort-up text-dark-300"></i>
                             </a>
                             @endif
 
                             @if(isset($down) && $down)
                             <a href="{{ $down }}"
-                                class="btn btn-circle btn-sm btn-light">
+                                class="btn btn-circle btn-sm btn-secondary">
                             <i class="fas fa-sort-down text-dark-300"></i>
                             </a>
                             @endif

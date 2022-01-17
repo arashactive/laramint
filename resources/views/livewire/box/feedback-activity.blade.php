@@ -35,7 +35,8 @@
                 @forelse ($feedbacks as $feedback)
                 
                     <x-box.item  
-                    :title="$feedback->title">
+                    :title="$feedback->title"
+                    :color="$feedback->color">
                     @slot('add')
                     {{ route('addFeedbackToSession' , [
                         'session' => 1,

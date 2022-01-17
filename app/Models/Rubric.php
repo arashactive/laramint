@@ -9,5 +9,6 @@ class Rubric extends Model
 {
     use HasFactory;
 
+    public $color = 'info';
     protected $guarded = [];
 }

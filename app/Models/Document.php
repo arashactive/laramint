@@ -9,7 +9,7 @@ class Document extends Model
 {
     use HasFactory;
 
-
+    public $color = 'primary';
     protected $guarded = [];
 
 

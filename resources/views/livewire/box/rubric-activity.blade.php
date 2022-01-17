@@ -36,7 +36,8 @@
                 @forelse ($rubrics as $rubric)
                 
                     <x-box.item  
-                    :title="$rubric->title">
+                    :title="$rubric->title"
+                    :color="$rubric->color">
                     @slot('add')
                     {{ route('addRubricToSession' , [
                         'session' => 1,

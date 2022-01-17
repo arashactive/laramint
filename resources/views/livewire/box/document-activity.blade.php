@@ -36,7 +36,8 @@
                 
                 
                 <x-box.item  
-                :title="$document->title">
+                :title="$document->title"
+                :color="$document->color">
                 @slot('add')
                 {{ route('addDocumentToSession' , [
                     'session' => 1,

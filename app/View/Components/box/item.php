@@ -6,14 +6,19 @@ use Illuminate\View\Component;
 
 class item extends Component
 {
+
     public $title;
+    public $color;
+
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title)
+    public function __construct($title, $color = 'primary')
     {
+        $this->color = $color;
         $this->title = $title;
     }
 

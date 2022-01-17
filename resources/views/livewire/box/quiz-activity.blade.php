@@ -35,7 +35,8 @@
                 @forelse ($quizes as $quiz)
                 
                     <x-box.item  
-                    :title="$quiz->title">
+                    :title="$quiz->title"
+                    :color="$quiz->color">
                     @slot('add')
                     {{ route('addQuizToSession' , [
                         'session' => 1,
