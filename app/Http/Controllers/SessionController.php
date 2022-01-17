@@ -60,6 +60,7 @@ class SessionController extends Controller
     public function show(Session $session)
     {
         $this->authorize('session.edit');
+        $session->with('related');
         return view('contents.admin.session.show', compact(
             "session"
         ));
