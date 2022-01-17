@@ -72,6 +72,9 @@ Route::middleware(['verified'])->group(function () {
     Route::get('/session/quiz/{session}/{active_id}', [SessionController::class , 'addQuizToSession'])->name("addQuizToSession");
     Route::get('/session/delete/{session_id}', [SessionController::class , 'deleteActivityAsSession'])->name("deleteActivityAsSession");
 
+    // rubric add to session
+    Route::get('/session/rubric/{session}/{active_id}', [SessionController::class , 'addRubricToSession'])->name("addRubricToSession");
+
     // Quiz Question Relationship
     Route::get('/quiz/order/{from}/{move}', [QuizController::class , 'orderChangeQuestion'])->name("orderChangeQuestion");
     Route::get('/quiz/question/add/{parent}/{question}', [QuizController::class , 'addQuestionToQuiz'])->name("addQuestionToQuiz");
@@ -81,7 +84,7 @@ Route::middleware(['verified'])->group(function () {
     Route::get('/feedback/order/{from}/{move}', [FeedbackController::class , 'orderChangeQuestionFeedback'])->name("orderChangeQuestionFeedback");
     Route::get('/feedback/question/add/{parent}/{question}', [FeedbackController::class , 'addQuestionToFeedback'])->name("addQuestionToFeedback");
     Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class , 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
-    
+    Route::get('/session/feedback/{session}/{active_id}', [SessionController::class , 'addFeedbackToSession'])->name("addFeedbackToSession");
 });
 
 

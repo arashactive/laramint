@@ -19,6 +19,10 @@ class Session extends Model
         return $this->hasMany(Sessionable::class, 'session_id')->orderBy('order');
     }
 
+    public function Sessionable(){
+        return $this->hasMany(Sessionable::class);
+    }
+
     public function documents()
     {
         return $this->morphedByMany(Document::class, 'sessionable')->withTimestamps();
@@ -27,6 +31,16 @@ class Session extends Model
     public function Quizes()
     {
         return $this->morphedByMany(Quiz::class, 'sessionable')->withTimestamps();
+    }
+    
+    public function Feedbacks()
+    {
+        return $this->morphedByMany(Feedback::class, 'sessionable')->withTimestamps();
+    }
+    
+    public function Rubrics()
+    {
+        return $this->morphedByMany(Rubric::class, 'sessionable')->withTimestamps();
     }
 
 }

@@ -109,6 +109,21 @@ class SessionController extends Controller
             ->with('danger', __('item deleted successfully'));
     }
 
+    
+    /**
+     * addActivityTosessio
+     *
+     * @param  mixed $activity
+     * @param  mixed $active_id
+     * @return void
+     */
+    private function addActivityTosessio($activity, $active_id, $session)
+    {
+        return $activity->attach(
+            $active_id,
+            ['order' => $session->Sessionable()->max('order') + 1]
+        );
+    }
 
     /**
      * Attach Document To Session
@@ -119,12 +134,7 @@ class SessionController extends Controller
      */
     public function addDocumentToSession(Session $session, $active_id)
     {
-
-        $session->Documents()->attach(
-            $active_id,
-            ['order' => $session->Documents()->max('order') + 1]
-        );
-
+        $this->addActivityTosessio($session->documents(), $active_id, $session);
         return redirect()->back();
     }
 
@@ -138,15 +148,37 @@ class SessionController extends Controller
      */
     public function addQuizToSession(Session $session, $active_id)
     {
-
-        $session->Quizes()->attach(
-            $active_id,
-            ['order' => $session->Quizes()->max('order') + 1]
-        );
-
+        $this->addActivityTosessio($session->Quizes(), $active_id, $session);
         return redirect()->back();
     }
 
+
+    /**
+     * Attach Document To Session
+     *
+     * @param  Session  $session
+     * @param  id  $quiz_id
+     * @return \Illuminate\Http\Response redirect
+     */
+    public function addFeedbackToSession(Session $session, $active_id)
+    {
+        $this->addActivityTosessio($session->Feedbacks(), $active_id, $session);
+        return redirect()->back();
+    }
+
+    
+    /**
+     * Attach Document To Session
+     *
+     * @param  Session  $session
+     * @param  id  $quiz_id
+     * @return \Illuminate\Http\Response redirect
+     */
+    public function addRubricToSession(Session $session, $active_id)
+    {
+        $this->addActivityTosessio($session->Rubrics(), $active_id, $session);
+        return redirect()->back();
+    }
 
 
     /**
@@ -175,10 +207,15 @@ class SessionController extends Controller
         return redirect()->back();
     }
 
-
+    
+    /**
+     * deleteActivityAsSession
+     *
+     * @param  mixed $session_id
+     * @return void
+     */
     public function deleteActivityAsSession($session_id)
     {
-        
         Sessionable::findorfail($session_id)->delete();
         return redirect()->back()->with('danger', 'activity is deleted');
     }

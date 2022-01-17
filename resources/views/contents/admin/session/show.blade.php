@@ -71,24 +71,21 @@
             <div class="card-body">
                 <div class="text-center">
                     <div class="row">
-
                         <div class="col-xl-6 col-sm-12 mb-4">
-                            
-                            @livewire('box.document-activity')
-                            
-                            
+                            @livewire('box.document-activity') 
                         </div>
-                
-                
                         <div class="col-xl-6 col-sm-12 mb-4">
-                            
                             @livewire('box.quiz-activity')
-                            
-                            
                         </div>
-                
-                        
                    </div>
+                   <div class="row">
+                    <div class="col-xl-6 col-sm-12 mb-4">
+                        @livewire('box.feedback-activity') 
+                    </div>
+                    <div class="col-xl-6 col-sm-12 mb-4">
+                        @livewire('box.rubric-activity')
+                    </div>
+               </div>
                 </div>
             </div>
         </div>
