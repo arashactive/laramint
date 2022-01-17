@@ -43,18 +43,7 @@ class QuestionController extends Controller
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Question  $question
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Question $question)
-    {
-        //
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -67,18 +56,6 @@ class QuestionController extends Controller
         return view('contents.admin.question.form', compact(
             "question"
         ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Question  $question
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Question $question)
-    {
-        //
     }
 
     /**
