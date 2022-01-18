@@ -10,6 +10,8 @@ class QuizActivity extends Component
 {
     use WithPagination;
 
+    public $session;
+    
     public function render()
     {
         $quizes =  Quiz::paginate();

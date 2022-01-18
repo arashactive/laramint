@@ -40,7 +40,7 @@
                     :color="$rubric->color">
                     @slot('add')
                     {{ route('addRubricToSession' , [
-                        'session' => 1,
+                        'session' => $session,
                         'active_id' => $rubric->id
                     ]) }}   
                     @endslot

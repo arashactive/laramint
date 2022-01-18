@@ -39,7 +39,7 @@
                     :color="$quiz->color">
                     @slot('add')
                     {{ route('addQuizToSession' , [
-                        'session' => 1,
+                        'session' => $session,
                         'active_id' => $quiz->id
                     ]) }}   
                     @endslot

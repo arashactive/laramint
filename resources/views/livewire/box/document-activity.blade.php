@@ -40,7 +40,7 @@
                 :color="$document->color">
                 @slot('add')
                 {{ route('addDocumentToSession' , [
-                    'session' => 1,
+                    'session' => $session,
                     'active_id' => $document->id
                 ]) }}   
                 @endslot

@@ -10,6 +10,10 @@ class DocumentActivity extends Component
 {
 
     use WithPagination;
+
+    public $session;
+    public $activity;
+    
     public function render()
     {
         $documents =  Document::paginate(20);

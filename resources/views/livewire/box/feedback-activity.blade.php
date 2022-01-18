@@ -39,7 +39,7 @@
                     :color="$feedback->color">
                     @slot('add')
                     {{ route('addFeedbackToSession' , [
-                        'session' => 1,
+                        'session' => $session,
                         'active_id' => $feedback->id
                     ]) }}   
                     @endslot

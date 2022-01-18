@@ -10,6 +10,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\ForumPostController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
@@ -59,7 +60,6 @@ Route::middleware(['verified'])->group(function () {
     Route::resource('question', QuestionController::class);
     Route::resource('rubric', RubricController::class);
     Route::resource('feedback', FeedbackController::class);
-
 
 
 

@@ -73,18 +73,18 @@
                 <div class="text-center">
                     <div class="row">
                         <div class="col-xl-6 col-sm-12 mb-4">
-                            @livewire('box.document-activity') 
+                            @livewire('box.document-activity', ['session' => $session->id]) 
                         </div>
                         <div class="col-xl-6 col-sm-12 mb-4">
-                            @livewire('box.quiz-activity')
+                            @livewire('box.quiz-activity', ['session' => $session->id])
                         </div>
                    </div>
                    <div class="row">
                     <div class="col-xl-6 col-sm-12 mb-4">
-                        @livewire('box.feedback-activity') 
+                        @livewire('box.feedback-activity', ['session' => $session->id]) 
                     </div>
                     <div class="col-xl-6 col-sm-12 mb-4">
-                        @livewire('box.rubric-activity')
+                        @livewire('box.rubric-activity', ['session' => $session->id])
                     </div>
                </div>
                 </div>

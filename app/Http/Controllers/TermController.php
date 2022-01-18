@@ -18,7 +18,7 @@ class TermController extends Controller
     public function index()
     {
         $this->authorize('term.index');
-        $terms = Term::paginate(env('PAGINATION'));
+        $terms = Term::paginate();
         
         return view("contents.admin.term.index", compact("terms"));
     }

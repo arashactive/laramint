@@ -9,6 +9,9 @@ use Livewire\WithPagination;
 class FeedbackActivity extends Component
 {
     use WithPagination;
+    
+    public $session;
+
     public function render()
     {
         $feedbacks =  Feedback::paginate();
