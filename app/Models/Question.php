@@ -24,6 +24,5 @@ class Question extends Model
     {
         return LogOptions::defaults()
             ->logOnly(['title', 'answer']);
-        // Chain fluent methods for configuration options
     }
 }

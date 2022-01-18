@@ -11,6 +11,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\ForumPostController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
@@ -64,27 +65,30 @@ Route::middleware(['verified'])->group(function () {
 
 
     // signle functions:
-    Route::get('/document/order/{from}/{move}', [DocumentController::class , 'orderChangeFiles'])->name("changeOrderFile");
-    Route::get('/document/file/add/{document}/{file}', [DocumentController::class , 'addFileToDocument'])->name("addFileToDocument");
-    Route::get('/document/file/delete/{documentFile}', [DocumentController::class , 'deleteFileAsDocument'])->name("deleteFileDocument");
-    Route::get('/session/document/{session}/{active_id}', [SessionController::class , 'addDocumentToSession'])->name("addDocumentToSession");
-    Route::get('/session/order/{from}/{move}', [SessionController::class , 'changeOrderSessionable'])->name("changeOrderSessionable");
-    Route::get('/session/quiz/{session}/{active_id}', [SessionController::class , 'addQuizToSession'])->name("addQuizToSession");
-    Route::get('/session/delete/{session_id}', [SessionController::class , 'deleteActivityAsSession'])->name("deleteActivityAsSession");
+
+    Route::get('logs', [LogController::class, 'index'])->name('logs');
+
+    Route::get('/document/order/{from}/{move}', [DocumentController::class, 'orderChangeFiles'])->name("changeOrderFile");
+    Route::get('/document/file/add/{document}/{file}', [DocumentController::class, 'addFileToDocument'])->name("addFileToDocument");
+    Route::get('/document/file/delete/{documentFile}', [DocumentController::class, 'deleteFileAsDocument'])->name("deleteFileDocument");
+    Route::get('/session/document/{session}/{active_id}', [SessionController::class, 'addDocumentToSession'])->name("addDocumentToSession");
+    Route::get('/session/order/{from}/{move}', [SessionController::class, 'changeOrderSessionable'])->name("changeOrderSessionable");
+    Route::get('/session/quiz/{session}/{active_id}', [SessionController::class, 'addQuizToSession'])->name("addQuizToSession");
+    Route::get('/session/delete/{session_id}', [SessionController::class, 'deleteActivityAsSession'])->name("deleteActivityAsSession");
 
     // rubric add to session
-    Route::get('/session/rubric/{session}/{active_id}', [SessionController::class , 'addRubricToSession'])->name("addRubricToSession");
+    Route::get('/session/rubric/{session}/{active_id}', [SessionController::class, 'addRubricToSession'])->name("addRubricToSession");
 
     // Quiz Question Relationship
-    Route::get('/quiz/order/{from}/{move}', [QuizController::class , 'orderChangeQuestion'])->name("orderChangeQuestion");
-    Route::get('/quiz/question/add/{parent}/{question}', [QuizController::class , 'addQuestionToQuiz'])->name("addQuestionToQuiz");
-    Route::get('/quiz/question/delete/{quizQuestion}', [QuizController::class , 'deleteQuestionAsQuiz'])->name("deleteQuestionAsQuiz");
-    
+    Route::get('/quiz/order/{from}/{move}', [QuizController::class, 'orderChangeQuestion'])->name("orderChangeQuestion");
+    Route::get('/quiz/question/add/{parent}/{question}', [QuizController::class, 'addQuestionToQuiz'])->name("addQuestionToQuiz");
+    Route::get('/quiz/question/delete/{quizQuestion}', [QuizController::class, 'deleteQuestionAsQuiz'])->name("deleteQuestionAsQuiz");
+
     // feedback question relationship
-    Route::get('/feedback/order/{from}/{move}', [FeedbackController::class , 'orderChangeQuestionFeedback'])->name("orderChangeQuestionFeedback");
-    Route::get('/feedback/question/add/{parent}/{question}', [FeedbackController::class , 'addQuestionToFeedback'])->name("addQuestionToFeedback");
-    Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class , 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
-    Route::get('/session/feedback/{session}/{active_id}', [SessionController::class , 'addFeedbackToSession'])->name("addFeedbackToSession");
+    Route::get('/feedback/order/{from}/{move}', [FeedbackController::class, 'orderChangeQuestionFeedback'])->name("orderChangeQuestionFeedback");
+    Route::get('/feedback/question/add/{parent}/{question}', [FeedbackController::class, 'addQuestionToFeedback'])->name("addQuestionToFeedback");
+    Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class, 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
+    Route::get('/session/feedback/{session}/{active_id}', [SessionController::class, 'addFeedbackToSession'])->name("addFeedbackToSession");
 });
 
 
