@@ -5,12 +5,12 @@ use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
-use App\Http\Controllers\ForumPostController;
+use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
@@ -31,13 +31,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index'])->name('home');
 
 
 Route::middleware(['verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
 });
 
 

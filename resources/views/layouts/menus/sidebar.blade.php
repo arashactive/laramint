@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -13,18 +13,35 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>{{ __("Dashboard") }}</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('dashboard') }}">
+            <i class="fas fa-fw fa-envelope"></i>
+            <span>{{ __("Messages") }}</span></a>
+    </li>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+     <!-- Heading -->
+     <div class="sidebar-heading">
+        {{ __('Course Management') }}
+    </div>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('dashboard') }}">
+            <i class="fas fa-fw fa-book-reader"></i>
+            <span>{{ __("My Course") }}</span></a>
+    </li>
+    
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        {{ __('Configuration') }}
+        {{ __('Admin Configuration') }}
     </div>
 
     <!-- Nav Item - Admin Setup LMS -->
