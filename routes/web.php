@@ -37,7 +37,7 @@ Route::get('/', function () {
 
 
 Route::middleware(['verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 
