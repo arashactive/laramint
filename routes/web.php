@@ -9,7 +9,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
-use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\QuestionController;
@@ -31,11 +31,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexController::class, 'index'])->name('home');
+Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::group(['prefix' => 'front' , 'as' => 'front.'],function () {
+    Route::get('/courses', function(){
 
-
-Route::middleware(['verified'])->group(function () {
-    Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
+    })->name('courses');
 });
 
 
@@ -44,10 +44,13 @@ Route::middleware(['verified'])->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes for only superAdmin Access
+| Web Routes for only Admin Access
 |--------------------------------------------------------------------------
 */
-Route::middleware(['verified'])->group(function () {
+Route::prefix('panel')->middleware(['verified'])->group(function () {
+
+    Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
+
     Route::resource('department', DepartmentController::class);
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);
@@ -87,13 +90,14 @@ Route::middleware(['verified'])->group(function () {
     Route::get('/feedback/question/add/{parent}/{question}', [FeedbackController::class, 'addQuestionToFeedback'])->name("addQuestionToFeedback");
     Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class, 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
     Route::get('/session/feedback/{session}/{active_id}', [SessionController::class, 'addFeedbackToSession'])->name("addFeedbackToSession");
-});
 
 
-// ACL Route
-Route::middleware(['verified'])->group(function () {
+
+    // ACL Route
     Route::resource('user', UserController::class)->middleware('role:Super-Admin');
     Route::resource('role', RoleController::class)->middleware('role:Super-Admin');
     Route::resource('permission', PermissionController::class)->middleware('role:Super-Admin');
     Route::post('role/permission/{role}', [RoleController::class, 'permission'])->name("role_permissions");
 });
+
+
