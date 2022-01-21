@@ -380,6 +380,10 @@ h6,
     color: #FFFFFF;
 }
 
+.service-item:hover h6 {
+    color: #FBA504;
+}
+
 .service-item a.btn {
     position: absolute;
     bottom: -40px;

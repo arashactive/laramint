@@ -10,6 +10,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Front\FrontCourseController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\QuestionController;
@@ -32,10 +33,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
-Route::group(['prefix' => 'front' , 'as' => 'front.'],function () {
-    Route::get('/courses', function(){
-
-    })->name('courses');
+Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
+    Route::get('/courses', [FrontCourseController::class, 'showCourses'])->name('courses');
 });
 
 
@@ -99,5 +98,3 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('permission', PermissionController::class)->middleware('role:Super-Admin');
     Route::post('role/permission/{role}', [RoleController::class, 'permission'])->name("role_permissions");
 });
-
-
