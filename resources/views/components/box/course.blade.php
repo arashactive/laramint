@@ -6,6 +6,6 @@
         <h5 class="mb-3">{{ $course->title }}</h5>
         <h6 class="mb-3">{{ $course->Department->title }}</h5>
         <p class="m-0">{{ Str::words($course->description, 20) }}</p>
-        <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+        <a class="btn btn-square" href="{{ route('front.course', $course->id) }}"><i class="fa fa-arrow-right"></i></a>
     </div>
 </div>

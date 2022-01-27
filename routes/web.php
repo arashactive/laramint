@@ -37,6 +37,7 @@ Route::get('/', [FrontController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
     Route::get('/courses', [FrontCourseController::class, 'showCourses'])->name('courses');
+    Route::get('/course/{course_id}', [FrontCourseController::class, 'showCourse'])->name('course');
 });
 
 
