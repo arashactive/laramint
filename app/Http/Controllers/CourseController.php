@@ -18,7 +18,7 @@ class CourseController extends Controller
     public function index()
     {
         $this->authorize('course.index');
-        $courses = Course::paginate(env('PAGINATION'));
+        $courses = Course::paginate();
         return view("contents.admin.courses.index", compact("courses"));
     }
 

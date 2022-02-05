@@ -17,7 +17,7 @@ class DepartmentController extends Controller
     public function index()
     {
         $this->authorize('department.index');
-        $departments = Department::paginate(env('PAGINATION'));
+        $departments = Department::paginate();
         return view("contents.admin.department.index", compact("departments"));
     }
 

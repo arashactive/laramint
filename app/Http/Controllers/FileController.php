@@ -17,7 +17,7 @@ class FileController extends Controller
     public function index()
     {
         $this->authorize('file.index');
-        $files = File::paginate(env('PAGINATION'));
+        $files = File::paginate();
         return view("contents.admin.toolbox.file.index", compact("files"));
     }
 

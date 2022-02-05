@@ -21,7 +21,7 @@ class DocumentController extends Controller
     public function index()
     {
         $this->authorize('document.index');
-        $documents = Document::paginate(env('PAGINATION'));
+        $documents = Document::paginate();
         return view("contents.admin.document.index", compact("documents"));
     }
 
