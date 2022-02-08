@@ -34,6 +34,8 @@ class PermissionsSeeder extends Seeder
         }
 
         Permission::create(['name' => 'document.order']);
+        Permission::create(['name' => 'menu.education']);
+        Permission::create(['name' => 'menu.toolbox']);
 
 
         $role1 = Role::create(['name' => 'Super-Admin']);
@@ -47,6 +49,8 @@ class PermissionsSeeder extends Seeder
             $role2->givePermissionTo($model . '.show');
         }
         $role2->givePermissionTo('document.order');
+        $role2->givePermissionTo('menu.education');
+        $role2->givePermissionTo('menu.toolbox');
 
         // create roles and assign existing permissions
         $role3 = Role::create(['name' => 'mentor']);
@@ -57,8 +61,6 @@ class PermissionsSeeder extends Seeder
 
         // create roles and assign existing permissions
         $role4 = Role::create(['name' => 'student']);
-        $role4->givePermissionTo('document.order');
-
 
         // create demo users
         $user = \App\Models\User::factory()->create([
@@ -72,6 +74,7 @@ class PermissionsSeeder extends Seeder
             'email' => 'mosavi@laramint.com',
         ]);
         $user->assignRole($role2);
+        
 
         $user = \App\Models\User::factory()->create([
             'name' => 'Ali Dehghani',
@@ -80,8 +83,8 @@ class PermissionsSeeder extends Seeder
         $user->assignRole($role3);
 
         $user = \App\Models\User::factory()->create([
-            'name' => 'Student A1',
-            'email' => 'student_A1@mint.com',
+            'name' => 'John Doe',
+            'email' => 'john@mint.com',
         ]);
         $user->assignRole($role4);
     }

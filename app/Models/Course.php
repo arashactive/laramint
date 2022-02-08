@@ -19,6 +19,10 @@ class Course extends Model
         return $this->belongsTo(Department::class);
     }
 
+    public function Terms(){
+        return $this->hasMany(Term::class);
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

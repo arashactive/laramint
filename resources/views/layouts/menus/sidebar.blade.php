@@ -38,12 +38,16 @@
     
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    
+    
+    
+    @can('menu.education')
     <!-- Heading -->
     <div class="sidebar-heading">
         {{ __('Admin Configuration') }}
     </div>
 
+    
     <!-- Nav Item - Admin Setup LMS -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#EducationCollapse"
@@ -89,9 +93,10 @@
             </div>
         </div>
     </li>
+    @endcan
 
 
-    
+    @can('menu.education')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse"
             aria-expanded="true" aria-controls="ACLCollapse">
@@ -112,6 +117,7 @@
         
     </li>
     
+    
 
     @role('Super-Admin')
     <!-- Nav Item - Admin Setup LMS -->
@@ -130,9 +136,10 @@
         </div>
     </li>
     @endrole
+    
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
-
+    @endcan
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
