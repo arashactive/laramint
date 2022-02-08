@@ -7,14 +7,16 @@ use Illuminate\View\Component;
 class term extends Component
 {
     public $term;
+    public $iteration;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term)
+    public function __construct($term, $iteration = '')
     {
         $this->term = $term;
+        $this->iteration = $iteration;
     }
 
     /**

@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Department;
-use App\Models\Term;
-use Illuminate\Http\Request;
+
 
 class CourseController extends Controller
 {
@@ -14,13 +13,22 @@ class CourseController extends Controller
     {
         // get 3 departments that you made.
         $departments = Department::limit(3)->get();
-        
+
         // get 3 departments that you made.
-        $courses = Course::with('Department')->get();
+        $courses = Course::with('Department', 'Terms')->get();
 
         return view('contents.front.courses.index', compact([
             "departments",
             "courses"
+        ]));
+    }
+
+    public function course($id)
+    {
+
+        $course = Course::with('Terms')->findorfail($id);
+        return view('contents.front.courses.course', compact([
+            "course"
         ]));
     }
 }
