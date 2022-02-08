@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {
-    public function index(){
+    public function courses(){
         return view('front.index.welcome');
     }
 }

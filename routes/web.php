@@ -32,10 +32,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
-Route::group(['prefix' => 'front' , 'as' => 'front.'],function () {
-    Route::get('/courses', function(){
 
-    })->name('courses');
+Route::group(['prefix' => 'front' , 'as' => 'front.'],function () {
+    Route::get('/courses', [FrontController::class, 'courses'])->name('courses');
 });
 
 
