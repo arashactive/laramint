@@ -9,7 +9,6 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
-use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Front\FrontCourseController;
 use App\Http\Controllers\GeneralController;

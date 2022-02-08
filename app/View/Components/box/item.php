@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\box;
+namespace App\View\Components\Box;
 
 use Illuminate\View\Component;
 
-class item extends Component
+class Item extends Component
 {
 
     public $title;
