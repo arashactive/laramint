@@ -58,20 +58,20 @@
             </div>
         </div>
         <div class="row g-3 portfolio-container">
-            <!-- Term Start -->
-                @if(count($terms) > 1)
+            <!-- course Start -->
+                @if(count($courses) > 1)
                 <div class="container-xxl py-5">
                     <div class="container py-5 px-lg-5">
                         <div class="row g-4">
-                            @forelse ($terms as $term)
-                                <x-front.term :term="$term"/>
+                            @forelse ($courses as $course)
+                                <x-front.course :course="$course"/>
                             @empty
                             @endforelse
                         </div>
                     </div>
                 </div>
                 @endif
-            <!-- Term End -->
+            <!-- course End -->
         </div>
     </div>
 </div>
