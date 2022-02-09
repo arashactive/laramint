@@ -9,8 +9,8 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
-use App\Http\Controllers\Front\FrontCourseController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\QuestionController;
@@ -36,8 +36,8 @@ Route::get('/', [FrontController::class, 'index'])->name('home');
 
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
-    Route::get('/courses', [FrontCourseController::class, 'showCourses'])->name('courses');
-    Route::get('/course/{course_id}', [FrontCourseController::class, 'showCourse'])->name('course');
+    Route::get('/courses', [FrontCourseController::class, 'courses'])->name('courses');
+    Route::get('/course/{course_id}', [FrontCourseController::class, 'course'])->name('course');
 });
 
 
