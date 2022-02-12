@@ -168,6 +168,7 @@ h6,
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
+        background-color: #6222CC;
     }
     
     .sticky-top.navbar-light {
@@ -209,6 +210,12 @@ h6,
 
 
 /*** Hero Header ***/
+
+.space{
+    margin-bottom: 1rem;
+    padding: 3rem 0; 
+}
+
 .hero-header {
     margin-bottom: 6rem;
     padding: 18rem 0;

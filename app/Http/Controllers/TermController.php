@@ -59,9 +59,14 @@ class TermController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Term $term)
     {
-        //
+        $this->authorize('term.edit');
+        $departments = $this->getDepartmentsPluck(Department::class);
+        $courses = $this->getDepartmentsPluck(Course::class);
+        return view('contents.admin.term.show' , compact(
+            "term" , "departments" , 'courses'
+        ));
     }
 
     /**

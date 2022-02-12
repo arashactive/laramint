@@ -30,6 +30,9 @@
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("Course") }}</th>
+                        @can('term.show')
+                        <th scope="col">{{ __("Participants") }}</th>  
+                        @endcan
                         @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
@@ -42,7 +45,11 @@
                                 <td>{{ $term->title  }}</td>
                                 <td>{{ $term->Department->title ?? '' }}</td>
                                 <td>{{ $term->Course->title ?? '' }}</td>
-                             
+                                @can('term.show')
+                                <td>
+                                    <x-buttons.show itemId="{{ $term->id }}" path="term.show" />
+                                </td>
+                                @endcan
                                 @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
