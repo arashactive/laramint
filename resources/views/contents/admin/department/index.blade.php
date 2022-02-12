@@ -27,7 +27,7 @@
                         <th scope="col">#</th>
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("is_published") }}</th>
-                        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['department.edit' , 'department.delete']))
+                        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['department.edit' , 'department.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
                         </tr>
@@ -47,7 +47,7 @@
                                     <x-CheckUnCheck isChecked="{{ $department->is_published }}" />
                                 </td>
                                 
-                                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['department.edit' , 'department.delete']))
+                                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['department.edit' , 'department.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
                                         @can('department.edit')

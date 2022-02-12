@@ -28,7 +28,7 @@
                         <th scope="col">{{ __("Title") }}</th>
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("is_published") }}</th>
-                        @if(Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
+                        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
                         <th scope="col">{{ __("Action") }}</th>
                         @endif
                         </tr>
@@ -42,7 +42,7 @@
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $course->is_published }}" />
                                 </td>
-                                @if(Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
+                                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
                                 <td>
                                     <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
                                         @can('course.edit')

@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="form-group">
-                        <textarea name="description" type="text" class="form-control form-control-user" id="description"
+                        <textarea name="description" type="text" class="form-control editor" id="description"
                             placeholder="Description">{{ $quiz->description ?? '' }}</textarea>
                         @error('description')
                             <span class="invalid-feedback" role="alert">
