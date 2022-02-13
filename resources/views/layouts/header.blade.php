@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ URL::to('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('css/sb-admin-2.css') }}" rel="stylesheet">
     <link href="{{ URL::to('vendor/jQuery-TE/jquery-te-1.4.0.css') }}" rel="stylesheet">
 
 </head>
