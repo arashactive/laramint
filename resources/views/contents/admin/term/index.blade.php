@@ -31,7 +31,7 @@
                         <th scope="col">{{ __("Department") }}</th>
                         <th scope="col">{{ __("Course") }}</th>
                         @can('term.show')
-                        <th scope="col">{{ __("Participants") }}</th>  
+                        <th scope="col">{{ __("Show") }}</th>  
                         @endcan
                         @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'term.delete']))
                         <th scope="col">{{ __("Action") }}</th>

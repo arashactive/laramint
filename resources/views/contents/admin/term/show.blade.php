@@ -4,10 +4,8 @@
 @section("content")
 
 
-
 <div class="row">
-    
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="card shadow mb-4 border-bottom-primary">
             <!-- Card Header - Dropdown -->
             <div
@@ -25,11 +23,11 @@
                
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input name="title" type="text" class="form-control form-control-user" id="title"
-                                placeholder="Title" value="{{ $term->title ?? '' }}">   
+                            <input name="title" type="text" class="form-control"  disabled
+                                value="{{ $term->title ?? '' }}">   
                         </div>
                         <div class="col-sm-6">
-                            <input name="image" type="text" class="form-control form-control-user" id="image"
+                            <input name="image" type="text" class="form-control" disabled 
                                 placeholder="Image" value="{{ $term->image ?? '' }}">
                         </div>
                     </div>
@@ -42,7 +40,7 @@
                 
                 
                     <div class="form-group">
-                        <textarea name="description" type="text" class="form-control form-control-user" id="description"
+                        <textarea name="description" class="form-control" disabled
                             placeholder="Description">{{ $term->description ?? '' }}</textarea>
                     </div>
                 </div>
@@ -50,8 +48,16 @@
             </div>
         </div>
     </div>
+</div>
 
 
+<div class="row">
+    
+    
+
+    <div class="col-lg-6">
+        
+    </div>
     
     <div class="col-lg-6">
         

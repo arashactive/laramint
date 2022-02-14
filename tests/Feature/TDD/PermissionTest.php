@@ -8,7 +8,7 @@ use Tests\BaseTest;
 class PermissionTest extends BaseTest
 {
 
-    protected function setUp() :void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->seed();
@@ -16,8 +16,6 @@ class PermissionTest extends BaseTest
         $this->setBaseRoute('permission');
         $this->setBaseModel('App\Models\Permission');
         $this->setField('name');
-
-        
     }
 
 
@@ -82,7 +80,7 @@ class PermissionTest extends BaseTest
         $this->destroy();
     }
 
-    
+
     /**
      * A basic test to delete method and response correctly.
      *
@@ -93,6 +91,4 @@ class PermissionTest extends BaseTest
         $this->signIn();
         $this->destroy();
     }
-
-
 }

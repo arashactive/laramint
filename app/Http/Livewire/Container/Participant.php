@@ -3,8 +3,6 @@
 namespace App\Http\Livewire\Container;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Participant extends Component
