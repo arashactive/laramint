@@ -9,5 +9,6 @@ class Participant extends Model
 {
     use HasFactory;
 
+    protected $table = 'term_user';
     protected $guarded = [];
 }

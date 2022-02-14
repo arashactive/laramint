@@ -20,4 +20,8 @@ class Term extends Model
     public function Course(){
         return $this->belongsTo(Course::class);
     }
+
+    public function Participants(){
+        return $this->belongsToMany(User::class);
+    }
 }

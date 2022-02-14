@@ -56,7 +56,23 @@
     
 
     <div class="col-lg-6">
-        
+        <div class="card shadow mb-4 border-bottom-warning">
+            <!-- Card Header - Dropdown -->
+            <div
+                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-warning">{{ __("Participants") }}</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <ul>
+                @forelse ($term->Participants as $participant)
+                    <li>{{ $participant->email }}</li>
+                @empty
+                    
+                @endforelse
+                </ul>
+            </div>
+        </div>
     </div>
     
     <div class="col-lg-6">
@@ -71,10 +87,9 @@
             <!-- Card Body -->
             <div class="card-body">
                 @livewire('container.participant', [
-                        'route' => 'addQuestionToQuiz',
+                        'route' => 'addParticipantToTerm',
                         'parent' => $term->id
                     ])
-                
                 
             </div>
         </div>

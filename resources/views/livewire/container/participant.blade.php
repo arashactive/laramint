@@ -22,20 +22,26 @@
             @endslot
 
             @slot('add')
-                {{ route($route ,[
-                    'parent' => $parent ,
-                    'question' => $participant->id 
-                ]) }}
+                 @forelse ($participant->Roles as $role)
+                
+                 <a href="{{ route($route ,[
+                    'term_id' => $parent ,
+                    'user_id' => $participant->id,
+                    'role_id' => $role->id,
+                    ]) }}"  class="btn btn-sm btn-success">
+                <small><i class="fas fa-plus text-dark-300"></i> {{ $role->name }}</small>
+                 </a>
+
+                @empty
+                    
+                @endforelse
+                
             @endslot
 
             
             <small>
                 {{ $participant->email }}
-                @forelse ($participant->Roles as $role)
-                <x-buttons.pill name="role" count="{{ $role->name }}" theme="info" />
-                @empty
-                    
-                @endforelse
+                
             </small>
             
             

@@ -28,10 +28,7 @@
                             @endif
 
                             @if(isset($add) && $add)
-                            <a href="{{ $add }}"
-                                class="btn btn-circle btn-sm btn-success">
-                                <i class="fas fa-plus text-dark-300"></i>
-                            </a>
+                            {{ $add }}
                             @endif
 
                             @if(isset($delete) && $delete)

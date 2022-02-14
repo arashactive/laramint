@@ -13,6 +13,7 @@ use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
@@ -68,7 +69,6 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
 
 
     // signle functions:
-
     Route::get('logs', [LogController::class, 'index'])->name('logs');
 
     Route::get('/document/order/{from}/{move}', [DocumentController::class, 'orderChangeFiles'])->name("changeOrderFile");
@@ -93,6 +93,8 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class, 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
     Route::get('/session/feedback/{session}/{active_id}', [SessionController::class, 'addFeedbackToSession'])->name("addFeedbackToSession");
 
+    // Participant Routes
+    Route::get('/participant/add/{term_id}/{user_id}/{role_id}', [ParticipantController::class, 'addParticipantToTerm'])->name("addParticipantToTerm");
 
 
     // ACL Route
