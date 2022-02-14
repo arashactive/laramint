@@ -64,13 +64,33 @@
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <ul>
+               
                 @forelse ($term->Participants as $participant)
-                    <li>{{ $participant->email }}</li>
+                    
+                <x-box.item
+                :title="$participant->email">
+                           
+                @slot('delete')
+                    {{ route('deleteFileDocument' ,['documentFile' => $participant->pivot->id ]) }}
+                @endslot
+                
+                <small>
+                    <button type="button" class="badge bg-secondary position-relative">
+                        {{ $participant->name }}
+                        
+                    </button>
+                    <button type="button" class="badge bg-info position-relative">
+                        {{ $participant->Role->name }}
+                    </button>
+                   
+                </small>
+               
+                </x-box.item>
+
                 @empty
                     
                 @endforelse
-                </ul>
+               
             </div>
         </div>
     </div>

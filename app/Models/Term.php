@@ -22,6 +22,6 @@ class Term extends Model
     }
 
     public function Participants(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot(["id", "role_id"]);
     }
 }
