@@ -51,6 +51,8 @@
 </div>
 
 
+
+@if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['participant.edit' , 'participant.delete']))
 <div class="row">
     
     
@@ -75,7 +77,7 @@
                 @endslot
                 
                 <small>
-                    <button type="button" class="badge bg-secondary position-relative">
+                    <button type="button" class="badge bg-primary position-relative">
                         {{ $participant->name }}
                         
                     </button>
@@ -116,7 +118,7 @@
 
     </div>
 </div>
-
+@endcan
 
 
 @endsection
