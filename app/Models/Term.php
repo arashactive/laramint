@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,17 @@ class Term extends Model
 
 
     protected $guarded = [];
+
+    public function scopeGetParticipants(Builder $builder){
+        
+        if(!auth()->user()->hasRole(['Super-Admin'])){
+           
+            return $builder->whereHas('Participants', 
+            function($q){
+                $q->where('user_id',  auth()->user()->id);
+            });
+        }
+    }
 
     public function Department(){
         return $this->belongsTo(Department::class);

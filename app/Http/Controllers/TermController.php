@@ -9,6 +9,7 @@ use App\Models\Session;
 use App\Models\session_term;
 use App\Models\Term;
 use App\traits\Sequence;
+use Illuminate\Support\Facades\DB;
 
 class TermController extends Controller
 {
@@ -23,7 +24,10 @@ class TermController extends Controller
     public function index()
     {
         $this->authorize('term.index');
-        $terms = Term::paginate();
+        
+        $terms = Term::with('Participants')
+        ->getParticipants()
+        ->paginate();
 
         return view("contents.admin.term.index", compact("terms"));
     }
@@ -68,6 +72,7 @@ class TermController extends Controller
     public function show(Term $term)
     {
         $this->authorize('term.edit');
+        $this->authorize('view', $term);
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.show', compact(
@@ -86,6 +91,7 @@ class TermController extends Controller
     public function edit(Term $term)
     {
         $this->authorize('term.edit');
+        $this->authorize('view', $term);
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.form', compact(
@@ -105,6 +111,7 @@ class TermController extends Controller
     public function update(TermRequest $request, Term $term)
     {
         $this->authorize('term.edit');
+        $this->authorize('view', $term);
         $term->update($request->all());
         return redirect()
             ->route("term.index")
@@ -120,6 +127,7 @@ class TermController extends Controller
     public function destroy(Term $term)
     {
         $this->authorize('term.delete');
+        $this->authorize('view', $term);
         $term->delete();
         return redirect()
             ->route("term.index")

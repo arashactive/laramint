@@ -59,7 +59,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-success">{{ __("Sessions") }}</h6>
+                <h6 class="m-0 font-weight-bold text-success">{{ __("RoadMap") }}</h6>
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -67,7 +67,7 @@
                 @forelse ($term->Sessions as $session)
                     
                 <x-box.session-item
-                :title="$session->title">
+                :title="$session->title" :color="'success'">
                 
                 @if(!$loop->first)
                 @slot('up')
@@ -86,7 +86,7 @@
                 @endslot
                 
                 <small>
-                    <a href="{{ route('session.show', $session->id) }}" class="btn btn-primary btn-sm">
+                    <a href="{{ route('session.show', $session->id) }}" class="btn btn-success btn-sm">
                         {{ __('count of activity: ') }} 
                         <span class="badge badge-light">{{ $session->Sessionable->count() }}</span>
                         <span class="sr-only">unread messages</span>
@@ -107,11 +107,11 @@
     <div class="col-lg-6">
         
         
-        <div class="card shadow mb-4 border-bottom-warning">
+        <div class="card shadow mb-4 border-bottom-success">
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-warning">{{ __("Sessions") }}</h6>
+                <h6 class="m-0 font-weight-bold text-success">{{ __("Sessions") }}</h6>
                 <div class="dropdown no-arrow">
                     @can('session.create')
                     <x-CreateButton path="{{ route('session.create') }}" />
