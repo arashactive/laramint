@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SessionRequest;
 use App\Models\Session;
 use App\Models\Sessionable;
+use App\Models\Term;
 use App\traits\Sequence;
 
 class SessionController extends Controller
@@ -110,7 +111,7 @@ class SessionController extends Controller
             ->with('danger', __('item deleted successfully'));
     }
 
-    
+
     /**
      * addActivityTosessio
      *
@@ -167,7 +168,7 @@ class SessionController extends Controller
         return redirect()->back();
     }
 
-    
+
     /**
      * Attach Document To Session
      *
@@ -208,7 +209,7 @@ class SessionController extends Controller
         return redirect()->back();
     }
 
-    
+
     /**
      * deleteActivityAsSession
      *
@@ -219,12 +220,6 @@ class SessionController extends Controller
     {
         Sessionable::findorfail($session_id)->delete();
         return redirect()->back()->with('danger', 'activity is deleted');
-    }
-
-
-
-    public function addSessionToTerm($term_id, $session_id){
-        
     }
 
 }

@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class term_session extends Model
+class session_term extends Model
 {
     use HasFactory;
+
+    protected $table = 'session_term';
 }

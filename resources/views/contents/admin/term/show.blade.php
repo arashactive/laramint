@@ -55,33 +55,43 @@
 <div class="row">
 
     <div class="col-lg-6">
-        <div class="card shadow mb-4 border-bottom-warning">
+        <div class="card shadow mb-4 border-bottom-success">
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-warning">{{ __("Participants") }}</h6>
+                <h6 class="m-0 font-weight-bold text-success">{{ __("Sessions") }}</h6>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                
-                @forelse ($term->Participants as $participant)
+                @forelse ($term->Sessions as $session)
                     
-                <x-box.item
-                :title="$participant->email">
-                           
+                <x-box.session-item
+                :title="$session->title">
+                
+                @if(!$loop->first)
+                @slot('up')
+                    {{ route('orderChangeSession' , ['from' => $session->pivot->id , 'move' => 'up' ]) }}
+                @endslot
+                @endif
+
+                @if(!$loop->last)
+                    @slot('down')
+                        {{ route('orderChangeSession' , ['from' => $session->pivot->id , 'move' => 'down' ]) }}
+                    @endslot
+                @endif
+            
                 @slot('delete')
-                    {{ route('deleteFileDocument' ,['documentFile' => $participant->pivot->id ]) }}
+                    {{ route('deleteSessionAsTerm' ,['term' => $term->id, 'session' => $session->id ]) }}
                 @endslot
                 
                 <small>
-                    <button type="button" class="badge bg-primary position-relative">
-                        {{ $participant->name }}
-                        
-                    </button>
-                    <button type="button" class="badge bg-info position-relative">
-                        {{ $participant->Role->name }}
-                    </button>
-                   
+                    <a href="{{ route('session.show', $session->id) }}" class="btn btn-primary btn-sm">
+                        {{ __('count of activity: ') }} 
+                        <span class="badge badge-light">{{ $session->Sessionable->count() }}</span>
+                        <span class="sr-only">unread messages</span>
+                    </a>
+                 
                 </small>
                
                 </x-box.item>
@@ -102,6 +112,11 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-warning">{{ __("Sessions") }}</h6>
+                <div class="dropdown no-arrow">
+                    @can('session.create')
+                    <x-CreateButton path="{{ route('session.create') }}" />
+                    @endcan
+                </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -169,6 +184,9 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-warning">{{ __("Participants") }}</h6>
+                @can('user.create')
+                    <x-CreateButton path="{{ route('user.create') }}" />
+                @endcan
             </div>
             <!-- Card Body -->
             <div class="card-body">

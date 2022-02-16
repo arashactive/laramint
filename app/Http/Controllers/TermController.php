@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TermRequest;
 use App\Models\Course;
 use App\Models\Department;
+use App\Models\Session;
+use App\Models\session_term;
 use App\Models\Term;
-
+use App\traits\Sequence;
 
 class TermController extends Controller
 {
+
+    use Sequence;
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +24,7 @@ class TermController extends Controller
     {
         $this->authorize('term.index');
         $terms = Term::paginate();
-        
+
         return view("contents.admin.term.index", compact("terms"));
     }
 
@@ -34,7 +39,8 @@ class TermController extends Controller
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.form', compact(
-            'departments' , 'courses'
+            'departments',
+            'courses'
         ));
     }
 
@@ -50,7 +56,7 @@ class TermController extends Controller
         Term::create($request->all());
         return redirect()
             ->route("term.index")
-            ->with('success' , __('item created successfully'));
+            ->with('success', __('item created successfully'));
     }
 
     /**
@@ -64,8 +70,10 @@ class TermController extends Controller
         $this->authorize('term.edit');
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
-        return view('contents.admin.term.show' , compact(
-            "term" , "departments" , 'courses'
+        return view('contents.admin.term.show', compact(
+            "term",
+            "departments",
+            'courses'
         ));
     }
 
@@ -80,8 +88,10 @@ class TermController extends Controller
         $this->authorize('term.edit');
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
-        return view('contents.admin.term.form' , compact(
-            "term" , "departments" , 'courses'
+        return view('contents.admin.term.form', compact(
+            "term",
+            "departments",
+            'courses'
         ));
     }
 
@@ -97,8 +107,8 @@ class TermController extends Controller
         $this->authorize('term.edit');
         $term->update($request->all());
         return redirect()
-                ->route("term.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("term.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
@@ -112,12 +122,76 @@ class TermController extends Controller
         $this->authorize('term.delete');
         $term->delete();
         return redirect()
-                ->route("term.index")
-                ->with('danger' , __('item deleted successfully'));
+            ->route("term.index")
+            ->with('danger', __('item deleted successfully'));
     }
 
 
-    private function getDepartmentsPluck($model){
-        return $model::pluck('title' , 'id');
+    private function getDepartmentsPluck($model)
+    {
+        return $model::pluck('title', 'id');
+    }
+
+
+
+    /**
+     * Attach Session To Term
+     *
+     * @param  Term  $term
+     * @param  Session  $session
+     * @return \Illuminate\Http\Response redirect
+     */
+    public function addSessionToTerm(Term $term, Session $session)
+    {
+        $this->authorize('term.edit');
+        $term->Sessions()->sync([$session->id => [
+            'order' => $term->Sessions()->max('order') + 1
+        ]], false);
+
+
+        return redirect(route('term.show', $term->id))->with('success', 'session sync with this term');
+    }
+
+
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  Term $term
+     * @param  Session  $session
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteSessionAsTerm(Term $term, Session $session)
+    {
+        $this->authorize('term.delete');
+        $term->Sessions()->detach($session->id);
+        return redirect()->back()->with('danger', 'session is detached');
+    }
+
+
+    /**
+     * change the sequences of file belongs to document
+     *
+     * @param  int  $file_id
+     * @param  string  $move
+     * @return \Illuminate\Http\Response
+     */
+    public function orderChangeSession(session_term $from, $move)
+    {
+
+        $this->authorize('term.update');
+        $move_parameters = [
+            'up' => ['char' => '<', 'order' => 'desc'],
+            'down' => ['char' => '>', 'order' => 'asc']
+        ];
+
+        $to = session_term::where('term_id', $from->term_id)
+            ->where('order', (string)$move_parameters[$move]['char'], $from->order)
+            ->orderby('order', (string)$move_parameters[$move]['order'])
+            ->first();
+
+
+        $this->changeOrder($from, $to);
+
+        return redirect()->back();
     }
 }

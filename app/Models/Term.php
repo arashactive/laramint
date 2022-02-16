@@ -16,7 +16,6 @@ class Term extends Model
         return $this->belongsTo(Department::class);
     }
 
-
     public function Course(){
         return $this->belongsTo(Course::class);
     }
@@ -26,7 +25,7 @@ class Term extends Model
     }
 
     public function Sessions(){
-        return $this->belongsToMany(Session::class)->withPivot(["id", "order"]);
+        return $this->belongsToMany(Session::class)->withPivot(["id", "order"])->orderBy('order');
     }
 
 }

@@ -23,8 +23,8 @@
 
         @slot('add')
             {{ route($route ,[
-                'term_id' => $parent ,
-                'session_id' => $session->id 
+                'term' => $parent ,
+                'session' => $session->id 
             ]) }}
         @endslot
 
