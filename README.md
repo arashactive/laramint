@@ -1,7 +1,7 @@
 
   
 
-# Mint ( LMS + GAMIFICATION )
+# LaraMint ( LMS + GAMIFICATION )
 
 ## _Learning every thing with fun and game_
 
