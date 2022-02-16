@@ -47,6 +47,7 @@ trait FeatureTestCrud
         $this->post(route($route), $attributes->toArray())->assertRedirect();
 
         $this->assertDatabaseHas($model, [$this->field => $attributes->{$this->field}]);
+        return $this;
     }
 
 

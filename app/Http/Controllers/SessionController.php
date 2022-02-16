@@ -220,4 +220,11 @@ class SessionController extends Controller
         Sessionable::findorfail($session_id)->delete();
         return redirect()->back()->with('danger', 'activity is deleted');
     }
+
+
+
+    public function addSessionToTerm($term_id, $session_id){
+        
+    }
+
 }

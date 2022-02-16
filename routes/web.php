@@ -96,6 +96,9 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     // Participant Routes
     Route::get('/participant/add/{term_id}/{user_id}/{role_id}', [ParticipantController::class, 'addParticipantToTerm'])->name("addParticipantToTerm");
 
+    // add session  to term
+    Route::get('/addSessionToTerm/{term_id}/{session_id}', [SessionController::class, 'addSessionToTerm'])->name("addSessionToTerm");
+
 
     // ACL Route
     Route::resource('user', UserController::class)->middleware('role:Super-Admin');
