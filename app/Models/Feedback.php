@@ -10,6 +10,7 @@ class Feedback extends Model
     use HasFactory;
 
     public $color = 'success';
+    public $faIcon = 'fa fa-comment-medical';
     protected $guarded;
 
     public function Questions()

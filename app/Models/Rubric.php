@@ -10,5 +10,7 @@ class Rubric extends Model
     use HasFactory;
 
     public $color = 'info';
+    public $faIcon = 'fa fa-ruler';
+    
     protected $guarded = [];
 }

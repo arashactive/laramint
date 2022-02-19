@@ -10,6 +10,7 @@ class Document extends Model
     use HasFactory;
 
     public $color = 'primary';
+    public $faIcon = 'fa fa-files-o';
     protected $guarded = [];
 
 

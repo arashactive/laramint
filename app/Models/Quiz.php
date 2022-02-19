@@ -10,6 +10,7 @@ class Quiz extends Model
     use HasFactory;
 
     public $color = 'warning';
+    public $faIcon = 'fa fa-question-circle';
     protected $guarded=[];
 
 

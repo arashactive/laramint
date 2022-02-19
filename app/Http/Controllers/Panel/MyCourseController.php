@@ -25,6 +25,8 @@ class MyCourseController extends Controller
 
     public function learn(Term $term)
     {
+        $term = $term->with('Sessions')->first();
+        
         return view('contents.panel.learn.show', compact([
             'term'
         ]));
