@@ -31,7 +31,7 @@
         {{ __('Course Management') }}
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('dashboard') }}">
+        <a class="nav-link" href="{{ route('myCourse') }}">
             <i class="fas fa-fw fa-book-reader"></i>
             <span>{{ __("My Course") }}</span></a>
     </li>

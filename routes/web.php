@@ -13,6 +13,7 @@ use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\Panel\MyCourseController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
@@ -66,7 +67,9 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('rubric', RubricController::class);
     Route::resource('feedback', FeedbackController::class);
 
-
+    // my course route
+    Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
+    Route::get('my/course/{term}', [MyCourseController::class, 'learn'])->name('learningCourse');
 
     // signle functions:
     Route::get('logs', [LogController::class, 'index'])->name('logs');

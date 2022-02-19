@@ -13,31 +13,52 @@ class Term extends Model
 
     protected $guarded = [];
 
-    public function scopeGetParticipants(Builder $builder){
-        
-        if(!auth()->user()->hasRole(['Super-Admin'])){
-           
-            return $builder->whereHas('Participants', 
-            function($q){
-                $q->where('user_id',  auth()->user()->id);
-            });
+    // make difference get lists for super-admin and other roles.
+    // this part helps us to get clear list of supervisior and teacher with 
+    // correct access to each term
+    public function scopeGetParticipants(Builder $builder)
+    {
+
+        if (!auth()->user()->hasRole(['Super-Admin'])) {
+            return $builder->whereHas(
+                'Participants',
+                function ($q) {
+                    $q->where('user_id',  auth()->user()->id);
+                }
+            );
         }
     }
 
-    public function Department(){
+
+    public function scopeMyCourse(Builder $builder, $studentRoleId = 4)
+    {
+        return $builder->whereHas(
+            'Participants',
+            function ($q) use ($studentRoleId) {
+                $q->where('user_id',  auth()->user()->id);
+                $q->where('role_id', $studentRoleId);
+            }
+        );
+    }
+
+
+    public function Department()
+    {
         return $this->belongsTo(Department::class);
     }
 
-    public function Course(){
+    public function Course()
+    {
         return $this->belongsTo(Course::class);
     }
 
-    public function Participants(){
+    public function Participants()
+    {
         return $this->belongsToMany(User::class)->withPivot(["id", "role_id"]);
     }
 
-    public function Sessions(){
+    public function Sessions()
+    {
         return $this->belongsToMany(Session::class)->withPivot(["id", "order"])->orderBy('order');
     }
-
 }

@@ -22,7 +22,7 @@ class PermissionsSeeder extends Seeder
         $models = [
             'department', 'course', 'session', 'term', 'file',
             'document', 'quiz', 'question', 'rubric', 'feedback',
-            'participant'
+            'participant', 'myCourse'
         ];
 
         foreach ($models as $model) {
@@ -62,7 +62,7 @@ class PermissionsSeeder extends Seeder
 
         // create roles and assign existing permissions
         $role4 = Role::create(['name' => 'student']);
-
+        $role4->givePermissionTo('myCourse.index');
         // create demo users
         $user = \App\Models\User::factory()->create([
             'name' => 'Arash Dehghani',
