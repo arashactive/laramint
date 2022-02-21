@@ -13,19 +13,25 @@ class RubricFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'title' => $this->faker->unique()->name(),
-            'description' => $this->faker->sentence(),
-            'body' => json_encode([
-                'title' => $this->faker->unique()->name(),
-                'items' => [
-                    ['score' => 0 , $this->faker->unique()->name()], 
-                    ['score' => 1 , $this->faker->unique()->name()], 
-                    ['score' => 2 , 'pass' => true , $this->faker->unique()->name()], 
-                    ['score' => 3 , $this->faker->unique()->name()], 
-                    ['score' => 4 , $this->faker->unique()->name()], 
+        $bodies = [];
+        for($counter = 1; $counter <= 5; $counter++){
+            $bodies[] = [
+                'item_title' => "part $counter",
+                'cells' => [
+                    ['score' => 0, 'title' => $this->faker->unique()->name()],
+                    ['score' => 1, 'title' => $this->faker->unique()->name()],
+                    ['score' => 2, 'pass' => true, 'title' => $this->faker->unique()->name()],
+                    ['score' => 3, 'title' => $this->faker->unique()->name()],
+                    ['score' => 4, 'title' => $this->faker->unique()->name()],
                 ]
-            ])
+            ];
+        }
+        
+
+        return [
+            'title' => 'Rubric' . $this->faker->numberBetween(10, 100),
+            'description' => $this->faker->sentence(),
+            'body' => json_encode($bodies)
         ];
     }
 }

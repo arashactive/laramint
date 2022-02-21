@@ -16,7 +16,7 @@ class TermFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->unique()->name(),
+            'title' => 'Term ' . $this->faker->unique()->name(),
             'description' => $this->faker->text(),
             'image' => $this->faker->image(public_path('/term'),640,480, null, false),
             'is_published' => true,

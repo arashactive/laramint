@@ -63,30 +63,33 @@ class PermissionsSeeder extends Seeder
         // create roles and assign existing permissions
         $role4 = Role::create(['name' => 'student']);
         $role4->givePermissionTo('myCourse.index');
+
+
         // create demo users
-        $user = \App\Models\User::factory()->create([
+        $admin = \App\Models\User::factory()->create([
             'name' => 'Arash Dehghani',
             'email' => 'arash.aspx@gmail.com',
         ]);
-        $user->assignRole($role1);
+        $admin->assignRole($role1);
 
-        $user = \App\Models\User::factory()->create([
-            'name' => 'mr.Mosavi',
-            'email' => 'mosavi@laramint.com',
+        $supervisor = \App\Models\User::factory()->create([
+            'name' => 'SuperVisor',
+            'email' => 'supervisor@laramint.com',
         ]);
-        $user->assignRole($role2);
+        $supervisor->assignRole($role2);
         
 
-        $user = \App\Models\User::factory()->create([
-            'name' => 'Ali Dehghani',
-            'email' => 'ali@laramint.com',
+        $mentor = \App\Models\User::factory()->create([
+            'name' => 'mentor',
+            'email' => 'mentor@laramint.com',
         ]);
-        $user->assignRole($role3);
+        $mentor->assignRole($role3);
 
-        $user = \App\Models\User::factory()->create([
-            'name' => 'John Doe',
-            'email' => 'john@mint.com',
+        
+        $student = \App\Models\User::factory()->create([
+            'name' => 'student',
+            'email' => 'student@laramint.com',
         ]);
-        $user->assignRole($role4);
+        $student->assignRole($role4);
     }
 }

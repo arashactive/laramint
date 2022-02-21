@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 class RubricActivity extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     public $session;
 

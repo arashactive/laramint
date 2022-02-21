@@ -14,7 +14,7 @@ class DepartmentFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => 'Department ' . $this->faker->name(),
             'description' => $this->faker->text(),
             'image' => $this->faker->image(public_path('/department'),640,480, null, false),
             'is_published' => true,

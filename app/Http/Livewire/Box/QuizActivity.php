@@ -9,7 +9,8 @@ use Livewire\WithPagination;
 class QuizActivity extends Component
 {
     use WithPagination;
-
+    protected $paginationTheme = 'bootstrap';
+    
     public $session;
     
     public function render()

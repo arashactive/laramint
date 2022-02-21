@@ -14,7 +14,7 @@ class DocumentFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(),
+            'title' => 'Doc ' . $this->faker->numberBetween(10,100),
             'description' => $this->faker->paragraph()
         ];
     }

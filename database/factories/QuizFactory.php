@@ -14,7 +14,7 @@ class QuizFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => 'quiz ' .$this->faker->name(),
             'description' => $this->faker->text(),
             'attempt' => $this->faker->numberBetween(0,10),
             'duration' => $this->faker->numberBetween(30,120),

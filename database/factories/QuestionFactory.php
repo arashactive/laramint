@@ -18,7 +18,7 @@ class QuestionFactory extends Factory
             'title' => $this->faker->unique()->name(),
             'question_body' => $this->faker->paragraph(),
             'question_type_id' => QuestionType::all()->random()->id,
-            'answer' => ''
+            'answer' => json_encode([])
 
         ];
     }

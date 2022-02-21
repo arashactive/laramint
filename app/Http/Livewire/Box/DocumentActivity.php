@@ -10,7 +10,8 @@ class DocumentActivity extends Component
 {
 
     use WithPagination;
-
+    protected $paginationTheme = 'bootstrap';
+    
     public $session;
     public $activity;
     

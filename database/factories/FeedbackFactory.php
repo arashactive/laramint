@@ -14,7 +14,7 @@ class FeedbackFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => 'feedback ' . $this->faker->name(),
             'description' => $this->faker->text(),
             'require' => $this->faker->boolean(),
         ];
