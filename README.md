@@ -28,7 +28,7 @@ Clone the repository
 
 Switch to the repo folder
 
-    cd mint
+    cd laramint
 
 Install all the dependencies using composer
 
