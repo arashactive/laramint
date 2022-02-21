@@ -56,7 +56,7 @@ You can now access the server at http://127.0.0.1:8000
 
 
 
-**Why is the project useful?**
+# Why is the project useful?
 
 Our business contains some aspects that are internationally popular. First, we have an open-source education platform which is widespread globally. Next is our multilingual feature that makes it available for all people to join our platform easily and make use of it as they wish. After that, in order to make our business more expandable everywhere and for everyone, we have planned to add a subtitle option to our videos which is even more welcoming by those who are not fully dominant on the English language and make it more user-friendly for our clients.
 
