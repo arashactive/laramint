@@ -35,7 +35,7 @@
                                         <div class="form-group">
                                             <input name="password" type="password"
                                             class="form-control form-control-user @error('email') is-invalid @enderror"
-                                                id="password" placeholder="Password">
+                                                id="password" placeholder="Password" value="password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     {{ $message }}
@@ -52,20 +52,26 @@
                                         <input value="Login" type="submit" class="btn btn-primary btn-user btn-block" />
                                         
                                         <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+                                        
                                     </form>
+
+                                    <label>super admin:</label><br/>
+                                    <strong>username: </strong><span>arash.aspx@gmail.com</span><br/>
+                                    <strong>password: </strong><span>password</span>
                                     <hr>
-                                    <div class="text-center">
+                                    <label>supervisor:</label><br/>
+                                    <strong>username: </strong><span>supervisor@laramint.com</span><br/>
+                                    <hr>
+                                    <label>student:</label><br/>
+                                    <strong>username: </strong><span>student@laramint.com</span><br/>
+                                    <hr>
+
+                                    {{-- <div class="text-center">
                                         <a class="small" href="forgot-password">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register">Create an Account!</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

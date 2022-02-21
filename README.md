@@ -15,6 +15,47 @@ We are active as an open source platform and provide a perfect place for everyon
 website: [Laramint.com](https://laramint.com)
 
   
+# Getting started
+
+## Installation
+
+Please check the official laravel installation guide for server requirements before you start. 
+[Official Documentation](https://laravel.com/docs/9.x/installation)
+
+Clone the repository
+
+    git clone git@github.com:arashactive/laramint.git
+
+Switch to the repo folder
+
+    cd mint
+
+Install all the dependencies using composer
+
+    composer install
+
+Copy the example env file and make the required configuration changes in the .env file
+
+    cp .env.example .env
+
+Generate a new application key
+
+    php artisan key:generate
+
+
+Run the database migrations (**Set the database connection in .env before migrating**)
+
+    php artisan migrate --seed
+
+Start the local development server
+
+    php artisan serve
+
+You can now access the server at http://127.0.0.1:8000
+
+
+
+
 **Why is the project useful?**
 
 Our business contains some aspects that are internationally popular. First, we have an open-source education platform which is widespread globally. Next is our multilingual feature that makes it available for all people to join our platform easily and make use of it as they wish. After that, in order to make our business more expandable everywhere and for everyone, we have planned to add a subtitle option to our videos which is even more welcoming by those who are not fully dominant on the English language and make it more user-friendly for our clients.
