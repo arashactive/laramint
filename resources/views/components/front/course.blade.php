@@ -1,7 +1,7 @@
 <div class="col-lg-4 col-md-6 portfolio-item department-{{ $course->Department->id }} wow fadeInUp" data-wow-delay="0.1s">
     <div class="rounded overflow-hidden">
         <div class="position-relative overflow-hidden">
-            <img class="img-fluid w-100" src="{{ $course->image ?: URL::to('front/img/portfolio-1.jpg') }}" alt="">
+            <img class="img-fluid w-100" src="{{ URL::to('course/' . $course->image)  ?: URL::to('front/img/portfolio-1.jpg') }}" alt="">
             <div class="portfolio-overlay">
                 <a class="btn btn-square btn-outline-light mx-1" href="{{ route('front.course' , $course->id) }}">
                     <i class="fa fa-link"></i>

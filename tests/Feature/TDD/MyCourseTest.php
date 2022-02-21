@@ -18,15 +18,6 @@ class MyCourseTest extends BaseTest
     }
 
     
-    /**
-     * A basic test to check access level controller with without access to page
-     *
-     * @return void
-     */
-    public function test_acl()
-    {
-        $this->withOutPermissionUser();
-        $this->withOutAccessLevel();
-    }
+    
     
 }

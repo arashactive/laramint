@@ -12,7 +12,7 @@ class CourseController extends Controller
     public function courses()
     {
         // get 3 departments that you made.
-        $departments = Department::limit(3)->get();
+        $departments = Department::limit(10)->get();
 
         // get 3 departments that you made.
         $courses = Course::with('Department', 'Terms')->get();

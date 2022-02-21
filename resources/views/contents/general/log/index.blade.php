@@ -37,7 +37,7 @@
                                     <span class="badge badge-pill badge-{{$theme[$log->description] ?? 'primary' }}">{{ $log->description }}</span>
                                 </td>
                                 <td>{{ $log->subject->title ?? $log->subject_type }}</td>                                
-                                <td>{{ $log->causer->name }}</td>                                
+                                <td>{{ $log->causer->name ?? '' }}</td>                                
                                 <td>{{ $log->created_at }}</td>  
                             </tr>
                         @empty

@@ -17,7 +17,7 @@ class CourseFactory extends Factory
         return [
             'title' => $this->faker->unique()->name(),
             'description' => $this->faker->text(),
-            'image' => $this->faker->unique()->name(),
+            'image' => $this->faker->image(public_path('/course'),640,480, null, false),
             'is_published' => true,
             'department_id' => Department::factory(),
         ];
