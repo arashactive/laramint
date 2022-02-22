@@ -11,6 +11,8 @@ class Document extends Model
 
     public $color = 'primary';
     public $faIcon = 'fa fa-file';
+    public $route = 'documentLearner';
+
     protected $guarded = [];
 
 

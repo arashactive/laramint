@@ -11,6 +11,7 @@ class Rubric extends Model
 
     public $color = 'info';
     public $faIcon = 'fa fa-ruler';
+    public $route = 'rubricLearner';
     
     protected $guarded = [];
 }

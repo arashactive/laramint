@@ -11,6 +11,8 @@ class Feedback extends Model
 
     public $color = 'success';
     public $faIcon = 'fa fa-comment-medical';
+    public $route = 'feedbackLearner';
+
     protected $guarded;
 
     public function Questions()

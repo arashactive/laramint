@@ -12,6 +12,10 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\learn\documentLearnerController;
+use App\Http\Controllers\learn\feedbackLearnerController;
+use App\Http\Controllers\learn\quizLearnerController;
+use App\Http\Controllers\learn\rubricLearnerController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\Panel\MyCourseController;
 use App\Http\Controllers\ParticipantController;
@@ -43,7 +47,21 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 });
 
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes for learner access
+|--------------------------------------------------------------------------
+*/
+Route::prefix('learn')->middleware(['verified'])->group(function () {
+    Route::get('/feedback/{feedback}', [feedbackLearnerController::class, 'show'])->name('feedbackLearner');
+    Route::get('/rubric/{rubric}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
+    Route::get('/quiz/{quiz}', [quizLearnerController::class, 'show'])->name('quizLearner');
+    Route::get('/document/{document}', [documentLearnerController::class, 'show'])->name('documentLearner');
 
+    // my course route
+    Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
+    Route::get('my/course/{term}', [MyCourseController::class, 'learn'])->name('learningCourse');
+});
 
 
 /*
@@ -67,9 +85,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('rubric', RubricController::class);
     Route::resource('feedback', FeedbackController::class);
 
-    // my course route
-    Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
-    Route::get('my/course/{term}', [MyCourseController::class, 'learn'])->name('learningCourse');
+
 
     // signle functions:
     Route::get('logs', [LogController::class, 'index'])->name('logs');

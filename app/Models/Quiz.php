@@ -11,6 +11,8 @@ class Quiz extends Model
 
     public $color = 'warning';
     public $faIcon = 'fa fa-question-circle';
+    public $route = 'quizLearner';
+
     protected $guarded=[];
 
 

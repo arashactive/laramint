@@ -17,7 +17,7 @@ class MyCourseController extends Controller
             ->MyCourse($studentRoleId)
             ->paginate();
 
-        return view('contents.panel.my.course', compact([
+        return view('contents.learn.mycourses.list', compact([
             'terms'
         ]));
     }
@@ -27,7 +27,7 @@ class MyCourseController extends Controller
     {
         $term = $term->with('Sessions')->first();
         
-        return view('contents.panel.learn.show', compact([
+        return view('contents.learn.mycourses.show', compact([
             'term'
         ]));
     }
