@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Participant;
+use App\Models\Term;
+use App\Models\User;
 
 class ParticipantController extends Controller
 {
@@ -27,5 +29,13 @@ class ParticipantController extends Controller
 
         return redirect(route('term.show', ['term' => $term_id]))
             ->with('success', __('successfull added'));
+    }
+
+
+    public function deleteParticipantAsTerm(Term $term, User $user){
+        $term->Participants()->detach($user);
+
+        return redirect(route('term.show', ['term' => $term->id]))
+            ->with('danger', __('successfull deleted'));
     }
 }

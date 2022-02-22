@@ -114,6 +114,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
 
     // Participant Routes
     Route::get('/participant/add/{term_id}/{user_id}/{role_id}', [ParticipantController::class, 'addParticipantToTerm'])->name("addParticipantToTerm");
+    Route::get('/participant/delete/{term}/{user}', [ParticipantController::class, 'deleteParticipantAsTerm'])->name("deleteParticipantAsTerm");
 
     // add session  to term
     Route::get('/addSessionToTerm/{term}/{session}', [TermController::class, 'addSessionToTerm'])->name("addSessionToTerm");

@@ -152,7 +152,7 @@
                 :title="$participant->email">
                            
                 @slot('delete')
-                    {{ route('deleteFileDocument' ,['documentFile' => $participant->pivot->id ]) }}
+                    {{ route('deleteParticipantAsTerm' ,['term' => $term, 'user' => $participant->id  ]) }}
                 @endslot
                 
                 <small>
