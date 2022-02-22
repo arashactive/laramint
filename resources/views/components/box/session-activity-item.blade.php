@@ -8,7 +8,8 @@
                             <div class="text-xs font-weight-bold text-uppercase mb-1">
                                 <i class="{{ $activity->faIcon }}"></i>
                                 <span class="pl-4">
-                                    <a href="{{ route($activity->route, $activity->id) }}">
+                                    
+                                    <a href="{{ route($activity->route, ['term' => $term, 'activity'=>$activity->id]) }}">
                                     {{  $activity->title }}                                
                                     </a>
                                 </span>

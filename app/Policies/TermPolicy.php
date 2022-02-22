@@ -20,6 +20,7 @@ class TermPolicy
      */
     public function view(User $user, Term $term)
     {
+        
         return $term->Participants()->where('user_id', $user->id)->count() > 0 ?: null;
     }
 }

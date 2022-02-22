@@ -24,6 +24,7 @@
 
                 @forelse ($term->Sessions as $session)
                     <x-box.session-item-for-student
+                    :term="$term->id"
                     :session="$session" />
 
                 @empty

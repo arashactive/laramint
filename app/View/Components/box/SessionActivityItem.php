@@ -7,16 +7,18 @@ use Illuminate\View\Component;
 class SessionActivityItem extends Component
 {
     public $activity;
-
+    public $term;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($activity)
+    public function __construct($term, $activity)
     {
+        $this->term = $term;
         $this->activity = $activity;
+        
     }
 
     /**

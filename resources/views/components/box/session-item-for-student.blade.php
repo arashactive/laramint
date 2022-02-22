@@ -17,7 +17,8 @@
                                             @forelse ($session->related as $activity)
 
                                             <x-box.session-activity-item
-                                            :activity="$activity->model" />
+                                            :term="$term"
+                                            :activity="$activity->model"/>
                                             @empty   
                                             @endforelse
                                         </div>

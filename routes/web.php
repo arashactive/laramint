@@ -53,10 +53,10 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('learn')->middleware(['verified'])->group(function () {
-    Route::get('/feedback/{feedback}', [feedbackLearnerController::class, 'show'])->name('feedbackLearner');
-    Route::get('/rubric/{rubric}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
-    Route::get('/quiz/{quiz}', [quizLearnerController::class, 'show'])->name('quizLearner');
-    Route::get('/document/{document}', [documentLearnerController::class, 'show'])->name('documentLearner');
+    Route::get('/feedback/{term}/{activity}', [feedbackLearnerController::class, 'show'])->name('feedbackLearner');
+    Route::get('/rubric/{term}/{activity}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
+    Route::get('/quiz/{term}/{activity}', [quizLearnerController::class, 'show'])->name('quizLearner');
+    Route::get('/document/{term}/{activity}', [documentLearnerController::class, 'show'])->name('documentLearner');
 
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');

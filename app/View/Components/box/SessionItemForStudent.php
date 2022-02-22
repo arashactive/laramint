@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class SessionItemForStudent extends Component
 {
     public $session;
+    public $term;
 
 
     /**
@@ -14,8 +15,9 @@ class SessionItemForStudent extends Component
      *
      * @return void
      */
-    public function __construct($session)
+    public function __construct($term, $session)
     {
+        $this->term = $term;
         $this->session = $session;
     }
 
