@@ -17,7 +17,8 @@
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                
+                <x-content.rubric 
+                :rubric="$activity" />
             </div>
         </div>
     </div>
