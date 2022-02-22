@@ -52,6 +52,9 @@ class ParticipanTest extends BaseTest
         $role_id = $user->Roles->first()->id;
         $term = Term::first();
 
+        $term->Participants()->detach($user);
+        
+
         $response = $this->get(route('addParticipantToTerm',[
             'term_id' => $term->id,
             'user_id' => $user->id,

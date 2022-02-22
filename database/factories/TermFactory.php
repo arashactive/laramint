@@ -18,7 +18,7 @@ class TermFactory extends Factory
         return [
             'title' => 'Term ' . $this->faker->unique()->name(),
             'description' => $this->faker->text(),
-            'image' => $this->faker->image(public_path('/term'),640,480, null, false),
+            'image' => 'file.png' ,
             'is_published' => true,
             'department_id' => Department::factory(),
             'course_id' => Course::factory(),

@@ -7,7 +7,7 @@
                         <div class="col mr-4">
                             <div class="row">
                                 <div class="col-2">
-                                    <img src="{{ URL::to('img/no-image.jpg') }}" class="img-fluid" alt="">
+                                    <img src="{{ URL::to('term/' . $term->image) }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="col ml-3 align-middle">
                                         <h6 class="text-secondary fs-5">

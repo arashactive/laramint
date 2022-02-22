@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class FileFactory extends Factory
 {
@@ -14,10 +15,11 @@ class FileFactory extends Factory
      */
     public function definition()
     {
+        Storage::fake('avatars');
 
         return [
             'description' => $this->faker->sentence(),
-            'file' =>  $this->faker->image(public_path('/files'),640,480, null, false),
+            'file' =>  UploadedFile::fake()->image('avatar.jpg'),
             'file_size' => $this->faker->numberBetween(1200, 2800),
             'file_type' => 'img'
         ];

@@ -7,7 +7,11 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">
                                 <i class="{{ $activity->faIcon }}"></i>
-                                <span class="pl-4">{{  $activity->title }}</span>
+                                <span class="pl-4">
+                                    
+                                    {{  $activity->title }}
+                                
+                                </span>
                             </div>
                             
                         </div>

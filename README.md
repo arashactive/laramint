@@ -9,7 +9,7 @@
 **What is Laramint?**
 We are active as an open source platform and provide a perfect place for everyone who is interested in education. Our main purpose is to combine gamification with learning to make it a unique experience for learners all over the world. Also, we prepare a valuable field for onboarding and its related features which is a great opportunity for companies to take part.
 
-*NB: our platform is under the development process and will be completed ASAP.*
+## NB: our platform is under the development process and will be completed ASAP.*
 
 
 website: [Laramint.com](https://laramint.com)
@@ -34,9 +34,9 @@ Install all the dependencies using composer
 
     composer install
 
-Copy the example env file and make the required configuration changes in the .env file
+make the required configuration changes in the .env file
 
-    cp .env.example .env
+    .env
 
 Generate a new application key
 
