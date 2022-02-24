@@ -10,4 +10,10 @@ class File extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+
+    public function Documents()
+    {
+        return $this->belongsToMany(Document::class);
+    }
 }

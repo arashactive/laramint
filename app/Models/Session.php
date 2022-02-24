@@ -43,4 +43,9 @@ class Session extends Model
         return $this->morphedByMany(Rubric::class, 'sessionable')->withTimestamps();
     }
 
+    public function Terms()
+    {
+        return $this->belongsToMany(Term::class);
+    }
+
 }

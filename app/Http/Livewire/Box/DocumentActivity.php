@@ -17,7 +17,7 @@ class DocumentActivity extends Component
     
     public function render()
     {
-        $documents =  Document::paginate(20);
+        $documents =  Document::paginate();
         return view('livewire.box.document-activity' , compact([
             'documents'
         ]));

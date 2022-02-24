@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\File;
 use App\Models\Term;
+use App\Policies\filePolicy;
 use App\Policies\TermPolicy;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -17,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
          Term::class => TermPolicy::class,
+         File::class => filePolicy::class
     ];
 
     /**

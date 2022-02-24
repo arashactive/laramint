@@ -10,6 +10,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{ URL::to('js/sb-admin-2.min.js') }}"></script>
+<script src="{{ URL::to('js/custom.js') }}"></script>
 
 <script src="{{ URL::to('vendor/jQuery-TE/jquery-te-1.4.0.min.js') }}"></script>
 

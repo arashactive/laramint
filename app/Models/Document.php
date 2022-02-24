@@ -32,6 +32,6 @@ class Document extends Model
      */
     public function Sessions()
     {        
-        return $this->morphToMany(Session::class, 'activitable');
+        return $this->morphTo(Session::class);
     }
 }

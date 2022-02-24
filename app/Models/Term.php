@@ -61,4 +61,8 @@ class Term extends Model
     {
         return $this->belongsToMany(Session::class)->withPivot(["id", "order"])->orderBy('order');
     }
+
+    public function Files(){
+        
+    }
 }
