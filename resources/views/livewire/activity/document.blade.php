@@ -6,7 +6,7 @@
                     
             <div class="col-2 ">
                 <div class="process-step-cont">
-                <button wire:click="showFile" class="process-step step-{{ $loop->iteration }}"></button >
+                <button wire:click="showFile('{{ $file->id }}')" class="process-step step-{{ $loop->iteration }}"></button >
                 <span class="process-label">file {{ $loop->iteration }}</span>
                 </div>
             </div>
