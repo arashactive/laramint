@@ -13,7 +13,7 @@ class Document extends Component
 
     public function showFile(){
         
-        return view('livewire.activity.test');
+       
     }
 
     public function render()
