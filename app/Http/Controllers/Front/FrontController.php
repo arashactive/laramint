@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 class FrontController extends Controller
 {
     public function index(){
-        return view('contents.front.index.welcome');
+        return redirect(route('login'));
+        //return view('contents.front.index.welcome');
     }
 }
