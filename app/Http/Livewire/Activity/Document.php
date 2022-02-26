@@ -11,13 +11,18 @@ class Document extends Component
 
     public $activity;
     public $term;
-    
+
     /*
     * $fileRender is an html code to show students.
     */
     public $fileRender = '';
 
-    
+    public function mount()
+    {
+        if (!empty($this->activity->Files->first()))
+            $this->showFile($this->activity->Files->first());
+    }
+
     public function showFile(File $file)
     {
         $this->fileRender = FileFactory::Build($file)->makeRenderFile();
