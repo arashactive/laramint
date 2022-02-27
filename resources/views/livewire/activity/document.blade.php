@@ -4,10 +4,10 @@
                 
             @forelse ($activity->Files as $file)
                     
-            <div class="col-2 ">
+            <div class="col-1 ">
                 <div class="process-step-cont">
                 <button wire:click="showFile('{{ $file->id }}')" class="process-step  step-{{ $loop->iteration }}"></button >
-                <span class="process-label">file {{ $loop->iteration }}</span>
+                <span class="process-label">F {{ $loop->iteration }}</span>
                 </div>
             </div>
             

@@ -4,10 +4,10 @@
                 
             @forelse ($activity->Questions as $question)
                     
-            <div class="col-2 ">
+            <div class="col-1 ">
                 <div class="process-step-cont">
                 <button wire:click="showQuestion('{{ $question->id }}')" class="process-step"></button >
-                <span class="process-label">Question {{ $loop->iteration }}</span>
+                <span class="process-label">Q {{ $loop->iteration }}</span>
                 </div>
             </div>
             
