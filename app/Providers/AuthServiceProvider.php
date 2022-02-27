@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Feedback;
 use App\Models\File;
 use App\Models\Term;
+use App\Policies\FeedbackPolicy;
 use App\Policies\filePolicy;
 use App\Policies\TermPolicy;
 
@@ -19,7 +21,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
          Term::class => TermPolicy::class,
-         File::class => filePolicy::class
+         File::class => filePolicy::class,
+         Feedback::class => FeedbackPolicy::class
     ];
 
     /**

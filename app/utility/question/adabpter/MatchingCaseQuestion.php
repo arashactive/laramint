@@ -15,5 +15,7 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
         return parent::render(self::$className , 'create');
     }
 
-   
+    public static function createViewAsLearner(){
+        
+    }
 }

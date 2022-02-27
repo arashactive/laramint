@@ -161,10 +161,11 @@ class FeedbackController extends Controller
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */
-    public function deleteQuestionAsQuiz(FeedbackQuestion $feedbackQuestion)
+    public function deleteQuestionAsFeedback(FeedbackQuestion $feedbackQuestion)
     {
         $this->authorize('feedback.delete');
         $feedbackQuestion->delete();
         return redirect()->back();
     }
+
 }

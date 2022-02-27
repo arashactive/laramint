@@ -14,6 +14,8 @@ class UploadFileQuestion extends QuestionParent implements QuestionAdabpterInter
     {
         return parent::render(self::$className , 'create');
     }
-
+    public static function createViewAsLearner(){
+        
+    }
    
 }

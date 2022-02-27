@@ -15,5 +15,9 @@ class EssayQuestion extends QuestionParent implements QuestionAdabpterInterface
         return parent::render(self::$className , 'create');
     }
 
+    public static function createViewAsLearner(){
+        
+    }
+
    
 }

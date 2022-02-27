@@ -59,10 +59,6 @@
                         </div>
 
 
-                        <div id="completed" class="tab-pane fade">
-                          
-                           
-                        </div>
 
                     </div>
                 

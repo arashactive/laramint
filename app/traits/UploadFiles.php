@@ -13,7 +13,7 @@ trait UploadFiles
      */
     public function upload($file, $file_type)
     {
-        $path = $file->store($file_type);
+        $path = $file->store('storage/'. $file_type);
 
         return $path;
     }

@@ -19,12 +19,14 @@ class Render extends Component
         
         if($this->question){
             $this->questionTypeId = $this->question->question_type_id;
+            
             $this->getComponent($this->questionTypeId);
         }
     }
 
 
     private function getComponent($questionTypeId){
+        
         $this->component = (string)QuestionFactory::build($questionTypeId)->getCreateUpdateForm();
     }
 

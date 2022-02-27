@@ -15,5 +15,7 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
         return parent::render(self::$className , 'create');
     }
 
-   
+    public static function createViewAsLearner(){
+        
+    }
 }

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Document;
 use App\Models\File;
 use App\Models\Term;
-use Illuminate\Support\Facades\Gate;
 
 class documentLearnerController extends Controller
 {

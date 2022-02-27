@@ -15,5 +15,7 @@ class ShortAnswerQuestion extends QuestionParent implements QuestionAdabpterInte
         return parent::render(self::$className , 'create');
     }
 
-   
+    public static function createViewAsLearner(){
+        
+    }
 }

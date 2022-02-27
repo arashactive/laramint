@@ -22,11 +22,11 @@ abstract class QuestionParent
         return "factory.question.{$questionType}.{$file}";
     }
 
-
+  
     public function store($id = [], $attributes)
     {
         if (!empty($this->quiz)) {
-            $this->quiz->Questions()->create($attributes , ['order' => $this->quiz->Questions()->max('order') + 1]);
+            $this->quiz->Questions()->create($attributes, ['order' => $this->quiz->Questions()->max('order') + 1]);
         } else {
             return Question::updateOrCreate($id, $attributes);
         }

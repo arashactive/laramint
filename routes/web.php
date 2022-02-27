@@ -63,6 +63,8 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
     Route::get('my/course/{term}', [MyCourseController::class, 'learn'])->name('learningCourse');
+
+
 });
 
 

@@ -14,6 +14,8 @@ class TrueFalseQuestion extends QuestionParent implements QuestionAdabpterInterf
     {
         return parent::render(self::$className , 'create');
     }
-
+    public static function createViewAsLearner(){
+        
+    }
    
 }
