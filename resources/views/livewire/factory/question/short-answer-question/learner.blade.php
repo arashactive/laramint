@@ -10,14 +10,10 @@
                 {{ $question->question_body }}
             </p>
 
+
             @forelse($answer->answers as $index => $answer)
-                <div id="question-{{ $question->id }}" class="p2">
-                <div class="form-check">
-                    <input name="answer-{{ $question->id }}" class="form-check-input" type="radio" id="reviewAnswerTest{{ $question->id. $index }}">
-                    <label class="form-check-label" for="reviewAnswerTest{{$question->id. $index }}">
-                        {{ $answer }}
-                    </label>
-                </div>
+                <div class=" p-2">
+                    <input type="text" class="form-control" id="answer-{{ $question->id }}">                
                 </div>
             @empty 
             @endforelse

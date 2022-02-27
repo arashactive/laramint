@@ -13,8 +13,8 @@
             @forelse($answer->answers as $index => $answer)
                 <div id="question-{{ $question->id }}" class="p2">
                 <div class="form-check">
-                    <input name="answer-{{ $question->id }}" class="form-check-input" type="radio" id="reviewAnswerTest{{ $question->id. $index }}">
-                    <label class="form-check-label" for="reviewAnswerTest{{$question->id. $index }}">
+                    <input name="answer-{{ $question->id }}" class="form-check-input" type="radio" id="reviewAnswerTF{{ $question->id.$index }}">
+                    <label class="form-check-label" for="reviewAnswerTF{{ $question->id. $index }}">
                         {{ $answer }}
                     </label>
                 </div>
