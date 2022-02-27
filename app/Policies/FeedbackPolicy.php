@@ -18,7 +18,7 @@ class FeedbackPolicy
      * @param  \App\Models\Term  $term
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function feedbackViewForLearner(User $user, Feedback $feedback, Term $term): bool
+    public function feedbackViewForLearner(User $user, Feedback $feedback, Term $term)
     {
         
         if ($term->Participants()->where('user_id', $user->id)->count() == 0) {
