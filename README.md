@@ -13,6 +13,7 @@ We are active as an open source platform and provide a perfect place for everyon
 
 
 website: [Laramint.com](https://laramint.com)
+Demo   : [demo.Laramint.com](http://demo.laramint.com)
 
   
 # Getting started
