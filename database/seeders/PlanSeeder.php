@@ -14,21 +14,21 @@ class PlanSeeder extends Seeder
      */
     public function run()
     {
-        $supervisor = \App\Models\Plan::factory()->create([
+        \App\Models\Plan::factory()->create([
             'title' => '1 month',
             'validDaysForUse' => '31',
             'price' => '25',
             'discount' => '0'
         ]);
 
-        $supervisor = \App\Models\Plan::factory()->create([
+        \App\Models\Plan::factory()->create([
             'title' => '3 month',
             'validDaysForUse' => '90',
             'price' => '68',
             'discount' => '0'
         ]);
 
-        $supervisor = \App\Models\Plan::factory()->create([
+        \App\Models\Plan::factory()->create([
             'title' => '6 month',
             'validDaysForUse' => '180',
             'price' => '135',
@@ -36,7 +36,7 @@ class PlanSeeder extends Seeder
         ]);
 
 
-        $supervisor = \App\Models\Plan::factory()->create([
+        \App\Models\Plan::factory()->create([
             'title' => '1 year',
             'validDaysForUse' => '360',
             'price' => '280',

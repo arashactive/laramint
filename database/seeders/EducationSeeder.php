@@ -26,9 +26,10 @@ class EducationSeeder extends Seeder
      */
     public function run()
     {
-        Department::factory()->count(1)->create();
-        Course::factory()->count(1)->create();
-        Term::factory()->count(2)->create();
+        // Department::factory()->count(1)->create();
+        // Course::factory()->count(1)->create();
+        
+        //Term::factory()->count(2)->create();
 
         // make factory for documents and files
         Document::factory()->count(5)->create();
