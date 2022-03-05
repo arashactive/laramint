@@ -7,10 +7,10 @@
     <div class="container px-lg-5">
         <div class="row g-5 align-items-end">
             <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="text-white mb-4 animated slideInDown">A Digital Agency Of Inteligents & Creative People</h1>
-                <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
+                <h1 class="text-white mb-4 animated slideInDown">The free, fun, and effective way to learn English language!</h1>
+                <p class="text-white pb-3 animated slideInDown">Learning with Laramint is fun, and research shows that it works! With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world communication skills.</p>
                 <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                <a href="{{ route('front.courses') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Courses</a>
             </div>
             <div class="col-lg-6 text-center text-lg-start">
                 <img class="img-fluid animated zoomIn" src="front/img/hero.png" alt="">
@@ -19,35 +19,20 @@
     </div>
 </div>
 
-<!-- Feature Start -->
-<div class="container-xxl py-5">
-    <div class="container py-5 px-lg-5">
-        <div class="row g-4">
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="feature-item bg-light rounded text-center p-4">
-                    <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                    <h5 class="mb-3">Digital Marketing</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="feature-item bg-light rounded text-center p-4">
-                    <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                    <h5 class="mb-3">SEO & Backlinks</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="feature-item bg-light rounded text-center p-4">
-                    <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                    <h5 class="mb-3">Design & Development</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Feature End -->
+ <!-- Department Start -->
+ @if(count($departments) > 1)
+ <div class="container-xxl py-5">
+     <div class="container py-5 px-lg-5">
+         <div class="row g-4">
+             @forelse ($departments as $department)
+                 <x-front.department :department="$department"/>
+             @empty
+             @endforelse
+         </div>
+     </div>
+ </div>
+ @endif
+ <!-- Department End -->
 
 
 <!-- About Start -->
@@ -55,12 +40,12 @@
     <div class="container py-5 px-lg-5">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title text-secondary">About Us<span></span></p>
-                <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1>
-                <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore erat amet</p>
+                <p class="section-title text-secondary">laramint<span></span></p>
+                <h1 class="mb-5">What's laramint</h1>
+                
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">Digital Marketing</p>
+                        <p class="mb-2">Thousands of video examples of language used in real life</p>
                         <p class="mb-2">85%</p>
                     </div>
                     <div class="progress">
@@ -69,7 +54,7 @@
                 </div>
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">SEO & Backlinks</p>
+                        <p class="mb-2">Immersive learning that makes you feel like you're right there with the locals</p>
                         <p class="mb-2">90%</p>
                     </div>
                     <div class="progress">
@@ -78,7 +63,7 @@
                 </div>
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">Design & Development</p>
+                        <p class="mb-2">Gamified tests that train your language skills</p>
                         <p class="mb-2">95%</p>
                     </div>
                     <div class="progress">
@@ -130,70 +115,51 @@
 <div class="container-xxl py-5">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
-            <p class="section-title text-secondary justify-content-center"><span></span>Our Services<span></span></p>
-            <h1 class="text-center mb-5">What Solutions We Provide</h1>
+            <p class="section-title text-secondary justify-content-center"><span></span>Why Laramint<span></span></p>
+            <h1 class="text-center mb-5">Why you’ll love learning with Laramint</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
                         <i class="fa fa-search fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">SEO Optimization</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                    <h5 class="mb-3">Effective and efficient</h5>
+                    <p class="m-0">Our courses effectively and efficiently teach reading, listening, and speaking skills. Check out our latest research!</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
                         <i class="fa fa-laptop-code fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">Web Design</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                    <h5 class="mb-3">Personalized learning</h5>
+                    <p class="m-0">Combining the best of AI and language science, lessons are tailored to help you learn at just the right level and pace.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
                         <i class="fab fa-facebook-f fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">Social Media Marketing</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                    <h5 class="mb-3">Stay motivated</h5>
+                    <p class="m-0">We make it easy to form a habit of language learning, with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
                         <i class="fa fa-mail-bulk fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">Email Marketing</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                    <h5 class="mb-3">Have fun with it!</h5>
+                    <p class="m-0">Effective learning doesn’t have to be boring! Build your skills each day with engaging exercises and playful characters.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item d-flex flex-column text-center rounded">
-                    <div class="service-icon flex-shrink-0">
-                        <i class="fa fa-thumbs-up fa-2x"></i>
-                    </div>
-                    <h5 class="mb-3">PPC Advertising</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item d-flex flex-column text-center rounded">
-                    <div class="service-icon flex-shrink-0">
-                        <i class="fab fa-android fa-2x"></i>
-                    </div>
-                    <h5 class="mb-3">App Development</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -223,109 +189,35 @@
 <div class="container-xxl py-5">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
-            <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span></p>
-            <h1 class="text-center mb-5">Recently Completed Projects</h1>
+            <p class="section-title text-secondary justify-content-center"><span></span>Explorer<span></span></p>
+            <h1 class="text-center mb-5">Recently Completed Course</h1>
         </div>
         <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
             <div class="col-12 text-center">
                 <ul class="list-inline mb-5" id="portfolio-flters">
                     <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".first">Web Design</li>
-                    <li class="mx-2" data-filter=".second">Graphic Design</li>
+                    @forelse ($departments as $department)
+                        <li class="mx-2" data-filter=".department-{{ $department->id }}">{{ $department->title }}</li>
+                    @empty
+                    @endforelse
                 </ul>
             </div>
         </div>
-        <div class="row g-4 portfolio-container">
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                <div class="rounded overflow-hidden">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="front/img/portfolio-1.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="front/img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+        <div class="row g-3 portfolio-container">
+            <!-- course Start -->
+                @if(count($courses) > 1)
+                <div class="container-xxl py-5">
+                    <div class="container py-5 px-lg-5">
+                        <div class="row g-4">
+                            @forelse ($courses as $course)
+                                <x-front.course :course="$course"/>
+                            @empty
+                            @endforelse
                         </div>
                     </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                <div class="rounded overflow-hidden">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="front/img/portfolio-2.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="front/img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                <div class="rounded overflow-hidden">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="front/img/portfolio-3.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="front/img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                <div class="rounded overflow-hidden">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="front/img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="front/img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                <div class="rounded overflow-hidden">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="front/img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="front/img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                <div class="rounded overflow-hidden">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="front/img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="front/img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
+                @endif
+            <!-- course End -->
         </div>
     </div>
 </div>
@@ -387,7 +279,7 @@
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/team-1.jpg" alt="">
                         <h5>John Doe</h5>
-                        <span>CEO & Founder</span>
+                        <span>Adults Supervisor</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
                         <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -402,7 +294,7 @@
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/team-2.jpg" alt="">
                         <h5>Jessica Brown</h5>
-                        <span>Web Designer</span>
+                        <span>Kids Supervisior</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
                         <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -417,7 +309,7 @@
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/team-3.jpg" alt="">
                         <h5>Tony Johnson</h5>
-                        <span>SEO Expert</span>
+                        <span>Ielts Trainer</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
                         <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>

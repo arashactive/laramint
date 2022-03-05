@@ -4,9 +4,9 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, Lisbon, Portugal</p>
+                <p><i class="fa fa-phone-alt me-3"></i>+98 935 478 2299</p>
+                <p><i class="fa fa-envelope me-3"></i>arash.aspx@gmail.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
