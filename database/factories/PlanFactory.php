@@ -17,7 +17,11 @@ class PlanFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->unique()->name,
+            'description' =>  $this->faker->sentence(),
+            'validDaysForUse' => $this->faker->numberBetween(30, 360),
+            'price' => $this->faker->numberBetween(30, 360),
+            'discount' => $this->faker->numberBetween(0, 5)
         ];
     }
 }

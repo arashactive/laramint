@@ -19,6 +19,7 @@ use App\Http\Controllers\learn\rubricLearnerController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\Panel\MyCourseController;
 use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
@@ -88,6 +89,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('question', QuestionController::class);
     Route::resource('rubric', RubricController::class);
     Route::resource('feedback', FeedbackController::class);
+    Route::resource('plan', PlanController::class);
 
 
 

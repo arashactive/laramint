@@ -22,7 +22,7 @@ class PermissionsSeeder extends Seeder
         $models = [
             'department', 'course', 'session', 'term', 'file',
             'document', 'quiz', 'question', 'rubric', 'feedback',
-            'participant', 'myCourse'
+            'participant', 'myCourse', 'plan'
         ];
 
         foreach ($models as $model) {

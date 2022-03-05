@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlanRequest;
 use App\Models\Plan;
-use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,9 @@ class PlanController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('plan.index');
+        $plans = Plan::paginate();
+        return view("contents.admin.plan.index", compact("plans"));
     }
 
     /**
@@ -24,27 +27,32 @@ class PlanController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('plan.create');
+        return view('contents.admin.plan.form');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\planRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlanRequest $request)
     {
-        //
+        $this->authorize('plan.create');
+        Plan::create($request->all());
+        return redirect()
+            ->route("plan.index")
+            ->with('success' , __('item created successfully'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Plan  $plan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Plan $plan)
+    public function show($id)
     {
         //
     }
@@ -52,34 +60,47 @@ class PlanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Plan  $plan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Plan $plan)
     {
-        //
+        $this->authorize('plan.edit');        
+        return view('contents.admin.plan.form' , compact(
+            "plan"
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Plan  $plan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Plan $plan)
+    public function update(PlanRequest $request, Plan $plan)
     {
-        //
+        $this->authorize('plan.edit');
+        $plan->update($request->all());
+        return redirect()
+                ->route("plan.index")
+                ->with('warning' , __('item updated successfully'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Plan  $plan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Plan $plan)
     {
-        //
+        $this->authorize('plan.delete');
+        $plan->delete();
+        return redirect()
+                ->route("plan.index")
+                ->with('danger' , __('item deleted successfully'));
     }
+
+
 }
