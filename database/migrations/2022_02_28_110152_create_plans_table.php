@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->smallInteger('validDaysForUse')->default(0);
             $table->smallInteger('price');
-            $table->smallInteger('discount')->nullable();
+            $table->smallInteger('discount')->default();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             PermissionsSeeder::class,
             QuestionType::class,
             EducationSeeder::class,
-            ParticipantSeeder::class
+            ParticipantSeeder::class,
+            PlanSeeder::class
         ]);
     }
 }

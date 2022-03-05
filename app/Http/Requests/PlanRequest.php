@@ -28,7 +28,7 @@ class PlanRequest extends FormRequest
             'description' => 'required',
             'validDaysForUse' => 'required|int',
             'price' => 'required|int',
-            'discount' => 'nullable|numeric|min:1|max:100'
+            'discount' => 'nullable|numeric|min:0|max:100'
             
         ];
     }
