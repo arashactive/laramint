@@ -15,11 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PermissionsSeeder::class,
-            QuestionType::class,
+            
             DepartmentSeed::class,
             CourseSeed::class,
             TermSeed::class,
-            EducationSeeder::class,
+            SessionSeed::class,
+            RubricSeed::class,
+            
+            DocumentSeed::class,
+
+            QuestionType::class,
+            // EducationSeeder::class,
             ParticipantSeeder::class,
             PlanSeeder::class
         ]);
