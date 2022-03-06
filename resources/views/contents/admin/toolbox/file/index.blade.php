@@ -25,7 +25,7 @@
                     <thead>
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ __("description") }}</th>
+                        <th scope="col">{{ __("title") }}</th>
                         <th scope="col">{{ __("Type") }}</th>
                         <th scope="col">{{ __("size") }}</th>
                         @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['file.edit' , 'file.delete']))
@@ -38,7 +38,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>
-                                    {{ $file->description }} 
+                                    {{ $file->title }} 
                                 </td>
                                 <td>
                                     {{ $file->file_type }} 

@@ -9,6 +9,11 @@ class File extends Model
 {
     use HasFactory;
 
+
+    public $color = 'danger';
+    public $faIcon = 'fa fa-file';
+    public $route = 'fileLearner';
+
     protected $guarded = [];
 
 

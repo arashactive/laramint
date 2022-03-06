@@ -106,4 +106,6 @@ class FileController extends Controller
             ->route("file.index")
             ->with('danger', __('item deleted successfully'));
     }
+
+
 }

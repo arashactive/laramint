@@ -24,6 +24,7 @@ class FileRequest extends FormRequest
     public function rules()
     {
         $rules =  [
+            'title' => 'required',
             'file' => 'required',
         ];
 

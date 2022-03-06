@@ -28,22 +28,20 @@
                     @csrf
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input name="description" type="text" class="form-control form-control-user" id="description"
-                                placeholder="description" value="{{ $file->description ?? '' }}">
-                            @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                    {{ $message }}
-                                </span>
-                            @enderror    
+                            <input name="title" type="text" class="form-control form-control-user" id="title"
+                                placeholder="title" value="{{ $file->title ?? '' }}">
+                           
                         </div>
                         <div class="col-sm-6">
                             <input name="file" type="file" class="form-control form-control-user" id="file"
                                 placeholder="file" value="{{ $file->file ?? '' }}">
-                            @error('file')
-                                <span class="invalid-feedback" role="alert">
-                                    {{ $message }}
-                                </span>
-                            @enderror
+                           
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12 mb-3 mb-sm-0">
+                            <input name="description" type="text" class="form-control form-control-user" id="description"
+                                placeholder="description" value="{{ $file->description ?? '' }}">
                         </div>
                     </div>
                     

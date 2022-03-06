@@ -58,14 +58,12 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
     Route::get('/rubric/{term}/{activity}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
     Route::get('/quiz/{term}/{activity}', [quizLearnerController::class, 'show'])->name('quizLearner');
     Route::get('/document/{term}/{activity}', [documentLearnerController::class, 'show'])->name('documentLearner');
-    
+
     Route::get('/file/{term}/{activity}', [documentLearnerController::class, 'file'])->name('fileLearner');
 
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
     Route::get('my/course/{term}', [MyCourseController::class, 'learn'])->name('learningCourse');
-
-
 });
 
 
@@ -100,9 +98,13 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::get('/document/file/add/{document}/{file}', [DocumentController::class, 'addFileToDocument'])->name("addFileToDocument");
     Route::get('/document/file/delete/{documentFile}', [DocumentController::class, 'deleteFileAsDocument'])->name("deleteFileDocument");
     Route::get('/session/document/{session}/{active_id}', [SessionController::class, 'addDocumentToSession'])->name("addDocumentToSession");
+    Route::get('/session/file/{session}/{active_id}', [SessionController::class, 'addFileToSession'])->name("addFileToSession");
     Route::get('/session/order/{from}/{move}', [SessionController::class, 'changeOrderSessionable'])->name("changeOrderSessionable");
     Route::get('/session/quiz/{session}/{active_id}', [SessionController::class, 'addQuizToSession'])->name("addQuizToSession");
     Route::get('/session/delete/{session_id}', [SessionController::class, 'deleteActivityAsSession'])->name("deleteActivityAsSession");
+
+
+    
 
     // rubric add to session
     Route::get('/session/rubric/{session}/{active_id}', [SessionController::class, 'addRubricToSession'])->name("addRubricToSession");

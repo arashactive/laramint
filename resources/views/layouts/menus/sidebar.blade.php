@@ -125,12 +125,12 @@
         {{ __('Financial') }}
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Financial"
             aria-expanded="true" aria-controls="ACLCollapse">
             <i class="fas fa-fw fa-credit-card"></i>
             <span>{{ __('Financial') }}</span>
         </a>
-        <div id="ACLCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="Financial" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('plan.index') }}">{{ __('Plan') }}</a>
                 

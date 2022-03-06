@@ -27,6 +27,11 @@ class Session extends Model
     {
         return $this->morphedByMany(Document::class, 'sessionable')->withTimestamps();
     }
+    
+    public function Files()
+    {
+        return $this->morphedByMany(File::class, 'sessionable')->withTimestamps();
+    }
 
     public function Quizes()
     {

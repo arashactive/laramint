@@ -154,6 +154,18 @@ class SessionController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Attach File To Session
+     *
+     * @param  Session  $session
+     * @param  id  $active_id
+     * @return \Illuminate\Http\Response redirect
+     */
+    public function addFileToSession(Session $session, $active_id)
+    {
+        $this->addActivityTosessio($session->Files(), $active_id, $session);
+        return redirect()->back();
+    }
 
     /**
      * Attach Document To Session
@@ -221,5 +233,4 @@ class SessionController extends Controller
         Sessionable::findorfail($session_id)->delete();
         return redirect()->back()->with('danger', 'activity is deleted');
     }
-
 }
