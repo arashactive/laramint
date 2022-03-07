@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Quiz;
 use Illuminate\Database\Seeder;
 
 class QuestionSeed extends Seeder
@@ -14,7 +15,7 @@ class QuestionSeed extends Seeder
     public function run()
     {
 
-        $question = \App\Models\Question::factory()->create([
+        $question1 = \App\Models\Question::factory()->create([
             'title' => 'Question #1',
             'question_body' => 'Would you mind ______ the window?',
             'question_type_id' => '1',
@@ -30,7 +31,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question2 = \App\Models\Question::factory()->create([
             'title' => 'Question #2',
             'question_body' => 'I come ______ England',
             'question_type_id' => '1',
@@ -46,7 +47,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question3 = \App\Models\Question::factory()->create([
             'title' => 'Question #3',
             'question_body' => 'Can you tell me when ______ ?',
             'question_type_id' => '1',
@@ -62,7 +63,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question4 = \App\Models\Question::factory()->create([
             'title' => 'Question #4',
             'question_body' => 'When Simon ______ back tonight, he\'ll cook dinner',
             'question_type_id' => '1',
@@ -79,7 +80,7 @@ class QuestionSeed extends Seeder
 
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question5 = \App\Models\Question::factory()->create([
             'title' => 'Question #5',
             'question_body' => 'We would never have had the accident if you ______ so fast.',
             'question_type_id' => '1',
@@ -95,7 +96,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question6 = \App\Models\Question::factory()->create([
             'title' => 'Question #6',
             'question_body' => '"Did you speak to Juliet?" "No, I\'ve ______ seen her."',
             'question_type_id' => '1',
@@ -111,7 +112,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question7 = \App\Models\Question::factory()->create([
             'title' => 'Question #7',
             'question_body' => '"Did you speak to Juliet?" "No, I\'ve ______ seen her."',
             'question_type_id' => '1',
@@ -127,7 +128,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question8 = \App\Models\Question::factory()->create([
             'title' => 'Question #8',
             'question_body' => 'If only I ______ richer.',
             'question_type_id' => '1',
@@ -144,7 +145,7 @@ class QuestionSeed extends Seeder
 
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question9 = \App\Models\Question::factory()->create([
             'title' => 'Question #9',
             'question_body' => 'The tree ______ by lightning.',
             'question_type_id' => '1',
@@ -160,7 +161,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question10 = \App\Models\Question::factory()->create([
             'title' => 'Question #10',
             'question_body' => 'A RIVER is bigger than a STREAM.',
             'question_type_id' => '2',
@@ -174,7 +175,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question11 = \App\Models\Question::factory()->create([
             'title' => 'Question #11',
             'question_body' => 'There are one thousand years in a CENTURY.',
             'question_type_id' => '2',
@@ -189,7 +190,7 @@ class QuestionSeed extends Seeder
 
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question12 = \App\Models\Question::factory()->create([
             'title' => 'Question #12',
             'question_body' => ' SCARLET is a brilliant red colour.',
             'question_type_id' => '2',
@@ -203,7 +204,7 @@ class QuestionSeed extends Seeder
         ]);
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question13 = \App\Models\Question::factory()->create([
             'title' => 'Question #13',
             'question_body' => 'Does Linda read books? ',
             'question_type_id' => '6',
@@ -217,7 +218,7 @@ class QuestionSeed extends Seeder
 
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question14 = \App\Models\Question::factory()->create([
             'title' => 'Question #14',
             'question_body' => 'Has she got a brother?',
             'question_type_id' => '6',
@@ -231,7 +232,7 @@ class QuestionSeed extends Seeder
 
 
 
-        $question = \App\Models\Question::factory()->create([
+        $question15 = \App\Models\Question::factory()->create([
             'title' => 'Question #15',
             'question_body' => 'Is this your pencil?',
             'question_type_id' => '6',
@@ -242,5 +243,18 @@ class QuestionSeed extends Seeder
                 "correctAnswer" => []
             ])
         ]);
+
+
+        $quizess = Quiz::all();
+
+        foreach ($quizess as $quiz) {
+            $number = rand(1, 12);
+            for ($counter = 1; $counter <= 3; $counter++) {
+                $quiz->Questions()->attach(
+                    ${'question' . $number++},
+                    ['order' => $quiz->Questions()->max('order') + 1]
+                );
+            }
+        }
     }
 }

@@ -15,19 +15,20 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PermissionsSeeder::class,
-            
+
             DepartmentSeed::class,
             CourseSeed::class,
             TermSeed::class,
             SessionSeed::class,
-            
+
             DocumentSeed::class,
             RubricSeed::class,
 
-            
             QuestionType::class,
-            
+
+            QuizSeed::class,
             QuestionSeed::class,
+            
             // EducationSeeder::class,
             ParticipantSeeder::class,
             PlanSeeder::class
