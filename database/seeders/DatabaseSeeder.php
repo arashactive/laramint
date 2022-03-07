@@ -20,11 +20,14 @@ class DatabaseSeeder extends Seeder
             CourseSeed::class,
             TermSeed::class,
             SessionSeed::class,
-            RubricSeed::class,
             
             DocumentSeed::class,
+            RubricSeed::class,
 
+            
             QuestionType::class,
+            
+            QuestionSeed::class,
             // EducationSeeder::class,
             ParticipantSeeder::class,
             PlanSeeder::class
