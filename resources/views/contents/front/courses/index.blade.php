@@ -4,25 +4,6 @@
 @section("content")
 <div class="space"></div>
 
-{{-- <!-- Department Start -->
-@if(count($departments) > 1)
-<div class="container-xxl py-5">
-    <div class="container py-5 px-lg-5">
-        <div class="row g-4">
-            @forelse ($departments as $department)
-                <x-front.department :department="$department"/>
-            @empty
-            @endforelse
-        </div>
-    </div>
-</div>
-@endif
-<!-- Department End --> --}}
-
-
-
-
-
 
 <!-- Projects Start -->
 <div class="container-xxl py-5">

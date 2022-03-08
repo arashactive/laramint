@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Department;
-
+use App\Models\Plan;
 
 class CourseController extends Controller
 {
@@ -29,6 +29,14 @@ class CourseController extends Controller
         $course = Course::with('Terms')->findorfail($id);
         return view('contents.front.courses.course', compact([
             "course"
+        ]));
+    }
+
+
+    public function plans(){
+        $plans = Plan::all();
+        return view('contents.front.plans.index', compact([
+            "plans"
         ]));
     }
 }
