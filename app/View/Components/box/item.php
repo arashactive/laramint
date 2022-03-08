@@ -8,7 +8,7 @@ class Item extends Component
 {
 
     public $title;
-    public $color;
+    public $color = 'primary';
 
 
     /**

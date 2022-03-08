@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 class ParticipanetItem extends Component
 {
     public $title;
-    public $color;
+    public $color = 'primary';
 
 
     /**
