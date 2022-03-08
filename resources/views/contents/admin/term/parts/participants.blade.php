@@ -13,7 +13,7 @@
             <div class="card-body">
                
                 @forelse ($term->Participants as $participant)
-                    
+                
                 <x-box.item
                 :title="$participant->email">
                            
@@ -22,14 +22,14 @@
                 @endslot
                 
                 <small>
+                    
                     <button type="button" class="badge bg-primary position-relative">
-                        {{ $participant->name }}
-                        
+                        {{ $participant->name }}  
                     </button>
                     <button type="button" class="badge bg-info position-relative">
-                        {{ $participant->Role->name }}
+                        {{ $participant->Role()->name }}
                     </button>
-                   
+                    
                 </small>
                
                 </x-box.item>

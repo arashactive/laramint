@@ -43,9 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-
-    public function Role(){
-        return $this->hasOne(Role::class, 'id');
+    public function Role()
+    {
+        return Role::where('id', $this->getOriginal('pivot_role_id'))->first();
     }
 }

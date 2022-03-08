@@ -65,31 +65,98 @@ class PermissionsSeeder extends Seeder
         $role4->givePermissionTo('myCourse.index');
 
 
+
+        // create users
+        // participants
         // create demo users
+
+
+        // Super Admin
         $admin = \App\Models\User::factory()->create([
             'name' => 'Arash Dehghani',
             'email' => 'arash.aspx@gmail.com',
         ]);
         $admin->assignRole($role1);
 
+        /*
+        * SuperVisor Users
+        */
+
+        // SuperVisors Adults
         $supervisor = \App\Models\User::factory()->create([
             'name' => 'SuperVisor',
             'email' => 'supervisor@laramint.com',
         ]);
         $supervisor->assignRole($role2);
-        
 
+        // SuperVisors Kids
+        $supervisorKids = \App\Models\User::factory()->create([
+            'name' => 'SuperVisor Kids',
+            'email' => 'kids_supervisor@laramint.com',
+        ]);
+        $supervisorKids->assignRole($role2);
+
+        // SuperVisors Teenage
+        $supervisorTeenage = \App\Models\User::factory()->create([
+            'name' => 'SuperVisor Teenage',
+            'email' => 'teenage_supervisor@laramint.com',
+        ]);
+        $supervisorTeenage->assignRole($role2);
+
+
+        /*
+        * Mentors Users
+        */
+
+        // mentor adults
         $mentor = \App\Models\User::factory()->create([
             'name' => 'mentor',
             'email' => 'mentor@laramint.com',
         ]);
         $mentor->assignRole($role3);
 
-        
+        // mentor kids
+        $mentorKids = \App\Models\User::factory()->create([
+            'name' => 'mentor kids',
+            'email' => 'kids_mentor@laramint.com',
+        ]);
+        $mentorKids->assignRole($role3);
+
+        // mentor teenage
+        $mentorTeenage = \App\Models\User::factory()->create([
+            'name' => 'mentor teenage',
+            'email' => 'teenage_mentor@laramint.com',
+        ]);
+        $mentorTeenage->assignRole($role3);
+
+
+
+
+        /*
+        * students Users
+        */
+
+        // adult student
         $student = \App\Models\User::factory()->create([
             'name' => 'student',
             'email' => 'student@laramint.com',
         ]);
         $student->assignRole($role4);
+
+
+         // teenage student
+         $studentTeenage = \App\Models\User::factory()->create([
+            'name' => 'teenage',
+            'email' => 'teenage@laramint.com',
+        ]);
+        $studentTeenage->assignRole($role4);
+
+        
+         // kids student
+         $studentKids = \App\Models\User::factory()->create([
+            'name' => 'kids',
+            'email' => 'kids@laramint.com',
+        ]);
+        $studentKids->assignRole($role4);
     }
 }
