@@ -14,7 +14,7 @@
 
 <script src="{{ URL::to('vendor/jQuery-TE/jquery-te-1.4.0.min.js') }}"></script>
 
-
+@yield('js')
 <script>
     $(".editor").jqte();
-  </script>
+</script>

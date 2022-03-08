@@ -50,160 +50,33 @@
     </div>
 </div>
 
-
-@if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'session.edit']))
 <div class="row">
-
-    <div class="col-lg-6">
-        <div class="card shadow mb-4 border-bottom-success">
-            <!-- Card Header - Dropdown -->
-            <div
-                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-success">{{ __("RoadMap") }}</h6>
+    <div class="col-12">
+        <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#RoadMap">RoadMap</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Particpants">Particpants</a></li>
+        </ul>
+        
+        
+        
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="RoadMap">
+                @include('contents.admin.term.parts.roadmap')
             </div>
-            <!-- Card Body -->
-            <div class="card-body">
-               
-                @forelse ($term->Sessions as $session)
-                    
-                <x-box.session-item
-                :title="$session->title" :color="'success'">
-                
-                @if(!$loop->first)
-                @slot('up')
-                    {{ route('orderChangeSession' , ['from' => $session->pivot->id , 'move' => 'up' ]) }}
-                @endslot
-                @endif
-
-                @if(!$loop->last)
-                    @slot('down')
-                        {{ route('orderChangeSession' , ['from' => $session->pivot->id , 'move' => 'down' ]) }}
-                    @endslot
-                @endif
+            <div class="tab-pane" id="Particpants">
+                @include('contents.admin.term.parts.participants')
+            </div>
             
-                @slot('delete')
-                    {{ route('deleteSessionAsTerm' ,['term' => $term->id, 'session' => $session->id ]) }}
-                @endslot
-                
-                <small>
-                    <a href="{{ route('session.show', $session->id) }}" class="btn btn-success btn-sm">
-                        {{ __('count of activity: ') }} 
-                        <span class="badge badge-light">{{ $session->Sessionable->count() }}</span>
-                        <span class="sr-only">unread messages</span>
-                    </a>
-                 
-                </small>
-               
-                </x-box.item>
-
-                @empty
-                    
-                @endforelse
-               
-            </div>
         </div>
-    </div>
-    
-    <div class="col-lg-6">
-        
-        
-        <div class="card shadow mb-4 border-bottom-success">
-            <!-- Card Header - Dropdown -->
-            <div
-                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-success">{{ __("Sessions") }}</h6>
-                <div class="dropdown no-arrow">
-                    @can('session.create')
-                    <x-CreateButton path="{{ route('session.create') }}" />
-                    @endcan
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-                @livewire('container.session-panel', [
-                        'route' => 'addSessionToTerm',
-                        'parent' => $term->id
-                    ])
-                
-            </div>
-        </div>
-
     </div>
 </div>
-@endcan
 
 
-@if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['participant.edit' , 'participant.delete']))
-<div class="row">
 
-    <div class="col-lg-6">
-        <div class="card shadow mb-4 border-bottom-warning">
-            <!-- Card Header - Dropdown -->
-            <div
-                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-warning">{{ __("Participants") }}</h6>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-               
-                @forelse ($term->Participants as $participant)
-                    
-                <x-box.item
-                :title="$participant->email">
-                           
-                @slot('delete')
-                    {{ route('deleteParticipantAsTerm' ,['term' => $term, 'user' => $participant->id  ]) }}
-                @endslot
-                
-                <small>
-                    <button type="button" class="badge bg-primary position-relative">
-                        {{ $participant->name }}
-                        
-                    </button>
-                    <button type="button" class="badge bg-info position-relative">
-                        {{ $participant->Role->name }}
-                    </button>
-                   
-                </small>
-               
-                </x-box.item>
 
-                @empty
-                    
-                @endforelse
-               
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-lg-6">
-        
-        
-        <div class="card shadow mb-4 border-bottom-warning">
-            <!-- Card Header - Dropdown -->
-            <div
-                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-warning">{{ __("Participants") }}</h6>
-                @can('user.create')
-                    <x-CreateButton path="{{ route('user.create') }}" />
-                @endcan
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-                @livewire('container.participant', [
-                        'route' => 'addParticipantToTerm',
-                        'parent' => $term->id
-                    ])
-                
-            </div>
-        </div>
 
-    </div>
-</div>
-@endcan
 
 
 @endsection
-
 
 

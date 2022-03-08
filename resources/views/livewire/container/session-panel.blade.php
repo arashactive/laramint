@@ -4,7 +4,7 @@
             <input type="text" 
                 class="form-control form-control-user" 
                 wire:model="search"
-                placeholder="search name or email">
+                placeholder="search session">
         </div>
 
      
