@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="col-12 mb-2">
-            <div class="card border-left-{{ $color ?? 'primary' }} bg-light shadow">
+            <div class="card border-left-{{ $color }} bg-light shadow">
                 <div class="card-body p-2 text-left">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">

@@ -64,7 +64,7 @@
                 @include('contents.admin.term.parts.roadmap')
             </div>
             <div class="tab-pane" id="Particpants">
-                @include('contents.admin.term.parts.participants')
+                {{-- @include('contents.admin.term.parts.participants') --}}
             </div>
             
         </div>
