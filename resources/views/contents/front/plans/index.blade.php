@@ -31,12 +31,12 @@
                     </h5>
                     @if(Auth::check())
                     <a class="btn btn" href="">
-                        <i class="fa fa-arrow-right"></i> {{ __('Add') }}
+                        <i class="fa fa-arrow-right"></i> {{ __('Add ') }}
                     </a>
                    
                     @else
                     <a class="btn" href="{{ route('login') }}">
-                        <i class="fa fa-arrow-right"></i> {{ __('Login') }}
+                        <i class="fa fa-arrow-right"></i> {{ __('Login ') }}
                     </a>
                     @endif
                 </div>
