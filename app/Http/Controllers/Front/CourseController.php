@@ -33,10 +33,15 @@ class CourseController extends Controller
     }
 
 
-    public function plans(){
+    public function plans()
+    {
+
         $plans = Plan::all();
-        return view('contents.front.plans.index', compact([
-            "plans"
-        ]));
+        return view(
+            'contents.front.plans.index',
+            compact([
+                "plans"
+            ])
+        );
     }
 }

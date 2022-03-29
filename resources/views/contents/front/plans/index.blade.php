@@ -29,7 +29,16 @@
                         <span class="text-danger text-sm">- ({{ $plan->discount }}%)</span>
                     @endif
                     </h5>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                    @if(Auth::check())
+                    <a class="btn btn" href="">
+                        <i class="fa fa-arrow-right"></i> {{ __('Add') }}
+                    </a>
+                   
+                    @else
+                    <a class="btn" href="{{ route('login') }}">
+                        <i class="fa fa-arrow-right"></i> {{ __('Login') }}
+                    </a>
+                    @endif
                 </div>
             </div>
             @empty
