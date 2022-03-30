@@ -53,7 +53,6 @@ class FileManagerTest extends BaseTest
     public function test_create_form()
     {
         $this->signIn();
-        $this->setField('description');
         $this->create();
     }
 
@@ -65,7 +64,6 @@ class FileManagerTest extends BaseTest
     public function test_update_form()
     {
         $this->signIn();
-        $this->setField('description');
         $this->update();
     }
 

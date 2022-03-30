@@ -10,9 +10,9 @@ use App\Models\User;
 trait FeatureTestAuth
 {
 
-    protected $userHasPermission = 1;
+    protected $userHasPermission = 1; # user arash.aspx@gmail.com is super admin
 
-    protected $withOutPermission = 4;
+    protected $withOutPermission = 8; # user student@laramint.com is a student
 
     /**
      * signIn method.

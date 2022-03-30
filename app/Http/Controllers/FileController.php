@@ -53,6 +53,7 @@ class FileController extends Controller
     {
         $file = $request->file('file');
         return [
+            'title' => $request->title,
             'description' => $request->description,
             'file' => $this->upload($file, $file->extension()),
             'file_size' => $file->getSize(),
@@ -106,6 +107,4 @@ class FileController extends Controller
             ->route("file.index")
             ->with('danger', __('item deleted successfully'));
     }
-
-
 }

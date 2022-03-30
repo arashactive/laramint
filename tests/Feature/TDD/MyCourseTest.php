@@ -17,6 +17,18 @@ class MyCourseTest extends BaseTest
        
     }
 
+
+     /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function test_myCourse()
+    {
+        $response = $this->get(route('home'));
+
+        $response->assertStatus(200);
+    }
     
     
     

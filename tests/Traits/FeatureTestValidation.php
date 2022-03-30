@@ -65,7 +65,7 @@ trait FeatureTestValidation
     public function withOutAccessLevel($route = '')
     {
         $route = $this->base_route ? "{$this->base_route}.index" : $route;
-
+        
         $this->get(route($route))
             ->assertStatus(403);
     }

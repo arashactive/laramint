@@ -21,22 +21,7 @@ class sessionAddTermTest extends BaseTest
         $this->setBaseModel('App\Models\Session');
     }
 
-     /**
-     * A basic test to check components retun currect data
-     *
-     * @return void
-     */
-    public function test_container_sessions()
-    {
-        $this->withoutExceptionHandling();
-        $this->signIn();
-        $this->create([],  'session');
-        Livewire::test(SessionPanel::class, [
-            'parent' => Term::first()->id,
-            'route' => 'addSessionToTerm'
-        ])->assertSee(Session::first()->title);
-    }
-
+  
     /**
      * A basic test to check components retun currect data
      *

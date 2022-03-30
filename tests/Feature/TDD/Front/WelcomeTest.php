@@ -2,20 +2,27 @@
 
 namespace Tests\Feature\TDD\Front;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
+use Tests\BaseTest;
 
-class WelcomeTest extends TestCase
+class WelcomeTest extends BaseTest
 {
+
+
+    protected function setUp(): void
+    {
+
+        parent::setUp();
+        $this->seed();
+    }
+
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_example()
+    public function test_homePage_valid()
     {
-        $response = $this->get('/');
+        $response = $this->get(route('home'));
 
         $response->assertStatus(200);
     }

@@ -39,7 +39,7 @@ trait FeatureTestCrud
         $model = $this->base_model ?? $model;
 
         $attributes = !empty($attributes) ? $attributes : $model::factory()->make();
-
+        
         if (!auth()->user()) {
             $this->expectException(\Illuminate\Auth\AuthenticationException::class);
         }
