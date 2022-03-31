@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ParticipantAddToTerm;
 use App\Models\Participant;
 use App\Models\Term;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class ParticipantController extends Controller
 {
@@ -26,6 +28,8 @@ class ParticipantController extends Controller
             'user_id' => $user_id,
             'role_id' => $role_id,
         ]);
+
+        // Mail::to(User::findorfail(1))->queue(new ParticipantAddToTerm());
 
         return redirect(route('term.show', ['term' => $term_id]))
             ->with('success', __('successfull added'));

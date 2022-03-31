@@ -15,7 +15,7 @@
 
                                         <div class="mt-3">
                                             @forelse ($session->related as $activity)
-
+                                            
                                             <x-box.session-activity-item
                                             :term="$term"
                                             :activity="$activity->model"/>

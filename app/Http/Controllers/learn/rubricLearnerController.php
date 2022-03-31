@@ -10,7 +10,7 @@ class rubricLearnerController extends Controller
 {
     public function show(Term $term, Rubric $activity)
     {        
-        $this->authorize('view', $term);
+        $this->authorize('participantAccessToTerm', $term);
 
         return view('contents.learn.rubric.show', compact([
             'activity'

@@ -25,8 +25,8 @@ class MyCourseController extends Controller
 
     public function learn(Term $term)
     {
-        $term = $term->with('Sessions')->first();
-        
+        $this->authorize('participantAccessToTerm', [$term]);
+    
         return view('contents.learn.mycourses.show', compact([
             'term'
         ]));

@@ -23,6 +23,7 @@
                 <h6>{{ $term->Department->title }} | {{ $term->Course->title }}</h6>
 
                 @forelse ($term->Sessions as $session)
+                    
                     <x-box.session-item-for-student
                     :term="$term->id"
                     :session="$session" />

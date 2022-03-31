@@ -12,7 +12,7 @@ class documentLearnerController extends Controller
 
     public function show(Term $term, Document $activity)
     {
-        $this->authorize('view', $term);
+        $this->authorize('participantAccessToTerm', $term);
 
         return view('contents.learn.document.show', compact([
             'activity', 'term'
@@ -21,6 +21,6 @@ class documentLearnerController extends Controller
 
     public function file(Term $term, File $activity)
     {
-        $this->authorize('view', $term);
+        $this->authorize('participantAccessToTerm', $term);
     }
 }

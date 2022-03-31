@@ -18,9 +18,8 @@ class TermPolicy
      * @param  \App\Models\Term  $term
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Term $term)
+    public function participantAccessToTerm(User $user, Term $term)
     {
-        
         return $term->Participants()->where('user_id', $user->id)->count() > 0 ?: null;
     }
 }
