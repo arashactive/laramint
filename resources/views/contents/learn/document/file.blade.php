@@ -16,11 +16,7 @@
                 </div>
             </div>
             
-            @livewire('activity.document', [
-                'activity' => $activity,
-                'term' => $term
-                ]) 
-
+            {!! $file !!}
           
 
         </div>

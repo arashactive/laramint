@@ -12,6 +12,7 @@ class Document extends Component
     public $activity;
     public $term;
 
+
     /*
     * $fileRender is an html code to show students.
     */
@@ -21,6 +22,7 @@ class Document extends Component
     {
         if (!empty($this->activity->Files->first()))
             $this->showFile($this->activity->Files->first());
+
     }
 
     public function showFile(File $file)

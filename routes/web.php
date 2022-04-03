@@ -91,7 +91,6 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('plan', PlanController::class);
 
 
-
     // signle functions:
     Route::get('logs', [LogController::class, 'index'])->name('logs');
 

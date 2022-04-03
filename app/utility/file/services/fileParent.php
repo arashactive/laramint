@@ -16,7 +16,7 @@ abstract class fileParent
     {
         if (file_exists(Storage::missing('storage/public/' . $file)))
             return '';
-        return asset('storage/' . $file);
+        return asset($file);
     }
 
     public function makeRenderFile()
