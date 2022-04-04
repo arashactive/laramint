@@ -15,10 +15,10 @@ class rubricLearnerController extends Controller
     {
         $this->authorize('participantAccessToTerm', $term);
 
-        WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
 
         return view('contents.learn.rubric.show', compact([
-            'activity'
+            'activity', 'workout'
         ]));
     }
 }
