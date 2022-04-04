@@ -17,10 +17,10 @@ class documentLearnerController extends Controller
     public function show(Term $term, Document $activity, Session $session, Sessionable $sessionable)
     {
         $this->authorize('participantAccessToTerm', $term);
-        WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
 
         return view('contents.learn.document.show', compact([
-            'activity', 'term'
+            'activity', 'term', 'workout'
         ]));
     }
 
