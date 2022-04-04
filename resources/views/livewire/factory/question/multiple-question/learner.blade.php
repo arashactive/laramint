@@ -1,4 +1,4 @@
-<div class="col-12 text-left mt-4 p-4">
+<div class="col-12 text-left mt-4 p-4 question">
 
     <div class="card shadow p-2">
         <div class="card-header py-3">

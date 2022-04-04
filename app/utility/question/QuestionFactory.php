@@ -3,8 +3,6 @@
 namespace App\utility\question;
 
 use App\Models\Question;
-use App\utility\question\adabpter\TestQuestion;
-use Exception;
 use App\Models\questionType;
 
 class QuestionFactory

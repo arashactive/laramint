@@ -27,3 +27,7 @@
 
 
 @endsection
+
+@section('js')
+    <script src="{{ URL::to('/js/quiz.js') }}"></script>
+@endsection

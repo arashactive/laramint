@@ -11,6 +11,8 @@ class Quiz extends Component
     public $activity;
     public $term;
 
+    public $style;
+
     /*
     * $fileRender is an html code to show students.
     */
@@ -18,12 +20,20 @@ class Quiz extends Component
 
     public function mount()
     {
+
         if (empty($this->activity->Questions()))
             return null;
+
+        // $this->activity->show_question == 'StepByStep'
+
         foreach ($this->activity->Questions as $question) {
             $this->questionsRender .= $this->getQuestion($question);
         }
+
+        // onePage or questions
+        $this->style = $this->activity->show_question;
     }
+
 
     public function showQuestion(Question $question)
     {

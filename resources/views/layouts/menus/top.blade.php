@@ -188,10 +188,12 @@
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
+                                @hasrole('Super-Admin')
                                 <a class="dropdown-item" href="{{ route('logs') }}">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a>
+                                @endhasrole
                                 <div class="dropdown-divider"></div>
                                 
                                 <a class="dropdown-item" href="#" data-toggle="modal" 
