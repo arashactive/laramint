@@ -29,12 +29,12 @@ class documentLearnerController extends Controller
         $this->authorize('participantAccessToTerm', $term);
 
         // set a record for workout table
-        WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
 
         $file = FileFactory::Build($activity)->makeRenderFile();
 
         return view('contents.learn.document.file', compact([
-            'activity', 'term', 'file'
+            'activity', 'term', 'file', 'workout'
         ]));
     }
 }

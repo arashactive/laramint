@@ -9,20 +9,24 @@ use App\View\Components\front\term as FrontTerm;
 
 abstract class WorkoutService
 {
-    private static function checkExistWorkout($term_id, $session_id, $activity_id,$sessionable)
+    private static function checkExistWorkout($term_id, $session_id, $activity_id, $sessionable)
     {
-        return Workout::where('user_id', auth()->user()->id)
+        $workout = Workout::where('user_id', auth()->user()->id)
             ->where('term_id', $term_id)
             ->where('session_id', $session_id)
             ->where('activity_id', $activity_id)
             ->where('sessionable_id', $sessionable)
-            ->count() == 0 ? true : false;
+            ->first();
+
+        return empty($workout) ? [] : $workout;
     }
 
 
     public static function WorkOutSyncForThisExcersice(Term $term, Session $session, $activity_id, $sessionable)
     {
-        if (self::checkExistWorkout($term->id, $session->id, $activity_id, $sessionable)) {
+        $workout = self::checkExistWorkout($term->id, $session->id, $activity_id, $sessionable);
+
+        if (empty($workout)) {
             $workout = new Workout();
             $workout->user_id = auth()->user()->id;
             $workout->term_id = $term->id;
@@ -33,6 +37,9 @@ abstract class WorkoutService
             $workout->is_completed = 0;
             $workout->score = 0;
             $workout->save();
+            return $workout;
         }
+
+        return $workout;
     }
 }

@@ -13,12 +13,10 @@
                     {{ $activity->title }}
                 </h6>
 
-                <div class="dropdown no-arrow">
-                    <x-complete-and-next />
-                    
+                <div class="no-arrow">
+                    <x-complete-and-next :workout="$workout" /> 
                 </div>
-                <div class="dropdown no-arrow">
-                    
+                <div class="no-arrow">
                     <x-BackButton />
                 </div>
             </div>

@@ -6,14 +6,17 @@ use Illuminate\View\Component;
 
 class CompleteAndNext extends Component
 {
+
+    public $workout;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($workout)
     {
-        //
+        $this->workout = $workout;
     }
 
     /**
