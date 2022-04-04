@@ -28,13 +28,15 @@ return new class extends Migration
             $table->unsignedBigInteger('sessionable_id');
             $table->foreign('sessionable_id')->references('id')->on('sessionables');
 
+            $table->unsignedBigInteger('activity_id');
+
             $table->dateTime('date_first_view');
-            $table->dateTime('date_last_view');
+            $table->dateTime('date_last_view')->nullable();
 
             $table->boolean('is_completed')->default(false);
 
             $table->smallInteger('score')->default(0);
-            $table->dateTime('date_get_score');
+            $table->dateTime('date_get_score')->nullable();
 
 
 

@@ -8,17 +8,20 @@ class SessionActivityItem extends Component
 {
     public $activity;
     public $term;
+    public $session;
+    public $sessionable;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term, $activity)
+    public function __construct($term, $activity, $session, $sessionable)
     {
         $this->term = $term;
         $this->activity = $activity;
-        
+        $this->session = $session;
+        $this->sessionable = $sessionable;
     }
 
     /**

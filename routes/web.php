@@ -55,12 +55,12 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('learn')->middleware(['verified'])->group(function () {
-    Route::get('/feedback/{term}/{activity}', [feedbackLearnerController::class, 'show'])->name('feedbackLearner');
-    Route::get('/rubric/{term}/{activity}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
-    Route::get('/quiz/{term}/{activity}', [quizLearnerController::class, 'show'])->name('quizLearner');
-    Route::get('/document/{term}/{activity}', [documentLearnerController::class, 'show'])->name('documentLearner');
+    Route::get('/feedback/{term}/{activity}/{session}/{sessionable}', [feedbackLearnerController::class, 'show'])->name('feedbackLearner');
+    Route::get('/rubric/{term}/{activity}/{session}/{sessionable}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
+    Route::get('/quiz/{term}/{activity}/{session}/{sessionable}', [quizLearnerController::class, 'show'])->name('quizLearner');
+    Route::get('/document/{term}/{activity}/{session}/{sessionable}', [documentLearnerController::class, 'show'])->name('documentLearner');
 
-    Route::get('/file/{term}/{activity}', [documentLearnerController::class, 'file'])->name('fileLearner');
+    Route::get('/file/{term}/{activity}/{session}/{sessionable}', [documentLearnerController::class, 'file'])->name('fileLearner');
 
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');

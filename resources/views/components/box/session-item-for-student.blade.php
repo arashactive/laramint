@@ -18,7 +18,10 @@
                                             
                                             <x-box.session-activity-item
                                             :term="$term"
-                                            :activity="$activity->model"/>
+                                            :activity="$activity->model"
+                                            :session="$session"
+                                            :sessionable="$activity"
+                                            />
                                             @empty   
                                             @endforelse
                                         </div>
