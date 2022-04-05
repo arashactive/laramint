@@ -2,14 +2,17 @@
 
 namespace App\utility\workout;
 
+use App\Models\Quiz;
 use App\Models\Session;
 use App\Models\Term;
 use App\Models\Workout;
+use App\Models\WorkoutQuizLog;
 use App\View\Components\front\term as FrontTerm;
 
 abstract class WorkoutService
 {
-    private static function checkExistWorkout($term_id, $session_id, $activity_id, $sessionable)
+
+    public static function checkExistWorkout($term_id, $session_id, $activity_id, $sessionable)
     {
         $workout = Workout::where('user_id', auth()->user()->id)
             ->where('term_id', $term_id)
@@ -41,5 +44,22 @@ abstract class WorkoutService
         }
 
         return $workout;
+    }
+
+
+    public static function setWorkOutQuizSyncForThisExcersice(Workout $workout, Quiz $quiz)
+    {
+        if ($workout->WorkOutQuiz->count() > 0) {
+            return [];
+        }
+
+
+        foreach ($quiz->Questions as $question) {
+            WorkoutQuizLog::create([
+                'workout_id' => $workout->id,
+                'quiz_id' => $quiz->id,
+                'question_id' => $question->id
+            ]);
+        }
     }
 }

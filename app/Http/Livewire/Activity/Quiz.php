@@ -24,20 +24,17 @@ class Quiz extends Component
         if (empty($this->activity->Questions()))
             return null;
 
-        // $this->activity->show_question == 'StepByStep'
-
+        #
+        # $this->activity->show_question == 'StepByStep'
+        #
         foreach ($this->activity->Questions as $question) {
             $this->questionsRender .= $this->getQuestion($question);
         }
 
-        // onePage or questions
+        #
+        # onePage or questions
+        #
         $this->style = $this->activity->show_question;
-    }
-
-
-    public function showQuestion(Question $question)
-    {
-        return redirect()->to(url()->previous() . '#question-' . $question->id);
     }
 
     private function getQuestion(Question $question)

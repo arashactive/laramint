@@ -11,7 +11,7 @@
             </p>
 
             @forelse($answer->answers as $index => $answer)
-                <div  class="p2">
+                <div  class="p-2">
                 <div class="form-check">
                     <input name="answer-{{ $question->id }}" class="form-check-input" type="radio" id="reviewAnswerTest{{ $question->id. $index }}">
                     <label class="form-check-label" for="reviewAnswerTest{{$question->id. $index }}">

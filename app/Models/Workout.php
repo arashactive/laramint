@@ -16,4 +16,9 @@ class Workout extends Model
     {
         return $this->update(['is_completed' => 1]);
     }
+
+
+    public function WorkOutQuiz(){
+        return $this->hasMany(WorkoutQuizLog::class);
+    }
 }

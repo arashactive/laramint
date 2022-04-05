@@ -25,8 +25,8 @@ return new class extends Migration
             $table->unsignedBigInteger('question_id');
             $table->foreign('question_id')->references('id')->on('questions');
 
-            $table->json('answer');
-            $table->smallInteger('score');
+            $table->json('answer')->nullable();
+            $table->smallInteger('score')->nullable();
 
             $table->timestamps();
         });

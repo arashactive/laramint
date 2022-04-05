@@ -12,15 +12,17 @@ use App\utility\workout\WorkoutService;
 class quizLearnerController extends Controller
 {
 
-    public function show(Term $term, Quiz $activity, Session $session, Sessionable $sessionable){
-        
+    public function show(Term $term, Quiz $activity, Session $session, Sessionable $sessionable)
+    {
+
         $this->authorize('QuizViewForLearner', [$activity, $term]);
 
         // set a record for workout table
-        WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
+        WorkoutService::setWorkOutQuizSyncForThisExcersice($workout, $activity);
 
         return view('contents.learn.quiz.show', compact([
-            'term', 'activity'
+            'term', 'activity', 'workout'
         ]));
     }
 }
