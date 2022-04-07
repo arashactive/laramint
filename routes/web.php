@@ -25,6 +25,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
@@ -80,6 +81,9 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
 Route::prefix('panel')->middleware(['verified'])->group(function () {
 
     Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
+    Route::get('/settings', [SettingController::class, 'index'])->name('settings');
+    Route::patch('/setting/{user}', [SettingController::class, 'update'])->name('setting.update');
+
 
     Route::resource('department', DepartmentController::class);
     Route::resource('course', CourseController::class);
