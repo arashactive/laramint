@@ -61,25 +61,9 @@ class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
             ]
         );
 
-        self::workoutScoreUpdate();
+        parent::workoutScoreUpdate(self::$workout);
         return $score;
     }
 
-
-    public static function workoutScoreUpdate()
-    {
-        $workoutQuiz = self::$workout->WorkOutQuiz;
-        $sumOfScore = 0;
-        foreach ($workoutQuiz as $question) {
-            $sumOfScore += (int)$question->score;
-        }
-
-        $score = (int)($sumOfScore /  count($workoutQuiz));
-
-        self::$workout->update([
-            'score' => $score
-        ]);
-
-        return $score;
-    }
+    
 }

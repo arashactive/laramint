@@ -4,6 +4,7 @@ namespace App\utility\question\adabpter;
 
 use App\Models\Question;
 use App\Models\Quiz;
+use App\Models\Workout;
 
 abstract class QuestionParent
 {
@@ -22,7 +23,7 @@ abstract class QuestionParent
         return "factory.question.{$questionType}.{$file}";
     }
 
-  
+
     public function store($id = [], $attributes)
     {
         if (!empty($this->quiz)) {
@@ -30,5 +31,24 @@ abstract class QuestionParent
         } else {
             return Question::updateOrCreate($id, $attributes);
         }
+    }
+
+
+
+    public static function workoutScoreUpdate(Workout $workout)
+    {
+        $workoutQuiz = $workout->WorkOutQuiz;
+        $sumOfScore = 0;
+        foreach ($workoutQuiz as $question) {
+            $sumOfScore += (int)$question->score;
+        }
+
+        $score = (int)($sumOfScore /  count($workoutQuiz));
+
+        $workout->update([
+            'score' => $score
+        ]);
+
+        return $score;
     }
 }
