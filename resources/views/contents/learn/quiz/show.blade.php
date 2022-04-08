@@ -19,7 +19,8 @@
             <div class="card-body">
                 @livewire('activity.quiz', [
                 'activity' => $activity,
-                'term' => $term
+                'term' => $term,
+                'workout' => $workout
                 ]) 
             </div>
         </div>

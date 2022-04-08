@@ -5,7 +5,8 @@
             <h6 class="m-0 font-weight-bold text-primary">{{ $question->title }}</h6>
         </div>
         <div class="card-body">
-            
+            <form class="workout_questions" id="question-{{ $question->id }}" method="post" action="{{ route("quizWorkout") }}">
+                @csrf
             <p>
                 {{ $question->question_body }}
             </p>
@@ -17,6 +18,7 @@
                 </div>
             @empty 
             @endforelse
+            </form>
         </div>
    
     </div>

@@ -11,6 +11,8 @@ class Quiz extends Component
     public $activity;
     public $term;
 
+    public $workout;
+
     public $style;
 
     /*
@@ -39,7 +41,7 @@ class Quiz extends Component
 
     private function getQuestion(Question $question)
     {
-        return (string)QuestionFactory::QuestionBuidler($question);
+        return (string)QuestionFactory::QuestionBuidler($question, $this->workout);
     }
 
     public function render()

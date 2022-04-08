@@ -70,6 +70,9 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
 
     // doing workout || excercise || quiz
     Route::get('/completeAndNext/{workout}', [WorkoutController::class, 'completedAndNext'])->name('completedAndNext');
+
+
+    Route::post('/quiz/workout', [quizLearnerController::class, 'workout'])->name('quizWorkout');
 });
 
 
