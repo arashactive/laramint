@@ -17,11 +17,20 @@
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                @livewire('activity.quiz', [
-                'activity' => $activity,
-                'term' => $term,
-                'workout' => $workout
-                ]) 
+
+                @if($workout->is_completed && $workout->score >= $activity->min_pass_score)
+                    @livewire('activity.result', [
+                    'activity' => $activity,
+                    'term' => $term,
+                    'workout' => $workout
+                    ]) 
+                @else
+                    @livewire('activity.quiz', [
+                        'activity' => $activity,
+                        'term' => $term,
+                        'workout' => $workout
+                        ]) 
+                @endif
             </div>
 
             <div class="card-footer text-center">

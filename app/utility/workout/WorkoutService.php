@@ -7,7 +7,6 @@ use App\Models\Session;
 use App\Models\Term;
 use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
-use App\View\Components\front\term as FrontTerm;
 
 abstract class WorkoutService
 {

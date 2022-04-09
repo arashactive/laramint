@@ -10,7 +10,6 @@
                 
                 <input type="hidden" value="{{ $question->id }}" name="question_id">
                 <input type="hidden" value="{{ $workout->id }}" name="workout_id">
-
                 <p>
                     {{ $question->question_body }}
                 </p>

@@ -5,6 +5,7 @@ namespace App\utility\question\adabpter;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\Workout;
+use Carbon\Carbon;
 
 abstract class QuestionParent
 {
@@ -46,7 +47,9 @@ abstract class QuestionParent
         $score = (int)($sumOfScore /  count($workoutQuiz));
 
         $workout->update([
-            'score' => $score
+            'score' => $score,
+            'is_completed' => 1,
+            'date_get_score' => Carbon::now()->format("Y-m-d H:i:s")
         ]);
 
         return $score;

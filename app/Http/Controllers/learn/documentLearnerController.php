@@ -26,8 +26,10 @@ class documentLearnerController extends Controller
 
     public function file(Term $term, File $activity, Session $session, Sessionable $sessionable)
     {
+        
         $this->authorize('participantAccessToTerm', $term);
 
+        
         // set a record for workout table
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
 

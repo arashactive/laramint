@@ -27,14 +27,6 @@ class QuestionFactory
         throw new \Exception('The Question type is not found');
     }
 
-    public static function WorkoutBuilder(Question $question, Workout $workout, $request)
-    {
-        $childQuestion = self::ChildQuestion($question->QuestionType);
-        return $childQuestion->workoutChecker($question, $workout, $request);
-
-        throw new \Exception('The Question type is not found');
-    }
-
 
     private static function ChildQuestion(questionType $questionType)
     {

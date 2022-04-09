@@ -65,5 +65,18 @@ class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
         return $score;
     }
 
-    
+
+    public static function ReviewChecker(Question $question, Workout $workout)
+    {
+        $answers = json_decode($question->answer, false);
+
+        return view("livewire.factory.question." . self::$className . ".review", [
+            'question' => $question,
+            'answers' => $answers->answers,
+            'correctAnswer' => $answers->correctAnswer,
+            'workout' => $workout,
+            'title' => $question->title,
+            'question_body' => $question->question_body
+        ])->render();
+    }
 }

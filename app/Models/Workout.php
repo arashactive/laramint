@@ -21,4 +21,5 @@ class Workout extends Model
     public function WorkOutQuiz(){
         return $this->hasMany(WorkoutQuizLog::class);
     }
+
 }
