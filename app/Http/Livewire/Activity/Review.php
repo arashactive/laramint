@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Activity;
 
 use App\Models\Question;
+use App\utility\question\QuestionFactory;
 use App\utility\question\ReviewBuilderFactory;
 use Livewire\Component;
 
@@ -16,7 +17,10 @@ class Review extends Component
 
     private function getQuestion(Question $question)
     {   
-        return (string)ReviewBuilderFactory::Builder($question, $this->workout);
+        return 
+        (string)QuestionFactory::Build($question->QuestionType)
+        ->ReviewChecker($question, $this->workout);
+
     }
 
     public function render()

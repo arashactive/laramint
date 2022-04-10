@@ -9,6 +9,7 @@ use App\Models\Session;
 use App\Models\Sessionable;
 use App\Models\Term;
 use App\Models\Workout;
+use App\utility\question\QuestionFactory;
 use App\utility\question\WorkoutBuilderFactory;
 use App\utility\workout\WorkoutService;
 
@@ -37,6 +38,8 @@ class quizLearnerController extends Controller
         $question = Question::findorfail($request->question_id);
         $workout = Workout::findorfail($request->workout_id);
 
-        return WorkoutBuilderFactory::Builder($question, $workout, $request);
+        return QuestionFactory::Build($question->questionType)
+        ->workoutChecker($question, $workout, $request);
+        
     }
 }

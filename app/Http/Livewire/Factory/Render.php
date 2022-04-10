@@ -26,8 +26,8 @@ class Render extends Component
 
 
     private function getComponent($questionTypeId){
-        
-        $this->component = (string)QuestionFactory::build($questionTypeId)->getCreateUpdateForm();
+        $questionType = questionType::find($questionTypeId);
+        $this->component = (string)QuestionFactory::build($questionType)->getCreateUpdateForm();
     }
 
     public function selectQuestionType(){

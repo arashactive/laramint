@@ -41,7 +41,8 @@ class Quiz extends Component
 
     private function getQuestion(Question $question)
     {
-        return (string)QuestionFactory::QuestionBuidler($question, $this->workout);
+        return (string)QuestionFactory::Build($question->QuestionType)->createViewAsLearner($question, $this->workout);
+        
     }
 
     public function render()
