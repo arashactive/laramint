@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -62,8 +63,20 @@ class Term extends Model
         return $this->belongsToMany(Session::class)->withPivot(["id", "order"])->orderBy('order');
     }
 
-    public function Files()
+    public function getAllActivitiesAttribute()
     {
+        $activities = [];
+        $sessions = [$this->Sessions];
+        if( !isset($sessions[0]) ) return;
+        foreach ($sessions[0] as $session) {
+            
+            $activities = array_merge($activities, $session->Related->all());
+        }
+        return new Collection($activities);
     }
 
+    public function Workout()
+    {
+        return $this->hasMany(Workout::class);
+    }
 }

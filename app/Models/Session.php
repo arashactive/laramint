@@ -53,4 +53,8 @@ class Session extends Model
         return $this->belongsToMany(Term::class);
     }
 
+    public function Workout(){
+        return $this->hasMany(Workout::class);
+    }
+
 }

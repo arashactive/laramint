@@ -16,11 +16,11 @@
 
                     <div class=" p-2 
                     {{ $index == $correctAnswer 
-                    ? " bg-gradient-success text-white" : '' }}
+                    ? " border border-success text-success rounded font-weight-bold " : '' }}
                     
                     {{ $index == $workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer  && 
                         $workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer !=  $correctAnswer
-                        ? " bg-gradient-danger text-white" : '' }}
+                        ? " border border-danger text-danger rounded font-weight-light" : '' }}
                     ">
                         <div class="form-check">
                             <input name="answer" {{ $index == $correctAnswer ? 'checked' : ''}} class="form-check-input" type="radio"  id="reviewAnswer{{ $index }}">
@@ -32,7 +32,7 @@
                    
                         
                     @else
-                    <div class=" p-2 {{ $index == $correctAnswer ? " bg-gradient-success text-white" : '' }}">
+                    <div class=" p-2 {{ $index == $correctAnswer ? " border border-success rounded font-weight-bold" : '' }}">
                         <div class="form-check">
                             <input name="answer" {{ $index == $correctAnswer ? 'checked' : ''}} class="form-check-input" type="radio"  id="reviewAnswer{{ $index }}">
                             <label class="form-check-label" for="reviewAnswer{{ $index }}">

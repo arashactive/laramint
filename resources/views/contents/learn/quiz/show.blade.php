@@ -33,11 +33,13 @@
                 @endif
             </div>
 
+            @if(!$workout->is_completed)
             <div class="card-footer text-center">
                 <button class="btn btn-danger" id="saveAndClose">
                     <i class="fa fa-save"></i> {{ __("save & close") }}
                 </button>
             </div>
+            @endif
         </div>
     </div>
 

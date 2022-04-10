@@ -9,7 +9,6 @@ class Sessionable extends Model
 {
     use HasFactory;
 
-
     public function model()
     {
         return $this->belongsTo($this->sessionable_type, 'sessionable_id');

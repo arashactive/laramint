@@ -32,7 +32,24 @@
                                     
                                     <h6 class="font-weight-bold text-dark">{{ __('Grade') }}</h6>
                                     
+                                    <x-atoms.stars 
+                                    :score="$session->Workout
+                                    ->where('term_id', $term)
+                                    ->where('user_id', Auth::user()->id)
+                                    ->where('is_completed', 1)->avg('score')">
+                                    </x-container.File>
+
                                     <small class="text-secondary">session {{ $loop->iteration }} | Discussion Promot * 10 min</small>
+                                    <x-atoms.progress
+                                    :color="'bg-info'"
+                                    :fill="$session->Workout
+                                    ->where('term_id', $term)
+                                    ->where('user_id', Auth::user()->id)
+                                    ->where('is_completed', 1)->count()"
+                                    :count="$session->related->count()"
+                                    ></x-atoms.progress>
+
+
 
                                 </div>
                             </div>                            

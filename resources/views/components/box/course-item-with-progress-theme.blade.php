@@ -20,13 +20,14 @@
                                         </div>
 
                                         {{ $slot }}
-                                        
-                                        <div class="mt-3">
-                                            <div class="progress" style="height: 15px;">
-                                                @php($rand = rand(20, 95))
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{$rand}}%;" aria-valuenow="{{ $rand }}" aria-valuemin="0" aria-valuemax="100">{{$rand}}%</div>
-                                            </div>
-                                        </div>
+                         
+                                        <x-atoms.progress
+                                        :color="'progress-bar-striped bg-success'"
+                                        :fill="$term->Workout
+                                        ->where('user_id', Auth::user()->id)
+                                        ->where('is_completed', 1)->count()"
+                                        :count="$term->allActivities->count()"
+                                        ></x-atoms.progress>
 
                                 </div>
 
