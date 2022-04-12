@@ -20,6 +20,7 @@ class TermPolicy
      */
     public function participantAccessToTerm(User $user, Term $term)
     {
+        
         return $term->Participants()->where('user_id', $user->id)->count() > 0 ?: null;
     }
 }

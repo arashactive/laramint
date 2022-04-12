@@ -18,6 +18,7 @@ use App\Http\Controllers\learn\quizLearnerController;
 use App\Http\Controllers\learn\rubricLearnerController;
 use App\Http\Controllers\learn\WorkoutController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\Mentors\MyLearnerController;
 use App\Http\Controllers\Panel\MyCourseController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PlanController;
@@ -73,6 +74,17 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
 
 
     Route::post('/quiz/workout', [quizLearnerController::class, 'workout'])->name('quizWorkout');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes for mentors and super-visor access
+|--------------------------------------------------------------------------
+*/
+Route::prefix('mentor')->middleware(['verified'])->group(function () {
+    
+    Route::get('/learners', [MyLearnerController::class, 'myLearners'])->name('myLearners');
 });
 
 

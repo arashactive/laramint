@@ -9,6 +9,7 @@ use App\Models\Session;
 use App\Models\session_term;
 use App\Models\Term;
 use App\traits\Sequence;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TermController extends Controller
@@ -70,9 +71,10 @@ class TermController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Term $term)
-    {
-        $this->authorize('term.edit');
-        $this->authorize('view', $term);
+    {       
+        $this->authorize('term.show');   
+              
+    
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.show', compact(

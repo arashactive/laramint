@@ -1,5 +1,5 @@
 
-@if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['participant.edit' , 'participant.delete']))
+
 <div class="row">
 
     <div class="col-lg-6">
@@ -16,11 +16,16 @@
                 
                 <x-box.item
                 :title="$participant->email">
-                           
+                
+                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['participant.edit' , 'participant.delete']))
+                
                 @slot('delete')
                     {{ route('deleteParticipantAsTerm' ,['term' => $term, 'user' => $participant->id  ]) }}
                 @endslot
                 
+
+                @endcan
+
                 <small>
                     
                     <button type="button" class="badge bg-primary position-relative">
@@ -44,6 +49,7 @@
     
     <div class="col-lg-6">
         
+        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['participant.edit' , 'participant.delete']))
         
         <div class="card shadow mb-4 border-bottom-warning">
             <!-- Card Header - Dropdown -->
@@ -64,6 +70,7 @@
             </div>
         </div>
 
+        @endcan
+
     </div>
 </div>
-@endcan

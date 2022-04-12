@@ -1,4 +1,4 @@
-@if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'session.edit']))
+
 <div class="row">
 
     <div class="col-lg-6">
@@ -16,6 +16,9 @@
                 <x-box.session-item
                 :title="$session->title" :color="'success'">
                 
+
+                @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'session.edit']))
+
                 @if(!$loop->first)
                 @slot('up')
                     {{ route('orderChangeSession' , ['from' => $session->pivot->id , 'move' => 'up' ]) }}
@@ -31,6 +34,9 @@
                 @slot('delete')
                     {{ route('deleteSessionAsTerm' ,['term' => $term->id, 'session' => $session->id ]) }}
                 @endslot
+                
+                @endcan
+                
                 
                 <small>
                     <a href="{{ route('session.show', $session->id) }}" class="btn btn-success btn-sm">
@@ -53,6 +59,7 @@
     
     <div class="col-lg-6">
         
+        @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['term.edit' , 'session.edit']))
         
         <div class="card shadow mb-4 border-bottom-success">
             <!-- Card Header - Dropdown -->
@@ -75,6 +82,7 @@
             </div>
         </div>
 
+        @endcan
+
     </div>
 </div>
-@endcan

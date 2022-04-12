@@ -19,7 +19,7 @@ class Term extends Model
     // correct access to each term
     public function scopeGetParticipants(Builder $builder)
     {
-
+        
         if (!auth()->user()->hasRole(['Super-Admin'])) {
             return $builder->whereHas(
                 'Participants',

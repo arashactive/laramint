@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Factory\Question;
 
+use App\Models\QuestionType;
 use Livewire\Component;
 use App\utility\question\QuestionFactory;
 
@@ -30,8 +31,8 @@ class QuestionComponents extends Component
 
     public function store()
     {
-
-        $question = QuestionFactory::build($this->questionTypeId)
+        $questionType = QuestionType::findorfail($this->questionTypeId);
+        QuestionFactory::build($questionType)
             ->setQuizId($this->quiz->id ?? null)
             ->store([
                 'id' => $this->question->id ?? null

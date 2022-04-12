@@ -11,6 +11,11 @@ class workoutTest extends BaseTest
     private $workout = 'App\Models\Workout';
     private $workoutQuiz = 'App\Models\WorkoutQuizLog';
 
+
+    public function student(){
+        $this->signIn(8);
+    }
+
     protected function setUp(): void
     {
 
@@ -25,7 +30,7 @@ class workoutTest extends BaseTest
      */
     public function test_first_term_is_exist()
     {
-        $this->signIn(8);
+        $this->student();
         $response = $this->get(route('learningCourse', ['term' => 1]));
 
         $response->assertStatus(200);
@@ -38,7 +43,7 @@ class workoutTest extends BaseTest
      */
     public function test_first_view_set_record()
     {
-        $this->signIn(8);
+        $this->student();
         $response = $this->get(route('fileLearner', [
             'term' => 1,
             'activity' => 1,
@@ -70,7 +75,7 @@ class workoutTest extends BaseTest
      */
     public function test_first_view_quiz_set_record()
     {
-        $this->signIn(8);
+        $this->student();
         $response = $this->get(route('quizLearner', [
             'term' => 1,
             'activity' => 2,
@@ -101,5 +106,31 @@ class workoutTest extends BaseTest
                 'quiz_id' => $workout->activity_id,
             ]
         );
+    }
+
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function test_completed_and_next()
+    {
+        $this->student();
+
+        $response = $this->get(route('fileLearner', [
+            'term' => 1,
+            'activity' => 1,
+            'session' => 1,
+            'sessionable' => 1
+        ]));
+
+        $response->assertStatus(200);
+
+        $response = $this->get(route('completedAndNext', [
+            'workout' => 1
+        ]));
+
+        $response->assertRedirect();
     }
 }
