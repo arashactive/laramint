@@ -49,12 +49,12 @@
 
     @can('mentor.list')
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MentorsCollapse"
             aria-expanded="true" aria-controls="ACLCollapse">
             <i class="fas fa-fw fa-toolbox"></i>
             <span>Learners</span>
         </a>
-        <div id="ToolboxCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="MentorsCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 
                 <a class="collapse-item" href="{{ route('myLearners') }}">{{ __('My Learners') }}</a>

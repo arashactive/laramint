@@ -36,7 +36,7 @@
                                <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <a href="{{ route('term.show', $participant->User->id) }}" class="btn btn-sm btn-primary btn-block">
+                                        <a href="{{ route('learnerShowTerms', $participant->User->id) }}" class="btn btn-sm btn-primary btn-block">
                                             {{ $participant->User->name }}
                                         </a>
                                     </td>

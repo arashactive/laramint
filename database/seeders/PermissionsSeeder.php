@@ -22,7 +22,7 @@ class PermissionsSeeder extends Seeder
         $models = [
             'department', 'course', 'session', 'term', 'file',
             'document', 'quiz', 'question', 'rubric', 'feedback',
-            'participant', 'myCourse', 'plan'
+            'participant', 'myCourse', 'plan', 'user'
         ];
 
         foreach ($models as $model) {
@@ -38,6 +38,7 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'menu.education']);
         Permission::create(['name' => 'menu.toolbox']);
         Permission::create(['name' => 'mentor.list']);
+        
 
 
         $role1 = Role::create(['name' => 'Super-Admin']);
@@ -63,6 +64,7 @@ class PermissionsSeeder extends Seeder
         }
         $role3->givePermissionTo('menu.education');
         $role3->givePermissionTo('mentor.list');
+        
 
         // create roles and assign existing permissions
         $role4 = Role::create(['name' => 'student']);

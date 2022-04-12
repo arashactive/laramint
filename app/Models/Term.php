@@ -31,12 +31,13 @@ class Term extends Model
     }
 
 
-    public function scopeMyCourse(Builder $builder, $studentRoleId = 4)
+    public function scopeMyCourse(Builder $builder, $studentRoleId = 4, $user_id = 0)
     {
+        $user_id = $user_id > 0 ? $user_id : auth()->user()->id;
         return $builder->whereHas(
             'Participants',
-            function ($q) use ($studentRoleId) {
-                $q->where('user_id',  auth()->user()->id);
+            function ($q) use ($studentRoleId, $user_id) {
+                $q->where('user_id', $user_id );
                 $q->where('role_id', $studentRoleId);
             }
         );

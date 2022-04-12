@@ -11,9 +11,23 @@ use Illuminate\Support\Facades\Mail;
 class ParticipantController extends Controller
 {
 
+    public function participantTerms(User $user)
+    {
+        $studentRoleId = 4;
+        $terms = Term::with('Participants')
+            ->MyCourse($studentRoleId, $user->id)
+            ->paginate();
+
+        return view('contents.mentors.learners.profile', compact(
+            'user',
+            'terms'
+        ));
+    }
+
+
     public function addParticipantToTerm($term_id, $user_id, $role_id)
     {
-       
+
         $participantCount = Participant::where('term_id', $term_id)
             ->where('user_id', $user_id)
             ->where('role_id', $role_id)
@@ -36,7 +50,8 @@ class ParticipantController extends Controller
     }
 
 
-    public function deleteParticipantAsTerm(Term $term, User $user){
+    public function deleteParticipantAsTerm(Term $term, User $user)
+    {
         $term->Participants()->detach($user);
 
         return redirect(route('term.show', ['term' => $term->id]))
