@@ -29,8 +29,12 @@ class progress extends Component
 
     private function calculatePercentage($count, $fill)
     {
-        $percentChange = (($count - $fill) / $count) * 100;
-        return 100 - round(abs($percentChange));
+        if($count > 0){
+            $percentChange = (($count - $fill) / $count) * 100;
+            return 100 - round(abs($percentChange));
+        }
+
+        return 0;
     }
 
     /**

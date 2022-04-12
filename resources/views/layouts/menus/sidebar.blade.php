@@ -51,7 +51,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MentorsCollapse"
             aria-expanded="true" aria-controls="ACLCollapse">
-            <i class="fas fa-fw fa-toolbox"></i>
+            <i class="fas fa-fw fa-clipboard"></i>
             <span>Learners</span>
         </a>
         <div id="MentorsCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

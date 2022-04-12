@@ -43,7 +43,7 @@
                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold ">
                         <i class="fa fa-comment"></i>
-                        {{ __('comments') }}
+                        {{ __('Messages & Alerts') }}
 
                     </h6>
                 </div>
@@ -166,6 +166,27 @@
                 @endforelse
                 </div>
             </div>
+        </div>
+
+
+        <div class="col-5">
+
+            <div class="card shadow mb-4 border-bottom-warning">
+                <!-- Card Header - Dropdown -->
+                <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold ">
+                        <i class="fa fa-comment"></i>
+                        {{ __('comments') }}
+
+                    </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                        
+                </div>
+            </div>
+
         </div>
     </div>
 
