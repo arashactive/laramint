@@ -27,9 +27,9 @@ class progress extends Component
     }
 
 
-    private function calculatePercentage($oldFigure, $newFigure)
+    private function calculatePercentage($count, $fill)
     {
-        $percentChange = (($oldFigure - $newFigure) / $oldFigure) * 100;
+        $percentChange = (($count - $fill) / $count) * 100;
         return 100 - round(abs($percentChange));
     }
 

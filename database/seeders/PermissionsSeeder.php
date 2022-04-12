@@ -37,11 +37,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'document.order']);
         Permission::create(['name' => 'menu.education']);
         Permission::create(['name' => 'menu.toolbox']);
+        Permission::create(['name' => 'mentor.list']);
 
 
         $role1 = Role::create(['name' => 'Super-Admin']);
 
-        // create roles and assign existing permissions
+        // create role and assign permission to super visor
         $role2 = Role::create(['name' => 'supervisor']);
         foreach ($models as $model) {
             $role2->givePermissionTo($model . '.index');
@@ -52,17 +53,21 @@ class PermissionsSeeder extends Seeder
         $role2->givePermissionTo('document.order');
         $role2->givePermissionTo('menu.education');
         $role2->givePermissionTo('menu.toolbox');
+        $role2->givePermissionTo('mentor.list');
 
-        // create roles and assign existing permissions
+        // create roles and assign existing permissions to mentos
         $role3 = Role::create(['name' => 'mentor']);
         foreach ($models as $model) {
             $role3->givePermissionTo($model . '.index');
             $role3->givePermissionTo($model . '.show');
         }
+        $role3->givePermissionTo('menu.education');
+        $role3->givePermissionTo('mentor.list');
 
         // create roles and assign existing permissions
         $role4 = Role::create(['name' => 'student']);
         $role4->givePermissionTo('myCourse.index');
+
 
 
 

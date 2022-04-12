@@ -47,6 +47,24 @@
         {{ __('Education') }}
     </div>
 
+    @can('mentor.list')
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse"
+            aria-expanded="true" aria-controls="ACLCollapse">
+            <i class="fas fa-fw fa-toolbox"></i>
+            <span>Learners</span>
+        </a>
+        <div id="ToolboxCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                
+                <a class="collapse-item" href="{{ route('myLearners') }}">{{ __('My Learners') }}</a>
+               
+            </div>
+            
+        </div>
+        
+    </li> 
+    @endcan
     
     <!-- Nav Item - Admin Setup LMS -->
     <li class="nav-item">
