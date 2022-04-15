@@ -22,7 +22,7 @@ class progress extends Component
         $this->color = $color;
         $this->fill = $fill;
         $this->count = $count;
-        dd($this->calculatePercentage($count, $fill));
+       
         $this->width = $this->calculatePercentage($count, $fill);
     }
 

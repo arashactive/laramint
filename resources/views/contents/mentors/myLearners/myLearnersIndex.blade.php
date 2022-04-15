@@ -50,7 +50,8 @@
                                         <x-atoms.progress
                                             :color="'progress-bar-striped bg-success'"
                                             :fill="rand(5,10)"
-                                            :count="rand(11,20)" />
+                                            :count="rand(11,20)"
+                                            :width="0" />
                                     </td>
                                </tr>
                            @empty
