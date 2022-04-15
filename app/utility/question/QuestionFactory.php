@@ -2,16 +2,14 @@
 
 namespace App\utility\question;
 
-use App\Models\Question;
-use App\Models\questionType;
-use App\Models\Workout;
+use App\Models\QuestionType;
 
 class QuestionFactory
 {
 
     private static $classPath = "App\\utility\\question\\adabpter\\";
 
-    public static function Build(questionType $questionType)
+    public static function Build(QuestionType $questionType)
     {
         $childQuestion = self::$classPath . $questionType->title;
         return new $childQuestion();

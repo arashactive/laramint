@@ -10,8 +10,8 @@ class progress extends Component
     public $color;
     public $fill;
     public $count;
-
     public $width;
+    
     /**
      * Create a new component instance.
      *
