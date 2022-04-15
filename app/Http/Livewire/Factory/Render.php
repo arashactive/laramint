@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Factory;
 
 use App\utility\question\QuestionFactory;
 use Livewire\Component;
-use App\Models\questionType;
+use App\Models\QuestionType;
 
 class Render extends Component
 {
@@ -15,7 +15,7 @@ class Render extends Component
     public $quiz = null;
 
     public function mount(){
-        $this->questionTypeId = questionType::first()->id;
+        $this->questionTypeId = QuestionType::first()->id;
         
         if($this->question){
             $this->questionTypeId = $this->question->question_type_id;
@@ -26,7 +26,7 @@ class Render extends Component
 
 
     private function getComponent($questionTypeId){
-        $questionType = questionType::find($questionTypeId);
+        $questionType = QuestionType::find($questionTypeId);
         $this->component = (string)QuestionFactory::build($questionType)->getCreateUpdateForm();
     }
 
@@ -36,7 +36,7 @@ class Render extends Component
 
     public function render()
     {
-        $questionTypes = questionType::all();
+        $questionTypes = QuestionType::all();
         return view('livewire.factory.render', compact("questionTypes"));
     }
 }
