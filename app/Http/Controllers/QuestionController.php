@@ -16,9 +16,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $this->authorize('question.index');       
-        $questions = Question::with('QuestionType')->paginate(env('PAGINATION'));
-        return view("contents.admin.question.index", compact("questions" ));
+        $this->authorize('question.index');
+        $questions = Question::with('QuestionType')->orderby('created_at', 'desc')->paginate();
+        return view("contents.admin.question.index", compact("questions"));
     }
 
     /**
@@ -43,7 +43,7 @@ class QuestionController extends Controller
     {
         //
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *

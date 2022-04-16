@@ -5,17 +5,20 @@ namespace App\utility\question\adabpter;
 use App\Models\Question;
 use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
+use App\traits\Helpers\Percentage;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
 
 class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
+    use Percentage;
+
     private static $className = 'multiple-question';
     private static $question;
     private static $workout;
     private static $workoutQuizQuestion;
-    
+
     public static function getCreateUpdateForm()
     {
         return parent::render(self::$className, 'create');
@@ -49,11 +52,35 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
     {
         $answer = json_decode(self::$question->answer, true);
 
-        $questionCorrectAnswer = $answer['correctAnswer'];
+        // set 0 for loop of answers in database and correct-answers of student
+        $correctAnswerInDatabase = 0;
+        $correctAnswerofStudent = 0;
+
+        // get correct answers from database
+        $questionCorrectAnswers = $answer['correctAnswer'];
+
+        // get answers of students
         $requestAnswer = $request->input("answer-" . self::$question->id);
 
-        $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
+        // loop of database correct answer to check score
+        for ($counter = 0; $counter <= count($questionCorrectAnswers); $counter++) {
+            
+            if (isset($questionCorrectAnswers[$counter]) 
+                && (string)$questionCorrectAnswers[$counter] != "") {
 
+                $correctAnswerInDatabase++;
+                // remove "answer-" from correct answer in database
+                $index = (int)str_replace('answer-', '', $questionCorrectAnswers[$counter]);
+                
+                // check if request index is exist and value is on so student answer is correct
+                if (isset($requestAnswer[$index]) && $requestAnswer[$index] == 'on') {
+                    $correctAnswerofStudent++;
+                }
+            }
+        }
+
+        $score = self::calculatePercentageBetweenTwoNumber($correctAnswerInDatabase, $correctAnswerofStudent);
+    
         self::$workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,

@@ -1,4 +1,4 @@
-<div class="col-12 text-left mt-4 p-4 question">
+<div id="question-{{ $question->id }}" class="question col-12 text-left mt-4 p-4">
 
     <div class="card shadow p-2">
         <div class="card-header py-3">
@@ -7,6 +7,9 @@
         <div class="card-body">
             <form class="workout_questions" id="question-{{ $question->id }}" method="post" action="{{ route("quizWorkout") }}">
                 @csrf
+                      
+                <input type="hidden" value="{{ $question->id }}" name="question_id">
+                <input type="hidden" value="{{ $workout->id }}" name="workout_id">
             <p>
                 {{ $question->question_body }}
             </p>
@@ -23,6 +26,8 @@
                 </div>
             @empty 
             @endforelse
+
+            <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3" />
             </form>
         </div>
    

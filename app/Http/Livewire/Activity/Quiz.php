@@ -30,7 +30,7 @@ class Quiz extends Component
         # $this->activity->show_question == 'StepByStep'
         #
         foreach ($this->activity->Questions as $question) {
-            $this->questionsRender .= $this->getQuestion($question);
+            $this->questionsRender .= (string)QuestionFactory::Build($question->QuestionType)->createViewAsLearner($question, $this->workout);
         }
 
         #
@@ -39,11 +39,6 @@ class Quiz extends Component
         $this->style = $this->activity->show_question;
     }
 
-    private function getQuestion(Question $question)
-    {
-        return (string)QuestionFactory::Build($question->QuestionType)->createViewAsLearner($question, $this->workout);
-        
-    }
 
     public function render()
     {
