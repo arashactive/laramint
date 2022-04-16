@@ -18,7 +18,7 @@
             @forelse($answer->answers as $index => $answer)
                 <div class=" p-2">
                 <div class="form-check">
-                    <input name="answer-{{ $question->id }}[]" class="form-check-input" type="checkbox"  id="reviewAnswerMultiChoice{{ $question->id. $index }}">
+                    <input name="answer-{{ $question->id }}[{{ $loop->iteration - 1 }}]" class="form-check-input" type="checkbox"  id="reviewAnswerMultiChoice{{ $question->id. $index }}">
                     <label class="form-check-label" for="reviewAnswerMultiChoice{{ $question->id.  $index }}">
                         {{ $answer }}
                     </label>

@@ -11,7 +11,7 @@ trait Percentage
     {
         
         if (($item != 0) && ($total != 0)) {
-            $percentChange = (1 - $item / $total) * 100;
+            $percentChange = 100 - ((1 - $item / $total) * 100);
         }
         else {
             $percentChange = 0;

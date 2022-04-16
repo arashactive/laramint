@@ -44,12 +44,9 @@ class EssayQuestion extends QuestionParent implements QuestionAdabpterInterface
 
     public static function getScore($request)
     {
-        $answer = json_decode(self::$question->answer, true);
 
-        $questionCorrectAnswer = $answer['correctAnswer'];
-        $requestAnswer = $request->input("answer-" . self::$question->id);
-
-        $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
+        $requestAnswer = json_encode($request->input("answer-" . self::$question->id));
+        $score = 0;
 
         self::$workoutQuizQuestion->update(
             [
