@@ -5,54 +5,47 @@ namespace App\utility\question\adabpter;
 use App\Models\Question;
 use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
+use App\traits\Helpers\Percentage;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
 
 class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
-    private static $className = 'matching-case-question';
-    private static $question;
-    private static $workout;
-    private static $workoutQuizQuestion;
+    use Percentage;
+
+    protected $className = 'matching-case-question';
     
-    public static function getCreateUpdateForm()
-    {
-        return parent::render(self::$className, 'create');
-    }
-
-    public static function createViewAsLearner(Question $question, Workout $workout)
-    {
-        $answer = json_decode($question->answer, false);
-
-        return view("livewire.factory.question." . self::$className . ".learner", [
-            'question' => $question,
-            'answer' => $answer,
-            'workout' => $workout
-        ])->render();
-    }
-
-    public static function workoutChecker(Question $question, Workout $workout, $request)
-    {
-        $workoutQuizQuestion = WorkoutQuizLog::where('workout_id', $workout->id)
-            ->where('question_id', $question->id)->first();
-
-        self::$question = $question;
-        self::$workout = $workout;
-        self::$workoutQuizQuestion = $workoutQuizQuestion;
-
-        self::getScore($request);
-    }
 
 
-    public static function getScore($request)
+    public function getScore($request)
     {
         $answer = json_decode(self::$question->answer, true);
 
-        $questionCorrectAnswer = $answer['correctAnswer'];
-        $requestAnswer = $request->input("answer-" . self::$question->id);
+        $correctAnswerInDatabase = 0;
+        $correctAnswerofStudent = 0;
 
-        $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
+        $requestAnswer = [];
+
+        // get correct answers from database
+        $questionCorrectAnswers = $answer['answers'];
+
+        for ($counter = 0; $counter < count($questionCorrectAnswers); $counter++) {
+            $correctAnswerInDatabase++;
+            $requestAnswerRight = $request->input("answer-" . self::$question->id . '-' . $counter);
+
+            $is_studentCorrectAnswer = false;
+            if ($questionCorrectAnswers[$counter]['right'] == $requestAnswerRight) {
+                $correctAnswerofStudent++;
+                $is_studentCorrectAnswer = true;
+            }
+
+            $requestAnswer[] = ['studentAnswer' => $requestAnswerRight, 'correct' => $is_studentCorrectAnswer];
+        }
+
+
+
+        $score = self::calculatePercentageBetweenTwoNumber($correctAnswerInDatabase, $correctAnswerofStudent);
 
         self::$workoutQuizQuestion->update(
             [
@@ -66,17 +59,5 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
     }
 
 
-    public static function ReviewChecker(Question $question, Workout $workout)
-    {
-        $answers = json_decode($question->answer, false);
-
-        return view("livewire.factory.question." . self::$className . ".review", [
-            'question' => $question,
-            'answers' => $answers->answers,
-            'correctAnswer' => $answers->correctAnswer,
-            'workout' => $workout,
-            'title' => $question->title,
-            'question_body' => $question->question_body
-        ])->render();
-    }
+  
 }

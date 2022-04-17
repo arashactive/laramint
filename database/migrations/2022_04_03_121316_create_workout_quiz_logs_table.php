@@ -26,6 +26,7 @@ return new class extends Migration
             $table->foreign('question_id')->references('id')->on('questions');
 
             $table->json('answer')->nullable();
+            $table->boolean('is_mentor')->default(false);
             $table->smallInteger('score')->nullable();
 
             $table->timestamps();

@@ -34,6 +34,7 @@ return new class extends Migration
             $table->dateTime('date_last_view')->nullable();
 
             $table->boolean('is_completed')->default(false);
+            $table->boolean('is_mentor')->default(false);
 
             $table->smallInteger('score')->default(0);
             $table->dateTime('date_get_score')->nullable();

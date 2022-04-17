@@ -11,17 +11,19 @@
                 {{ $question->question_body }}
             </p>
 
-            @forelse($answer->answers as $index => $answer)
-                <div id="question-{{ $question->id }}" class="p2">
-                <div class="form-check">
-                    <input name="answer" class="form-check-input" type="radio" id="reviewAnswer{{ $index }}">
+            <div class="row">
+                
+                
+                @forelse($answer->answers as $index => $answer)
+                <div class="col-3">
                     <label class="form-check-label" for="reviewAnswer{{ $index }}">
-                        {{ $answer }}
+                        {{ $index. ': ' .$answer .'"' }}
                     </label>
                 </div>
-                </div>
-            @empty 
-            @endforelse
+                @empty 
+                @endforelse
+            </div>
+           
             </form>
         </div>
    
