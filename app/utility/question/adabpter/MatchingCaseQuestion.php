@@ -2,9 +2,7 @@
 
 namespace App\utility\question\adabpter;
 
-use App\Models\Question;
-use App\Models\Workout;
-use App\Models\WorkoutQuizLog;
+
 use App\traits\Helpers\Percentage;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
@@ -15,7 +13,7 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
     use Percentage;
 
     protected $className = 'matching-case-question';
-    
+    protected $is_mentor = false;
 
 
     public function getScore($request)
@@ -50,7 +48,8 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
         self::$workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
-                'score' => $score
+                'score' => $score,
+                'is_mentor' => $this->is_mentor
             ]
         );
 

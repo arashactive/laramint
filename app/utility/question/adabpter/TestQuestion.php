@@ -9,7 +9,7 @@ class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
     protected $className = 'test-question';
-    
+    protected $is_mentor = false;
  
     public function getScore($request)
     {
@@ -24,7 +24,8 @@ class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
         $this->workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
-                'score' => $score
+                'score' => $score,
+                'is_mentor' => $this->is_mentor
             ]
         );
 

@@ -2,9 +2,6 @@
 
 namespace App\utility\question\adabpter;
 
-use App\Models\Question;
-use App\Models\Workout;
-use App\Models\WorkoutQuizLog;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
 
@@ -12,6 +9,7 @@ class TrueFalseQuestion extends QuestionParent implements QuestionAdabpterInterf
 {
 
     protected $className = 'true-false-question';
+    protected $is_mentor = false;
 
     public function getScore($request)
     {
@@ -25,7 +23,8 @@ class TrueFalseQuestion extends QuestionParent implements QuestionAdabpterInterf
         self::$workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
-                'score' => $score
+                'score' => $score,
+                'is_mentor' => $this->is_mentor
             ]
         );
 

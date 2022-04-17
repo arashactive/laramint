@@ -18,7 +18,7 @@
             <!-- Card Body -->
             <div class="card-body">
 
-                @if($workout->is_completed && $workout->score >= $activity->min_pass_score)
+                @if(($workout->is_completed && $workout->score >= $activity->min_pass_score) ||  $workout->is_mentor)
                     @livewire('activity.result', [
                     'activity' => $activity,
                     'term' => $term,

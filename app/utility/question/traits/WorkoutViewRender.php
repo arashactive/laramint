@@ -42,7 +42,14 @@ trait WorkoutViewRender
     {
         $workoutQuiz = $workout->WorkOutQuiz;
         $sumOfScore = 0;
+
+        $is_completed = true;
+        $is_mentor = false;
         foreach ($workoutQuiz as $question) {
+            if(!$is_mentor && $question->is_mentor){
+                $is_completed = false;
+                $is_mentor = true;
+            }
             $sumOfScore += (int)$question->score;
         }
 
@@ -50,7 +57,8 @@ trait WorkoutViewRender
 
         $workout->update([
             'score' => $score,
-            'is_completed' => 1,
+            'is_completed' => $is_completed,
+            'is_mentor' => $is_mentor,
             'date_get_score' => Carbon::now()->format("Y-m-d H:i:s")
         ]);
 

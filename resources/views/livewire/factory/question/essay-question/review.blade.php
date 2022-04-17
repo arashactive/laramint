@@ -7,8 +7,15 @@
         </div>
         <div class="card-body">
             
-            <h2>{{ $question_body }}</h2>
+            <h6>{{ $question_body }}</h2>
 
+            <p>
+                
+                @if(isset($workout) && $workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer != '')
+                <textarea class="form-control">{{ $workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer }}</textarea>     
+                @endif
+            
+            </p>
         </div>
     </div>
 

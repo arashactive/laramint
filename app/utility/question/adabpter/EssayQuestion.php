@@ -2,33 +2,29 @@
 
 namespace App\utility\question\adabpter;
 
-use App\Models\Question;
-use App\Models\Workout;
-use App\Models\WorkoutQuizLog;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
 class EssayQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
     protected $className = 'essay-question';
-
-
-
+    protected $is_mentor = true;
 
     public function getScore($request)
     {
 
-        $requestAnswer = json_encode($request->input("answer-" . self::$question->id));
+        $requestAnswer = json_encode($request->input("answer-" . $this->question->id));
         $score = 0;
 
-        self::$workoutQuizQuestion->update(
+        $this->workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
-                'score' => $score
+                'score' => $score,
+                'is_mentor' => $this->is_mentor
             ]
         );
 
-        parent::workoutScoreUpdate(self::$workout);
+        parent::workoutScoreUpdate($this->workout);
         return $score;
     }
 

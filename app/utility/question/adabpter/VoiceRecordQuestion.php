@@ -2,9 +2,6 @@
 
 namespace App\utility\question\adabpter;
 
-use App\Models\Question;
-use App\Models\Workout;
-use App\Models\WorkoutQuizLog;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
 
@@ -12,7 +9,7 @@ class VoiceRecordQuestion extends QuestionParent implements QuestionAdabpterInte
 {
 
     protected $className = 'voice-record-question';
-
+    protected $is_mentor = true;
 
     public function getScore($request)
     {
@@ -26,7 +23,8 @@ class VoiceRecordQuestion extends QuestionParent implements QuestionAdabpterInte
         self::$workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
-                'score' => $score
+                'score' => $score,
+                'is_mentor' => $this->is_mentor
             ]
         );
 

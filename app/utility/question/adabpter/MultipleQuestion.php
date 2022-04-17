@@ -2,9 +2,6 @@
 
 namespace App\utility\question\adabpter;
 
-use App\Models\Question;
-use App\Models\Workout;
-use App\Models\WorkoutQuizLog;
 use App\traits\Helpers\Percentage;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
@@ -14,8 +11,8 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
 
     use Percentage;
 
-    private $className = 'multiple-question';
-
+    protected $className = 'multiple-question';
+    protected $is_mentor = false;
 
     public function getScore($request)
     {
@@ -56,7 +53,8 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
         self::$workoutQuizQuestion->update(
             [
                 'answer' =>  json_encode($requestAnswer),
-                'score' => $score
+                'score' => $score,
+                'is_mentor' => $this->is_mentor
             ]
         );
 
