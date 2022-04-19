@@ -17,7 +17,7 @@ class QuizSeed extends Seeder
     public function run()
     {
 
-        for ($counter = 1; $counter <= 5; $counter++) {
+        for ($counter = 1; $counter <= 7; $counter++) {
             \App\Models\Quiz::factory()->create([
                 'title' => 'Quiz #' . $counter,
                 'attempt' => 3,
@@ -33,13 +33,18 @@ class QuizSeed extends Seeder
 
 
         $sessions = Session::all();
-
+        $number = 1;
+        $totalQuiz = Quiz::count();
         foreach ($sessions as $session) {
             for ($counter = 1; $counter <= 3; $counter++) {
                 $session->Quizes()->attach(
-                    Quiz::all()->random()->id,
+                    Quiz::findorfail($number),
                     ['order' => $session->Sessionable()->max('order') + 1]
                 );
+                $number++;
+
+                if ($number > $totalQuiz)
+                    $number = 1;
             }
         }
     }

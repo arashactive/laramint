@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Question;
 use App\Models\Quiz;
 use Illuminate\Database\Seeder;
 
@@ -335,24 +336,27 @@ class QuestionSeed extends Seeder
             'answer' => json_encode(
                 [
                     "answers" => [
-                          "min_second" => "30", 
-                          "max_second" => "120" 
-                       ], 
-                    "correctAnswer" => [
-                          ] 
-                 ]
+                        "min_second" => "30",
+                        "max_second" => "120"
+                    ],
+                    "correctAnswer" => []
+                ]
             )
         ]);
 
         $quizess = Quiz::all();
-
+        $number = 1;
+        $totalQuestion = Question::count();
         foreach ($quizess as $quiz) {
-            $number = rand(1, 17);
             for ($counter = 1; $counter <= 3; $counter++) {
                 $quiz->Questions()->attach(
-                    ${'question' . $number++},
+                    ${'question' . $number},
                     ['order' => $quiz->Questions()->max('order') + 1]
                 );
+                $number++;
+                if ($number > $totalQuestion) {
+                    $number = 1;
+                }
             }
         }
     }

@@ -58,12 +58,19 @@ function scrollToAnchor(question) {
 }
 
 function saveAndClose() {
-    $(".workout_questions").each(function () {
-        var data = $(this).serialize();
-        var url = $(this).attr("action");
 
-        $.post(url, data, function (data) {});
-    });
+    $.when(
+        $(".workout_questions").each(function () {
+            var data = $(this).serialize();
+            var url = $(this).attr("action");
+    
+            $.post(url, data, function (data) {});
+        })
+       ).then(function () {
+            window.location.reload();
+       });
 
-    alert("save and close is succesfully");
+    
+
+    
 }

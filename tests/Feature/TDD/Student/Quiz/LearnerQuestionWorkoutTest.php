@@ -2,14 +2,22 @@
 
 namespace Tests\Feature\TDD\Student\Quiz;
 
+use App\Models\WorkoutQuizLog;
 use Tests\BaseTest;
 
 class LearnerQuestionWorkoutTest extends BaseTest
 {
 
+    private $student_id = 8;
+    private $term = 1;
+    private $activity = 1;
+    private $session = 1;
+    private $sessionable = 1;
 
-    public function student(){
-        $this->signIn(8);
+
+    public function student()
+    {
+        $this->signIn($this->student_id);
     }
 
     protected function setUp(): void
@@ -25,21 +33,72 @@ class LearnerQuestionWorkoutTest extends BaseTest
      *
      * @return void
      */
-    public function test_quiz_testing_questions_render(){
+    public function test_quiz_testing_questions_render()
+    {
         $this->student();
         $response = $this->get(route('quizLearner', [
-            'term' => 1,
-            'activity' => 3,
-            'session' => 1,
-            'sessionable' => 16
-        
+            'term' => $this->term,
+            'activity' => $this->activity,
+            'session' => $this->session,
+            'sessionable' => $this->sessionable
         ]));
 
         $response->assertStatus(200);
     }
 
 
-    
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function test_quiz_with_test()
+    {
+        $this->withoutExceptionHandling();
 
+        $this->test_quiz_testing_questions_render();
 
+        $value = [
+            'question_id' => 1,
+            'workout_id' => 1,
+            'answer' => 1
+        ];
+        $this->postRequestCheckCorrectAndExist($value);
+
+        $value = [
+            'question_id' => 2,
+            'workout_id' => 1,
+            'answer' => 0
+        ];
+        $this->postRequestCheckCorrectAndExist($value);
+
+        $value = [
+            'question_id' => 3,
+            'workout_id' => 1,
+            'answer' => 1
+        ];
+        $this->postRequestCheckCorrectAndExist($value);
+    }
+
+    private function postRequestCheckCorrectAndExist($value)
+    {
+        $response = $this->post(route(
+            'quizWorkout',
+            [
+                'question_id' => $value['question_id'],
+                'workout_id' => $value['workout_id'],
+                'answer-' . $value['question_id'] => $value['answer']
+            ]
+        ));
+
+        $response->assertStatus(200);
+
+        $this->assertDatabaseHas(WorkoutQuizLog::class, [
+            'question_id' => $value['question_id'],
+            'answer' => $value['answer'],
+            'is_mentor' => 0,
+            'workout_id' => $value['workout_id'],
+            'score' => 100
+        ]);
+    }
 }

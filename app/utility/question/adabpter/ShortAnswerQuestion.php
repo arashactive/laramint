@@ -13,23 +13,22 @@ class ShortAnswerQuestion extends QuestionParent implements QuestionAdabpterInte
 
     public function getScore($request)
     {
-        $answer = json_decode(self::$question->answer, true);
+        $answer = json_decode($this->question->answer, true);
 
         $questionCorrectAnswer = $answer['correctAnswer'];
-        $requestAnswer = $request->input("answer-" . self::$question->id);
+        $requestAnswer = $request->input("answer-" . $this->question->id);
 
         $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
 
-        self::$workoutQuizQuestion->update(
+        $this->workoutQuizQuestion->update(
             [
-                'answer' =>  $requestAnswer,
+                'answer' =>  json_encode($requestAnswer),
                 'score' => $score,
                 'is_mentor' => $this->is_mentor
             ]
         );
 
-        parent::workoutScoreUpdate(self::$workout);
+        parent::workoutScoreUpdate($this->workout);
         return $score;
     }
-
 }

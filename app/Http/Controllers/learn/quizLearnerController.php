@@ -26,7 +26,7 @@ class quizLearnerController extends Controller
         // set a record for workout table
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
         WorkoutService::setWorkOutQuizSyncForThisExcersice($workout, $activity);
-        
+
         return view('contents.learn.quiz.show', compact([
             'term', 'activity', 'workout'
         ]));
@@ -35,11 +35,17 @@ class quizLearnerController extends Controller
 
     public function workout(Request $request)
     {
+        
+        $request->validate([
+            'question_id' => 'required|int',
+            'workout_id' => 'required|int'
+        ]);
+        
         $question = Question::findorfail($request->question_id);
         $workout = Workout::findorfail($request->workout_id);
 
-        return QuestionFactory::Build($question->questionType)
-        ->workoutChecker($question, $workout, $request);
         
+        return QuestionFactory::Build($question->questionType)
+            ->workoutChecker($question, $workout, $request);
     }
 }
