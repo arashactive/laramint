@@ -2,33 +2,33 @@
 
 namespace App\utility\question\adabpter;
 
+use App\traits\UploadFiles;
 use App\utility\question\contract\QuestionAdabpterInterface;
 
 
 class UploadFileQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
-
+    use UploadFiles;
     protected $className = 'upload-file-question';
     protected $is_mentor = true;
 
     public function getScore($request)
     {
-        $answer = json_decode(self::$question->answer, true);
+        
+        $file = $request->file("answer-" . $this->question->id);
+        
+        $score = 0;
+        $file = $this->upload_file_by_student($file);
 
-        $questionCorrectAnswer = $answer['correctAnswer'];
-        $requestAnswer = $request->input("answer-" . self::$question->id);
-
-        $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
-
-        self::$workoutQuizQuestion->update(
+        $this->workoutQuizQuestion->update(
             [
-                'answer' =>  $requestAnswer,
+                'answer' =>  json_encode($file),
                 'score' => $score,
                 'is_mentor' => $this->is_mentor
             ]
         );
 
-        parent::workoutScoreUpdate(self::$workout);
+        parent::workoutScoreUpdate($this->workout);
         return $score;
     }
 

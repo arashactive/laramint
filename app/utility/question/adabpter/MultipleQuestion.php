@@ -16,7 +16,8 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
 
     public function getScore($request)
     {
-        $answer = json_decode(self::$question->answer, true);
+
+        $answer = json_decode($this->question->answer, true);
 
         // set 0 for loop of answers in database and correct-answers of student
         $correctAnswerInDatabase = 0;
@@ -27,7 +28,7 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
 
         
         // get answers of students
-        $requestAnswer = $request->input("answer-" . self::$question->id);
+        $requestAnswer = $request->input("answer-" . $this->question->id);
 
         // loop of database correct answer to check score
         for ($counter = 0; $counter <= count($questionCorrectAnswers); $counter++) {
@@ -48,9 +49,9 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
             }
         }
 
-        $score = self::calculatePercentageBetweenTwoNumber($correctAnswerInDatabase, $correctAnswerofStudent);
+        $score = $this->calculatePercentageBetweenTwoNumber($correctAnswerInDatabase, $correctAnswerofStudent);
         
-        self::$workoutQuizQuestion->update(
+        $this->workoutQuizQuestion->update(
             [
                 'answer' =>  json_encode($requestAnswer),
                 'score' => $score,
@@ -58,7 +59,7 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
             ]
         );
 
-        parent::workoutScoreUpdate(self::$workout);
+        parent::workoutScoreUpdate($this->workout);
         return $score;
     }
 
