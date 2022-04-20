@@ -18,7 +18,7 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
 
     public function getScore($request)
     {
-        $answer = json_decode(self::$question->answer, true);
+        $answer = json_decode($this->question->answer, true);
 
         $correctAnswerInDatabase = 0;
         $correctAnswerofStudent = 0;
@@ -30,7 +30,7 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
 
         for ($counter = 0; $counter < count($questionCorrectAnswers); $counter++) {
             $correctAnswerInDatabase++;
-            $requestAnswerRight = $request->input("answer-" . self::$question->id . '-' . $counter);
+            $requestAnswerRight = $request->input("answer-" . $this->question->id . '-' . $counter);
 
             $is_studentCorrectAnswer = false;
             if ($questionCorrectAnswers[$counter]['right'] == $requestAnswerRight) {
@@ -43,9 +43,9 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
 
 
 
-        $score = self::calculatePercentageBetweenTwoNumber($correctAnswerInDatabase, $correctAnswerofStudent);
+        $score = $this->calculatePercentageBetweenTwoNumber($correctAnswerInDatabase, $correctAnswerofStudent);
 
-        self::$workoutQuizQuestion->update(
+        $this->workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
                 'score' => $score,
@@ -53,7 +53,7 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
             ]
         );
 
-        parent::workoutScoreUpdate(self::$workout);
+        parent::workoutScoreUpdate($this->workout);
         return $score;
     }
 

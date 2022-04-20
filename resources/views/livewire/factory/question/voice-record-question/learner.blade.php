@@ -22,11 +22,23 @@
                 </div>
                 @empty 
                 @endforelse
+
+
+                
             </div>
            
+            <div class="row record mt-4">
+                <div class="col-6">
+                    <a class="btn btn-primary small" id="record"><i class="fa fa-microphone"></i>
+                        @lang("record live")
+                    </a>
+                </div>
+                <div class="col-6"></div>
+            </div>
             </form>
         </div>
    
     </div>
 
 </div>
+
