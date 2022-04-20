@@ -18,9 +18,9 @@
             </p>
             
             <label class="font-weight-bold">@lang('max size: ')</label>
-            <span class="text-secondary text-sm">{{ $answer->answers->max_size }}(kb) | </span>
+            <span class="text-secondary text-sm">{{ $answer->answers->max_size }}<sub>(kb)</sub> | </span>
             <label class="font-weight-bold">@lang('min size: ')</label> 
-            <span class="text-secondary text-sm">{{ $answer->answers->min_size }}(kb) | </span>
+            <span class="text-secondary text-sm">{{ $answer->answers->min_size }}<sub>(kb)</sub> | </span>
             <label class="font-weight-bold">@lang('filetype: ')</label>
             <span class="text-secondary  text-sm">{{ $answer->answers->file_type }}</span>
             
