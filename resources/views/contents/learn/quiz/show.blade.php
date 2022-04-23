@@ -52,5 +52,11 @@
 @endsection
 
 @section('js')
+        <script>
+            let mp3WorkerPathPHP = "{{ URL::to('js/record/src/mp3Worker.js') }}";
+        </script>
     <script src="{{ URL::to('/js/quiz.js') }}"></script>
+    <script src="{{ URL::to('/js/record/src/recorder.js') }}"></script>
+    <script src="{{ URL::to('/js/record/src/mp3Worker.js') }}"></script>
+    <script src="{{ URL::to('/js/record/js/app.js') }}"></script>
 @endsection
