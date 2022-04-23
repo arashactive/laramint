@@ -10,13 +10,18 @@
             <h2>{{ $question_body }}</h2>
 
              @forelse($answers as $index => $answer)
-                <div class="row pb-2 mt-2 border-bottom">
+             @if(isset($workout) && $workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer >= 0)
+             @php($workoutAnswer = json_decode($workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer, true))
+             
+
+                <div class="row pb-2 mt-2 border-bottom 
+                {{ !$workoutAnswer[$index]['correct'] ? "border border-danger text-danger rounded font-weight-light" : '' }} ">
                     <div class="col-1">
                         <span># {{ $loop->iteration }}</span>
                     </div>
                     <div class="col-5 ">
                         <label class="form-check-label text-info">
-                            {{ $answer['left'] }}
+                            {{ $answer->left }}
                         </label>
                     </div>
                     <div class="col-1">
@@ -26,12 +31,18 @@
                     </div>
                     <div class="col-5">
                         <label class="form-check-label text-warning">
-                            {{ $answer['right'] }}
+                            @if(!$workoutAnswer[$index]['correct'])
+                            <label class="text-success">{{ $answer->right }}</label>
+                            @endif
+                            <label>{{ $workoutAnswer[$index]['studentAnswer'] }}</label>
                         </label>
                     </div>
                         
                     
                 </div>
+
+
+            @endif
             @empty 
             @endforelse
         </div>

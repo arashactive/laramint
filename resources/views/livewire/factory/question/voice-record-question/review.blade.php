@@ -9,6 +9,11 @@
             
             <h2>{{ $question_body }}</h2>
 
+            
+            @if(isset($workout) && $workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer != '')
+            <p>Audio:</p>
+            <audio src="{{ asset(json_decode($workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer, true)) }}" controls class="form-control"></audio>
+            @endif
         </div>
     </div>
 

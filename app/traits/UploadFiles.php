@@ -15,14 +15,14 @@ trait UploadFiles
      */
     public function upload($file, $file_type)
     {
-        $path = $file->store('storage/'. $file_type);
+        $path = $file->store('public/'. $file_type);
 
         return $path;
     }
 
 
     public function upload_file_by_student($file){
-        $path = $file->store('storage/student_' . Auth::user()->id);
+        $path = $file->store('public/student_' . Auth::user()->id);
 
         return $path;
     }
