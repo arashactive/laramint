@@ -9,7 +9,7 @@
                                
                                 <div class="col ml-3 align-middle">
                                         <div class="text-lg pt-2 font-weight-bold mb-1 text-primary">
-                                            <a href="{{ route('learningCourse', $term->id) }}">
+                                            <a href="{{ route('learnerParticipantWorkout', $term->pivot->id) }}">
                                                 {{  $term->title }}    
                                             </a>
                                             <small>{{ $term->Department->title }} | {{ $term->Course->title }}</small>

@@ -47,4 +47,14 @@ class User extends Authenticatable
     {
         return Role::where('id', $this->getOriginal('pivot_role_id'))->first();
     }
+
+    public function Terms()
+    {
+        return $this->belongsToMany(
+            Term::class,
+            'term_user',
+            'user_id',
+            'term_id'
+        )->withPivot('id', 'role_id');
+    }
 }

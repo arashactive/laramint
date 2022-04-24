@@ -18,6 +18,7 @@ class StudentCoursesForAdmin extends Component
     public function __construct($term, $user)
     {
         $this->term = $term;
+        
         $this->user = $user;
     }
 

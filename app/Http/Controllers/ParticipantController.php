@@ -14,13 +14,9 @@ class ParticipantController extends Controller
     public function participantTerms(User $user)
     {
         $studentRoleId = 4;
-        $terms = Term::with('Participants')
-            ->MyCourse($studentRoleId, $user->id)
-            ->paginate();
-
+        
         return view('contents.mentors.learners.profile', compact(
-            'user',
-            'terms'
+            'user'
         ));
     }
 
@@ -56,5 +52,11 @@ class ParticipantController extends Controller
 
         return redirect(route('term.show', ['term' => $term->id]))
             ->with('danger', __('successfull deleted'));
+    }
+
+
+
+    public function participantWorkout(Participant $participant){
+        
     }
 }

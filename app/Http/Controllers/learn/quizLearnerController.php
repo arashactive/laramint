@@ -22,7 +22,7 @@ class quizLearnerController extends Controller
     {
 
         $this->authorize('QuizViewForLearner', [$activity, $term]);
-
+        
         // set a record for workout table
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $session, $activity->id, $sessionable->id);
         WorkoutService::setWorkOutQuizSyncForThisExcersice($workout, $activity);

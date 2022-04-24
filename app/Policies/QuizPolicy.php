@@ -14,7 +14,8 @@ class QuizPolicy
     public function QuizViewForLearner(User $user, Quiz $quiz, Term $term)
     {
         
-        if ($term->Participants()->where('user_id', $user->id)->count() == 0) {
+        if ($term->Participants()->where('user_id', $user->id)
+        ->where('role_id', 4)->count() == 0) {
             return null;
         }
         

@@ -23,7 +23,7 @@ trait UploadFiles
 
     public function upload_file_by_student($file){
         $path = $file->store('public/student_' . Auth::user()->id);
-
+        
         return $path;
     }
 

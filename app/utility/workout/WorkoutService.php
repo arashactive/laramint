@@ -10,7 +10,7 @@ use App\Models\WorkoutQuizLog;
 
 abstract class WorkoutService
 {
-
+    
     public static function checkExistWorkout($term_id, $session_id, $activity_id, $sessionable)
     {
         $workout = Workout::where('user_id', auth()->user()->id)
