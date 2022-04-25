@@ -155,7 +155,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    @forelse ($user->Terms as $term)
+                    @forelse ($terms as $term)
                     <x-box.student-courses-for-admin
                         :term="$term"
                         :user="$user"/>

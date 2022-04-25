@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Term;
+use App\utility\modules\facades\TermFacade;
+use App\utility\modules\terms\TermModule;
+use Illuminate\Support\Facades\Auth;
 
 class MyCourseController extends Controller
 {
@@ -12,11 +15,9 @@ class MyCourseController extends Controller
     {
         $this->authorize('myCourse.index');
 
-        $studentRoleId = 4;
-        $terms = Term::with('Participants')
-            ->MyCourse($studentRoleId)
-            ->paginate();
-
+        $termModule = new TermModule();
+        $terms = $termModule->All();
+        
         return view('contents.learn.mycourses.list', compact([
             'terms'
         ]));

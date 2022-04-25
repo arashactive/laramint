@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ParticipantAddToTerm;
 use App\Models\Participant;
 use App\Models\Term;
 use App\Models\User;
-use Illuminate\Support\Facades\Mail;
+use App\utility\modules\terms\TermModule;
 
 class ParticipantController extends Controller
 {
 
     public function participantTerms(User $user)
     {
-        $studentRoleId = 4;
         
+        $termModule = new TermModule();
+        $termModule->User($user);
+        $terms = $termModule->All();
+
         return view('contents.mentors.learners.profile', compact(
-            'user'
+            'user', 'terms'
         ));
     }
 
@@ -56,7 +58,14 @@ class ParticipantController extends Controller
 
 
 
-    public function participantWorkout(Participant $participant){
+    public function participantWorkout(Participant $participant)
+    {
         
+        $term = Term::findorfail($participant->term_id);
+        $user = User::findorfail($participant->user_id);
+        
+        return view('contents.mentors.myLearners.courses.show', compact([
+            'term', 'user'
+        ]));
     }
 }
