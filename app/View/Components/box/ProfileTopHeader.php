@@ -1,24 +1,22 @@
 <?php
 
-namespace App\View\Components\box;
+namespace App\View\Components\Box;
 
 use Illuminate\View\Component;
 
-class CourseItemWithProgressTheme extends Component
+class ProfileTopHeader extends Component
 {
-    
-    
-    public $term;
 
+    public $user;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term)
+    public function __construct($user)
     {
-        $this->term = $term;
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +26,6 @@ class CourseItemWithProgressTheme extends Component
      */
     public function render()
     {
-        return view('components.box.course-item-with-progress-theme');
+        return view('components.box.profile-top-header');
     }
 }

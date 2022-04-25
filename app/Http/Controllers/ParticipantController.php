@@ -12,13 +12,14 @@ class ParticipantController extends Controller
 
     public function participantTerms(User $user)
     {
-        
-        $termModule = new TermModule();
-        $termModule->User($user);
-        $terms = $termModule->All();
 
+        $terms = new TermModule();
+        $terms->User($user);
+        $terms->is_mentor = true;
+       
         return view('contents.mentors.learners.profile', compact(
-            'user', 'terms'
+            'user',
+            'terms'
         ));
     }
 
@@ -60,12 +61,11 @@ class ParticipantController extends Controller
 
     public function participantWorkout(Participant $participant)
     {
-        
-        $term = Term::findorfail($participant->term_id);
-        $user = User::findorfail($participant->user_id);
-        
-        return view('contents.mentors.myLearners.courses.show', compact([
-            'term', 'user'
+
+        $term = $participant->Term;      
+        $user = $participant->User;
+        return view('contents.learn.mycourses.show', compact([
+            'term', 'participant', 'user'
         ]));
     }
 }

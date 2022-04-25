@@ -2,6 +2,13 @@
 
 
 @section("content")
+
+@can('mentor.list')
+<x-box.profile-top-header :user="$user" />
+<x-box.profile-review-box />
+@endcan
+
+
 <div class="row">
 
     <div class="col-12">

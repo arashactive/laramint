@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class TermModule
 {
 
-    private $is_mentor = false;
+    public $is_mentor = false;
     private $user;
 
     public function __construct()
@@ -19,11 +19,6 @@ class TermModule
     public function All()
     {
         return $this->user->Terms;
-    }
-
-
-    public function is_mentor($value = true){
-        $this->is_mentor = $value;
     }
 
     public function User(User $user){

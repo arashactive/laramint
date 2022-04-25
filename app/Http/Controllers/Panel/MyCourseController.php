@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Participant;
 use App\Models\Term;
 use App\utility\modules\facades\TermFacade;
 use App\utility\modules\terms\TermModule;
@@ -15,8 +16,7 @@ class MyCourseController extends Controller
     {
         $this->authorize('myCourse.index');
 
-        $termModule = new TermModule();
-        $terms = $termModule->All();
+        $terms = new TermModule();
         
         return view('contents.learn.mycourses.list', compact([
             'terms'
@@ -24,12 +24,12 @@ class MyCourseController extends Controller
     }
 
 
-    public function learn(Term $term)
+    public function learn(Participant $participant)
     {
-        $this->authorize('participantAccessToTerm', [$term]);
-    
+        //$this->authorize('participantAccessToTerm', [$term]);
+        $term = $participant->Term;        
         return view('contents.learn.mycourses.show', compact([
-            'term'
+            'term', 'participant'
         ]));
     }
 }

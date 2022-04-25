@@ -22,44 +22,14 @@
                         <li class="nav-item active">
                             <a class="nav-link active" data-toggle="tab" href="#home">{{ __('Home') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#progress">{{ __('In Progress') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#completed">{{ __('Completed') }}</a>
-                        </li>
                       </ul>
                       
                     <div class="tab-content p-4">
                         
                         <div id="home" class="tab-pane active">
-
-                            @forelse ($terms as $term)
-                                <x-box.course-item-with-progress-theme
-                                    :term="$term"/>
-                            @empty
-                                <p>
-                                    {{ __("You don't have any course in progress, you can enroll one course in this link.") }}
-                                </p>
-                            @endforelse
+                            <x-modules.terms.all :terms="$terms" />
                        
                         </div>
-
-
-                        <div id="progress" class="tab-pane fade">
-                          
-                            @forelse ($terms as $term)
-                            <x-box.course-item-with-progress-theme
-                                :term="$term"/>
-                            @empty
-                                <p>
-                                    {{ __("You don't have any course in progress, you can enroll one course in this link.") }}
-                                </p>
-                            @endforelse
-                        </div>
-
-
-
                     </div>
                 
         
