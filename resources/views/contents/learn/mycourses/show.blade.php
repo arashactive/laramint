@@ -4,7 +4,7 @@
 @section("content")
 
 @can('mentor.list')
-<x-box.profile-top-header :user="$user" />
+<x-box.profile-top-header :user="$term->User" />
 <x-box.profile-review-box />
 @endcan
 
@@ -30,9 +30,8 @@
                 <h6>{{ $term->Department->title }} | {{ $term->Course->title }}</h6>
 
                 @forelse ($term->Sessions as $session)
-                    
+                
                     <x-box.session-item-for-student
-                    :term="$term->id"
                     :session="$session" />
 
                 @empty

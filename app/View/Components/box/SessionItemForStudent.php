@@ -7,17 +7,14 @@ use Illuminate\View\Component;
 class SessionItemForStudent extends Component
 {
     public $session;
-    public $term;
-
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term, $session)
+    public function __construct($session)
     {
-        $this->term = $term;
         $this->session = $session;
     }
 

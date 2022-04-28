@@ -12,10 +12,7 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
-use App\Http\Controllers\learn\documentLearnerController;
-use App\Http\Controllers\learn\feedbackLearnerController;
 use App\Http\Controllers\learn\quizLearnerController;
-use App\Http\Controllers\learn\rubricLearnerController;
 use App\Http\Controllers\learn\WorkoutController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\Mentors\MyLearnerController;
@@ -58,12 +55,8 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('learn')->middleware(['verified'])->group(function () {
-    Route::get('/feedback/{term}/{activity}/{session}/{sessionable}', [feedbackLearnerController::class, 'show'])->name('feedbackLearner');
-    Route::get('/rubric/{term}/{activity}/{session}/{sessionable}', [rubricLearnerController::class, 'show'])->name('rubricLearner');
-    Route::get('/quiz/{term}/{activity}/{session}/{sessionable}', [quizLearnerController::class, 'show'])->name('quizLearner');
-    Route::get('/document/{term}/{activity}/{session}/{sessionable}', [documentLearnerController::class, 'show'])->name('documentLearner');
-
-    Route::get('/file/{term}/{activity}/{session}/{sessionable}', [documentLearnerController::class, 'file'])->name('fileLearner');
+    
+    Route::get('/task/{term}/{sessionable}', [WorkoutController::class, 'task'])->name('taskLearner');
 
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
@@ -86,6 +79,7 @@ Route::prefix('mentor')->middleware(['verified'])->group(function () {
     Route::get('/learners', [MyLearnerController::class, 'myLearners'])->name('myLearners');
     Route::get('/learner/{user}', [ParticipantController::class, 'participantTerms'])->name('learnerShowTerms');
     Route::get('/workout/{participant}', [ParticipantController::class, 'participantWorkout'])->name('learnerParticipantWorkout');
+    Route::get('/review/workout/{term}/{workout}', [ParticipantController::class, 'reviewWorkout'])->name('reviewWorkout');
 });
 
 

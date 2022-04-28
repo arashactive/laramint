@@ -22,6 +22,13 @@ class Workout extends Model
         ]);
     }
 
+    public function Sessionable(){
+        return $this->belongsTo(Sessionable::class);
+    }
+
+    public function Session(){
+        return $this->belongsTo(Session::class);
+    }
 
     public function WorkOutQuiz()
     {

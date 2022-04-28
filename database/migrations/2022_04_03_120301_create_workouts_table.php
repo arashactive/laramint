@@ -22,13 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('term_id');
             $table->foreign('term_id')->references('id')->on('terms');
 
-            $table->unsignedBigInteger('session_id');
-            $table->foreign('session_id')->references('id')->on('sessions');
-
             $table->unsignedBigInteger('sessionable_id');
             $table->foreign('sessionable_id')->references('id')->on('sessionables');
-
-            $table->unsignedBigInteger('activity_id');
 
             $table->dateTime('date_first_view');
             $table->dateTime('date_last_view')->nullable();
@@ -38,8 +33,6 @@ return new class extends Migration
 
             $table->smallInteger('score')->default(0);
             $table->dateTime('date_get_score')->nullable();
-
-
 
             $table->timestamps();
         });

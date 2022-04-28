@@ -14,13 +14,11 @@
                                         </div>
 
                                         <div class="mt-3">
-                                            @forelse ($session->related as $activity)
+                                            
+                                            @forelse ($session->relateds as $activity)
                                             
                                             <x-box.session-activity-item
-                                            :term="$term"
-                                            :activity="$activity->model"
-                                            :session="$session"
-                                            :sessionable="$activity"
+                                            :activity="$activity"
                                             />
                                             @empty   
                                             @endforelse
@@ -32,23 +30,7 @@
                                     
                                     <h6 class="font-weight-bold text-dark">{{ __('Grade') }}</h6>
                                     
-                                    <x-atoms.stars 
-                                    :score="$session->Workout
-                                    ->where('term_id', $term)
-                                    ->where('user_id', Auth::user()->id)
-                                    ->where('is_completed', 1)->avg('score')">
-                                    </x-container.File>
-
-                                    <small class="text-secondary">session {{ $loop->iteration }} | Discussion Promot * 10 min</small>
-                                    <x-atoms.progress
-                                    :color="'bg-info'"
-                                    :fill="$session->Workout
-                                    ->where('term_id', $term)
-                                    ->where('user_id', Auth::user()->id)
-                                    ->where('is_completed', 1)->count()"
-                                    :count="$session->related->count()"
-                                    ></x-atoms.progress>
-
+                                    
 
 
                                 </div>

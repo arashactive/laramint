@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Participant;
 use App\Models\Term;
 use App\Models\User;
+use App\Models\Workout;
+use App\utility\modules\tasks\TaskFactory;
 use App\utility\modules\terms\TermModule;
 
 class ParticipantController extends Controller
@@ -16,7 +18,7 @@ class ParticipantController extends Controller
         $terms = new TermModule();
         $terms->User($user);
         $terms->is_mentor = true;
-       
+
         return view('contents.mentors.learners.profile', compact(
             'user',
             'terms'
@@ -57,15 +59,26 @@ class ParticipantController extends Controller
             ->with('danger', __('successfull deleted'));
     }
 
-
+    public function reviewWorkout(Term $term, Workout $workout)
+    {
+        
+        $className = $workout->Sessionable->sessionable_type;
+        dd($workout);
+        $task = TaskFactory::Build($className);
+        $task->Mentor();
+        dd($task->Review($term, $workout));
+    }
 
     public function participantWorkout(Participant $participant)
     {
 
-        $term = $participant->Term;      
-        $user = $participant->User;
+        $termModule = new TermModule();
+        $termModule->is_mentor = true;
+
+        $term = $termModule->Participant($participant);
+
         return view('contents.learn.mycourses.show', compact([
-            'term', 'participant', 'user'
+            'term', 'participant'
         ]));
     }
 }
