@@ -12,7 +12,10 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\learn\documentLearnerController;
+use App\Http\Controllers\learn\feedbackLearnerController;
 use App\Http\Controllers\learn\quizLearnerController;
+use App\Http\Controllers\learn\rubricLearnerController;
 use App\Http\Controllers\learn\WorkoutController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\Mentors\MyLearnerController;
@@ -57,6 +60,8 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 Route::prefix('learn')->middleware(['verified'])->group(function () {
     
     Route::get('/task/{term}/{sessionable}', [WorkoutController::class, 'task'])->name('taskLearner');
+    Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
+
 
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
@@ -66,7 +71,6 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
     Route::get('/completeAndNext/{workout}', [WorkoutController::class, 'completedAndNext'])->name('completedAndNext');
 
 
-    Route::post('/quiz/workout', [quizLearnerController::class, 'workout'])->name('quizWorkout');
 });
 
 

@@ -17,19 +17,14 @@
             <!-- Card Body -->
             <div class="card-body">
 
-                @livewire('activity.quiz', [
+                @livewire('activity.result', [
                 'activity' => $activity,
                 'term' => $term,
                 'workout' => $workout
                 ])
             </div>
 
-
-            <div class="card-footer text-center">
-                <button class="btn btn-danger" id="saveAndClose">
-                    <i class="fa fa-save"></i> {{ __("save & close") }}
-                </button>
-            </div>
+            
         </div>
     </div>
 

@@ -34,4 +34,8 @@ class Workout extends Model
     {
         return $this->hasMany(WorkoutQuizLog::class);
     }
+
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
 }

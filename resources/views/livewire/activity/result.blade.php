@@ -1,3 +1,5 @@
+
+
 <div class="row">
 
     <!-- Earnings (Monthly) Card Example -->
@@ -9,10 +11,9 @@
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             @lang("Score")</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            
-                            <x-atoms.stars 
-                            :score="$workout->score">
-                            </x-container.File>
+
+                            <x-atoms.stars :score="$workout->score">
+                                </x-container.File>
                         </div>
                     </div>
                     <div class="col-auto">
@@ -60,7 +61,7 @@
                                     {{ $workout->date_get_score }}
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                     <div class="col-auto">
@@ -92,13 +93,8 @@
     </div>
 </div>
 
-
-
 @livewire('activity.review', [
-                        'activity' => $activity,
-                        'term' => $term,
-                        'workout' => $workout
-                        ]) 
-
-
-
+'activity' => $activity,
+'term' => $term,
+'workout' => $workout
+])

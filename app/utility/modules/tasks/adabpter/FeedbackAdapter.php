@@ -4,12 +4,12 @@ namespace App\utility\modules\tasks\adabpter;
 
 use App\Models\Sessionable;
 use App\Models\Term;
-use App\utility\file\FileFactory;
+use App\Models\User;
 use App\utility\modules\tasks\contract\TaskInterface;
+use App\utility\modules\tasks\services\TaskParent;
 use App\utility\workout\WorkoutService;
-use Illuminate\Support\Facades\Auth;
 
-class FeedbackAdapter implements TaskInterface
+class FeedbackAdapter extends TaskParent
 {
     protected $view = 'contents.learn.feedback.show';
     public $is_mentor = false;
@@ -17,9 +17,7 @@ class FeedbackAdapter implements TaskInterface
 
     public function Render(Term $term, Sessionable $sessionable)
     {
-        $user = Auth::user();
-        
-        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $user);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
         
         $activity = $sessionable->Model;
 

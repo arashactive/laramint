@@ -63,10 +63,11 @@ class ParticipantController extends Controller
     {
         
         $className = $workout->Sessionable->sessionable_type;
-        dd($workout);
+        
         $task = TaskFactory::Build($className);
         $task->Mentor();
-        dd($task->Review($term, $workout));
+        $task->set_user($workout->User);
+        return $task->Render($term, $workout->Sessionable);
     }
 
     public function participantWorkout(Participant $participant)

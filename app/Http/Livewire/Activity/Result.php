@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Activity;
 
+use App\Models\Workout;
 use Livewire\Component;
 
 class Result extends Component
