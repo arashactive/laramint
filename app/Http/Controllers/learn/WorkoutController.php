@@ -17,6 +17,7 @@ class WorkoutController extends Controller
    
     public function task(Term $term, Sessionable $sessionable){
         $className = $sessionable->sessionable_type;
+        
         $task = TaskFactory::Build($className);
         $task->set_user(Auth::user());
         return $task->Render($term, $sessionable);
@@ -38,11 +39,11 @@ class WorkoutController extends Controller
             'question_id' => 'required|int',
             'workout_id' => 'required|int'
         ]);
+
         
         $question = Question::findorfail($request->question_id);
         $workout = Workout::findorfail($request->workout_id);
-
-        
+       
         return QuestionFactory::Build($question->questionType)
             ->workoutChecker($question, $workout, $request);
     }

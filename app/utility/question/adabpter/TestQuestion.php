@@ -20,7 +20,7 @@ class TestQuestion extends QuestionParent implements QuestionAdabpterInterface
         $requestAnswer = $request->input("answer-" . $this->question->id);
 
         $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
-
+        
         $this->workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,

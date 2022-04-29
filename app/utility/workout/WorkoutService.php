@@ -45,11 +45,12 @@ abstract class WorkoutService
 
     public static function setWorkOutQuizSyncForThisExcersice(Workout $workout, Quiz $quiz)
     {
+        
         if ($workout->WorkOutQuiz->count() > 0) {
             return [];
         }
 
-
+        
         foreach ($quiz->Questions as $question) {
             WorkoutQuizLog::create([
                 'workout_id' => $workout->id,

@@ -19,6 +19,7 @@ class QuizAdapter extends TaskParent
 
     public function Render(Term $term, Sessionable $sessionable)
     {
+    
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
 
         $activity = $sessionable->Model;

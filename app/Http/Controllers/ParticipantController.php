@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Workout;
 use App\utility\modules\tasks\TaskFactory;
 use App\utility\modules\terms\TermModule;
+use Illuminate\Http\Request;
 
 class ParticipantController extends Controller
 {
@@ -61,9 +62,9 @@ class ParticipantController extends Controller
 
     public function reviewWorkout(Term $term, Workout $workout)
     {
-        
+
         $className = $workout->Sessionable->sessionable_type;
-        
+
         $task = TaskFactory::Build($className);
         $task->Mentor();
         $task->set_user($workout->User);
@@ -81,5 +82,23 @@ class ParticipantController extends Controller
         return view('contents.learn.mycourses.show', compact([
             'term', 'participant'
         ]));
+    }
+
+
+    public function reviewWorkoutUpdate(Request $request)
+    {
+        $request->validate([
+            'workout_id' => 'required|int',
+            'score' => 'required|int|min:0|max:100',
+            'is_completed' => 'required|boolean'
+        ]);
+
+        $workout = Workout::findorfail($request->workout_id);
+        $workout->score = $request->score;
+        $workout->is_completed = $request->is_completed;
+
+        $workout->save();
+
+        return redirect()->back()->with('msg-success', 'success');
     }
 }

@@ -6,7 +6,6 @@ use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\URL;
 use Tests\BaseTest;
 
 class QuizSixTest extends BaseTest
@@ -14,8 +13,6 @@ class QuizSixTest extends BaseTest
 
     private $student_id = 8;
     private $term = 1;
-    private $activity = 6;
-    private $session = 2;
     private $sessionable = 21;
 
 
@@ -40,10 +37,8 @@ class QuizSixTest extends BaseTest
     public function test_quiz_testing_questions_render()
     {
         $this->student();
-        $response = $this->get(route('quizLearner', [
+        $response = $this->get(route('taskLearner', [
             'term' => $this->term,
-            'activity' => $this->activity,
-            'session' => $this->session,
             'sessionable' => $this->sessionable
         ]));
 
@@ -97,8 +92,6 @@ class QuizSixTest extends BaseTest
         $this->assertDatabaseHas(Workout::class, [
             'user_id' => $this->student_id,
             'term_id' => $this->term,
-            'activity_id' => $this->activity,
-            'session_id' => $this->session,
             'sessionable_id' => $this->sessionable,
             'is_completed' => 0,
             'is_mentor' => 1

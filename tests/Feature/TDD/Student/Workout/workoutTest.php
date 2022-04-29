@@ -31,7 +31,7 @@ class workoutTest extends BaseTest
     public function test_first_term_is_exist()
     {
         $this->student();
-        $response = $this->get(route('learningCourse', ['term' => 1]));
+        $response = $this->get(route('learningCourse', ['participant' => 3]));
 
         $response->assertStatus(200);
     }
@@ -44,12 +44,11 @@ class workoutTest extends BaseTest
     public function test_first_view_set_record()
     {
         $this->student();
-        $response = $this->get(route('fileLearner', [
+        $response = $this->get(route('taskLearner', [
             'term' => 1,
-            'activity' => 1,
-            'session' => 1,
             'sessionable' => 1
         ]));
+        
 
         $response->assertStatus(200);
 
@@ -58,8 +57,6 @@ class workoutTest extends BaseTest
             [
                 'user_id' => "8",
                 'term_id' => "1",
-                'activity_id' => "1",
-                'session_id' => "1",
                 'sessionable_id' => "1",
                 'is_completed' => "0"
             ]
@@ -76,20 +73,17 @@ class workoutTest extends BaseTest
     public function test_first_view_quiz_set_record()
     {
         $this->student();
-        $response = $this->get(route('quizLearner', [
+        $response = $this->get(route('taskLearner', [
             'term' => 1,
-            'activity' => 2,
-            'session' => 1,
             'sessionable' => 16
         ]));
+        
 
         $response->assertStatus(200);
         
         $workout = Workout::where([
             'user_id' => "8",
             'term_id' => "1",
-            'activity_id' => "2",
-            'session_id' => "1",
             'sessionable_id' => "16",
             'is_completed' => "0"
         ])->first();
@@ -99,13 +93,6 @@ class workoutTest extends BaseTest
         );
 
 
-        $this->assertDatabaseHas(
-            $this->workoutQuiz,
-            [
-                'workout_id' => $workout->id,
-                'quiz_id' => $workout->activity_id,
-            ]
-        );
     }
 
 
@@ -117,13 +104,11 @@ class workoutTest extends BaseTest
     public function test_completed_and_next()
     {
         $this->student();
-
-        $response = $this->get(route('fileLearner', [
+        $response = $this->get(route('taskLearner', [
             'term' => 1,
-            'activity' => 1,
-            'session' => 1,
             'sessionable' => 1
         ]));
+       
 
         $response->assertStatus(200);
 

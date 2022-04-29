@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\TDD\Student\Quiz;
 
+use App\Models\Sessionable;
+use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
 use Tests\BaseTest;
 
@@ -10,9 +12,7 @@ class LearnerQuestionWorkoutTest extends BaseTest
 
     private $student_id = 8;
     private $term = 1;
-    private $activity = 1;
-    private $session = 1;
-    private $sessionable = 1;
+    private $sessionable = 16;
 
 
     public function student()
@@ -36,12 +36,11 @@ class LearnerQuestionWorkoutTest extends BaseTest
     public function test_quiz_testing_questions_render()
     {
         $this->student();
-        $response = $this->get(route('quizLearner', [
+        $response = $this->get(route('taskLearner', [
             'term' => $this->term,
-            'activity' => $this->activity,
-            'session' => $this->session,
             'sessionable' => $this->sessionable
         ]));
+       
 
         $response->assertStatus(200);
     }
@@ -90,7 +89,7 @@ class LearnerQuestionWorkoutTest extends BaseTest
                 'answer-' . $value['question_id'] => $value['answer']
             ]
         ));
-
+        
         $response->assertStatus(200);
 
         $this->assertDatabaseHas(WorkoutQuizLog::class, [

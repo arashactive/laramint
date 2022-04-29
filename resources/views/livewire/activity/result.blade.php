@@ -1,5 +1,4 @@
 
-
 <div class="row">
 
     <!-- Earnings (Monthly) Card Example -->

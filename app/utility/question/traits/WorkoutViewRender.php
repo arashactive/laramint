@@ -72,6 +72,7 @@ trait WorkoutViewRender
         $workoutQuizQuestion = WorkoutQuizLog::where('workout_id', $workout->id)
             ->where('question_id', $question->id)->first();
 
+        
         $this->question = $question;
         $this->workout = $workout;
         $this->workoutQuizQuestion = $workoutQuizQuestion;

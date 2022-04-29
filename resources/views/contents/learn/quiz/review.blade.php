@@ -2,6 +2,13 @@
 
 
 @section("content")
+
+@can('mentor.list')
+
+    @include('contents.learn.mentor.mentor-workout')
+
+@endcan
+
 <div class="row">
 
     <div class="col-12">

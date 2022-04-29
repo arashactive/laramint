@@ -11,8 +11,6 @@ class ShortAnswerTest extends BaseTest
 
     private $student_id = 8;
     private $term = 1;
-    private $activity = 5;
-    private $session = 2;
     private $sessionable = 20;
 
 
@@ -37,10 +35,8 @@ class ShortAnswerTest extends BaseTest
     public function test_quiz_testing_questions_render()
     {
         $this->student();
-        $response = $this->get(route('quizLearner', [
+        $response = $this->get(route('taskLearner', [
             'term' => $this->term,
-            'activity' => $this->activity,
-            'session' => $this->session,
             'sessionable' => $this->sessionable
         ]));
 
@@ -84,8 +80,6 @@ class ShortAnswerTest extends BaseTest
         $this->assertDatabaseHas(Workout::class, [
             'user_id' => $this->student_id,
             'term_id' => $this->term,
-            'activity_id' => $this->activity,
-            'session_id' => $this->session,
             'sessionable_id' => $this->sessionable,
             'is_completed' => 0,
             'is_mentor' => 1
