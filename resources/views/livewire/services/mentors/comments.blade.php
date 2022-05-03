@@ -1,6 +1,6 @@
 <div>
     @forelse($comments as $comment)
-        <x-box.item :title="$comment->body" :color="'danger'" />
+        <x-box.mentor.comments.item :comment="$comment" />
     @empty
 
     @endforelse

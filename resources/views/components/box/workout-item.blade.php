@@ -25,7 +25,8 @@
                                         href="{{ route('reviewWorkout' , [
                                             'term' => $workout->term_id,
                                             'workout' => $workout->id
-                                        ]) }}" @endif>
+                                        ]) }}" 
+                                        @endif >
 
                                         <span class="{{ $workout ? '' : 'text-secondary' }}">
                                             {{ $workout->Sessionable->Model->title }}
