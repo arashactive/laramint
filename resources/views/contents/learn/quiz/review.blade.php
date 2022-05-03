@@ -5,7 +5,7 @@
 
 @can('mentor.list')
 
-    @include('contents.learn.mentor.mentor-workout')
+@include('contents.learn.mentor.mentor-workout')
 
 @endcan
 
@@ -31,7 +31,7 @@
                 ])
             </div>
 
-            
+
         </div>
     </div>
 
