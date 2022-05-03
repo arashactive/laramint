@@ -20,7 +20,8 @@ class TermModule
 
     public function All()
     {
-        return $this->user->Terms->where('role_id', 4);
+        
+        return $this->user->Terms()->wherePivot('role_id', 4)->get();
     }
 
 

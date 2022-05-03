@@ -27,7 +27,7 @@ class MyCourseController extends Controller
         //$this->authorize('participantAccessToTerm', [$term]);
         $termModule = new TermModule();
         $term = $termModule->Participant($participant);
-
+        
         return view('contents.learn.mycourses.show', compact([
             'term', 'participant'
         ]));
