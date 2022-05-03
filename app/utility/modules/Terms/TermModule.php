@@ -20,14 +20,15 @@ class TermModule
 
     public function All()
     {
-        return $this->user->Terms;
+        return $this->user->Terms->where('role_id', 4);
     }
 
 
     public function Participant(Participant $participant)
     {
-
+        
         $term = $participant->Term;
+
         $this->user = $participant->User;
         $term->User = $this->user;
 

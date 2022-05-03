@@ -11,6 +11,7 @@ class MyCourseController extends Controller
 
     public function myCourse()
     {
+        
         $this->authorize('myCourse.index');
 
         $terms = new TermModule();

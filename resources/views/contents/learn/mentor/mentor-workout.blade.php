@@ -25,7 +25,9 @@
                         </select>
 
                     </div>
+                    
                     <button type="submit" class="btn btn-primary mb-2">{{ __('Confirm') }}</button>
+                    
                 </form>
             </div>
 
