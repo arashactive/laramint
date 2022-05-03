@@ -5,12 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sessionable extends Model
+class MentorComment extends Model
 {
     use HasFactory;
-
-    public function Model()
-    {
-        return $this->belongsTo($this->sessionable_type, 'sessionable_id');
-    }
+    protected $fillable = ['user_id', 'activable_type', 'activable_id', 'mentor_id', 'body'];
 }

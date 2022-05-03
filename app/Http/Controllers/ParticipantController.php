@@ -20,9 +20,16 @@ class ParticipantController extends Controller
         $terms->User($user);
         $terms->is_mentor = true;
 
+        $lastActivities = Workout::where('user_id', $user->id)
+            ->limit(10)
+            ->orderby('updated_at', 'desc')
+            ->get();
+
+
         return view('contents.mentors.learners.profile', compact(
             'user',
-            'terms'
+            'terms',
+            'lastActivities'
         ));
     }
 

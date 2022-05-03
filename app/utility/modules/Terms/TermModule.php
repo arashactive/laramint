@@ -39,6 +39,9 @@ class TermModule
         return $term;
     }
 
+
+    
+
     private function Relateds($relateds, $term_id)
     {
         foreach ($relateds as $related) {
@@ -47,7 +50,8 @@ class TermModule
             $related->Workout = Workout::where('term_id', $term_id)
                 ->where('user_id', $this->user->id)
                 ->where('sessionable_id', $related->id)
-                ->first();
+                ->first();    
+
             if ($this->is_mentor) {
                 $related->Route = ($related->Workout) ? route(
                     'reviewWorkout',

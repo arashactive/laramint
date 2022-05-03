@@ -7,6 +7,7 @@ use App\Models\Term;
 use App\Models\User;
 use App\Models\Workout;
 use App\utility\modules\tasks\services\TaskParent;
+use App\utility\question\adabpter\TrueFalseQuestion;
 use App\utility\workout\WorkoutService;
 
 class QuizAdapter extends TaskParent
@@ -19,11 +20,14 @@ class QuizAdapter extends TaskParent
 
     public function Render(Term $term, Sessionable $sessionable)
     {
-    
+
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
 
         $activity = $sessionable->Model;
-        
+
+        if (!$this->checkMentorCanBeAccess($workout))
+            return redirect()->back()->with('danger', __('for this task, review is not exist.'));
+
         if ($workout->is_completed)
             return $this->Review($term, $workout, $activity);
 
@@ -37,8 +41,9 @@ class QuizAdapter extends TaskParent
 
     public function Review(Term $term, Workout $workout, $activity)
     {
-        if (!$workout->is_completed)
-            return redirect()->back()->with('msg-danger', __('for this task, review is not exist.'));
+        if (!$this->checkMentorCanBeAccess($workout))
+            return redirect()->back()->with('danger', __('for this task, review is not exist.'));
+
 
         return view($this->review, compact([
             'term', 'workout', 'activity'
@@ -48,5 +53,17 @@ class QuizAdapter extends TaskParent
     public function Mentor()
     {
         $this->is_mentor = true;
+    }
+
+
+    private function checkMentorCanBeAccess($workout, $is_mentor = null)
+    {
+        $is_mentor = $is_mentor ?: $this->is_mentor;
+
+        if ($is_mentor && !$workout->is_completed) {
+            return false;
+        }
+
+        return true;
     }
 }

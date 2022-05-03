@@ -34,13 +34,16 @@
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold ">
                     <i class="fa fa-comment"></i>
-                    {{ __('comments') }}
+                    {{ __('Last Activity') }}
 
                 </h6>
             </div>
             <!-- Card Body -->
             <div class="card-body">
-
+                @forelse($lastActivities as $workout)
+                    <x-box.workout-item :workout="$workout" />
+                @empty
+                @endforelse
             </div>
         </div>
 

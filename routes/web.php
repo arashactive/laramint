@@ -18,6 +18,7 @@ use App\Http\Controllers\learn\quizLearnerController;
 use App\Http\Controllers\learn\rubricLearnerController;
 use App\Http\Controllers\learn\WorkoutController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\Mentors\MentorCommentsController;
 use App\Http\Controllers\Mentors\MyLearnerController;
 use App\Http\Controllers\Panel\MyCourseController;
 use App\Http\Controllers\ParticipantController;
@@ -85,6 +86,8 @@ Route::prefix('mentor')->middleware(['verified'])->group(function () {
     Route::get('/workout/{participant}', [ParticipantController::class, 'participantWorkout'])->name('learnerParticipantWorkout');
     Route::get('/review/workout/{term}/{workout}', [ParticipantController::class, 'reviewWorkout'])->name('reviewWorkout');
     Route::post('/review/update', [ParticipantController::class, 'reviewWorkoutUpdate'])->name('workoutMentorReviewUpdate');
+
+    Route::resource('mentor-comments', MentorCommentsController::class);
 });
 
 

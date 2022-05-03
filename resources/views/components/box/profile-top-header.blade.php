@@ -43,7 +43,11 @@
             </div>
             <!-- Card Body -->
             <div class="card-body">
-
+            @livewire('services.mentors.comments',[
+                    'activable_id' => $activable_id,
+                    'activable_type' => $activable_type,
+                    'userId' => $user->id
+                ])
             </div>
         </div>
 
