@@ -5,5 +5,5 @@
 
     @endforelse
 
-    
+    {{ $comments->links() }}
 </div>

@@ -9,4 +9,10 @@ class MentorComment extends Model
 {
     use HasFactory;
     protected $fillable = ['user_id', 'activable_type', 'activable_id', 'mentor_id', 'body'];
+
+    public function Mentor(){
+        return $this->hasOne(User::class, 'id', 'mentor_id');
+    }
+
+
 }

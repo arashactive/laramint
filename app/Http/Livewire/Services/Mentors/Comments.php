@@ -10,6 +10,8 @@ class Comments extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     public $activable_id;
     public $activable_type;
     public $userId;
@@ -23,7 +25,7 @@ class Comments extends Component
                 ->where('activable_id', $this->activable_id);
         }
         $comments = $comments->orderby('created_at', 'desc')
-            ->paginate();
+            ->paginate(4);
 
         return view('livewire.services.mentors.comments', [
             'comments' => $comments

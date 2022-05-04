@@ -81,8 +81,9 @@ class MentorCommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MentorComment $comment)
     {
-        //
+        $comment->delete();
+        return redirect()->back()->with('danger', 'Item deleted successfully.');
     }
 }

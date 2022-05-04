@@ -15,7 +15,7 @@
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a 
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                class="btn btn-danger" href="login.html">Logout</a>
+                class="btn btn-danger" href="{{ route('login') }}">Logout</a>
             </div>
         </div>
     </div>
