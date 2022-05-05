@@ -6,40 +6,41 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-4">
                             <div class="row">
-                               
-                                <div class="col ml-3 align-middle">
-                                        
-                                        <div class="text-lg pt-2 font-weight-bold mb-1 text-primary">
-                                            {{  $session->title }}    
-                                        </div>
 
-                                        <div class="mt-3">
-                                            
-                                            @forelse ($session->relateds as $activity)
-                                            
-                                            <x-box.session-activity-item
-                                            :activity="$activity"
-                                            />
-                                            @empty   
-                                            @endforelse
-                                        </div>
+                                <div class="col ml-3 align-middle">
+
+                                    <div class="text-lg pt-2 font-weight-bold mb-1 text-primary">
+                                        {{ $session->title }}
+                                    </div>
+
+                                    <div class="mt-3">
+
+                                        @forelse ($session->relateds as $activity)
+
+                                        <x-box.session-activity-item :activity="$activity" />
+                                        @empty
+                                        @endforelse
+                                    </div>
 
                                 </div>
 
                                 <div class="col-4">
-                                    
-                                    <h6 class="font-weight-bold text-dark">{{ __('Grade') }}</h6>
-                                    
-                                    
 
+                                    <h6 class="font-weight-bold text-dark">{{ __('Grade') }}</h6>
+                                    <hr />
+                                    <label>{{ __('Progress Bar:') }}</label>
+                                    <x-atoms.progress :color="'primary'" :fill="$session->info['workout']" :count="$session->info['total']" />
+                                    <hr />
+                                    <span>Average Star:</span>
+                                    <x-atoms.stars :score="$session->info['score']" />
 
                                 </div>
-                            </div>                            
-                            
+                            </div>
+
                         </div>
-                        
+
                     </div>
-    
+
                 </div>
             </div>
         </div>

@@ -35,7 +35,9 @@
                         </div>
 
                         <div class="d-flex flex-row-reverse">
-                            {{ ($activity->Workout) ? $activity->Workout->score : '' }}
+                            @if(isset($activity->Workout->score))
+                            <x-atoms.stars :score="$activity->Workout->score" />
+                            @endif
                         </div>
 
                     </div>

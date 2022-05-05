@@ -25,7 +25,7 @@
                                         href="{{ route('reviewWorkout' , [
                                             'term' => $workout->term_id,
                                             'workout' => $workout->id
-                                        ]) }}" 
+                                        ]) }}"
                                         @endif >
 
                                         <span class="{{ $workout ? '' : 'text-secondary' }}">
@@ -39,7 +39,9 @@
                         </div>
 
                         <div class="d-flex flex-row-reverse">
-                            {{ ($workout->score) ?: $workout->score }}
+                            @if($workout->score)
+                            <x-atoms.stars :score="$workout->score" />
+                            @endif
                         </div>
 
                     </div>
