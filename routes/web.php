@@ -59,7 +59,6 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
     Route::get('/task/{term}/{sessionable}', [WorkoutController::class, 'task'])->name('taskLearner');
     Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
 
-
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
     Route::get('my/course/{participant}', [MyCourseController::class, 'learn'])->name('learningCourse');
