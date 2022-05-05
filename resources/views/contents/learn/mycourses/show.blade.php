@@ -3,10 +3,11 @@
 
 @section("content")
 
-@can('mentor.list')
+
 <x-box.profile-top-header :user="$term->User" :activabel_id="$term->id" :activable_type="'App\Models\Term'" />
+
 <x-box.profile-review-box />
-@endcan
+
 
 <div class="row">
 

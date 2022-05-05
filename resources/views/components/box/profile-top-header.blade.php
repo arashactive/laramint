@@ -14,9 +14,6 @@
             <!-- Card Body -->
             <div class="card-body">
 
-
-
-
                 <div class="d-flex flex-column align-items-center text-center">
                     <img src="{{ URL::to('img/profiles/' . rand(1,12) . '.jpg') }}" alt="{{ $user->name }}" class="rounded" width="150">
                     <div class="mt-3 ">
@@ -43,10 +40,10 @@
             </div>
             <!-- Card Body -->
             <div class="card-body">
-            @livewire('services.mentors.comments',[
-                    'activable_id' => $activable_id,
-                    'activable_type' => $activable_type,
-                    'userId' => $user->id
+                @livewire('services.mentors.comments',[
+                'activable_id' => $activable_id,
+                'activable_type' => $activable_type,
+                'userId' => $user->id
                 ])
             </div>
         </div>

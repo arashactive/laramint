@@ -3,7 +3,6 @@
 namespace App\utility\file\services;
 
 use Illuminate\Support\Facades\Storage;
-use PDO;
 
 abstract class fileParent
 {
@@ -16,7 +15,8 @@ abstract class fileParent
     {
         if (file_exists(Storage::missing('storage/public/' . $file)))
             return '';
-        return asset($file);
+            
+        return asset(Storage::url($file));
     }
 
     public function makeRenderFile()

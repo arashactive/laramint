@@ -1,3 +1,4 @@
+@can('mentor.list')
 <div class="row">
 
     <!-- Earnings (Monthly) Card Example -->
@@ -81,3 +82,4 @@
         </div>
     </div>
 </div>
+@endcan
