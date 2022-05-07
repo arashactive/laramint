@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\traits;
+namespace App\Traits;
 
 use App\Http\Requests\UserRequest;
 use App\Models\Role;

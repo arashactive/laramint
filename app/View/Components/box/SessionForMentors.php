@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\box;
+namespace App\View\Components\Box;
 
 use Illuminate\View\Component;
 

@@ -19,7 +19,7 @@
             <!-- Card Body -->
             <div class="card-body">
                 @if(isset($activity) && !empty($activity))
-                <x-content.rubric :rubric="$activity" />
+                <x-content.rubric :rubric="$activity" :bodies="null" />
 
                 @endif
             </div>

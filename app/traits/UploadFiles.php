@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\traits;
+namespace App\Traits;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;

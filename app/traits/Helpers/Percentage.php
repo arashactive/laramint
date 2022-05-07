@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\traits\Helpers;
+namespace App\Traits\Helpers;
 
 
 trait Percentage

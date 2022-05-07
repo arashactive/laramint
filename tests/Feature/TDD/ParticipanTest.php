@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Tdd;
+namespace Tests\Feature\TDD;
 
 use App\Http\Livewire\Container\Participant;
 use App\Models\Term;

@@ -29,6 +29,7 @@ class Rubric extends Component
 
     public function mount()
     {
+        
         $this->bodies[] = $this->body;
 
         if ($this->rubric_id != null) {
@@ -37,6 +38,7 @@ class Rubric extends Component
             $this->description = $rubric->description;
             $this->bodies = json_decode($rubric->body, true);
         }
+        
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\atoms;
+namespace App\View\Components\Atoms;
 
 use Illuminate\View\Component;
 

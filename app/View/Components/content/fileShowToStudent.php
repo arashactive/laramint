@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\content;
+namespace App\View\Components\Content;
 
 use App\traits\ConvertorHelper;
 use Illuminate\View\Component;
 
 
-class fileShowToStudent extends Component
+class FileShowToStudent extends Component
 {
 
     use ConvertorHelper;
