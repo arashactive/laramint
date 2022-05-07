@@ -5,7 +5,7 @@ namespace App\Utility\Modules\Tasks\Adabpter;
 use App\Models\Sessionable;
 use App\Models\Term;
 use App\Models\Workout;
-use App\utility\Modules\Tasks\Services\TaskParent;
+use App\Utility\Modules\Tasks\Services\TaskParent;
 use App\Utility\Workout\WorkoutService;
 
 class RubricAdapter extends TaskParent
