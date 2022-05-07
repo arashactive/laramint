@@ -58,5 +58,8 @@ class User extends Authenticatable
         )->withPivot('id', 'role_id');
     }
 
+
+    
+
     
 }

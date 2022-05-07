@@ -16,9 +16,12 @@ class ParticipantController extends Controller
     public function participantTerms(User $user)
     {
 
-        $terms = new TermModule();
-        $terms->User($user);
-        $terms->is_mentor = true;
+        $termsModule = new TermModule();
+        
+        $termsModule->User($user);
+        $termsModule->is_mentor = true;
+
+        $terms = $termsModule->getAllTerms();
 
         $lastActivities = Workout::where('user_id', $user->id)
             ->limit(10)
@@ -82,6 +85,7 @@ class ParticipantController extends Controller
     {
 
         $termModule = new TermModule();
+        $termModule->user = $participant->User;
         $termModule->is_mentor = true;
 
         $term = $termModule->Participant($participant);

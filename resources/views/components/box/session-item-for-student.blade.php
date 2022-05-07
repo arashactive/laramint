@@ -16,7 +16,7 @@
                                     <div class="mt-3">
 
                                         @forelse ($session->relateds as $activity)
-
+                                        
                                         <x-box.session-activity-item :activity="$activity" />
                                         @empty
                                         @endforelse
@@ -29,10 +29,10 @@
                                     <h6 class="font-weight-bold text-dark">{{ __('Grade') }}</h6>
                                     <hr />
                                     <label>{{ __('Progress Bar:') }}</label>
-                                    <x-atoms.progress :color="'primary'" :fill="$session->info['workout']" :count="$session->info['total']" />
+                                    <x-atoms.progress :color="'primary'" :fill="$session->sessionStatistic['workout']" :count="$session->sessionStatistic['total']" />
                                     <hr />
                                     <span>Average Star:</span>
-                                    <x-atoms.stars :score="$session->info['score']" />
+                                    <x-atoms.stars :score="$session->sessionStatistic['score']" />
 
                                 </div>
                             </div>

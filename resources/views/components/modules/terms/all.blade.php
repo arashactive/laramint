@@ -1,6 +1,6 @@
 <div>
 
-    @foreach($terms->All() as $term)
+    @foreach($terms as $term)
 
     <div class="row">
             <div class="col-12 mb-2">
@@ -32,9 +32,7 @@
 
                                         {{ $slot }}
 
-                                        <x-atoms.progress :color="'progress-bar-striped bg-success'" :fill="$term->Workout
-                                        ->where('user_id', Auth::user()->id)
-                                        ->where('is_completed', 1)->count()" :count="$term->allActivities->count()"></x-atoms.progress>
+                                        <x-atoms.progress :color="'progress-bar-striped bg-success'" :fill="$term->statistic['workoutDone']" :count="$term->statistic['totalTask']"></x-atoms.progress>
 
                                     </div>
 

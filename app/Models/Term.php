@@ -76,8 +76,9 @@ class Term extends Model
         return new Collection($activities);
     }
 
-    public function Workout()
+
+    public function WorkoutByUser(User $user)
     {
-        return $this->hasMany(Workout::class);
+        return $this->hasMany(Workout::class)->where('user_id', $user->id);
     }
 }

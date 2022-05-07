@@ -3,6 +3,7 @@
 namespace App\utility\modules\terms;
 
 use App\Models\Participant;
+use App\Models\Term;
 use App\Models\User;
 use App\Models\Workout;
 use Illuminate\Support\Facades\Auth;
@@ -11,38 +12,68 @@ class TermModule
 {
 
     public $is_mentor = false;
-    private $user;
+    public $user;
 
     public function __construct()
     {
         $this->user = Auth::user();
     }
 
-    public function All()
-    {
 
-        return $this->user->Terms()->wherePivot('role_id', 4)->get();
+    public function getAllTerms()
+    {
+        
+        $terms = $this->user->Terms()->wherePivot('role_id', 4)->get();
+        $terms->is_mentor = $this->is_mentor;
+        foreach ($terms as $term) {
+            $term->statistic = $this->getTermStatistic($term);
+        }
+
+        return $terms;
+    }
+
+    private function getTermStatistic($term)
+    {
+        
+        $statistic = [
+            'totalTask' => $term->allActivities->count(),
+            'workoutDone' => $term->WorkoutByUser($this->user)->count() 
+        ];
+
+        return $statistic;
     }
 
 
-    public function Participant(Participant $participant)
+    
+
+    public function All()
     {
+        $terms = $this->user->Terms()->wherePivot('role_id', 4)->get();
 
-        $term = $participant->Term;
+        return $terms;
+    }
 
-        $this->user = $participant->User;
-        $term->User = $this->user;
-
+    public function getTermInfo($term)
+    {
         $term->Sessions = $term->Sessions;
         foreach ($term->Sessions as $session) {
             $session->relateds = $this->Relateds($session->related, $term->id);
-            $session->info = $this->info($session);
+            $session->sessionStatistic = $this->getSessionStatistic($session);
         }
-
+        
         return $term;
     }
 
-    private function Info($session)
+    public function Participant(Participant $participant)
+    {
+        
+        $term = $this->getTermInfo($participant->Term);
+        $term->User = $this->user;
+       
+        return $term;
+    }
+
+    private function getSessionStatistic($session)
     {
 
         $info = [
@@ -58,7 +89,7 @@ class TermModule
 
     private function Relateds($relateds, $term_id)
     {
-
+        
         $videos = [
             'total' => 0,
             'checked' => 0
@@ -109,7 +140,7 @@ class TermModule
                 );
             }
         }
-
+        
         return $relateds;
     }
 

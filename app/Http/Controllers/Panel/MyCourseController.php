@@ -14,8 +14,9 @@ class MyCourseController extends Controller
         
         $this->authorize('myCourse.index');
 
-        $terms = new TermModule();
-        
+        $termModule = new TermModule();
+        $terms = $termModule->getAllTerms();
+
         return view('contents.learn.mycourses.list', compact([
             'terms'
         ]));
