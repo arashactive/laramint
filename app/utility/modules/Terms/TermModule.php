@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\modules\Terms;
+namespace App\Utility\Modules\Terms;
 
 use App\Models\Participant;
 use App\Models\User;
