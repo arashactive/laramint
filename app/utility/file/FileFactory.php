@@ -1,9 +1,9 @@
 <?php
 
-namespace App\utility\File;
+namespace App\Utility\File;
 
 use App\Models\File;
-use App\utility\file\enum\MemeEnum;
+use App\Utility\File\Enum\MemeEnum;
 
 abstract class FileFactory
 {
@@ -13,7 +13,7 @@ abstract class FileFactory
     {
         
         $className = MemeEnum::fileMemeToClassName($file->file_type);
-        $classOfFileLoader = "App\\utility\\file\\adabpter\\" . $className;
+        $classOfFileLoader = "App\\Utility\\File\\Adabpter\\" . $className;
         return new $classOfFileLoader($file);
     
         throw new \Exception('The Question type is not found');

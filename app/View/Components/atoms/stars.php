@@ -4,7 +4,7 @@ namespace App\View\Components\atoms;
 
 use Illuminate\View\Component;
 
-class stars extends Component
+class Stars extends Component
 {
 
     public $score;

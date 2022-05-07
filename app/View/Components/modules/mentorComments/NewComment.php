@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\modules\mentorComments;
+namespace App\View\Components\Modules\MentorComments;
 
 use Illuminate\View\Component;
 

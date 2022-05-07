@@ -4,13 +4,13 @@ namespace App\View\Components\atoms;
 
 use Illuminate\View\Component;
 
-class progress extends Component
+class Progress extends Component
 {
 
     public $color;
     public $fill;
     public $count;
-    public $width;
+    public $width = 0;
 
     /**
      * Create a new component instance.
@@ -19,11 +19,13 @@ class progress extends Component
      */
     public function __construct($color, $fill, $count)
     {
+        $this->width = 0;
         $this->color = $color;
         $this->fill = $fill;
         $this->count = $count;
-       
+        
         $this->width = $this->calculatePercentage($count, $fill);
+        
     }
 
 

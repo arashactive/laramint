@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\modules\Terms;
+namespace App\View\Components\Modules\Terms;
 
 use Illuminate\View\Component;
 

@@ -14,7 +14,7 @@ class TaskFactory
     public static function Build($class)
     {
         $class = self::RemoveStringFromClassName($class);
-        $classOfFileLoader = "App\\utility\\modules\\tasks\\adabpter\\" . $class . 'Adapter';
+        $classOfFileLoader = "App\\Utility\\Modules\\Tasks\\Adabpter\\" . $class . 'Adapter';
         return new $classOfFileLoader();
 
         throw new \Exception('The Question type is not found');
