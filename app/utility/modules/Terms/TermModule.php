@@ -38,7 +38,7 @@ class TermModule
             'totalTask' => $term->allActivities->count(),
             'workoutDone' => $term->WorkoutByUser($this->user)->count() 
         ];
-
+        
         return $statistic;
     }
 
