@@ -19,6 +19,7 @@ class RubricAdapter extends TaskParent
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term,  $sessionable, $this->user);
 
         $activity = $sessionable->Model;
+        
         $review = $this->Review($term, $workout);
         return view($this->view, compact([
             'activity', 'workout', 'review'
