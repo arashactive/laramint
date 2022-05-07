@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\modules\tasks\contract;
+namespace App\Utility\Modules\Tasks\Contract;
 
 interface TaskInterface{
 

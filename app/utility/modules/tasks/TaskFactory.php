@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\modules\tasks;
+namespace App\Utility\Modules\Tasks;
 
 
 class TaskFactory
