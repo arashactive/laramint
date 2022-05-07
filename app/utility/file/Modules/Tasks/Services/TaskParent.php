@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utility\modules\Tasks\Services;
+namespace App\Utility\Modules\Tasks\Services;
 
 
 abstract class TaskParent

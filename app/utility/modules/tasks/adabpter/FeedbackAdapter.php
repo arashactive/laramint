@@ -1,13 +1,11 @@
 <?php
 
-namespace App\utility\modules\tasks\adabpter;
+namespace App\Utility\Modules\Tasks\Adabpter;
 
 use App\Models\Sessionable;
 use App\Models\Term;
-use App\Models\User;
-use App\utility\modules\tasks\contract\TaskInterface;
-use App\utility\modules\tasks\services\TaskParent;
-use App\utility\workout\WorkoutService;
+use App\Utility\Modules\Tasks\Services\TaskParent;
+use App\Utility\Workout\WorkoutService;
 
 class FeedbackAdapter extends TaskParent
 {

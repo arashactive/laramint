@@ -1,13 +1,12 @@
 <?php
 
-namespace App\utility\modules\tasks\adabpter;
+namespace App\Utility\Modules\Tasks\Adabpter;
 
 use App\Models\Sessionable;
 use App\Models\Term;
-use App\Models\User;
 use App\Models\Workout;
-use App\utility\modules\tasks\services\TaskParent;
-use App\utility\workout\WorkoutService;
+use App\Utility\Modules\Tasks\Services\TaskParent;
+use App\Utility\Workout\WorkoutService;
 
 class DocumentAdapter extends TaskParent
 {
