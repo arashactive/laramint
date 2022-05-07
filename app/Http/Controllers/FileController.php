@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FileRequest;
 use App\Models\File;
-use App\traits\UploadFiles;
+use App\Traits\UploadFiles;
 
 class FileController extends Controller
 {

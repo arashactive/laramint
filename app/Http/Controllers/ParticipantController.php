@@ -6,8 +6,8 @@ use App\Models\Participant;
 use App\Models\Term;
 use App\Models\User;
 use App\Models\Workout;
-use App\utility\modules\tasks\TaskFactory;
-use App\utility\modules\Terms\TermModule;
+use App\Utility\Modules\Tasks\TaskFactory;
+use App\Utility\Modules\Terms\TermModule;
 use Illuminate\Http\Request;
 
 class ParticipantController extends Controller

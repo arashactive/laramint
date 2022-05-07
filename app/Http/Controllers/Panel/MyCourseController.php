@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Participant;
-use App\utility\modules\terms\TermModule;
+use App\Utility\Modules\Terms\TermModule;
 
 class MyCourseController extends Controller
 {

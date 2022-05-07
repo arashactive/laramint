@@ -7,8 +7,8 @@ use App\Models\Question;
 use App\Models\Sessionable;
 use App\Models\Term;
 use App\Models\Workout;
-use App\utility\modules\tasks\TaskFactory;
-use App\utility\question\QuestionFactory;
+use App\Utility\Modules\Tasks\TaskFactory;
+use App\Utility\Question\QuestionFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

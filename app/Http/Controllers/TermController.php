@@ -8,9 +8,7 @@ use App\Models\Department;
 use App\Models\Session;
 use App\Models\session_term;
 use App\Models\Term;
-use App\traits\Sequence;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use App\Traits\Sequence;
 
 class TermController extends Controller
 {

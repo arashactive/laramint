@@ -6,8 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SessionRequest;
 use App\Models\Session;
 use App\Models\Sessionable;
-use App\Models\Term;
-use App\traits\Sequence;
+use App\Traits\Sequence;
 
 class SessionController extends Controller
 {
