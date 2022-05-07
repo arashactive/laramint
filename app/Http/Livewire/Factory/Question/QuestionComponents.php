@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Factory\Question;
 
 use App\Models\QuestionType;
 use Livewire\Component;
-use App\utility\question\QuestionFactory;
+use App\Utility\Question\QuestionFactory;
 
 
 class QuestionComponents extends Component

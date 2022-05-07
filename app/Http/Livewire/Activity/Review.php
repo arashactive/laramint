@@ -3,8 +3,7 @@
 namespace App\Http\Livewire\Activity;
 
 use App\Models\Question;
-use App\utility\question\QuestionFactory;
-use App\utility\question\ReviewBuilderFactory;
+use App\Utility\Question\QuestionFactory;
 use Livewire\Component;
 
 class Review extends Component

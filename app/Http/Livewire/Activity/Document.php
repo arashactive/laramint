@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Activity;
 
 use App\Models\File;
-use App\utility\file\FileFactory;
+use App\Utility\File\FileFactory;
 use Livewire\Component;
 
 class Document extends Component

@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Activity;
 
 use App\Models\Question;
-use App\utility\question\QuestionFactory;
+use App\Utility\Question\QuestionFactory;
 use Livewire\Component;
 
 class Feedback extends Component
