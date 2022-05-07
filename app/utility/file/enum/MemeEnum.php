@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\file\enum;
+namespace App\Utility\File\Enum;
 
 Abstract class MemeEnum
 {

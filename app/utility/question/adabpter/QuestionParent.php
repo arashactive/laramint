@@ -1,9 +1,9 @@
 <?php
 
-namespace App\utility\question\adabpter;
+namespace App\Utility\Question\Adabpter;
 
-use App\utility\question\traits\CreateUpdateForm;
-use App\utility\question\traits\WorkoutViewRender;
+use App\Utility\Question\Traits\CreateUpdateForm;
+use App\Utility\Question\Traits\WorkoutViewRender;
 
 abstract class QuestionParent
 {

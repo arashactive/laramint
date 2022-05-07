@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\file;
+namespace App\utility\File;
 
 use App\Models\File;
 use App\utility\file\enum\MemeEnum;

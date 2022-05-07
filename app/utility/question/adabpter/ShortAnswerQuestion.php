@@ -1,8 +1,8 @@
 <?php
 
-namespace App\utility\question\adabpter;
+namespace App\Utility\Question\Adabpter;
 
-use App\utility\question\contract\QuestionAdabpterInterface;
+use App\Utility\Question\Contract\QuestionAdabpterInterface;
 
 
 class ShortAnswerQuestion extends QuestionParent implements QuestionAdabpterInterface

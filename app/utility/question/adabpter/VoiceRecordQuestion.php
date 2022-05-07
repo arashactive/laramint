@@ -1,9 +1,9 @@
 <?php
 
-namespace App\utility\question\adabpter;
+namespace App\Utility\Question\Adabpter;
 
-use App\traits\UploadFiles;
-use App\utility\question\contract\QuestionAdabpterInterface;
+use App\Utility\Question\Contract\QuestionAdabpterInterface;
+use App\Traits\UploadFiles;
 
 
 class VoiceRecordQuestion extends QuestionParent implements QuestionAdabpterInterface

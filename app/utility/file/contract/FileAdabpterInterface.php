@@ -1,8 +1,7 @@
 <?php
 
-namespace App\utility\file\contract;
+namespace App\Utility\File\Contract;
 
-use App\Models\File;
 
 interface FileAdabpterInterface
 {

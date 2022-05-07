@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\utility\question\traits;
+namespace App\Utility\Question\Traits;
 
 use App\Models\Question;
 use App\Models\Quiz;

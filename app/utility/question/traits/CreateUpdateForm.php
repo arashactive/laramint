@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\utility\question\traits;
+namespace App\Utility\Question\Traits;
 
 
 trait CreateUpdateForm

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\utility\file\services;
+namespace App\utility\File\Services;
 
 use Illuminate\Support\Facades\Storage;
 
-abstract class fileParent
+abstract class FileParent
 {
 
     protected $file;

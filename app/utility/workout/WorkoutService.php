@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\workout;
+namespace App\Utility\Workout;
 
 use App\Models\Quiz;
 use App\Models\User;
@@ -9,7 +9,6 @@ use App\Models\WorkoutQuizLog;
 
 abstract class WorkoutService
 {
-
 
     public static function checkExistWorkout($term_id, $sessionable, $user)
     {

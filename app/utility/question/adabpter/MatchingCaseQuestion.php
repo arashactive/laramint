@@ -1,10 +1,10 @@
 <?php
 
-namespace App\utility\question\adabpter;
+namespace App\Utility\Question\Adabpter;
 
+use App\Utility\Question\Contract\QuestionAdabpterInterface;
 
-use App\traits\Helpers\Percentage;
-use App\utility\question\contract\QuestionAdabpterInterface;
+use App\Traits\Helpers\Percentage;
 
 
 class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInterface

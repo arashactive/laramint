@@ -1,13 +1,13 @@
 <?php
 
-namespace App\utility\question;
+namespace App\Utility\Question;
 
 use App\Models\QuestionType;
 
 class QuestionFactory
 {
 
-    private static $classPath = "App\\utility\\question\\adabpter\\";
+    private static $classPath = "App\\Utility\\Question\\Adabpter\\";
 
     public static function Build(QuestionType $questionType)
     {

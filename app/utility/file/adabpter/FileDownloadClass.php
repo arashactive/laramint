@@ -1,9 +1,9 @@
 <?php
 
-namespace App\utility\file\adabpter;
+namespace App\Utility\File\Adabpter;
 
 use App\Models\File;
-use App\utility\file\services\fileParent;
+use App\Utility\File\Services\FileParent;
 
 class FileDownloadClass extends fileParent
 {

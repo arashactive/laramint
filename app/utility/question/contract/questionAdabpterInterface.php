@@ -1,6 +1,6 @@
 <?php
 
-namespace App\utility\question\contract;
+namespace App\Utility\Question\Contract;
 
 interface QuestionAdabpterInterface
 {
