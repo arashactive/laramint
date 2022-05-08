@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\CommentCreated;
+use App\Listeners\CommentCreatedListener;
 use App\Models\User;
 use App\Observers\UserObserver;
 use Illuminate\Auth\Events\Registered;
@@ -20,6 +22,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        CommentCreated::class => [
+            CommentCreatedListener::class
+        ]
     ];
 
     /**

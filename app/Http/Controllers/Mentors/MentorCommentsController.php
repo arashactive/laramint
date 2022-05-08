@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Mentors;
 
+use App\Events\CommentCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MentorCommentsRequest;
 use App\Models\MentorComment;
@@ -37,7 +38,10 @@ class MentorCommentsController extends Controller
      */
     public function store(MentorCommentsRequest $request)
     {
-        MentorComment::create(array_merge($request->all(), ['mentor_id' => Auth::user()->id]));
+        $mentor = MentorComment::create(array_merge($request->all(), ['mentor_id' => Auth::user()->id]));
+        
+        event(new CommentCreated($mentor));
+        
         return redirect()->back()->with('msg-success', 'success');
     }
 

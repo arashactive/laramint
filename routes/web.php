@@ -76,6 +76,7 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('mentor')->middleware(['verified'])->group(function () {
+    
     Route::get('/learners', [MyLearnerController::class, 'myLearners'])->name('myLearners');
     Route::get('/learner/{user}', [ParticipantController::class, 'participantTerms'])->name('learnerShowTerms');
     Route::get('/workout/{participant}', [ParticipantController::class, 'participantWorkout'])->name('learnerParticipantWorkout');
