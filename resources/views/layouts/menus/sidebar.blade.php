@@ -175,6 +175,14 @@
             </div>
         </div>
     </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('configuration.index') }}">
+            <i class="fas fa-fw fa-book-reader"></i>
+            <span>{{ __("Configuration") }}</span></a>
+    </li>
+
     @endrole
     
     <!-- Divider -->

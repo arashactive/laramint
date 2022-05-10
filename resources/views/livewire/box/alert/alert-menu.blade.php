@@ -10,7 +10,7 @@
             <h6 class="dropdown-header">
                 Alerts Center
             </h6>
-            @forelse($notifications as $notification)
+            @forelse($notifications->take(5) as $notification)
             <a class="dropdown-item d-flex align-items-center" wire:click="markNotification('{{ $notification->id }}')" href="#">
                 <div class="mr-3">
                     <div class="icon-circle bg-primary">

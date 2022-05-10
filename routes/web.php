@@ -4,6 +4,7 @@ use App\Http\Controllers\Acl\PermissionController;
 use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
@@ -126,7 +127,8 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::get('/session/delete/{session_id}', [SessionController::class, 'deleteActivityAsSession'])->name("deleteActivityAsSession");
 
 
-
+    // Global Configuration (Admin Only)
+    Route::resource('/configuration', ConfigurationController::class)->middleware('role:Super-Admin');
 
     // rubric add to session
     Route::get('/session/rubric/{session}/{active_id}', [SessionController::class, 'addRubricToSession'])->name("addRubricToSession");
@@ -156,4 +158,8 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('role', RoleController::class)->middleware('role:Super-Admin');
     Route::resource('permission', PermissionController::class)->middleware('role:Super-Admin');
     Route::post('role/permission/{role}', [RoleController::class, 'permission'])->name("role_permissions");
+
+    
+    
+
 });

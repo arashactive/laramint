@@ -11,20 +11,28 @@ class AlertMenu extends Component
 
     public $notifications;
 
-    public function markNotification($id){
-        
+    public function markNotification($id)
+    {
+
         Auth::user()->unreadNotifications
-        ->when($id, function ($query) use ($id){
-            return $query->where('id', $id);
-        })->markAsRead();
+            ->when($id, function ($query) use ($id) {
+                return $query->where('id', $id);
+            })->markAsRead();
 
+        $this->setNotification();
+    }
+
+    public function mount()
+    {
+        $this->setNotification();
+    }
+
+
+    private function setNotification()
+    {
         $this->notifications = Auth::user()->notifications;
     }
 
-    public function mount(){
-        $this->notifications = Auth::user()->notifications;
-    }
-    
 
     public function render()
     {
