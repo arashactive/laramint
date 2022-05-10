@@ -13,6 +13,7 @@ abstract class FileParent
 
     private function temporayUrlGenerator($file): string
     {
+        
         if (file_exists(Storage::missing('storage/public/' . $file)))
             return '';
             
