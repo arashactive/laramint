@@ -3,6 +3,7 @@
 
 namespace App\Utility\Question\Traits;
 
+use App\Events\MentorsGetAlertAfterQuizSubmit;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\Workout;
@@ -15,8 +16,8 @@ trait WorkoutViewRender
     protected $workout;
     protected $workoutQuizQuestion;
     protected $quiz = null;
-    
-    
+
+
     public function setQuizId($quiz_id)
     {
         if ((int)$quiz_id > 0)
@@ -24,7 +25,7 @@ trait WorkoutViewRender
         return $this;
     }
 
-    
+
 
 
     public function store($id = [], $attributes)
@@ -46,13 +47,14 @@ trait WorkoutViewRender
         $is_completed = true;
         $is_mentor = false;
         foreach ($workoutQuiz as $question) {
-            if(!$is_mentor && $question->is_mentor){
+            if (!$is_mentor && $question->is_mentor) {
                 $is_completed = false;
                 $is_mentor = true;
             }
             $sumOfScore += (int)$question->score;
         }
 
+       
         $score = (int)($sumOfScore /  count($workoutQuiz));
 
         $workout->update([
@@ -72,7 +74,7 @@ trait WorkoutViewRender
         $workoutQuizQuestion = WorkoutQuizLog::where('workout_id', $workout->id)
             ->where('question_id', $question->id)->first();
 
-        
+
         $this->question = $question;
         $this->workout = $workout;
         $this->workoutQuizQuestion = $workoutQuizQuestion;
@@ -95,7 +97,7 @@ trait WorkoutViewRender
             'question_body' => $question->question_body
         ])->render();
     }
-    
+
 
 
     public function createViewAsLearner(Question $question, Workout $workout)
@@ -108,5 +110,4 @@ trait WorkoutViewRender
             'workout' => $workout
         ])->render();
     }
-
 }

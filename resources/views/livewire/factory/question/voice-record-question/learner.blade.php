@@ -64,7 +64,7 @@
                         
               
            
-                <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3 " />
+                <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3  d-none" />
             </form>
         </div>
    

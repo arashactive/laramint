@@ -10,12 +10,14 @@
             <h2>{{ $question_body }}</h2>
 
             @forelse($answers as $index => $answer)
+                
                 <div class=" p-2 {{ $index == $correctAnswer ? " bg-gradient-success text-white" : '' }}">
                 <div class="form-check">
-                    <input name="answer" {{ $index == $correctAnswer ? 'checked' : ''}} class="form-check-input" type="radio"  id="reviewAnswer{{ $index }}">
+                    
                     <label class="form-check-label" for="reviewAnswer{{ $index }}">
                         {{ $answer }}
                     </label>
+                    <input name="answer" value="{{ json_decode($workout->WorkOutQuiz->where('question_id', $question->id)->first()->answer) ?? '' }}" class="form-control" type="text" id="reviewAnswer{{ $index }}">
                 </div>
                 </div>
             @empty 

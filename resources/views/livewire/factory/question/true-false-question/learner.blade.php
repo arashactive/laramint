@@ -26,7 +26,7 @@
                 @empty 
                 @endforelse
 
-                <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3 d-none" />
+                <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3 d-none  d-none" />
             </form>
         </div>
    

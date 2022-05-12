@@ -15,7 +15,7 @@
                 </p>
                 
                 <textarea name="answer-{{ $question->id }}" rows="10" type="text" class="form-control"></textarea>
-                <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3" />
+                <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3 d-none" />
             </form>
         </div>
    

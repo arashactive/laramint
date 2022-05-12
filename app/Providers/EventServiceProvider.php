@@ -3,13 +3,14 @@
 namespace App\Providers;
 
 use App\Events\CommentCreated;
+use App\Events\MentorsGetAlertAfterQuizSubmit;
 use App\Listeners\CommentCreatedListener;
-use App\Models\User;
-use App\Observers\UserObserver;
+use App\Listeners\MentorGetAlertListener;
+use App\Observers\WorkoutObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
+use App\Models\Workout;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,11 @@ class EventServiceProvider extends ServiceProvider
         ],
         CommentCreated::class => [
             CommentCreatedListener::class
-        ]
+        ],
+        MentorsGetAlertAfterQuizSubmit::class => [
+            MentorGetAlertListener::class
+        ],
+
     ];
 
     /**
@@ -34,6 +39,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Workout::observe(WorkoutObserver::class);
     }
 }
