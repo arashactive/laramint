@@ -12,15 +12,19 @@ class QuizAdapter extends TaskParent
 {
     protected $view = 'contents.learn.quiz.show';
     protected $review = 'contents.learn.quiz.review';
+    protected $prepare = 'contents.learn.quiz.prepare';
 
     public $is_mentor = false;
 
 
     public function Render(Term $term, Sessionable $sessionable)
     {
-
-        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
-
+        $workout = WorkoutService::checkExistWorkout($term->id, $sessionable, $this->user);
+        if(empty($workout)){
+            $model = $sessionable->Model;
+            return view($this->prepare, compact(['term' , 'model', 'sessionable']));
+        }
+        
         $activity = $sessionable->Model;
 
         if (!$this->checkMentorCanBeAccess($workout))
