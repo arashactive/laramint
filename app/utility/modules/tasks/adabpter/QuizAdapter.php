@@ -20,6 +20,7 @@ class QuizAdapter extends TaskParent
     public function Render(Term $term, Sessionable $sessionable)
     {
         $workout = WorkoutService::checkExistWorkout($term->id, $sessionable, $this->user);
+        
         if(empty($workout)){
             $model = $sessionable->Model;
             return view($this->prepare, compact(['term' , 'model', 'sessionable']));

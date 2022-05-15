@@ -9,7 +9,7 @@ use Tests\BaseTest;
 
 class QuizSevenTest extends BaseTest
 {
-
+    use QuizTrait;
     private $student_id = 8;
     private $term = 1;
     private $sessionable = 22;
@@ -36,6 +36,7 @@ class QuizSevenTest extends BaseTest
     public function test_quiz_testing_questions_render()
     {
         $this->student();
+        $this->setWorkoutForQuiz();
         $response = $this->get(route('taskLearner', [
             'term' => $this->term,
             'sessionable' => $this->sessionable

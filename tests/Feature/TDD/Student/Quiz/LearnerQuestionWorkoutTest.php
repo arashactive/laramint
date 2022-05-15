@@ -2,17 +2,15 @@
 
 namespace Tests\Feature\TDD\Student\Quiz;
 
-use App\Models\Sessionable;
-use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
 use Tests\BaseTest;
 
 class LearnerQuestionWorkoutTest extends BaseTest
 {
-
-    private $student_id = 8;
-    private $term = 1;
-    private $sessionable = 16;
+    use QuizTrait;
+    protected $student_id = 8;
+    protected $term = 1;
+    protected $sessionable = 16;
 
 
     public function student()
@@ -28,6 +26,7 @@ class LearnerQuestionWorkoutTest extends BaseTest
     }
 
 
+
     /**
      * A basic feature test example.
      *
@@ -35,7 +34,11 @@ class LearnerQuestionWorkoutTest extends BaseTest
      */
     public function test_quiz_testing_questions_render()
     {
+        $this->withoutExceptionHandling();
         $this->student();
+
+        $this->setWorkoutForQuiz();
+
         $response = $this->get(route('taskLearner', [
             'term' => $this->term,
             'sessionable' => $this->sessionable

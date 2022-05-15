@@ -20,7 +20,7 @@ class WorkoutController extends Controller
     public function prepared(Term $term, Sessionable $sessionable)
     {
 
-        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, Auth::user());
+        WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, Auth::user());
 
         return redirect(route('taskLearner', ['term' => $term, 'sessionable' => $sessionable]));
     }

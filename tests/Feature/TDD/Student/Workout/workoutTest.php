@@ -79,19 +79,26 @@ class workoutTest extends BaseTest
         ]));
         
 
-        $response->assertStatus(200);
+        $response->assertSee('Start');
+
+    }
+
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function test_prepare_quiz_set_record()
+    {
+        $this->student();
+        $response = $this->post(route('taskLearner', [
+            'term' => 1,
+            'sessionable' => 16
+        ]));
         
-        $workout = Workout::where([
-            'user_id' => "8",
-            'term_id' => "1",
-            'sessionable_id' => "16",
-            'is_completed' => "0"
-        ])->first();
 
-        $this->assertModelExists(
-            $workout
-        );
-
+        $response->assertRedirect(route('taskLearner', ['term' => 1, 'sessionable' => 16]));
 
     }
 

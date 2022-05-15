@@ -3,15 +3,19 @@
 namespace App\Utility\Workout;
 
 use App\Models\Quiz;
+use App\Models\Sessionable;
+use App\Models\Term;
 use App\Models\User;
 use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
+use Illuminate\Support\Facades\Auth;
 
 abstract class WorkoutService
 {
 
     public static function checkExistWorkout($term_id, $sessionable, $user)
     {
+       
         $workout = Workout::where('user_id', $user->id)
             ->where('term_id', $term_id)
             ->where('sessionable_id', $sessionable->id)
@@ -21,11 +25,10 @@ abstract class WorkoutService
     }
 
 
-    public static function WorkOutSyncForThisExcersice($term,  $sessionable, User $user)
+    public static function WorkOutSyncForThisExcersice(Term $term, Sessionable $sessionable, User $user)
     {
-                
+        
         $workout = self::checkExistWorkout($term->id, $sessionable, $user);
-
         if (empty($workout)) {
             $workout = new Workout();
             $workout->user_id = auth()->user()->id;
