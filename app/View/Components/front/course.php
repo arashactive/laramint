@@ -2,17 +2,18 @@
 
 namespace App\View\Components\front;
 
+use App\Models\Course as ModelsCourse;
 use Illuminate\View\Component;
 
 class course extends Component
 {
-    public $course;
+    public ModelsCourse $course;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($course)
+    public function __construct(ModelsCourse $course)
     {
         $this->course = $course;
     }

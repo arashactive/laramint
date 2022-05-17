@@ -2,19 +2,21 @@
 
 namespace App\View\Components\Box;
 
+use App\Models\Session;
+use App\Models\Term;
 use Illuminate\View\Component;
 
 class SessionForMentors extends Component
 {
-    public $session;
-    public $term;
+    public Session $session;
+    public Term $term;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term, $session)
+    public function __construct(Term $term, Session $session)
     {
         $this->term = $term;
         $this->session = $session;

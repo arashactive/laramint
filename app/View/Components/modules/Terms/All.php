@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Modules\Terms;
 
+use App\Models\Term;
 use Illuminate\View\Component;
 
 class All extends Component

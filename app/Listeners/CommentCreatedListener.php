@@ -24,7 +24,7 @@ class CommentCreatedListener
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param  CommentCreated  $event
      * @return void
      */
     public function handle(CommentCreated $event)

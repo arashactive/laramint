@@ -33,9 +33,9 @@ class QuestionComponents extends Component
     {
         $questionType = QuestionType::findorfail($this->questionTypeId);
         QuestionFactory::build($questionType)
-            ->setQuizId($this->quiz->id ?? null)
+            ->setQuizId($this->quiz->id ?? 0)
             ->store([
-                'id' => $this->question->id ?? null
+                'id' => $this->question->id ?? 0
             ], [
                 'title' => $this->title,
                 'question_body' => $this->question_body,

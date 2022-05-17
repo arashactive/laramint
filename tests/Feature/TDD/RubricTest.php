@@ -42,6 +42,9 @@ class RubricTest extends BaseTest
         $response->assertStatus(200);
     }
 
+    
+
+
     /**
      * A basic test to create form is worked correctly.
      *
@@ -49,6 +52,7 @@ class RubricTest extends BaseTest
      */
     public function test_create_form()
     {
+        $this->withoutExceptionHandling();
         $this->signIn();
 
         $response = $this->get(route($this->route . '.create'));

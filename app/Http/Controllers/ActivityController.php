@@ -34,7 +34,7 @@ class ActivityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  ActivityRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(ActivityRequest $request)
@@ -43,22 +43,21 @@ class ActivityController extends Controller
         Activity::create($request->all());
         return redirect()
             ->route("activity.index")
-            ->with('success' , __('item created successfully'));
-
+            ->with('success', __('item created successfully'));
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Activity  $activity
      * @return \Illuminate\Http\Response
      */
     public function edit(Activity $activity)
     {
         $this->authorize('activity.edit');
-        return view('contents.admin.activity.form' , compact(
+        return view('contents.admin.activity.form', compact(
             "activity"
         ));
     }
@@ -66,8 +65,8 @@ class ActivityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Department  $department
+     * @param  ActivityRequest  $request
+     * @param  Activity $activity
      * @return \Illuminate\Http\Response
      */
     public function update(ActivityRequest $request, Activity $activity)
@@ -75,31 +74,28 @@ class ActivityController extends Controller
         $this->authorize('activity.edit');
         $activity->update($request->all());
         return redirect()
-                ->route("activity.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("activity.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Activity  $activity
      * @return \Illuminate\Http\Response
      */
     public function destroy(Activity $activity)
     {
         $this->authorize('department.delete');
-        try{
+        try {
             $activity->delete();
             return redirect()
-                    ->route("activity.index")
-                    ->with('danger' , __('item deleted successfully'));
-        }catch (\Exception $e){
+                ->route("activity.index")
+                ->with('danger', __('item deleted successfully'));
+        } catch (\Exception $e) {
             return redirect()
-            ->route("activity.index")
-            ->with('danger' , __('Delete is not Completed, Please check child of this activity'));
+                ->route("activity.index")
+                ->with('danger', __('Delete is not Completed, Please check child of this activity'));
         }
-        
     }
-
-
 }

@@ -33,8 +33,8 @@ class PermissionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\RoleRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param  \App\Http\Requests\PermissionRequest  $request
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(PermissionRequest $request)
     {
@@ -50,8 +50,8 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  Permission  $permission
+     * @return \Illuminate\View\View
      */
     public function edit(Permission $permission)
     {
@@ -63,9 +63,9 @@ class PermissionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Department  $department
-     * @return \Illuminate\Http\Response
+     * @param  \App\Http\Requests\PermissionRequest  $request
+     * @param Permission  $permission
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(PermissionRequest $request, Permission $permission)
     {
@@ -79,8 +79,8 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  Permission  $permission
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Permission $permission)
     {

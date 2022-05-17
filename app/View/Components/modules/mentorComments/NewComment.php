@@ -6,19 +6,19 @@ use Illuminate\View\Component;
 
 class NewComment extends Component
 {
-    public $userId;
-    public $activableType;
-    public $activableId;
-    
-    
+    public int $userId;
+    public string $activableType;
+    public int $activableId;
+
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($userId, $activableType, $activableId)
+    public function __construct(int $userId, string $activableType, int $activableId)
     {
-        
+
         $this->userId = $userId;
         $this->activableType = $activableType;
         $this->activableId = $activableId;
@@ -31,7 +31,7 @@ class NewComment extends Component
      */
     public function render()
     {
-        
+
         return view('components.modules.mentor-comments.new-comment');
     }
 }

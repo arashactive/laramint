@@ -7,16 +7,16 @@ use Illuminate\View\Component;
 class Pill extends Component
 {
 
-    public $name = null;
-    public $theme = null;
-    public $count = null;
+    public string $name = '';
+    public string $theme = '';
+    public string $count = '';
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name , $theme , $count)
+    public function __construct(string $name , string $theme ,string $count)
     {
         $this->name = $name;
         $this->theme = $theme;

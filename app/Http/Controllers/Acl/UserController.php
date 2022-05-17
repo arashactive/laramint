@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Acl;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
-use App\traits\SyncPermissions;
+use App\Traits\SyncPermissions;
 
 class UserController extends Controller
 {
     use SyncPermissions;
+    
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +36,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UserRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(UserRequest $request)
@@ -53,7 +54,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  User  $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
@@ -66,8 +67,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Department  $department
+     * @param  UserRequest  $request
+     * @param  User  $user
      * @return \Illuminate\Http\Response
      */
     public function update(UserRequest $request, User $user)
@@ -83,7 +84,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  User  $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)

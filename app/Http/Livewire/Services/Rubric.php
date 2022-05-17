@@ -8,7 +8,7 @@ use Livewire\Component;
 class Rubric extends Component
 {
 
-    private $body = [
+    private array $body = [
         'item_title' => '',
         'cells' => [
             ['title' => '', 'score' => 0, 'pass_score' => false],
@@ -17,28 +17,28 @@ class Rubric extends Component
         ]
     ];
 
-    public $rubric_id = null;
-    public $title, $description;
-    public $bodies;
+    public int $rubric_id = 0;
+    public ?string $title = null;
+    public ?string $description = null;
+    public array $bodies;
 
 
-    protected $rules = [
+    protected array $rules = [
         'title' => 'required|min:6',
         'description' => 'required',
     ];
 
     public function mount()
     {
-        
+
         $this->bodies[] = $this->body;
 
-        if ($this->rubric_id != null) {
+        if ($this->rubric_id > 0) {
             $rubric = ModelsRubric::findorfail($this->rubric_id);
             $this->title = $rubric->title;
             $this->description = $rubric->description;
             $this->bodies = json_decode($rubric->body, true);
         }
-        
     }
 
 
@@ -74,7 +74,6 @@ class Rubric extends Component
         ]);
 
         return redirect()->route('rubric.index')->with('success', 'rubric updated');
-
     }
 
     public function render()

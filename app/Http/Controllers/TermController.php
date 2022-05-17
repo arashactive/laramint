@@ -50,7 +50,7 @@ class TermController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\CourseRequest  $request
+     * @param  TermRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(TermRequest $request)
@@ -65,7 +65,7 @@ class TermController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Term  $term
      * @return \Illuminate\Http\Response
      */
     public function show(Term $term)
@@ -85,7 +85,7 @@ class TermController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Term  $term
      * @return \Illuminate\Http\Response
      */
     public function edit(Term $term)
@@ -104,8 +104,8 @@ class TermController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  TermRequest $request
+     * @param  Term  $term
      * @return \Illuminate\Http\Response
      */
     public function update(TermRequest $request, Term $term)
@@ -121,7 +121,7 @@ class TermController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Term  $term
      * @return \Illuminate\Http\Response
      */
     public function destroy(Term $term)
@@ -139,8 +139,6 @@ class TermController extends Controller
     {
         return $model::pluck('title', 'id');
     }
-
-
 
     /**
      * Attach Session To Term
@@ -179,7 +177,7 @@ class TermController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
+     * @param  session_term  $from
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */

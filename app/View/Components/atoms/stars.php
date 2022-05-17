@@ -7,14 +7,14 @@ use Illuminate\View\Component;
 class Stars extends Component
 {
 
-    public $score;
+    public int $score;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($score)
+    public function __construct(int $score)
     {
         $this->score = $score;
     }

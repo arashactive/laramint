@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Factory;
 
-use App\utility\question\QuestionFactory;
+use App\Utility\Question\QuestionFactory;
 use Livewire\Component;
 use App\Models\QuestionType;
 

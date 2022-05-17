@@ -6,7 +6,7 @@ use App\Http\Requests\QuizRequest;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\QuizQuestion;
-use App\traits\Sequence;
+use App\Traits\Sequence;
 
 class QuizController extends Controller
 {
@@ -43,7 +43,7 @@ class QuizController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  QuizRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(QuizRequest $request)
@@ -58,7 +58,7 @@ class QuizController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Quiz  $quiz
+     * @param  Quiz $quiz
      * @return \Illuminate\Http\Response
      */
     public function show(Quiz $quiz)
@@ -72,7 +72,7 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Quiz  $quiz
+     * @param  Quiz $quiz
      * @return \Illuminate\Http\Response
      */
     public function edit(Quiz $quiz)
@@ -88,8 +88,8 @@ class QuizController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Quiz  $quiz
+     * @param  QuizRequest $request
+     * @param  Quiz $quiz
      * @return \Illuminate\Http\Response
      */
     public function update(QuizRequest $request, Quiz $quiz)
@@ -104,7 +104,7 @@ class QuizController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Quiz  $quiz
+     * @param  Quiz $quiz
      * @return \Illuminate\Http\Response
      */
     public function destroy(Quiz $quiz)
@@ -126,7 +126,7 @@ class QuizController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
+     * @param  QuizQuestion $from
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */
@@ -144,7 +144,7 @@ class QuizController extends Controller
             ->where('order', (string)$move_parameters[$move]['char'], $from->order)
             ->orderby('order', (string)$move_parameters[$move]['order'])
             ->first();
-        
+
         $this->changeOrder($from, $to);
 
         return redirect()->back();
@@ -154,8 +154,8 @@ class QuizController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
-     * @param  string  $move
+     * @param  Quiz  $parent
+     * @param  Question  $question
      * @return \Illuminate\Http\Response
      */
     public function addQuestionToQuiz(Quiz $parent, Question $question)
@@ -172,8 +172,7 @@ class QuizController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
-     * @param  string  $move
+     * @param  QuizQuestion  $quizQuestion
      * @return \Illuminate\Http\Response
      */
     public function deleteQuestionAsQuiz(QuizQuestion $quizQuestion)

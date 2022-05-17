@@ -6,14 +6,14 @@ use Illuminate\View\Component;
 
 class Show extends Component
 {
-    public $itemId;
-    public $path;
+    public int $itemId;
+    public string $path;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($itemId , $path)
+    public function __construct(int $itemId, string $path)
     {
         $this->itemId = $itemId;
         $this->path = $path;

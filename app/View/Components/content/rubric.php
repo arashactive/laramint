@@ -6,14 +6,14 @@ use Illuminate\View\Component;
 
 class Rubric extends Component
 {
-    public $rubric;
-    public $bodies = null;
+    public Rubric $rubric;
+    public $bodies = [];
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($rubric, $bodies = null)
+    public function __construct(Rubric $rubric, $bodies = null)
     {
         $this->bodies = $bodies;
         $this->rubric = $rubric;
@@ -27,7 +27,7 @@ class Rubric extends Component
      */
     public function render()
     {
-        
+
         return view('components.content.rubric');
     }
 }

@@ -2,19 +2,20 @@
 
 namespace App\View\Components\Box\Mentor\Comments;
 
+use App\Models\MentorComment;
 use Illuminate\View\Component;
 
 class Item extends Component
 {
 
-    public $comment;
+    public MentorComment $comment;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($comment)
+    public function __construct(MentorComment $comment)
     {
         $this->comment = $comment;
     }

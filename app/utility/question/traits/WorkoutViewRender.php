@@ -3,22 +3,22 @@
 
 namespace App\Utility\Question\Traits;
 
-use App\Events\MentorsGetAlertAfterQuizSubmit;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\Workout;
 use App\Models\WorkoutQuizLog;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 trait WorkoutViewRender
 {
-    protected $question;
-    protected $workout;
-    protected $workoutQuizQuestion;
-    protected $quiz = null;
+    protected Question $question;
+    protected Workout $workout;
+    protected WorkoutQuizLog $workoutQuizQuestion;
+    protected Quiz $quiz;
 
-
-    public function setQuizId($quiz_id)
+    
+    public function setQuizId(?int $quiz_id)
     {
         if ((int)$quiz_id > 0)
             $this->quiz = Quiz::findorfail($quiz_id);
@@ -26,9 +26,7 @@ trait WorkoutViewRender
     }
 
 
-
-
-    public function store($id = [], $attributes)
+    public function store(array $id, array $attributes)
     {
         if (!empty($this->quiz)) {
             $this->quiz->Questions()->create($attributes, ['order' => $this->quiz->Questions()->max('order') + 1]);
@@ -39,22 +37,23 @@ trait WorkoutViewRender
 
 
 
-    public function workoutScoreUpdate(Workout $workout)
+    public function workoutScoreUpdate(Workout $workout): int
     {
         $workoutQuiz = $workout->WorkOutQuiz;
         $sumOfScore = 0;
-
+       
         $is_completed = true;
         $is_mentor = false;
         foreach ($workoutQuiz as $question) {
-            if (!$is_mentor && $question->is_mentor) {
+            if ($is_mentor == false && $question->is_mentor) {
+                
                 $is_completed = false;
                 $is_mentor = true;
             }
             $sumOfScore += (int)$question->score;
         }
 
-       
+        
         $score = (int)($sumOfScore /  count($workoutQuiz));
 
         $workout->update([
@@ -69,17 +68,17 @@ trait WorkoutViewRender
 
 
 
-    public function workoutChecker(Question $question, Workout $workout, $request)
+    public function workoutChecker(Question $question, Workout $workout, Request $request)
     {
         $workoutQuizQuestion = WorkoutQuizLog::where('workout_id', $workout->id)
             ->where('question_id', $question->id)->first();
-
+       
 
         $this->question = $question;
         $this->workout = $workout;
         $this->workoutQuizQuestion = $workoutQuizQuestion;
 
-        $this->getScore($request);
+        return $this->getScore($request);
     }
 
 

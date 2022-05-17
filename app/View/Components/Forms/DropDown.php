@@ -6,18 +6,18 @@ use Illuminate\View\Component;
 
 class DropDown extends Component
 {
-    public $model = null;
-    public $name = null;
-    public $selected = 0;
-    public $field = 'title';
+    public string $model;
+    public string $name;
+    public int $selected = 0;
+    public string $field = 'title';
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($model,  $name, $selected = 0, $filed = "title")
+    public function __construct(string $model, string $name, int $selected = 0, string $filed = "title")
     {
-    
+
         $model = "App\Models\\" . $model;
         $this->model =  $model::pluck($filed, 'Id');
         $this->name = $name;

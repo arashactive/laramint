@@ -19,7 +19,7 @@
             <div class="text-center">
                 
                 @livewire('services.rubric', [
-                    'rubric_id' => ($rubric->id ?? null)
+                    'rubric_id' => ($rubric->id ?? 0)
                 ])
 
             </div>

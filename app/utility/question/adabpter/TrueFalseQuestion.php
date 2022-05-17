@@ -13,14 +13,14 @@ class TrueFalseQuestion extends QuestionParent implements QuestionAdabpterInterf
 
     public function getScore($request)
     {
-        $answer = json_decode(self::$question->answer, true);
+        $answer = json_decode($this->question->answer, true);
 
         $questionCorrectAnswer = $answer['correctAnswer'];
-        $requestAnswer = $request->input("answer-" . self::$question->id);
+        $requestAnswer = $request->input("answer-" . $this->question->id);
 
         $score = ($questionCorrectAnswer == $requestAnswer) ? 100 : 0;
 
-        self::$workoutQuizQuestion->update(
+        $this->workoutQuizQuestion->update(
             [
                 'answer' =>  $requestAnswer,
                 'score' => $score,
@@ -28,7 +28,7 @@ class TrueFalseQuestion extends QuestionParent implements QuestionAdabpterInterf
             ]
         );
 
-        parent::workoutScoreUpdate(self::$workout);
+        parent::workoutScoreUpdate($this->workout);
         return $score;
     }
 

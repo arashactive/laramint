@@ -6,6 +6,8 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Term extends Model
 {
@@ -17,9 +19,10 @@ class Term extends Model
     // make difference get lists for super-admin and other roles.
     // this part helps us to get clear list of supervisior and teacher with 
     // correct access to each term
+    /** @return Builder<TModel>|null */
     public function scopeGetParticipants(Builder $builder)
     {
-        
+
         if (!auth()->user()->hasRole(['Super-Admin'])) {
             return $builder->whereHas(
                 'Participants',
@@ -30,36 +33,36 @@ class Term extends Model
         }
     }
 
-
+    /** @return Builder<TModel>|null */
     public function scopeMyCourse(Builder $builder, $studentRoleId = 4, $user_id = 0)
     {
         $user_id = $user_id > 0 ? $user_id : auth()->user()->id;
         return $builder->whereHas(
             'Participants',
             function ($q) use ($studentRoleId, $user_id) {
-                $q->where('user_id', $user_id );
+                $q->where('user_id', $user_id);
                 $q->where('role_id', $studentRoleId);
             }
         );
     }
 
 
-    public function Department()
+    public function Department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
 
-    public function Course()
+    public function Course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }
 
-    public function Participants()
+    public function Participants(): BelongsToMany
     {
         return $this->belongsToMany(User::class)->withPivot(["id", "role_id"]);
     }
 
-    public function Sessions()
+    public function Sessions(): BelongsToMany
     {
         return $this->belongsToMany(Session::class)->withPivot(["id", "order"])->orderBy('order');
     }
@@ -68,9 +71,9 @@ class Term extends Model
     {
         $activities = [];
         $sessions = [$this->Sessions];
-        if( !isset($sessions[0]) ) return;
+        if (!isset($sessions[0])) return;
         foreach ($sessions[0] as $session) {
-            
+
             $activities = array_merge($activities, $session->Related->all());
         }
         return new Collection($activities);

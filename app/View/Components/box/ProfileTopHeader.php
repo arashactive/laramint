@@ -2,16 +2,17 @@
 
 namespace App\View\Components\Box;
 
+use App\Models\User;
 use Illuminate\View\Component;
 use Ramsey\Uuid\Type\Integer;
 
 class ProfileTopHeader extends Component
 {
 
-    public $user;
+    public User $user;
 
-    public $activable_id;
-    public $activable_type;
+    public int $activable_id;
+    public string $activable_type;
 
 
     /**
@@ -19,7 +20,7 @@ class ProfileTopHeader extends Component
      *
      * @return void
      */
-    public function __construct($user, $activable_id = null, $activable_type = null )
+    public function __construct(User $user, int $activable_id = 0, string $activable_type = '' )
     {
         $this->user = $user;
         $this->activable_id = $activable_id;

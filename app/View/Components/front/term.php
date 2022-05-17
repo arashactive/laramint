@@ -2,18 +2,19 @@
 
 namespace App\View\Components\front;
 
+use App\Models\Term as ModelsTerm;
 use Illuminate\View\Component;
 
 class term extends Component
 {
-    public $term;
-    public $iteration;
+    public ModelsTerm $term;
+    public String $iteration;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term, $iteration = '')
+    public function __construct(ModelsTerm $term, string $iteration = '')
     {
         $this->term = $term;
         $this->iteration = $iteration;

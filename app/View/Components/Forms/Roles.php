@@ -6,20 +6,18 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\View\Component;
 
-
 class Roles extends Component
 {
-    public $roles = null;
-    public $user = null;
+
+    public array $user;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($user = null)
+    public function __construct(int $user = 0)
     {
-        $this->user = null;
         
         if((int)$user > 0){
             $user = User::findorfail($user);
@@ -28,7 +26,7 @@ class Roles extends Component
         }
 
         
-        $this->roles = Role::get();
+        
     }
 
     /**
@@ -38,6 +36,7 @@ class Roles extends Component
      */
     public function render()
     {
-        return view('components.forms.roles');
+        $roles = Role::all();
+        return view('components.forms.roles', compact('roles'));
     }
 }

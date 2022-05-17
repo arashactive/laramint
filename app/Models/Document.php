@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Document extends Model
 {
@@ -16,7 +19,7 @@ class Document extends Model
     protected $guarded = [];
 
 
-    public function Files()
+    public function Files(): BelongsToMany
     {
         return $this->belongsToMany(File::class)
             ->withPivot('order', 'id')
@@ -24,19 +27,18 @@ class Document extends Model
             ->withTimestamps();
     }
 
-    
     /**
      * Sessions is pholymorph relationship
      *
-     * @return void
+     * @return MorphTo
      */
-    public function Sessions()
+    public function Sessions(): MorphTo
     {        
         return $this->morphTo(Session::class);
     }
 
 
-    public function Workout($term_id, $sesison_id, $sessionable_id)
+    public function Workout($term_id, $sesison_id, $sessionable_id): HasOne
     {
         return $this->hasOne(Workout::class, 'activity_id', 'id')
             ->where('term_id', $term_id)

@@ -13,11 +13,17 @@ use Illuminate\Http\Request;
 class ParticipantController extends Controller
 {
 
+    /**
+     * get all term for this user
+     *
+     * @param  User  $user
+     * @return \Illuminate\Http\Response
+     */
     public function participantTerms(User $user)
     {
 
         $termsModule = new TermModule();
-        
+
         $termsModule->User($user);
         $termsModule->is_mentor = true;
 
@@ -37,6 +43,14 @@ class ParticipantController extends Controller
     }
 
 
+    /**
+     * Add user to especific term with dynamic role
+     *
+     * @param  int  $term_id
+     * @param  int  $user_id
+     * @param  int  $role_id
+     * @return \Illuminate\Http\Response
+     */
     public function addParticipantToTerm($term_id, $user_id, $role_id)
     {
 
@@ -61,7 +75,13 @@ class ParticipantController extends Controller
             ->with('success', __('successfull added'));
     }
 
-
+    /**
+     * delete user to especific term with dynamic role
+     *
+     * @param  Term  $term
+     * @param  User  $user
+     * @return \Illuminate\Http\Response
+     */
     public function deleteParticipantAsTerm(Term $term, User $user)
     {
         $term->Participants()->detach($user);
@@ -70,6 +90,13 @@ class ParticipantController extends Controller
             ->with('danger', __('successfull deleted'));
     }
 
+    /**
+     * review of term and workout of especific user
+     *
+     * @param  Term  $term
+     * @param  Workout  $workout
+     * @return \Illuminate\Http\Response
+     */
     public function reviewWorkout(Term $term, Workout $workout)
     {
 
@@ -81,6 +108,12 @@ class ParticipantController extends Controller
         return $task->Render($term, $workout->Sessionable);
     }
 
+    /**
+     * participantWorkout
+     *
+     * @param  Participant  $participant
+     * @return \Illuminate\Http\Response
+     */
     public function participantWorkout(Participant $participant)
     {
 
@@ -96,6 +129,12 @@ class ParticipantController extends Controller
     }
 
 
+    /**
+     * participantWorkout
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function reviewWorkoutUpdate(Request $request)
     {
         $request->validate([

@@ -5,6 +5,8 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Workout extends Model
 {
@@ -22,20 +24,23 @@ class Workout extends Model
         ]);
     }
 
-    public function Sessionable(){
+    public function Sessionable():BelongsTo
+    {
         return $this->belongsTo(Sessionable::class);
     }
 
-    public function Session(){
+    public function Session(): BelongsTo
+    {
         return $this->belongsTo(Session::class);
     }
 
-    public function WorkOutQuiz()
+    public function WorkOutQuiz():HasMany
     {
         return $this->hasMany(WorkoutQuizLog::class);
     }
 
-    public function User(){
+    public function User(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 }

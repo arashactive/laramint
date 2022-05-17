@@ -7,7 +7,7 @@ use App\Models\Plan;
 
 class PlanController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +34,7 @@ class PlanController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\planRequest  $request
+     * @param  PlanRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(PlanRequest $request)
@@ -43,30 +43,19 @@ class PlanController extends Controller
         Plan::create($request->all());
         return redirect()
             ->route("plan.index")
-            ->with('success' , __('item created successfully'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+            ->with('success', __('item created successfully'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Plan  $plan
      * @return \Illuminate\Http\Response
      */
     public function edit(Plan $plan)
     {
-        $this->authorize('plan.edit');        
-        return view('contents.admin.plan.form' , compact(
+        $this->authorize('plan.edit');
+        return view('contents.admin.plan.form', compact(
             "plan"
         ));
     }
@@ -74,8 +63,8 @@ class PlanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  PlanRequest  $request
+     * @param  Plan  $plan
      * @return \Illuminate\Http\Response
      */
     public function update(PlanRequest $request, Plan $plan)
@@ -83,14 +72,14 @@ class PlanController extends Controller
         $this->authorize('plan.edit');
         $plan->update($request->all());
         return redirect()
-                ->route("plan.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("plan.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Plan $plan
      * @return \Illuminate\Http\Response
      */
     public function destroy(Plan $plan)
@@ -98,9 +87,7 @@ class PlanController extends Controller
         $this->authorize('plan.delete');
         $plan->delete();
         return redirect()
-                ->route("plan.index")
-                ->with('danger' , __('item deleted successfully'));
+            ->route("plan.index")
+            ->with('danger', __('item deleted successfully'));
     }
-
-
 }

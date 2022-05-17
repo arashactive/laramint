@@ -35,7 +35,7 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\RoleRequest  $request
+     * @param  RoleRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(RoleRequest $request)
@@ -51,7 +51,7 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Role  $role
      * @return \Illuminate\Http\Response
      */
     public function show(Role $role)
@@ -69,7 +69,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Role  $role
      * @return \Illuminate\Http\Response
      */
     public function edit(Role $role)
@@ -82,8 +82,8 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Department  $department
+     * @param  RoleRequest  $request
+     * @param  Role  $role
      * @return \Illuminate\Http\Response
      */
     public function update(RoleRequest $request, Role $role)
@@ -98,7 +98,7 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Role  $role
      * @return \Illuminate\Http\Response
      */
     public function destroy(Role $role)
@@ -115,12 +115,18 @@ class RoleController extends Controller
         }
     }
 
-
+    /**
+     * sync permissions to the specified role.
+     *
+     * @param  Request  $request
+     * @param  Role  $role
+     * @return \Illuminate\Http\Response
+     */
     public function permission(Request $request, Role $role)
     {
-        
+
         $role->syncPermissions($request->permissions);
 
-        return back()->with('success' , 'Role Permissions is updated');
+        return back()->with('success', 'Role Permissions is updated');
     }
 }

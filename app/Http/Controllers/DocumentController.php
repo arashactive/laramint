@@ -6,7 +6,7 @@ use App\Http\Requests\DocumentRequest;
 use App\Models\Document;
 use App\Models\DocumentFile;
 use App\Models\File;
-use App\traits\Sequence;
+use App\Traits\Sequence;
 
 class DocumentController extends Controller
 {
@@ -39,7 +39,7 @@ class DocumentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  DocumentRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(DocumentRequest $request)
@@ -55,7 +55,7 @@ class DocumentController extends Controller
     /**
      * Show the form for showing the specified resource.
      *
-     * @param  int  $id
+     * @param  Document  $document
      * @return \Illuminate\Http\Response
      */
     public function show(Document $document)
@@ -69,7 +69,7 @@ class DocumentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Document  $document
      * @return \Illuminate\Http\Response
      */
     public function edit(Document $document)
@@ -83,8 +83,8 @@ class DocumentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Department  $department
+     * @param  DocumentRequest $request
+     * @param  Document $document
      * @return \Illuminate\Http\Response
      */
     public function update(DocumentRequest $request, Document $document)
@@ -99,7 +99,7 @@ class DocumentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Document  $activity
      * @return \Illuminate\Http\Response
      */
     public function destroy(Document $activity)
@@ -121,7 +121,7 @@ class DocumentController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
+     * @param  DocumentFile $from
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */
@@ -133,7 +133,7 @@ class DocumentController extends Controller
             'up' => ['char' => '<', 'order' => 'desc'],
             'down' => ['char' => '>', 'order' => 'asc']
         ];
-        
+
         $to = DocumentFile::where('document_id', $from->document_id)
             ->where('order', (string)$move_parameters[$move]['char'], $from->order)
             ->orderby('order', (string)$move_parameters[$move]['order'])
@@ -148,29 +148,30 @@ class DocumentController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
-     * @param  string  $move
+     * @param  Document  $document
+     * @param  File $file
      * @return \Illuminate\Http\Response
      */
     public function addFileToDocument(Document $document, File $file)
     {
-        
-        $document->Files()->attach($file , 
-            ['order' => $document->Files()->max('order') + 1]);
+
+        $document->Files()->attach(
+            $file,
+            ['order' => $document->Files()->max('order') + 1]
+        );
         return redirect()->back();
     }
-    
-    
+
+
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
-     * @param  string  $move
+     * @param  DocumentFile  $documentFile
      * @return \Illuminate\Http\Response
      */
     public function deleteFileAsDocument(DocumentFile $documentFile)
     {
-        
+
         $documentFile->delete();
         return redirect()->back();
     }

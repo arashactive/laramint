@@ -35,7 +35,7 @@ class FileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  FileRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(FileRequest $request)
@@ -64,7 +64,7 @@ class FileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  File  $file
      * @return \Illuminate\Http\Response
      */
     public function edit(File $file)
@@ -78,7 +78,7 @@ class FileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  FileRequest $request
      * @param  File  $file
      * @return \Illuminate\Http\Response
      */
@@ -95,7 +95,7 @@ class FileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  File  $file
      * @return \Illuminate\Http\Response
      */
     public function destroy(File $file)

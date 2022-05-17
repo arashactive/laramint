@@ -6,10 +6,12 @@ use App\Http\Requests\FeedbackRequest;
 use App\Models\Feedback;
 use App\Models\FeedbackQuestion;
 use App\Models\Question;
-
+use App\Traits\Sequence;
 
 class FeedbackController extends Controller
 {
+    use Sequence;
+
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +38,7 @@ class FeedbackController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  FeedbackRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(FeedbackRequest $request)
@@ -51,7 +53,7 @@ class FeedbackController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feedback  $feedback
+     * @param  Feedback $feedback
      * @return \Illuminate\Http\Response
      */
     public function show(Feedback $feedback)
@@ -65,7 +67,7 @@ class FeedbackController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feedback  $feedback
+     * @param  Feedback $feedback
      * @return \Illuminate\Http\Response
      */
     public function edit(Feedback $feedback)
@@ -79,8 +81,8 @@ class FeedbackController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feedback  $feedback
+     * @param  FeedbackRequest $request
+     * @param  Feedback $feedback
      * @return \Illuminate\Http\Response
      */
     public function update(FeedbackRequest $request, Feedback $feedback)
@@ -95,7 +97,7 @@ class FeedbackController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feedback  $feedback
+     * @param  Feedback $feedback
      * @return \Illuminate\Http\Response
      */
     public function destroy(Feedback $feedback)
@@ -111,7 +113,7 @@ class FeedbackController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
+     * @param  FeedbackQuestion  $from
      * @param  string  $move
      * @return \Illuminate\Http\Response
      */
@@ -139,8 +141,8 @@ class FeedbackController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
-     * @param  string  $move
+     * @param  Feedback $parent
+     * @param  Question $question
      * @return \Illuminate\Http\Response
      */
     public function addQuestionToFeedback(Feedback $parent, Question $question)
@@ -157,8 +159,7 @@ class FeedbackController extends Controller
     /**
      * change the sequences of file belongs to document
      *
-     * @param  int  $file_id
-     * @param  string  $move
+     * @param  FeedbackQuestion  $feedbackQuestion
      * @return \Illuminate\Http\Response
      */
     public function deleteQuestionAsFeedback(FeedbackQuestion $feedbackQuestion)

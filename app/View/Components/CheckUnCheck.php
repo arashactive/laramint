@@ -7,13 +7,13 @@ use Illuminate\View\Component;
 class CheckUnCheck extends Component
 {
 
-    public $isChecked;
+    public bool $isChecked;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($isChecked)
+    public function __construct(bool $isChecked)
     {
         $this->isChecked = $isChecked;
     }

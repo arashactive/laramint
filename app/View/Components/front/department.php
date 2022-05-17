@@ -2,17 +2,18 @@
 
 namespace App\View\Components\front;
 
+use App\Models\Department as ModelsDepartment;
 use Illuminate\View\Component;
 
 class department extends Component
 {
-    public $department;
+    public ModelsDepartment $department;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($department)
+    public function __construct(ModelsDepartment $department)
     {
         $this->department = $department;
     }

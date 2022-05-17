@@ -39,7 +39,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\CourseRequest  $request
+     * @param  CourseRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(CourseRequest $request)
@@ -48,40 +48,32 @@ class CourseController extends Controller
         Course::create($request->all());
         return redirect()
             ->route("course.index")
-            ->with('success' , __('item created successfully'));
+            ->with('success', __('item created successfully'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Course  $course
      * @return \Illuminate\Http\Response
      */
     public function edit(Course $course)
     {
         $this->authorize('course.edit');
         $departments = $this->getDepartmentsPluck();
-        return view('contents.admin.courses.form' , compact(
-            "course" , "departments"
+        return view('contents.admin.courses.form', compact(
+            "course",
+            "departments"
         ));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  CourseRequest $request
+     * @param  Course  $course
      * @return \Illuminate\Http\Response
      */
     public function update(CourseRequest $request, Course $course)
@@ -89,14 +81,14 @@ class CourseController extends Controller
         $this->authorize('course.edit');
         $course->update($request->all());
         return redirect()
-                ->route("course.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("course.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified course from storage.
      *
-     * @param  int  $id
+     * @param  Course  $course
      * @return \Illuminate\Http\Response
      */
     public function destroy(Course $course)
@@ -104,13 +96,13 @@ class CourseController extends Controller
         $this->authorize('course.delete');
         $course->delete();
         return redirect()
-                ->route("course.index")
-                ->with('danger' , __('item deleted successfully'));
+            ->route("course.index")
+            ->with('danger', __('item deleted successfully'));
     }
 
 
-    private function getDepartmentsPluck(){
-        return Department::pluck('title' , 'id');
+    private function getDepartmentsPluck()
+    {
+        return Department::pluck('title', 'id');
     }
-
 }

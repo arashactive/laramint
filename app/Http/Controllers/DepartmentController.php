@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
- 
+
 
 class DepartmentController extends Controller
 {
@@ -35,7 +35,7 @@ class DepartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  DepartmentRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(DepartmentRequest $request)
@@ -44,22 +44,21 @@ class DepartmentController extends Controller
         Department::create($request->all());
         return redirect()
             ->route("department.index")
-            ->with('success' , __('item created successfully'));
-
+            ->with('success', __('item created successfully'));
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Department  $department
      * @return \Illuminate\Http\Response
      */
     public function edit(Department $department)
     {
         $this->authorize('department.edit');
-        return view('contents.admin.department.form' , compact(
+        return view('contents.admin.department.form', compact(
             "department"
         ));
     }
@@ -67,7 +66,7 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  DepartmentRequest  $request
      * @param  Department  $department
      * @return \Illuminate\Http\Response
      */
@@ -76,31 +75,28 @@ class DepartmentController extends Controller
         $this->authorize('department.edit');
         $department->update($request->all());
         return redirect()
-                ->route("department.index")
-                ->with('warning' , __('item updated successfully'));
+            ->route("department.index")
+            ->with('warning', __('item updated successfully'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Department  $department
      * @return \Illuminate\Http\Response
      */
     public function destroy(Department $department)
     {
         $this->authorize('department.delete');
-        try{
+        try {
             $department->delete();
             return redirect()
-                    ->route("department.index")
-                    ->with('danger' , __('item deleted successfully'));
-        }catch (\Exception $e){
+                ->route("department.index")
+                ->with('danger', __('item deleted successfully'));
+        } catch (\Exception $e) {
             return redirect()
-            ->route("department.index")
-            ->with('danger' , __('Delete is not Completed, Please check child of this department'));
+                ->route("department.index")
+                ->with('danger', __('Delete is not Completed, Please check child of this department'));
         }
-        
     }
-
-
 }

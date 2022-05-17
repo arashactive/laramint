@@ -2,7 +2,9 @@
 
 namespace App\View\Components\Content;
 
-use App\traits\ConvertorHelper;
+use App\Models\File;
+use App\Models\Term;
+use App\Traits\ConvertorHelper;
 use Illuminate\View\Component;
 
 
@@ -10,23 +12,23 @@ class FileShowToStudent extends Component
 {
 
     use ConvertorHelper;
-    
-    public $file;
-    public $term;
-    public $step;
+
+    public File $file;
+    public Term $term;
+    public string $step;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($term, $file, $step)
+    public function __construct(Term $term, File $file, string $step)
     {
         $this->term = $term;
         $this->file = $file;
         $this->step = $step;
     }
 
-    public function toFaIcon($file_type = ''): string
+    public function toFaIcon(string $file_type = ''): string
     {
         return (string)$this->fileTypeToFaIcon($file_type);
     }

@@ -5,6 +5,7 @@ namespace App\Traits;
 
 use App\Http\Requests\UserRequest;
 use App\Models\Role;
+use App\Models\User;
 
 trait SyncPermissions
 {
@@ -16,7 +17,7 @@ trait SyncPermissions
      * @param  User  $user
      * @return \Illuminate\Http\Response
      */
-    public function syncPermissions(UserRequest $request, $user)
+    public function syncPermissions(UserRequest $request, User $user)
     {
         // Get the submitted roles
         $roles = $request->get('roles', []);

@@ -38,7 +38,7 @@ class SessionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  SessionRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(SessionRequest $request)
@@ -54,7 +54,7 @@ class SessionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Session  $session
      * @return \Illuminate\Http\Response
      */
     public function show(Session $session)
@@ -69,7 +69,7 @@ class SessionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Session  $session
      * @return \Illuminate\Http\Response
      */
     public function edit(Session $session)
@@ -83,7 +83,8 @@ class SessionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  SessionRequest  $request
+     * @param  Session  $session
      * @return \Illuminate\Http\Response
      */
     public function update(SessionRequest $request, Session $session)
@@ -98,7 +99,7 @@ class SessionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Session  $session
      * @return \Illuminate\Http\Response
      */
     public function destroy(Session $session)
@@ -115,7 +116,8 @@ class SessionController extends Controller
      * addActivityTosessio
      *
      * @param  mixed $activity
-     * @param  mixed $active_id
+     * @param  int $active_id
+     * @param  mixed $session
      * @return void
      */
     private function addActivityTosessio($activity, $active_id, $session)
@@ -130,10 +132,10 @@ class SessionController extends Controller
      * Attach Document To Session
      *
      * @param  Session  $session
-     * @param  id  $active_id
+     * @param  int  $active_id
      * @return \Illuminate\Http\Response redirect
      */
-    public function addDocumentToSession(Session $session, $active_id)
+    public function addDocumentToSession(Session $session, int $active_id)
     {
         $this->addActivityTosessio($session->documents(), $active_id, $session);
         return redirect()->back();
@@ -144,10 +146,10 @@ class SessionController extends Controller
      * Attach Document To Session
      *
      * @param  Session  $session
-     * @param  id  $quiz_id
+     * @param  int  $active_id
      * @return \Illuminate\Http\Response redirect
      */
-    public function addQuizToSession(Session $session, $active_id)
+    public function addQuizToSession(Session $session, int $active_id)
     {
         $this->addActivityTosessio($session->Quizes(), $active_id, $session);
         return redirect()->back();
@@ -157,10 +159,10 @@ class SessionController extends Controller
      * Attach File To Session
      *
      * @param  Session  $session
-     * @param  id  $active_id
+     * @param  int  $active_id
      * @return \Illuminate\Http\Response redirect
      */
-    public function addFileToSession(Session $session, $active_id)
+    public function addFileToSession(Session $session, int $active_id)
     {
         $this->addActivityTosessio($session->Files(), $active_id, $session);
         return redirect()->back();
@@ -170,10 +172,10 @@ class SessionController extends Controller
      * Attach Document To Session
      *
      * @param  Session  $session
-     * @param  id  $quiz_id
+     * @param  int  $active_id
      * @return \Illuminate\Http\Response redirect
      */
-    public function addFeedbackToSession(Session $session, $active_id)
+    public function addFeedbackToSession(Session $session, int $active_id)
     {
         $this->addActivityTosessio($session->Feedbacks(), $active_id, $session);
         return redirect()->back();
@@ -184,10 +186,10 @@ class SessionController extends Controller
      * Attach Document To Session
      *
      * @param  Session  $session
-     * @param  id  $quiz_id
+     * @param  int  $active_id
      * @return \Illuminate\Http\Response redirect
      */
-    public function addRubricToSession(Session $session, $active_id)
+    public function addRubricToSession(Session $session, int $active_id)
     {
         $this->addActivityTosessio($session->Rubrics(), $active_id, $session);
         return redirect()->back();
@@ -198,10 +200,10 @@ class SessionController extends Controller
      * change the sequences of file belongs to Sessionable
      *
      * @param  Sessionable  $from
-     * @param  string  $move => up or down
+     * @param  string  $move
      * @return \Illuminate\Http\Response
      */
-    public function changeOrderSessionable(Sessionable $from, $move)
+    public function changeOrderSessionable(Sessionable $from, string $move)
     {
         $this->authorize('session.order');
 

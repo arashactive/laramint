@@ -56,7 +56,9 @@ class WorkoutController extends Controller
         $question = Question::findorfail($request->question_id);
         $workout = Workout::findorfail($request->workout_id);
 
-        return QuestionFactory::Build($question->questionType)
+        $result =  QuestionFactory::Build($question->questionType)
             ->workoutChecker($question, $workout, $request);
+
+        return response()->json($result);    
     }
 }

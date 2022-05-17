@@ -7,8 +7,8 @@ use Illuminate\View\Component;
 class Item extends Component
 {
 
-    public $title;
-    public $color = 'primary';
+    public string $title;
+    public string $color = 'primary';
 
 
     /**
@@ -16,7 +16,7 @@ class Item extends Component
      *
      * @return void
      */
-    public function __construct($title, $color = 'primary')
+    public function __construct(string $title, string $color = 'primary')
     {
         $this->color = $color;
         $this->title = $title;

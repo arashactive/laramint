@@ -33,7 +33,7 @@ class Feedback extends Component
 
     private function getQuestion(Question $question)
     {
-        return (string)QuestionFactory::QuestionBuidler($question);
+        return '';
     }
 
 

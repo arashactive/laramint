@@ -2,18 +2,19 @@
 
 namespace App\View\Components\Box;
 
+use App\Models\Sessionable;
 use Illuminate\View\Component;
 
 class SessionActivityItem extends Component
 {
-    public $activity;
+    public Sessionable $activity;
     
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($activity)
+    public function __construct(Sessionable $activity)
     {
         $this->activity = $activity;
     }

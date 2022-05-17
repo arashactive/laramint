@@ -2,19 +2,20 @@
 
 namespace App\View\Components;
 
+use App\Models\Workout;
 use Illuminate\View\Component;
 
 class CompleteAndNext extends Component
 {
 
-    public $workout;
+    public Workout $workout;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($workout)
+    public function __construct(Workout $workout)
     {
         $this->workout = $workout;
     }
