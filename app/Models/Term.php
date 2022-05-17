@@ -20,6 +20,7 @@ class Term extends Model
     // this part helps us to get clear list of supervisior and teacher with 
     // correct access to each term
     /** @return mixed|null */
+    /** @phpstan-ignore-next-line */
     public function scopeGetParticipants(Builder $builder)
     {
 
@@ -33,7 +34,7 @@ class Term extends Model
         }
     }
 
-    /** @return mixed|null */
+    /** @phpstan-ignore-next-line */
     public function scopeMyCourse(Builder $builder, $studentRoleId = 4, $user_id = 0)
     {
         $user_id = $user_id > 0 ? $user_id : auth()->user()->id;

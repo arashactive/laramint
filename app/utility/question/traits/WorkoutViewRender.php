@@ -78,6 +78,7 @@ trait WorkoutViewRender
         $this->workout = $workout;
         $this->workoutQuizQuestion = $workoutQuizQuestion;
 
+        /** @phpstan-ignore-next-line */
         return $this->getScore($request);
     }
 

@@ -13,6 +13,7 @@ class AlertMenu extends Component
 
     public function markNotification($id)
     {
+        /** @phpstan-ignore-next-line */
         Auth::user()->unreadNotifications
             ->when($id, function ($query) use ($id) {
                 return $query->where('id', $id);

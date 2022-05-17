@@ -17,6 +17,7 @@ class TaskFactory
         $classOfFileLoader = "App\\Utility\\Modules\\Tasks\\Adabpter\\" . $class . 'Adapter';
         return new $classOfFileLoader();
 
+        /** @phpstan-ignore-next-line */
         throw new \Exception('The Question type is not found');
     }
 }

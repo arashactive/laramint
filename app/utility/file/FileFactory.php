@@ -16,6 +16,7 @@ abstract class FileFactory
         $classOfFileLoader = "App\\Utility\\File\\Adabpter\\" . $className;
         return new $classOfFileLoader($file);
     
+        /** @phpstan-ignore-next-line */
         throw new \Exception('The Question type is not found');
     }
 }
