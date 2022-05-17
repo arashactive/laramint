@@ -18,7 +18,7 @@ class TermController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -34,7 +34,7 @@ class TermController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -51,7 +51,7 @@ class TermController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  TermRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(TermRequest $request)
     {
@@ -66,7 +66,7 @@ class TermController extends Controller
      * Display the specified resource.
      *
      * @param  Term  $term
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Term $term)
     {       
@@ -86,7 +86,7 @@ class TermController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Term  $term
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Term $term)
     {
@@ -106,7 +106,7 @@ class TermController extends Controller
      *
      * @param  TermRequest $request
      * @param  Term  $term
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(TermRequest $request, Term $term)
     {
@@ -122,7 +122,7 @@ class TermController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Term  $term
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Term $term)
     {
@@ -145,7 +145,7 @@ class TermController extends Controller
      *
      * @param  Term  $term
      * @param  Session  $session
-     * @return \Illuminate\Http\Response redirect
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addSessionToTerm(Term $term, Session $session)
     {
@@ -164,7 +164,7 @@ class TermController extends Controller
      *
      * @param  Term $term
      * @param  Session  $session
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function deleteSessionAsTerm(Term $term, Session $session)
     {
@@ -179,7 +179,7 @@ class TermController extends Controller
      *
      * @param  session_term  $from
      * @param  string  $move
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function orderChangeSession(session_term $from, $move)
     {

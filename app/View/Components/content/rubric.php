@@ -2,18 +2,19 @@
 
 namespace App\View\Components\Content;
 
+use App\Models\Rubric as ModelsRubric;
 use Illuminate\View\Component;
 
 class Rubric extends Component
 {
-    public Rubric $rubric;
+    public ModelsRubric $rubric;
     public $bodies = [];
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Rubric $rubric, $bodies = null)
+    public function __construct(ModelsRubric $rubric, $bodies = null)
     {
         $this->bodies = $bodies;
         $this->rubric = $rubric;

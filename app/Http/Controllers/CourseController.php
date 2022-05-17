@@ -13,7 +13,7 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -25,7 +25,7 @@ class CourseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -40,7 +40,7 @@ class CourseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  CourseRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(CourseRequest $request)
     {
@@ -57,7 +57,7 @@ class CourseController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Course  $course
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Course $course)
     {
@@ -74,7 +74,7 @@ class CourseController extends Controller
      *
      * @param  CourseRequest $request
      * @param  Course  $course
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(CourseRequest $request, Course $course)
     {
@@ -89,7 +89,7 @@ class CourseController extends Controller
      * Remove the specified course from storage.
      *
      * @param  Course  $course
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Course $course)
     {

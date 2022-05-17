@@ -11,7 +11,7 @@ class PermissionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class PermissionController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -51,7 +51,7 @@ class PermissionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Permission  $permission
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit(Permission $permission)
     {

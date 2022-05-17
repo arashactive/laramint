@@ -11,7 +11,7 @@ class QuestionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class QuestionController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create(Request $request)
     {
@@ -37,7 +37,7 @@ class QuestionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Question  $question
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Question $question)
     {
@@ -51,7 +51,7 @@ class QuestionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Question  $question
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Question $question)
     {

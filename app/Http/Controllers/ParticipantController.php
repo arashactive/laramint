@@ -17,7 +17,7 @@ class ParticipantController extends Controller
      * get all term for this user
      *
      * @param  User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function participantTerms(User $user)
     {
@@ -49,7 +49,7 @@ class ParticipantController extends Controller
      * @param  int  $term_id
      * @param  int  $user_id
      * @param  int  $role_id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addParticipantToTerm($term_id, $user_id, $role_id)
     {
@@ -80,7 +80,7 @@ class ParticipantController extends Controller
      *
      * @param  Term  $term
      * @param  User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function deleteParticipantAsTerm(Term $term, User $user)
     {
@@ -95,7 +95,7 @@ class ParticipantController extends Controller
      *
      * @param  Term  $term
      * @param  Workout  $workout
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function reviewWorkout(Term $term, Workout $workout)
     {
@@ -112,7 +112,7 @@ class ParticipantController extends Controller
      * participantWorkout
      *
      * @param  Participant  $participant
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function participantWorkout(Participant $participant)
     {
@@ -133,7 +133,7 @@ class ParticipantController extends Controller
      * participantWorkout
      *
      * @param  Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function reviewWorkoutUpdate(Request $request)
     {

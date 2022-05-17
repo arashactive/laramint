@@ -16,7 +16,7 @@ class DocumentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -28,7 +28,7 @@ class DocumentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -40,7 +40,7 @@ class DocumentController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  DocumentRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(DocumentRequest $request)
     {
@@ -56,7 +56,7 @@ class DocumentController extends Controller
      * Show the form for showing the specified resource.
      *
      * @param  Document  $document
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Document $document)
     {
@@ -70,7 +70,7 @@ class DocumentController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Document  $document
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Document $document)
     {
@@ -85,7 +85,7 @@ class DocumentController extends Controller
      *
      * @param  DocumentRequest $request
      * @param  Document $document
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(DocumentRequest $request, Document $document)
     {
@@ -100,7 +100,7 @@ class DocumentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Document  $activity
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Document $activity)
     {
@@ -123,7 +123,7 @@ class DocumentController extends Controller
      *
      * @param  DocumentFile $from
      * @param  string  $move
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function orderChangeFiles(DocumentFile $from, $move)
     {
@@ -150,7 +150,7 @@ class DocumentController extends Controller
      *
      * @param  Document  $document
      * @param  File $file
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addFileToDocument(Document $document, File $file)
     {
@@ -167,7 +167,7 @@ class DocumentController extends Controller
      * change the sequences of file belongs to document
      *
      * @param  DocumentFile  $documentFile
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function deleteFileAsDocument(DocumentFile $documentFile)
     {

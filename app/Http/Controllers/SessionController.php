@@ -15,7 +15,7 @@ class SessionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class SessionController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -39,7 +39,7 @@ class SessionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  SessionRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(SessionRequest $request)
     {
@@ -55,7 +55,7 @@ class SessionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Session  $session
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Session $session)
     {
@@ -70,7 +70,7 @@ class SessionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Session  $session
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Session $session)
     {
@@ -85,7 +85,7 @@ class SessionController extends Controller
      *
      * @param  SessionRequest  $request
      * @param  Session  $session
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(SessionRequest $request, Session $session)
     {
@@ -100,7 +100,7 @@ class SessionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Session  $session
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Session $session)
     {
@@ -118,7 +118,7 @@ class SessionController extends Controller
      * @param  mixed $activity
      * @param  int $active_id
      * @param  mixed $session
-     * @return void
+     * @return void|null
      */
     private function addActivityTosessio($activity, $active_id, $session)
     {
@@ -133,7 +133,7 @@ class SessionController extends Controller
      *
      * @param  Session  $session
      * @param  int  $active_id
-     * @return \Illuminate\Http\Response redirect
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addDocumentToSession(Session $session, int $active_id)
     {
@@ -147,7 +147,7 @@ class SessionController extends Controller
      *
      * @param  Session  $session
      * @param  int  $active_id
-     * @return \Illuminate\Http\Response redirect
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addQuizToSession(Session $session, int $active_id)
     {
@@ -160,7 +160,7 @@ class SessionController extends Controller
      *
      * @param  Session  $session
      * @param  int  $active_id
-     * @return \Illuminate\Http\Response redirect
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addFileToSession(Session $session, int $active_id)
     {
@@ -173,7 +173,7 @@ class SessionController extends Controller
      *
      * @param  Session  $session
      * @param  int  $active_id
-     * @return \Illuminate\Http\Response redirect
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addFeedbackToSession(Session $session, int $active_id)
     {
@@ -187,7 +187,7 @@ class SessionController extends Controller
      *
      * @param  Session  $session
      * @param  int  $active_id
-     * @return \Illuminate\Http\Response redirect
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addRubricToSession(Session $session, int $active_id)
     {
@@ -201,7 +201,7 @@ class SessionController extends Controller
      *
      * @param  Sessionable  $from
      * @param  string  $move
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function changeOrderSessionable(Sessionable $from, string $move)
     {
@@ -227,7 +227,7 @@ class SessionController extends Controller
      * deleteActivityAsSession
      *
      * @param  mixed $session_id
-     * @return void
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function deleteActivityAsSession($session_id)
     {

@@ -19,7 +19,7 @@ class QuizController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class QuizController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -44,7 +44,7 @@ class QuizController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  QuizRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(QuizRequest $request)
     {
@@ -59,7 +59,7 @@ class QuizController extends Controller
      * Display the specified resource.
      *
      * @param  Quiz $quiz
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Quiz $quiz)
     {
@@ -73,7 +73,7 @@ class QuizController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Quiz $quiz
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Quiz $quiz)
     {
@@ -90,7 +90,7 @@ class QuizController extends Controller
      *
      * @param  QuizRequest $request
      * @param  Quiz $quiz
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(QuizRequest $request, Quiz $quiz)
     {
@@ -105,7 +105,7 @@ class QuizController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Quiz $quiz
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Quiz $quiz)
     {
@@ -128,7 +128,7 @@ class QuizController extends Controller
      *
      * @param  QuizQuestion $from
      * @param  string  $move
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function orderChangeQuestion(QuizQuestion $from, $move)
     {
@@ -156,7 +156,7 @@ class QuizController extends Controller
      *
      * @param  Quiz  $parent
      * @param  Question  $question
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addQuestionToQuiz(Quiz $parent, Question $question)
     {
@@ -173,7 +173,7 @@ class QuizController extends Controller
      * change the sequences of file belongs to document
      *
      * @param  QuizQuestion  $quizQuestion
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function deleteQuestionAsQuiz(QuizQuestion $quizQuestion)
     {

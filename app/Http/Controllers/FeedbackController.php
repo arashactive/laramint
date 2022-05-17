@@ -15,7 +15,7 @@ class FeedbackController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class FeedbackController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -39,7 +39,7 @@ class FeedbackController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  FeedbackRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(FeedbackRequest $request)
     {
@@ -54,7 +54,7 @@ class FeedbackController extends Controller
      * Display the specified resource.
      *
      * @param  Feedback $feedback
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Feedback $feedback)
     {
@@ -68,7 +68,7 @@ class FeedbackController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Feedback $feedback
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Feedback $feedback)
     {
@@ -83,7 +83,7 @@ class FeedbackController extends Controller
      *
      * @param  FeedbackRequest $request
      * @param  Feedback $feedback
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(FeedbackRequest $request, Feedback $feedback)
     {
@@ -98,7 +98,7 @@ class FeedbackController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Feedback $feedback
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Feedback $feedback)
     {
@@ -115,7 +115,7 @@ class FeedbackController extends Controller
      *
      * @param  FeedbackQuestion  $from
      * @param  string  $move
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function orderChangeQuestionFeedback(FeedbackQuestion $from, $move)
     {
@@ -143,7 +143,7 @@ class FeedbackController extends Controller
      *
      * @param  Feedback $parent
      * @param  Question $question
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function addQuestionToFeedback(Feedback $parent, Question $question)
     {
@@ -160,7 +160,7 @@ class FeedbackController extends Controller
      * change the sequences of file belongs to document
      *
      * @param  FeedbackQuestion  $feedbackQuestion
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function deleteQuestionAsFeedback(FeedbackQuestion $feedbackQuestion)
     {

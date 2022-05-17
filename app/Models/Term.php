@@ -19,7 +19,7 @@ class Term extends Model
     // make difference get lists for super-admin and other roles.
     // this part helps us to get clear list of supervisior and teacher with 
     // correct access to each term
-    /** @return Builder<TModel>|null */
+    /** @return mixed|null */
     public function scopeGetParticipants(Builder $builder)
     {
 
@@ -33,7 +33,7 @@ class Term extends Model
         }
     }
 
-    /** @return Builder<TModel>|null */
+    /** @return mixed|null */
     public function scopeMyCourse(Builder $builder, $studentRoleId = 4, $user_id = 0)
     {
         $user_id = $user_id > 0 ? $user_id : auth()->user()->id;

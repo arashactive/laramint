@@ -13,7 +13,6 @@ class AlertMenu extends Component
 
     public function markNotification($id)
     {
-
         Auth::user()->unreadNotifications
             ->when($id, function ($query) use ($id) {
                 return $query->where('id', $id);

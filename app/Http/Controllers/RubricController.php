@@ -10,7 +10,7 @@ class RubricController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class RubricController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -36,7 +36,7 @@ class RubricController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Rubric  $rubric
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Rubric $rubric)
     {
@@ -51,7 +51,7 @@ class RubricController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Rubric  $rubric
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Rubric $rubric)
     {

@@ -11,7 +11,7 @@ class ActivityController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class ActivityController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -35,7 +35,7 @@ class ActivityController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  ActivityRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(ActivityRequest $request)
     {
@@ -52,7 +52,7 @@ class ActivityController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Activity  $activity
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Activity $activity)
     {
@@ -67,7 +67,7 @@ class ActivityController extends Controller
      *
      * @param  ActivityRequest  $request
      * @param  Activity $activity
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(ActivityRequest $request, Activity $activity)
     {
@@ -82,7 +82,7 @@ class ActivityController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Activity  $activity
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Activity $activity)
     {

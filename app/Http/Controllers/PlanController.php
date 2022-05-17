@@ -11,7 +11,7 @@ class PlanController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class PlanController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -35,7 +35,7 @@ class PlanController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  PlanRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(PlanRequest $request)
     {
@@ -50,7 +50,7 @@ class PlanController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Plan  $plan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Plan $plan)
     {
@@ -65,7 +65,7 @@ class PlanController extends Controller
      *
      * @param  PlanRequest  $request
      * @param  Plan  $plan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(PlanRequest $request, Plan $plan)
     {
@@ -80,7 +80,7 @@ class PlanController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Plan $plan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Plan $plan)
     {

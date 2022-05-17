@@ -12,7 +12,7 @@ class FileController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -24,7 +24,7 @@ class FileController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -36,7 +36,7 @@ class FileController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  FileRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(FileRequest $request)
     {
@@ -65,7 +65,7 @@ class FileController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  File  $file
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(File $file)
     {
@@ -80,7 +80,7 @@ class FileController extends Controller
      *
      * @param  FileRequest $request
      * @param  File  $file
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(FileRequest $request, File $file)
     {
@@ -96,7 +96,7 @@ class FileController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  File  $file
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(File $file)
     {

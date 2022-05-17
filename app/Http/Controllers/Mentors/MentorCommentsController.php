@@ -16,7 +16,7 @@ class MentorCommentsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  MentorCommentsRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(MentorCommentsRequest $request)
     {
@@ -32,7 +32,7 @@ class MentorCommentsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param MentorComment $comment
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(MentorComment $comment)
     {

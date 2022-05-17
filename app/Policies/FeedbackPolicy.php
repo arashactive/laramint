@@ -16,7 +16,7 @@ class FeedbackPolicy
      * @param  \App\Models\User  $user
      * @param  \App\Models\Feedback  $feedback
      * @param  \App\Models\Term  $term
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return \Illuminate\Auth\Access\Response|bool|null
      */
     public function feedbackViewForLearner(User $user, Feedback $feedback, Term $term)
     {

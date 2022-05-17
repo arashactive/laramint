@@ -12,7 +12,7 @@ class DepartmentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -24,7 +24,7 @@ class DepartmentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -36,7 +36,7 @@ class DepartmentController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  DepartmentRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(DepartmentRequest $request)
     {
@@ -53,7 +53,7 @@ class DepartmentController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Department  $department
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Department $department)
     {
@@ -68,7 +68,7 @@ class DepartmentController extends Controller
      *
      * @param  DepartmentRequest  $request
      * @param  Department  $department
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(DepartmentRequest $request, Department $department)
     {
@@ -83,7 +83,7 @@ class DepartmentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Department  $department
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Department $department)
     {

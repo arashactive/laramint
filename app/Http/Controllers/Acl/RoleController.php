@@ -13,7 +13,7 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -24,7 +24,7 @@ class RoleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -36,7 +36,7 @@ class RoleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  RoleRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(RoleRequest $request)
     {
@@ -52,7 +52,7 @@ class RoleController extends Controller
      * Display the specified resource.
      *
      * @param  Role  $role
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Role $role)
     {
@@ -70,7 +70,7 @@ class RoleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Role  $role
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Role $role)
     {
@@ -84,7 +84,7 @@ class RoleController extends Controller
      *
      * @param  RoleRequest  $request
      * @param  Role  $role
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(RoleRequest $request, Role $role)
     {
@@ -99,7 +99,7 @@ class RoleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Role  $role
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function destroy(Role $role)
     {
@@ -120,13 +120,13 @@ class RoleController extends Controller
      *
      * @param  Request  $request
      * @param  Role  $role
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function permission(Request $request, Role $role)
     {
 
         $role->syncPermissions($request->permissions);
 
-        return back()->with('success', 'Role Permissions is updated');
+        return redirect()->back()->with('success', 'Role Permissions is updated');
     }
 }

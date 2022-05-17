@@ -15,7 +15,7 @@ trait SyncPermissions
      *
      * @param  UserRequest  $request
      * @param  User  $user
-     * @return \Illuminate\Http\Response
+     * @return User
      */
     public function syncPermissions(UserRequest $request, User $user)
     {

@@ -16,7 +16,7 @@ class filePolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Term  $term
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return \Illuminate\Auth\Access\Response|bool|null
      */
     public function view(User $user, File $file, Term $term)
     {
