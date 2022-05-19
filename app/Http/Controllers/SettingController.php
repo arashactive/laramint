@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 class SettingController extends Controller
 {
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function index()
     {
         $user = Auth::user();
@@ -18,6 +24,11 @@ class SettingController extends Controller
     }
 
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, User $user)
     {
         $user->theme = $request->theme;

@@ -8,6 +8,13 @@ use App\Models\Department;
 
 class FrontController extends Controller
 {
+
+    
+    /**
+     * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function index(){
         
         $departments = Department::limit(3)->get();

@@ -9,5 +9,6 @@ abstract class QuestionParent
 {
     use CreateUpdateForm, WorkoutViewRender;
 
-    protected $className;
+    protected string $className;
+    protected bool $is_mentor;
 }

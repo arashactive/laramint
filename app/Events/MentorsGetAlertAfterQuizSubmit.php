@@ -15,10 +15,10 @@ class MentorsGetAlertAfterQuizSubmit
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $workout;
+    public Workout $workout;
     /**
      * Create a new event instance.
-     *
+     * @param Workout $workout
      * @return void
      */
     public function __construct(Workout $workout)

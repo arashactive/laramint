@@ -10,7 +10,7 @@ class Permission extends ModelsPermission
     use HasFactory;
 
 
-    public static function defaultPermissions()
+    public static function defaultPermissions(): array
     {
         return [
             'view_users',

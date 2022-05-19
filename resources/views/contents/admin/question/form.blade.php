@@ -19,7 +19,7 @@
             <div class="text-center">
                 
                 @livewire('factory.render', [
-                    'question' => $question ?? '',
+                    'question' => $question ?? null,
                     'quiz' => $quiz ?? null
                     ])
 

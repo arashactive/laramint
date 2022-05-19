@@ -5,7 +5,7 @@ namespace App\Utility\File\Enum;
 Abstract class MemeEnum
 {
 
-    private static $mime_types = array(
+    private static array $mime_types = array(
 
         'txt' => 'TextClass',
 
@@ -28,7 +28,7 @@ Abstract class MemeEnum
         'pdf' => 'PdfClass',
     );
 
-    public static function fileMemeToClassName($type)
+    public static function fileMemeToClassName(string $type): string
     {
         if(!isset(self::$mime_types[strtolower($type)]))
             return 'FileDownloadClass';

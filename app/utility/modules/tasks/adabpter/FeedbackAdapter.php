@@ -9,10 +9,15 @@ use App\Utility\Workout\WorkoutService;
 
 class FeedbackAdapter extends TaskParent
 {
-    protected $view = 'contents.learn.feedback.show';
-    public $is_mentor = false;
+    protected string $view = 'contents.learn.feedback.show';
+    public bool $is_mentor = false;
 
 
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function Render(Term $term, Sessionable $sessionable)
     {
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
@@ -24,12 +29,12 @@ class FeedbackAdapter extends TaskParent
         ]));
     }
 
-    public function Review()
+    public function Review(): bool
     {
         return $this->is_mentor;
     }
 
-    public function Mentor()
+    public function Mentor(): void
     {
         $this->is_mentor = true;
     }

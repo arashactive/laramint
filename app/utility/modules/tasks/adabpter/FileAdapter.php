@@ -11,18 +11,26 @@ use App\Utility\Workout\WorkoutService;
 
 class FileAdapter extends TaskParent
 {
-    protected $view = 'contents.learn.document.show';
+    protected string $view = 'contents.learn.document.show';
 
-    public $is_mentor = false;
-    
+    public bool $is_mentor = false;
 
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function Render(Term $term, Sessionable $sessionable)
     {
 
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
 
         $activity = $sessionable->Model;
-        $file = FileFactory::Build($activity)->makeRenderFile();
+        
+        $file = '';
+        if (!empty($activity))
+            $file = FileFactory::Build($activity)->makeRenderFile();
 
         $review = $this->Review($term, $workout);
 
@@ -31,16 +39,16 @@ class FileAdapter extends TaskParent
         ]));
     }
 
-    public function Review(Term $term, Workout $workout)
+    public function Review(Term $term, Workout $workout): bool
     {
-        if($workout->is_completed == 1){
+        if ($workout->is_completed == 1) {
             return true;
         }
 
         return false;
     }
 
-    public function Mentor()
+    public function Mentor(): void
     {
         $this->is_mentor = true;
     }

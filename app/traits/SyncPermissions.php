@@ -27,14 +27,17 @@ trait SyncPermissions
         $roles = Role::find($roles);
 
         // check for current role changes
+        /** @phpstan-ignore-next-line */
         if (!$user->hasAllRoles($roles)) {
             // reset all direct permissions for user
             $user->permissions()->sync([]);
         } else {
             // handle permissions
+            /** @phpstan-ignore-next-line */
             $user->syncPermissions($permissions);
         }
 
+         /** @phpstan-ignore-next-line */
         $user->syncRoles($roles);
         return $user;
     }

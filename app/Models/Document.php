@@ -12,9 +12,9 @@ class Document extends Model
 {
     use HasFactory;
 
-    public $color = 'primary';
-    public $faIcon = 'fa fa-file';
-    public $route = 'documentLearner';
+    public string $color = 'primary';
+    public string $faIcon = 'fa fa-file';
+    public string $route = 'documentLearner';
 
     protected $guarded = [];
 
@@ -38,7 +38,7 @@ class Document extends Model
     }
 
 
-    public function Workout($term_id, $sesison_id, $sessionable_id): HasOne
+    public function Workout(int $term_id, int $sesison_id, int $sessionable_id): HasOne
     {
         return $this->hasOne(Workout::class, 'activity_id', 'id')
             ->where('term_id', $term_id)

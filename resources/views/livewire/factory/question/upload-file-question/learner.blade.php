@@ -26,7 +26,7 @@
             
             <input type="file" name="answer-{{ $question->id }}" class="form-control">
 
-            <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3  d-none" />
+            <input type="submit" value="{{ __('save') }}" class="btn btn-primary mt-3 " />
             </form>
             
         </div>

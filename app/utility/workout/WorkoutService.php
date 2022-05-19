@@ -30,7 +30,7 @@ abstract class WorkoutService
         $workout = self::checkExistWorkout($term->id, $sessionable, $user);
         if (empty($workout)) {
             $workout = new Workout();
-            $workout->user_id = auth()->user()->id;
+            $workout->user_id = $user->id;
             $workout->term_id = $term->id;
             $workout->sessionable_id = $sessionable->id;
             $workout->date_first_view = now();

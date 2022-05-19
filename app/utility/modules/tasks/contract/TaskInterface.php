@@ -2,8 +2,8 @@
 
 namespace App\Utility\Modules\Tasks\Contract;
 
-interface TaskInterface{
+interface TaskInterface
+{
 
-    public function review();
-
+    public function review(): bool;
 }

@@ -3,25 +3,32 @@
 namespace App\Http\Livewire\Activity;
 
 use App\Models\Question;
+use App\Models\Term;
+use App\Models\Workout;
 use App\Utility\Question\QuestionFactory;
 use Livewire\Component;
 
 class Review extends Component
 {
     public $activity;
-    public $term;
+    public Term $term;
 
-    public $workout;
-    public $questionsRender = '';
+    public Workout $workout;
+    public string $questionsRender = '';
 
     private function getQuestion(Question $question)
-    {   
-        return 
-        (string)QuestionFactory::Build($question->QuestionType)
-        ->ReviewChecker($question, $this->workout);
-
+    {
+        return
+            (string)QuestionFactory::Build($question->QuestionType)
+                ->ReviewChecker($question, $this->workout);
     }
 
+
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
 

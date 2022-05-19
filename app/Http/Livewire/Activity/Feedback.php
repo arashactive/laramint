@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Activity;
 
 use App\Models\Question;
+use App\Models\Term;
 use App\Utility\Question\QuestionFactory;
 use Livewire\Component;
 
@@ -10,13 +11,18 @@ class Feedback extends Component
 {
 
     public $activity;
-    public $term;
+    public Term $term;
 
     /*
     * $fileRender is an html code to show students.
     */
-    public $questionsRender = '';
-
+    public string $questionsRender = '';
+    
+    /**
+     * mount
+     *
+     * @return void|null
+     */
     public function mount()
     {
         if (empty($this->activity->Questions()))
@@ -26,17 +32,23 @@ class Feedback extends Component
         }
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     */
     public function showQuestion(Question $question)
     {
         return redirect()->to(url()->previous() . '#question-' . $question->id);
     }
 
-    private function getQuestion(Question $question)
-    {
-        return '';
-    }
+ 
 
-
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         return view('livewire.activity.feedback');

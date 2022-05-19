@@ -17,7 +17,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::paginate(env('PAGINATION'));
+        $roles = Role::paginate();
         return view("contents.admin.acl.role.index", compact("roles"));
     }
 

@@ -10,10 +10,15 @@ use App\Utility\Workout\WorkoutService;
 
 class DocumentAdapter extends TaskParent
 {
-    protected $view = 'contents.learn.documents.show';
-    public $is_mentor = false;
+    protected string $view = 'contents.learn.documents.show';
+    public bool $is_mentor = false;
 
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function Render(Term $term, Sessionable $sessionable)
     {
         
@@ -28,7 +33,8 @@ class DocumentAdapter extends TaskParent
         ]));
     }
 
-    public function Review(Term $term, Workout $workout)
+    
+    public function Review(Term $term, Workout $workout): bool
     {
         if($workout->is_completed == 1){
             return true;
@@ -37,7 +43,7 @@ class DocumentAdapter extends TaskParent
         return false;
     }
 
-    public function Mentor()
+    public function Mentor(): void
     {
         $this->is_mentor = true;
     }

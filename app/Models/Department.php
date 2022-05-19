@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Department extends Model
 {
@@ -12,12 +13,13 @@ class Department extends Model
     protected $guarded = [];
 
 
-    public function Course(){
+    public function Course(): HasMany
+    {
         return $this->hasMany(Course::class);
     }
 
-    public function Term(){
+    public function Term(): HasMany
+    {
         return $this->hasMany(Term::class);
     }
-    
 }

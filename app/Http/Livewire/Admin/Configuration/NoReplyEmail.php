@@ -8,16 +8,16 @@ use Livewire\Component;
 class NoReplyEmail extends Component
 {
 
-    public $MAIL_MAILER;
-    public $MAIL_HOST;
-    public $MAIL_PORT;
-    public $MAIL_USERNAME;
-    public $MAIL_PASSWORD;
-    public $MAIL_ENCRYPTION;
-    public $MAIL_FROM_ADDRESS;
-    public $MAIL_FROM_NAME;
+    public ?string $MAIL_MAILER = '';
+    public ?string $MAIL_HOST = '';
+    public ?string $MAIL_PORT = '';
+    public ?string $MAIL_USERNAME = '';
+    public ?string $MAIL_PASSWORD = '';
+    public ?string $MAIL_ENCRYPTION = '';
+    public ?string $MAIL_FROM_ADDRESS = '';
+    public ?string $MAIL_FROM_NAME = '';
 
-    public function mount()
+    public function mount(): void
     {
         $config = Configuration::where('config_type', 'NoReplyEmail')
             ->first();
@@ -36,7 +36,7 @@ class NoReplyEmail extends Component
         }
     }
 
-    public function config_changed()
+    public function config_changed(): void
     {
 
         $config = Configuration::where('config_type', 'NoReplyEmail')
@@ -59,6 +59,12 @@ class NoReplyEmail extends Component
         session()->flash('message', 'Item successfully updated.');
     }
 
+
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         return view('livewire.admin.configuration.no-reply-email');

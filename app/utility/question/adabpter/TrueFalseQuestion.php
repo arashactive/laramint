@@ -8,8 +8,8 @@ use App\Utility\Question\Contract\QuestionAdabpterInterface;
 class TrueFalseQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
-    protected $className = 'true-false-question';
-    protected $is_mentor = false;
+    protected string $className = 'true-false-question';
+    protected bool $is_mentor = false;
 
     public function getScore($request)
     {

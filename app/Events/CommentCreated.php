@@ -15,11 +15,11 @@ class CommentCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $comment;
+    public MentorComment $comment;
 
     /**
      * Create a new event instance.
-     *
+     * @param MentorComment $comment
      * @return void
      */
     public function __construct(MentorComment $comment)

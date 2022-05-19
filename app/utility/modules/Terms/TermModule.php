@@ -5,13 +5,14 @@ namespace App\Utility\Modules\Terms;
 use App\Models\Participant;
 use App\Models\User;
 use App\Models\Workout;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class TermModule
 {
 
-    public $is_mentor = false;
-    public $user;
+    public bool $is_mentor = false;
+    public User $user;
 
     public function __construct()
     {
@@ -21,7 +22,7 @@ class TermModule
 
     public function getAllTerms()
     {
-        
+
         $terms = $this->user->Terms()->wherePivot('role_id', 4)->get();
         $terms->is_mentor = $this->is_mentor;
         foreach ($terms as $term) {
@@ -33,17 +34,17 @@ class TermModule
 
     private function getTermStatistic($term)
     {
-        
+
         $statistic = [
             'totalTask' => $term->allActivities->count(),
-            'workoutDone' => $term->WorkoutByUser($this->user)->count() 
+            'workoutDone' => $term->WorkoutByUser($this->user)->count()
         ];
-        
+
         return $statistic;
     }
 
 
-    
+
 
     public function All()
     {
@@ -59,16 +60,16 @@ class TermModule
             $session->relateds = $this->Relateds($session->related, $term->id);
             $session->sessionStatistic = $this->getSessionStatistic($session);
         }
-        
+
         return $term;
     }
 
     public function Participant(Participant $participant)
     {
-        
+
         $term = $this->getTermInfo($participant->Term);
         $term->User = $this->user;
-       
+
         return $term;
     }
 
@@ -81,14 +82,15 @@ class TermModule
             'duration' => $session->relateds->Info['duration'],
             'score' =>  $session->relateds->Info['workout'] > 0 ? (int)$session->relateds->Info['score'] / $session->relateds->Info['workout'] : 0
         ];
-
+        
         return $info;
     }
 
 
-    private function Relateds($relateds, $term_id)
+
+    private function Relateds($relateds, int $term_id)
     {
-        
+
         $videos = [
             'total' => 0,
             'checked' => 0
@@ -139,12 +141,12 @@ class TermModule
                 );
             }
         }
-        
+
         return $relateds;
     }
 
 
-    public function User(User $user)
+    public function User(User $user): void
     {
         $this->user = $user;
     }

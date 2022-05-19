@@ -8,13 +8,13 @@ abstract class FileParent
 {
 
     protected $file;
-    protected $view;
+    protected string $view;
 
 
     private function temporayUrlGenerator($file): string
     {
         
-        if (file_exists(Storage::missing('storage/public/' . $file)))
+        if (Storage::missing('storage/public/' . $file))
             return '';
             
         return asset(Storage::url($file));

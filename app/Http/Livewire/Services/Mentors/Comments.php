@@ -10,13 +10,18 @@ class Comments extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'bootstrap';
+    protected string $paginationTheme = 'bootstrap';
 
-    public $activable_id;
-    public $activable_type;
-    public $userId;
+    public int $activable_id;
+    public string $activable_type;
+    public int $userId;
 
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         $comments = MentorComment::where('user_id', $this->userId);

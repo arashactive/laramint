@@ -2,7 +2,15 @@
 
 namespace App\Utility\Question\Contract;
 
+use Illuminate\Http\Request;
+
 interface QuestionAdabpterInterface
-{
-    public function getScore($request);
+{    
+    /**
+     * getScore
+     *
+     * @param  Request $request
+     * @return int|null
+     */
+    public function getScore(Request $request);
 }

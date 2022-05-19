@@ -8,12 +8,16 @@ use Livewire\Component;
 class Participant extends Component
 {
 
-    public $search = '';
+    public string $search = '';
 
-    public $route;
+    public string $route;
     public $parent;
-    
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         $search = '%' . $this->search . '%';
@@ -26,7 +30,4 @@ class Participant extends Component
             'participants' => $participants
         ]);
     }
-
-
-    
 }

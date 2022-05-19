@@ -5,13 +5,21 @@ namespace App\Utility\Modules\Tasks;
 
 class TaskFactory
 {
-
+    
+    /**
+     * RemoveStringFromClassName
+     *
+     * @param  string $class
+     * @return string
+     */
     private static function RemoveStringFromClassName($class)
     {
         return str_replace("App\Models\\", "", $class);
     }
 
-    public static function Build($class)
+    
+    /** @return object */
+    public static function Build(string $class)
     {
         $class = self::RemoveStringFromClassName($class);
         $classOfFileLoader = "App\\Utility\\Modules\\Tasks\\Adabpter\\" . $class . 'Adapter';

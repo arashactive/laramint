@@ -8,8 +8,8 @@ use App\Utility\Question\Contract\QuestionAdabpterInterface;
 class ShortAnswerQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
-    protected $className = 'short-answer-question';
-    protected $is_mentor = true;
+    protected string $className = 'short-answer-question';
+    protected bool $is_mentor = true;
 
     public function getScore($request)
     {

@@ -100,7 +100,13 @@ class CourseController extends Controller
             ->with('danger', __('item deleted successfully'));
     }
 
-
+        
+       
+    /**
+     * getDepartmentsPluck
+     *
+     * @return \Illuminate\Support\Collection
+     */
     private function getDepartmentsPluck()
     {
         return Department::pluck('title', 'id');

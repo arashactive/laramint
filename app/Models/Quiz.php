@@ -11,9 +11,9 @@ class Quiz extends Model
 {
     use HasFactory;
 
-    public $color = 'warning';
-    public $faIcon = 'fa fa-question-circle';
-    public $route = 'quizLearner';
+    public string $color = 'warning';
+    public string $faIcon = 'fa fa-question-circle';
+    public string $route = 'quizLearner';
 
     protected $guarded = [];
 
@@ -27,7 +27,7 @@ class Quiz extends Model
     }
 
 
-    public function Workout($term_id, $sesison_id, $sessionable_id): HasOne
+    public function Workout(int $term_id, int $sesison_id, int $sessionable_id): HasOne
     {
         return $this->hasOne(Workout::class, 'activity_id', 'id')
             ->where('term_id', $term_id)

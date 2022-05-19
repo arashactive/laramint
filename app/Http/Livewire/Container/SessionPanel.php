@@ -9,16 +9,21 @@ use Livewire\Component;
 class SessionPanel extends Component
 {
 
-    public $search = '';
+    public string $search = '';
 
-    public $route;
-    public $parent;
+    public string $route;
+    public int $parent;
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         /**
          *  get the current term
-        **/
+         **/
         $term = Term::findorfail($this->parent);
 
         /**

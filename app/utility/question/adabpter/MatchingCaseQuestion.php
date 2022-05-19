@@ -12,8 +12,8 @@ class MatchingCaseQuestion extends QuestionParent implements QuestionAdabpterInt
 
     use Percentage;
 
-    protected $className = 'matching-case-question';
-    protected $is_mentor = false;
+    protected string $className = 'matching-case-question';
+    protected bool $is_mentor = false;
 
 
     public function getScore($request)

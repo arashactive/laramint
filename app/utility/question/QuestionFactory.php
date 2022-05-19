@@ -7,9 +7,15 @@ use App\Models\QuestionType;
 class QuestionFactory
 {
 
-    private static $classPath = "App\\Utility\\Question\\Adabpter\\";
+    private static string $classPath = "App\\Utility\\Question\\Adabpter\\";
 
-
+    
+    /**
+     * Build
+     *
+     * @param  QuestionType $questionType
+     * @return object|Exception|void
+     */
     public static function Build(QuestionType $questionType)
     {
         $childQuestion = self::$classPath . $questionType->title;

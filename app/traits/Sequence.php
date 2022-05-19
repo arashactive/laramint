@@ -3,30 +3,21 @@
 
 namespace App\Traits;
 
-
 trait Sequence
 {
 
-    /**
-     * change the order of row order field
-     *
-     */
-    public function changeOrder($from, $to)
+    /** @phpstan-ignore-next-line */
+    public function changeOrder($from, $to): bool
     {
-        if ($from && $to) {
-            $fromOrder =  $from->order;
-            $from->order = $to->order;
-            $to->order = $fromOrder;
 
-            $from->save();
-            $to->save();
+        $fromOrder =  $from->order;
+        $from->order = $to->order;
+        $to->order = $fromOrder;
 
-            
-            return true;
-        } else {
-            return false;
-        }
+        $from->save();
+        $to->save();
+
+
+        return true;
     }
-
-
 }

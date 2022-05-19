@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -43,12 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Role()
+    public function Role(): Role
     {
         return Role::where('id', $this->getOriginal('pivot_role_id'))->first();
     }
 
-    public function Terms()
+    public function Terms(): BelongsToMany
     {
         return $this->belongsToMany(
             Term::class,

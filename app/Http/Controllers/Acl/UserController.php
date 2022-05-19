@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(env('PAGINATION'));
+        $users = User::paginate();
         return view("contents.admin.acl.user.index", compact("users"));
     }
 

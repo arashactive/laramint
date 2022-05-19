@@ -16,7 +16,7 @@ class ActivityController extends Controller
     public function index()
     {
         $this->authorize('activity.index');
-        $activities = Activity::paginate(env('PAGINATION'));
+        $activities = Activity::paginate();
         return view("contents.admin.activity.index", compact("activities"));
     }
 

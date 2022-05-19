@@ -15,7 +15,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $permissions = Permission::paginate(env('PAGINATION'));
+        
+        $permissions = Permission::paginate();
         return view("contents.admin.acl.permission.index", compact("permissions"));
     }
 

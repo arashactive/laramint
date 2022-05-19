@@ -4,15 +4,22 @@ namespace App\Utility\Question\Adabpter;
 
 use App\Utility\Question\Contract\QuestionAdabpterInterface;
 use App\Traits\UploadFiles;
-
+use Illuminate\Http\Request;
 
 class VoiceRecordQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
     use UploadFiles;
-    protected $className = 'voice-record-question';
-    protected $is_mentor = true;
-
-    public function getScore($request)
+    
+    protected string $className = 'voice-record-question';
+    protected bool $is_mentor = true;
+    
+    /**
+     * getScore
+     *
+     * @param Request $request
+     * @return int
+     */
+    public function getScore(Request $request)
     {
         $request->validate([
             'question_id' => 'required|int',

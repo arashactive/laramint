@@ -45,6 +45,11 @@ class SiteName extends Component
         session()->flash('message', 'Item successfully updated.');
     }
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         return view('livewire.admin.configuration.site-name');

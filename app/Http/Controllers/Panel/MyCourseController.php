@@ -9,9 +9,14 @@ use App\Utility\Modules\Terms\TermModule;
 class MyCourseController extends Controller
 {
 
+    /**
+     * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function myCourse()
     {
-        
+
         $this->authorize('myCourse.index');
 
         $termModule = new TermModule();
@@ -23,12 +28,17 @@ class MyCourseController extends Controller
     }
 
 
+    /**
+     * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function learn(Participant $participant)
     {
         //$this->authorize('participantAccessToTerm', [$term]);
         $termModule = new TermModule();
         $term = $termModule->Participant($participant);
-        
+
         return view('contents.learn.mycourses.show', compact([
             'term', 'participant'
         ]));

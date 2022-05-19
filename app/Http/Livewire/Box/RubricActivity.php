@@ -9,10 +9,16 @@ use Livewire\WithPagination;
 class RubricActivity extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected string $paginationTheme = 'bootstrap';
 
     public $session;
 
+
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         $rubrics = Rubric::paginate();

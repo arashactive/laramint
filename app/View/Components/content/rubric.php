@@ -8,17 +8,18 @@ use Illuminate\View\Component;
 class Rubric extends Component
 {
     public ModelsRubric $rubric;
-    public $bodies = [];
+    public array $bodies = [];
+    
+    
     /**
      * Create a new component instance.
-     *
+     * @param ModelsRubric $rubric
      * @return void
      */
-    public function __construct(ModelsRubric $rubric, $bodies = null)
+    public function __construct(ModelsRubric $rubric)
     {
-        $this->bodies = $bodies;
         $this->rubric = $rubric;
-        $this->bodies = json_decode($rubric->body, false);
+        $this->bodies = (array)json_decode($rubric->body, false);
     }
 
     /**

@@ -17,26 +17,45 @@ trait WorkoutViewRender
     protected WorkoutQuizLog $workoutQuizQuestion;
     protected Quiz $quiz;
 
-    
+        
+    /**
+     * setQuizId
+     *
+     * @param  int|null $quiz_id
+     * @return void
+     */
     public function setQuizId(?int $quiz_id)
     {
         if ((int)$quiz_id > 0)
             $this->quiz = Quiz::findorfail($quiz_id);
-        return $this;
     }
 
-
-    public function store(array $id, array $attributes)
+    
+    /**
+     * store
+     *
+     * @param  ?array $ids
+     * @param  array $attributes
+     * @return void|Question|bool
+     */
+    public function store(?array $ids, array $attributes)
     {
+        
         if (!empty($this->quiz)) {
             $this->quiz->Questions()->create($attributes, ['order' => $this->quiz->Questions()->max('order') + 1]);
         } else {
-            return Question::updateOrCreate($id, $attributes);
+            return Question::updateOrCreate($ids, $attributes);
         }
     }
 
 
-
+    
+    /**
+     * workoutScoreUpdate
+     *
+     * @param  Workout $workout
+     * @return int
+     */
     public function workoutScoreUpdate(Workout $workout): int
     {
         $workoutQuiz = $workout->WorkOutQuiz;
@@ -67,7 +86,15 @@ trait WorkoutViewRender
     }
 
 
-
+    
+    /**
+     * workoutChecker
+     *
+     * @param  Question $question
+     * @param  Workout $workout
+     * @param  Request $request
+     * @return int
+     */
     public function workoutChecker(Question $question, Workout $workout, Request $request)
     {
         $workoutQuizQuestion = WorkoutQuizLog::where('workout_id', $workout->id)
@@ -83,8 +110,15 @@ trait WorkoutViewRender
     }
 
 
-
-    public function ReviewChecker(Question $question, Workout $workout)
+    
+    /**
+     * ReviewChecker
+     *
+     * @param  Question $question
+     * @param  Workout $workout
+     * @return string
+     */
+    public function ReviewChecker(Question $question, Workout $workout): string
     {
         $answers = json_decode($question->answer, false);
 
@@ -99,7 +133,14 @@ trait WorkoutViewRender
     }
 
 
-
+    
+    /**
+     * createViewAsLearner
+     *
+     * @param  Question $question
+     * @param  Workout $workout
+     * @return string
+     */
     public function createViewAsLearner(Question $question, Workout $workout)
     {
         $answer = json_decode($question->answer, false);

@@ -22,18 +22,22 @@ class AlertMenu extends Component
         $this->setNotification();
     }
 
-    public function mount()
+    public function mount(): void
     {
         $this->setNotification();
     }
 
 
-    private function setNotification()
+    private function setNotification(): void
     {
         $this->notifications = Auth::user()->notifications;
     }
 
-
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         return view('livewire.box.alert.alert-menu');

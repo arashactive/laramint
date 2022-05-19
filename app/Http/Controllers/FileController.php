@@ -49,6 +49,12 @@ class FileController extends Controller
     }
 
 
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  mixed $request
+     * @return array
+     */
     private function setData($request)
     {
         $file = $request->file('file');

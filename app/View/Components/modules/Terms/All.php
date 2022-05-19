@@ -2,17 +2,22 @@
 
 namespace App\View\Components\Modules\Terms;
 
-use App\Models\Term;
 use Illuminate\View\Component;
+use App\Models\Term;
 
 class All extends Component
 {
 
+    /**
+     * terms
+     *
+     * @var Term[]
+     */
     public $terms;
 
     /**
      * Create a new component instance.
-     *
+     * @param Term[] $terms
      * @return void
      */
     public function __construct($terms)

@@ -12,7 +12,7 @@ class QuizController extends Controller
 {
     use Sequence;
 
-    protected $show_question = [
+    protected array $show_question = [
         'StepByStep', 'OnePage'
     ];
 

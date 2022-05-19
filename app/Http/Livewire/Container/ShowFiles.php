@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Container;
 
+use App\Models\Document;
 use App\Models\File;
 use Livewire\Component;
 
@@ -9,12 +10,17 @@ class ShowFiles extends Component
 {
     
 
-    public $search = '';
+    public string $search = '';
 
-    public $route;
-    public $document;
+    public string $route;
+    public int $document;
     
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
 

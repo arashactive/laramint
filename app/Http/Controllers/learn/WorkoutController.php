@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Auth;
 class WorkoutController extends Controller
 {
 
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     */
     public function prepared(Term $term, Sessionable $sessionable)
     {
 
@@ -25,6 +29,11 @@ class WorkoutController extends Controller
         return redirect(route('taskLearner', ['term' => $term, 'sessionable' => $sessionable]));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function task(Term $term, Sessionable $sessionable)
     {
 
@@ -35,6 +44,11 @@ class WorkoutController extends Controller
         return $task->Render($term, $sessionable);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     */
     public function completedAndNext(Workout $workout)
     {
         if ($workout->is_completed == 0)
@@ -43,7 +57,11 @@ class WorkoutController extends Controller
         return redirect()->back();
     }
 
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function workout(Request $request)
     {
 
@@ -59,6 +77,6 @@ class WorkoutController extends Controller
         $result =  QuestionFactory::Build($question->questionType)
             ->workoutChecker($question, $workout, $request);
 
-        return response()->json($result);    
+        return response()->json($result);
     }
 }

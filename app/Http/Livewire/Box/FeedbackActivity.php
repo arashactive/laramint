@@ -9,10 +9,15 @@ use Livewire\WithPagination;
 class FeedbackActivity extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected string $paginationTheme = 'bootstrap';
     
     public $session;
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         $feedbacks =  Feedback::paginate();

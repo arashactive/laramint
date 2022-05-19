@@ -4,25 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class File extends Model
 {
     use HasFactory;
 
 
-    public $color = 'danger';
-    public $faIcon = 'fa fa-file';
-    public $route = 'fileLearner';
+    public string $color = 'danger';
+    public string $faIcon = 'fa fa-file';
+    public string $route = 'fileLearner';
 
     protected $guarded = [];
 
 
-    public function Documents()
+    public function Documents(): BelongsToMany
     {
         return $this->belongsToMany(Document::class);
     }
 
-    public function Workout($term_id, $sesison_id, $sessionable_id)
+    public function Workout(int $term_id, int $sesison_id, int $sessionable_id): HasOne
     {
         return $this->hasOne(Workout::class, 'activity_id', 'id')
             ->where('term_id', $term_id)

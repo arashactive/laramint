@@ -28,6 +28,11 @@ class Rubric extends Component
         'description' => 'required',
     ];
 
+    /**
+     * mount
+     *
+     * @return void
+     */
     public function mount()
     {
 
@@ -42,24 +47,46 @@ class Rubric extends Component
     }
 
 
+    /**
+     * addNewBody
+     *
+     * @return void
+     */
     public function addNewBody()
     {
         $this->bodies[] = $this->body;
     }
 
 
+    /**
+     * removeBody
+     *
+     * @param  mixed $index
+     * @return void
+     */
     public function removeBody($index)
     {
         unset($this->bodies[$index]);
         $this->bodies = array_values($this->bodies);
     }
 
+    /**
+     * addCell
+     *
+     * @param  mixed $index
+     * @return void
+     */
     public function addCell($index)
     {
         $this->bodies[$index]['cells'][] = ['title' => '', 'score' => 0, 'pass_score' => false];
         $this->bodies = array_values($this->bodies);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     */
     public function store()
     {
 
@@ -76,6 +103,11 @@ class Rubric extends Component
         return redirect()->route('rubric.index')->with('success', 'rubric updated');
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         return view('livewire.services.rubric');

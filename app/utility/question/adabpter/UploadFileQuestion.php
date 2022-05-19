@@ -10,8 +10,8 @@ use App\Traits\UploadFiles;
 class UploadFileQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
     use UploadFiles;
-    protected $className = 'upload-file-question';
-    protected $is_mentor = true;
+    protected string $className = 'upload-file-question';
+    protected bool $is_mentor = true;
 
     public function getScore($request)
     {

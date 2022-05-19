@@ -11,7 +11,7 @@ class QuizPolicy
 {
     use HandlesAuthorization;
 
-    public function QuizViewForLearner(User $user, Quiz $quiz, Term $term)
+    public function QuizViewForLearner(User $user, Quiz $quiz, Term $term): null|bool
     {
         
         if ($term->Participants()->where('user_id', $user->id)

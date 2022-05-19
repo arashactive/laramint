@@ -10,23 +10,28 @@ use App\Utility\Workout\WorkoutService;
 
 class RubricAdapter extends TaskParent
 {
-    protected $view = 'contents.learn.rubric.show';
-    public $is_mentor = false;
+    protected string $view = 'contents.learn.rubric.show';
+    public bool $is_mentor = false;
 
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function Render(Term $term, Sessionable $sessionable)
     {
         $workout = WorkoutService::WorkOutSyncForThisExcersice($term,  $sessionable, $this->user);
 
         $activity = $sessionable->Model;
-        
+
         $review = $this->Review($term, $workout);
         return view($this->view, compact([
             'activity', 'workout', 'review'
         ]));
     }
 
-    public function Review(Term $term, Workout $workout)
+    public function Review(Term $term, Workout $workout): bool
     {
         if ($workout->is_completed == 1) {
             return true;
@@ -35,6 +40,11 @@ class RubricAdapter extends TaskParent
         return false;
     }
 
+    /**
+     * Mentor
+     *
+     * @return void
+     */
     public function Mentor()
     {
         $this->is_mentor = true;

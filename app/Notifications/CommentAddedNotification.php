@@ -12,7 +12,7 @@ class CommentAddedNotification extends Notification
 {
     use Queueable;
 
-    private $comment;
+    private MentorComment $comment;
     /**
      * Create a new notification instance.
      *

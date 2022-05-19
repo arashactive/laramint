@@ -181,6 +181,8 @@ class QuestionTest extends BaseTest
      */
     public function test_create_form_matching_case_question_type()
     {
+        $this->withoutExceptionHandling();
+
         $this->signIn();
 
         Livewire::test(MatchingCaseQuestionCreate::class)

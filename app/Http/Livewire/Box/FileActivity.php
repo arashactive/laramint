@@ -10,11 +10,16 @@ class FileActivity extends Component
 {
 
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected string $paginationTheme = 'bootstrap';
     
     public $session;
     public $activity;
 
+    /**
+     * render
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render()
     {
         $files =  File::paginate();

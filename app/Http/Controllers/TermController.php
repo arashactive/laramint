@@ -23,10 +23,10 @@ class TermController extends Controller
     public function index()
     {
         $this->authorize('term.index');
-        
+
         $terms = Term::with('Participants')
-        ->getParticipants()
-        ->paginate();
+            ->getParticipants()
+            ->paginate();
 
         return view("contents.admin.term.index", compact("terms"));
     }
@@ -69,10 +69,10 @@ class TermController extends Controller
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Term $term)
-    {       
-        $this->authorize('term.show');   
-              
-    
+    {
+        $this->authorize('term.show');
+
+
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.show', compact(
@@ -135,6 +135,11 @@ class TermController extends Controller
     }
 
 
+    /**
+     * getDepartmentsPluck
+     *
+     * @return \Illuminate\Support\Collection
+     */
     private function getDepartmentsPluck($model)
     {
         return $model::pluck('title', 'id');

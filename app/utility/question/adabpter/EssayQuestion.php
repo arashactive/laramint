@@ -7,8 +7,8 @@ use App\Utility\Question\Contract\QuestionAdabpterInterface;
 class EssayQuestion extends QuestionParent implements QuestionAdabpterInterface
 {
 
-    protected $className = 'essay-question';
-    protected $is_mentor = true;
+    protected string $className = 'essay-question';
+    protected bool $is_mentor = true;
 
     public function getScore($request)
     {

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
@@ -15,7 +14,13 @@ class Participant extends Pivot
     protected $table = 'term_user';
     protected $guarded = [];
 
-
+    
+    /**
+     * scopeLearners
+     *
+     * @param  Builder $builder
+     * @return Builder|void|null
+     */
     public function scopeLearners(Builder $builder)
     {
         $user_id = auth()->user()->id;

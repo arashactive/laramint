@@ -9,6 +9,13 @@ use App\Models\Plan;
 
 class CourseController extends Controller
 {
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function courses()
     {
         // get 3 departments that you made.
@@ -23,6 +30,13 @@ class CourseController extends Controller
         ]));
     }
 
+
+
+    /**
+     * Display a listing of the resource.
+     * @param int $id
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function course($id)
     {
 
@@ -33,6 +47,12 @@ class CourseController extends Controller
     }
 
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function plans()
     {
 

@@ -11,8 +11,8 @@ class MultipleQuestion extends QuestionParent implements QuestionAdabpterInterfa
 
     use Percentage;
 
-    protected $className = 'multiple-question';
-    protected $is_mentor = false;
+    protected string $className = 'multiple-question';
+    protected bool $is_mentor = false;
 
     public function getScore($request)
     {

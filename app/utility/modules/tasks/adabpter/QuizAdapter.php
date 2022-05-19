@@ -10,9 +10,9 @@ use App\Utility\Workout\WorkoutService;
 
 class QuizAdapter extends TaskParent
 {
-    protected $view = 'contents.learn.quiz.show';
-    protected $review = 'contents.learn.quiz.review';
-    protected $prepare = 'contents.learn.quiz.prepare';
+    protected string $view = 'contents.learn.quiz.show';
+    protected string $review = 'contents.learn.quiz.review';
+    protected string $prepare = 'contents.learn.quiz.prepare';
 
     public $is_mentor = false;
 
