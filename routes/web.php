@@ -4,6 +4,7 @@ use App\Http\Controllers\Acl\PermissionController;
 use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Admin\Menu\CourseManagmentController;
 use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
@@ -56,7 +57,7 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('learn')->middleware(['verified'])->group(function () {
-    
+
     Route::get('/task/{term}/{sessionable}', [WorkoutController::class, 'task'])->name('taskLearner');
     Route::post('/task/{term}/{sessionable}', [WorkoutController::class, 'prepared'])->name('taskLearnerPrepared');
     Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
@@ -67,8 +68,6 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
 
     // doing workout || excercise || quiz
     Route::get('/completeAndNext/{workout}', [WorkoutController::class, 'completedAndNext'])->name('completedAndNext');
-
-
 });
 
 
@@ -78,7 +77,7 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('mentor')->middleware(['verified'])->group(function () {
-    
+
     Route::get('/learners', [MyLearnerController::class, 'myLearners'])->name('myLearners');
     Route::get('/learner/{user}', [ParticipantController::class, 'participantTerms'])->name('learnerShowTerms');
     Route::get('/workout/{participant}', [ParticipantController::class, 'participantWorkout'])->name('learnerParticipantWorkout');
@@ -95,6 +94,9 @@ Route::prefix('mentor')->middleware(['verified'])->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('panel')->middleware(['verified'])->group(function () {
+
+    // Admin Menu
+    Route::get('/menu/courses', [CourseManagmentController::class, 'courses'])->name('adminMenuCourse');
 
     Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
     Route::get('/settings', [SettingController::class, 'index'])->name('settings');
@@ -159,8 +161,4 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('role', RoleController::class)->middleware('role:Super-Admin');
     Route::resource('permission', PermissionController::class)->middleware('role:Super-Admin');
     Route::post('role/permission/{role}', [RoleController::class, 'permission'])->name("role_permissions");
-
-    
-    
-
 });

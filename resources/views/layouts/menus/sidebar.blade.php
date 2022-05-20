@@ -26,8 +26,8 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-     <!-- Heading -->
-     <div class="sidebar-heading">
+    <!-- Heading -->
+    <div class="sidebar-heading">
         {{ __('Course Management') }}
     </div>
     <li class="nav-item">
@@ -35,12 +35,12 @@
             <i class="fas fa-fw fa-book-reader"></i>
             <span>{{ __("My Course") }}</span></a>
     </li>
-    
+
     <!-- Divider -->
     <hr class="sidebar-divider">
-    
-    
-    
+
+
+
     @can('menu.education')
     <!-- Heading -->
     <div class="sidebar-heading">
@@ -49,43 +49,33 @@
 
     @can('mentor.list')
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MentorsCollapse"
-            aria-expanded="true" aria-controls="ACLCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MentorsCollapse" aria-expanded="true" aria-controls="ACLCollapse">
             <i class="fas fa-fw fa-clipboard"></i>
             <span>Learners</span>
         </a>
         <div id="MentorsCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                
+
                 <a class="collapse-item" href="{{ route('myLearners') }}">{{ __('My Learners') }}</a>
-               
+
             </div>
-            
+
         </div>
-        
-    </li> 
+
+    </li>
     @endcan
-    
+
     <!-- Nav Item - Admin Setup LMS -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#EducationCollapse"
-            aria-expanded="true" aria-controls="EducationCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#EducationCollapse" aria-expanded="true" aria-controls="EducationCollapse">
             <i class="fas fa-fw fa-chalkboard-teacher"></i>
             <span>Education</span>
         </a>
         <div id="EducationCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">{{ __('First Step:') }}</h6>
-                @can('department.index')
-                    <a class="collapse-item" href="{{ route('department.index') }}">{{ __('Department') }}</a>
-                @endcan
-                @can('course.index')
-                <a class="collapse-item" href="{{ route('course.index') }}">{{ __('Course') }}</a>
-                @endcan
-                @can('term.index')
-                <a class="collapse-item" href="{{ route('term.index') }}">{{ __('terms') }}</a>
-                @endcan
-                
+
+                <a class="collapse-item" href="{{ route('adminMenuCourse') }}">{{ __('Courses') }}</a>
+
                 <h6 class="collapse-header">{{ __('Second Step:') }}</h6>
                 @can('session.index')
                 <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
@@ -107,7 +97,7 @@
                 @can('feedback.index')
                 <a class="collapse-item" href="{{ route('feedback.index') }}">{{ __('feedback') }}</a>
                 @endcan
-               
+
             </div>
         </div>
     </li>
@@ -116,8 +106,7 @@
 
     @can('menu.education')
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse"
-            aria-expanded="true" aria-controls="ACLCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse" aria-expanded="true" aria-controls="ACLCollapse">
             <i class="fas fa-fw fa-toolbox"></i>
             <span>Tool Box</span>
         </a>
@@ -130,12 +119,12 @@
                 <a class="collapse-item" href="{{ route('document.index') }}">{{ __('document') }}</a>
                 @endcan
             </div>
-            
+
         </div>
-        
+
     </li>
-    
-    
+
+
 
     @role('Super-Admin')
 
@@ -143,15 +132,14 @@
         {{ __('Financial') }}
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Financial"
-            aria-expanded="true" aria-controls="ACLCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Financial" aria-expanded="true" aria-controls="ACLCollapse">
             <i class="fas fa-fw fa-credit-card"></i>
             <span>{{ __('Financial') }}</span>
         </a>
         <div id="Financial" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('plan.index') }}">{{ __('Plan') }}</a>
-                
+
             </div>
         </div>
     </li>
@@ -162,8 +150,7 @@
     </div>
     <!-- Nav Item - Admin Setup LMS -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse"
-            aria-expanded="true" aria-controls="ACLCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse" aria-expanded="true" aria-controls="ACLCollapse">
             <i class="fas fa-fw fa-users-cog"></i>
             <span>ACL</span>
         </a>
@@ -184,7 +171,7 @@
     </li>
 
     @endrole
-    
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     @endcan
