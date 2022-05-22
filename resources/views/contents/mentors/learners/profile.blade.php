@@ -9,21 +9,7 @@
 
 <div class="row">
     <div class="col-7">
-        <div class="card shadow mb-4 border-bottom-primary">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">{{ __("Terms") }}</h6>
-                <div class="dropdown no-arrow">
-
-
-
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-                <x-modules.terms.all :terms="$terms" />
-            </div>
-        </div>
+        <x-modules.terms.all :terms="$terms" />
     </div>
 
 
@@ -41,7 +27,7 @@
             <!-- Card Body -->
             <div class="card-body">
                 @forelse($lastActivities as $workout)
-                    <x-box.workout-item :workout="$workout" />
+                <x-box.workout-item :workout="$workout" />
                 @empty
                 @endforelse
             </div>

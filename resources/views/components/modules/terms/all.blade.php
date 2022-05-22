@@ -25,7 +25,7 @@
                                     </h6>
 
                                     <div class="text-lg pt-2 font-weight-bold mb-1 text-primary">
-                                        <a href="{{ route($terms->is_mentor ? 'learnerParticipantWorkout' : 'learningCourse', $term->pivot->id) }}">
+                                        <a class="text-secondary" href="{{ route($terms->is_mentor ? 'learnerParticipantWorkout' : 'learningCourse', $term->pivot->id) }}">
                                             {{ $term->title }}
                                         </a>
                                     </div>

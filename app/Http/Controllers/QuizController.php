@@ -24,7 +24,7 @@ class QuizController extends Controller
     public function index()
     {
         $this->authorize('quiz.index');
-        $quizes = Quiz::paginate(env('PAGINATION'));
+        $quizes = Quiz::paginate();
         return view("contents.admin.quiz.index", compact("quizes"));
     }
 

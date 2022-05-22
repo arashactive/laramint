@@ -9,24 +9,20 @@ use Illuminate\View\Component;
 class Roles extends Component
 {
 
-    public array $user;
+    public ?array $user = [];
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(int $user = 0)
+    public function __construct(?int $user = null)
     {
-        
-        if((int)$user > 0){
+       
+        if ((int)$user > 0) {
             $user = User::findorfail($user);
-            $this->user = $user->Roles->pluck('name' , 'id')->toArray();
-            
+            $this->user = $user->Roles->pluck('name', 'id')->toArray();
         }
-
-        
-        
     }
 
     /**

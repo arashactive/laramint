@@ -69,7 +69,8 @@
 
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <x-forms.roles user="{{ $user->id ?? null }}" />
+                           
+                            <x-forms.roles user="{{ $user->id ?? 0 }}" />
                         </div>
                         <div class="col-sm-6">
                         </div>

@@ -1,5 +1,7 @@
 <div class="m-1">
-    <a href="{{ route($path , $itemId) }}" class="btn btn-warning btn-sm  btn-circle">
-        <span class="fa fa-edit"></span>
+    <a class="dropdown-item" href="{{ route($path , $itemId) }}">
+        <span class="fa fa-edit pr-2"></span>
+        @lang('Edit')
     </a>
+
 </div>

@@ -22,7 +22,7 @@
 
 
                                 <span class="pl-4">
-                                    <a href="{{ $activity->Route }}">
+                                    <a href="{{ $activity->Route }}" class="text-secondary">
 
                                         <span class="{{ $activity->Workout ? '' : 'text-secondary' }}">
                                             {{ $activity->Model->title }}

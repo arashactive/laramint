@@ -11,17 +11,24 @@
                             {{ $slot }}
                         </div>
                         <div class="col-auto">
-                            <div class="btn-group" role="group">
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
+                                    <div class="dropdown-header">{{ __('Actions') }}:</div>
+                                    <a class="dropdown-item" data-toggle="modal"  data-target="#comment{{ $comment->id }}">
+                                    <i class="fa fa-info pr-2"></i> @lang('Show Comment')
+                                    </a>
+                                   
+                                    @can('mentor.list')
+                                    <div class="dropdown-divider"></div>
+                                    <x-DeleteButton itemId="{{ $comment->id }}" path="mentor-comments.destroy" />
+                                    @endcan
 
-                                @can('mentor.list')
-                                <x-DeleteButton itemId="{{ $comment->id }}" path="mentor-comments.destroy" />
-                                @endcan
-                                <div class="m-1">
-                                <button type="button" class="btn btn-info btn-circle btn-sm" data-toggle="modal" data-target="#comment{{ $comment->id }}">
-                                    <i class="fa fa-info"></i>
-                                </button>
                                 </div>
                             </div>
+
                             <!-- Modal -->
                             <div class="modal fade" id="comment{{ $comment->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">

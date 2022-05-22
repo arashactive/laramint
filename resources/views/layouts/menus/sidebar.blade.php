@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
@@ -65,64 +65,37 @@
     </li>
     @endcan
 
-    <!-- Nav Item - Admin Setup LMS -->
+    @can('course.index')
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#EducationCollapse" aria-expanded="true" aria-controls="EducationCollapse">
+        <a class="nav-link" href="{{ route('adminMenuCourse') }}">
             <i class="fas fa-fw fa-chalkboard-teacher"></i>
-            <span>Education</span>
-        </a>
-        <div id="EducationCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+            <span>{{ __("Courses") }}</span></a>
+    </li>
+    @endcan
 
-                <a class="collapse-item" href="{{ route('adminMenuCourse') }}">{{ __('Courses') }}</a>
-
-                <h6 class="collapse-header">{{ __('Second Step:') }}</h6>
-                @can('session.index')
-                <a class="collapse-item" href="{{ route('session.index') }}">{{ __('session') }}</a>
-                @endcan
-
-                @can('quiz.index')
-                <a class="collapse-item" href="{{ route('quiz.index') }}">{{ __('quiz') }}</a>
-                @endcan
-
-                @can('question.index')
-                <a class="collapse-item" href="{{ route('question.index') }}">{{ __('question') }}</a>
-                @endcan
-
-                <h6 class="collapse-header">{{ __('Third Step:') }}</h6>
-                @can('rubric.index')
-                <a class="collapse-item" href="{{ route('rubric.index') }}">{{ __('rubric') }}</a>
-                @endcan
-
-                @can('feedback.index')
-                <a class="collapse-item" href="{{ route('feedback.index') }}">{{ __('feedback') }}</a>
-                @endcan
-
-            </div>
-        </div>
+    @can('quiz.index')
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('quiz.index') }}">
+            <i class="fas fa-fw fa-book-reader"></i>
+            <span>{{ __("quiz") }}</span></a>
     </li>
     @endcan
 
 
-    @can('menu.education')
+    @can('plugins')
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ToolboxCollapse" aria-expanded="true" aria-controls="ACLCollapse">
-            <i class="fas fa-fw fa-toolbox"></i>
-            <span>Tool Box</span>
-        </a>
-        <div id="ToolboxCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                @can('file.index')
-                <a class="collapse-item" href="{{ route('file.index') }}">{{ __('Files') }}</a>
-                @endcan
-                @can('document.index')
-                <a class="collapse-item" href="{{ route('document.index') }}">{{ __('document') }}</a>
-                @endcan
-            </div>
-
-        </div>
-
+        <a class="nav-link" href="{{ route('adminMenuPlugins') }}">
+            <i class="fas fa-fw fa-puzzle-piece"></i>
+            <span>{{ __("Plugins") }}</span></a>
     </li>
+    @endcan
+
+
+    @endcan
+
+
+    @can('menu.education')
+  
 
 
 
