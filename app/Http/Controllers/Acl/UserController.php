@@ -6,11 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Traits\SyncPermissions;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     use SyncPermissions;
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -18,6 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
+
         $users = User::paginate();
         return view("contents.admin.acl.user.index", compact("users"));
     }
@@ -29,7 +31,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+
         return view('contents.admin.acl.user.form');
     }
 
@@ -41,8 +43,12 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-        $user = User::create($request->except('roles'));
         $this->syncPermissions($request, $user);
         return redirect()
             ->route("user.index")
@@ -73,8 +79,13 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
+        
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->password != '')
+            $user->password = Hash::make($request->password);
 
-        $user->update($request->except('roles'));
+        $user->save();
         $this->syncPermissions($request, $user);
         return redirect()
             ->route("user.index")
@@ -100,6 +111,4 @@ class UserController extends Controller
                 ->with('danger', __('Delete is not Completed, Please check child of this user'));
         }
     }
-
-    
 }

@@ -48,26 +48,10 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input name="password" type="password" class="form-control form-control-user" id="password"
-                                placeholder="password" value="{{ $user->password ?? '' }}">
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    {{ $message }}
-                                </span>
-                            @enderror    
+                            <input name="password" type="text" class="form-control form-control-user" id="password"
+                                placeholder="password" value="">
+                        
                         </div>
-                        <div class="col-sm-6">
-                            <input name="password_confirmation" type="password" class="form-control form-control-user" id="password_confirmation"
-                                placeholder="password_confirmation" value="">
-                            @error('password_confirmation')
-                                <span class="invalid-feedback" role="alert">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                            
                             <x-forms.roles user="{{ $user->id ?? 0 }}" />
@@ -75,6 +59,8 @@
                         <div class="col-sm-6">
                         </div>
                     </div>
+                   
+                   
                     
    
                
