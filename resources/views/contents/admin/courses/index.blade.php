@@ -8,13 +8,32 @@
         <div class="card shadow mb-4 border-bottom-primary">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">{{ __("Courses") }}</h6>
+                <h6 class="m-0 font-weight-bold text-uppercase">{{ __('Courses') }}</h6>
+
                 <div class="dropdown no-arrow">
-                    @can('course.create')
-                    <x-CreateButton path="{{ route('course.create') }}" />
-                    @endcan
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
+                        <div class="dropdown-header">{{ __('Action') }}</div>
+                        @can('course.create')
+                        <x-CreateButton path="{{ route('course.create') }}" />
+                        @endcan
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('department.index') }}">
+                            <i class="fas fa-arrow-right pr-2"></i>
+                            {{ __("Department") }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('term.index') }}">
+                            <i class="fas fa-arrow-right pr-2"></i>
+                            {{ __("Term") }}
+                        </a>
+
+                    </div>
                 </div>
             </div>
+
+
             <!-- Card Body -->
             <div class="card-body">
                 <div class="text-center">
@@ -37,20 +56,31 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $course->title }}</td>
-                                <td>{{ $course->Department->title }}</td>
+                                <td>
+                                    <div class="badge badge-primary">
+                                        {{ $course->Department->title }}
+                                    </div>
+                                </td>
                                 <td>
                                     <x-CheckUnCheck isChecked="{{ $course->is_published }}" />
                                 </td>
                                 @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['course.edit' , 'course.delete']))
                                 <td>
-                                    <div class="btn-group" role="group" aria-label="{{ __("Action Buttons ") }}">
-                                        @can('course.edit')
-                                        <x-EditButton itemId="{{ $course->id }}" path="course.edit" />
-                                        @endcan
-                                        @can('course.delete')
-                                        <x-DeleteButton itemId="{{ $course->id }}" path="course.destroy" />
-                                        @endcan
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
+                                            <div class="dropdown-header">{{ __('Actions') }}:</div>
+                                            @can('course.edit')
+                                            <x-EditButton itemId="{{ $course->id }}" path="course.edit" />
+                                            @endcan
+                                            @can('course.delete')
+                                            <x-DeleteButton itemId="{{ $course->id }}" path="course.destroy" />
+                                            @endcan
+                                        </div>
                                     </div>
+
                                 </td>
                                 @endif
                             </tr>
@@ -72,5 +102,3 @@
 
 
     @endsection
-
-

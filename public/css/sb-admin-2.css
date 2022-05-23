@@ -73,7 +73,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #858796;
+  color: #505050;
   text-align: left;
   background-color: #fff;
 }
@@ -11866,11 +11866,12 @@ a:focus {
 }
 
 .sidebar-light .nav-item .nav-link {
-  color: #858796;
+  color: #3c3c3c;
+  font-weight: 600;
 }
 
 .sidebar-light .nav-item .nav-link i {
-  color: #d1d3e2;
+  color: #3c3c3c;
 }
 
 .sidebar-light .nav-item .nav-link:active,
