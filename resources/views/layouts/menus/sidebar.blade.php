@@ -73,23 +73,11 @@
     </li>
     @endcan
 
-    @can('quiz.index')
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('quiz.index') }}">
-            <i class="fas fa-fw fa-book-reader"></i>
-            <span>{{ __("quiz") }}</span></a>
-    </li>
-    @endcan
-
-
-
-
-
     @endcan
 
 
     @can('menu.education')
-  
+
 
 
 
