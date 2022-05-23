@@ -96,7 +96,7 @@ Route::prefix('mentor')->middleware(['verified'])->group(function () {
 Route::prefix('panel')->middleware(['verified'])->group(function () {
 
     // Admin Menu
-    Route::get('/menu/courses', [CourseManagmentController::class, 'courses'])->name('adminMenuCourse');
+    Route::get('/menu/education', [CourseManagmentController::class, 'courses'])->name('adminMenuCourse');
     Route::get('/menu/plugins', [CourseManagmentController::class, 'plugins'])->name('adminMenuPlugins');
 
     Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');

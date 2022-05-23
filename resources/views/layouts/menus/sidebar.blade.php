@@ -69,7 +69,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('adminMenuCourse') }}">
             <i class="fas fa-fw fa-chalkboard-teacher"></i>
-            <span>{{ __("Courses") }}</span></a>
+            <span>{{ __("Education Center") }}</span></a>
     </li>
     @endcan
 
@@ -82,13 +82,7 @@
     @endcan
 
 
-    @can('plugins')
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('adminMenuPlugins') }}">
-            <i class="fas fa-fw fa-puzzle-piece"></i>
-            <span>{{ __("Plugins") }}</span></a>
-    </li>
-    @endcan
+
 
 
     @endcan

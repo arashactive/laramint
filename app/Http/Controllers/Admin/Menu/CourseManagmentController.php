@@ -15,17 +15,9 @@ class CourseManagmentController extends Controller
      */
     public function courses()
     {
-        return view('contents.admin.menu.courses');
+        return view('contents.admin.menu.center');
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
-     */
-    public function plugins()
-    {
-        return view('contents.admin.menu.plugins');
-    }
+    
 }
