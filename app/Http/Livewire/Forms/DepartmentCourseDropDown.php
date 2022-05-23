@@ -14,11 +14,12 @@ class DepartmentCourseDropDown extends Component
     public $departments = [];
 
     public ?int $department_id = null;
-    public int $course_id = 0;
+    public ?int $course_id = 0;
 
 
     public function mount(): void
     {
+        
         $this->departments = Department::all();
         $this->courses = Course::where('department_id', $this->department_id)->get();
     }

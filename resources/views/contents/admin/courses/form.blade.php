@@ -50,8 +50,9 @@
                         <div class="col-sm-6 mb-3 mb-sm-0">
                     
                         </div>
+                        
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                           <x-forms.DropDown model="Department" name="department_id" selected="{{ $course->department_id ?? '0' }}" />
+                           <x-forms.DropDown model="Department" name="department_id" selected="{{ $course->department_id ?? 0 }}" />
                         </div>
                        
                     </div>
@@ -65,7 +66,7 @@
                         @enderror
                     </div>
    
-               
+                    
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary btn-user btn-block"
                             value="{{ __('Save') }}">

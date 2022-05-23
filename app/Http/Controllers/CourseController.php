@@ -100,8 +100,8 @@ class CourseController extends Controller
             ->with('danger', __('item deleted successfully'));
     }
 
-        
-       
+
+
     /**
      * getDepartmentsPluck
      *

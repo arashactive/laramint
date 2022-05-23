@@ -5,8 +5,13 @@ namespace App\View\Components\Forms;
 use Illuminate\View\Component;
 
 class DropDown extends Component
-{
-    public string $model;
+{    
+    /**
+     * model
+     *
+     * @var \Illuminate\Support\Collection<int, mixed>
+     */
+    public $model;
     public string $name;
     public int $selected = 0;
     public string $field = 'title';
@@ -17,7 +22,7 @@ class DropDown extends Component
      */
     public function __construct(string $model, string $name, int $selected = 0, string $filed = "title")
     {
-
+        
         $model = "App\Models\\" . $model;
         $this->model =  $model::pluck($filed, 'Id');
         $this->name = $name;
