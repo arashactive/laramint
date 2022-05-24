@@ -99,9 +99,9 @@ Features’ list:
 
 Image of the project:
 
-![quiz Management lms](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/imageQuiz.png)
+![education center Management lms](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/imageQuiz.png)
 
-![attach question to quiz](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/questions.png)
+![attach task to session](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/sessions.png)
 
 ![attach activities to session](https://github.com/arashactive/mint-lms-laravel/raw/main/public/img/sessionAttach.png)
 
