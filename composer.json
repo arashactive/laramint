@@ -19,7 +19,8 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.13",
+        "laravel/sail": "^1.14",
+        "laravel/telescope": "^4.9",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.0",
         "nunomaduro/larastan": "2.0",

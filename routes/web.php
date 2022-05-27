@@ -4,6 +4,7 @@ use App\Http\Controllers\Acl\PermissionController;
 use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Admin\Badges\BadgeController;
 use App\Http\Controllers\Admin\Menu\CourseManagmentController;
 use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\CourseController;
@@ -116,6 +117,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('rubric', RubricController::class);
     Route::resource('feedback', FeedbackController::class);
     Route::resource('plan', PlanController::class);
+    Route::resource('badges', BadgeController::class);
 
 
     // signle functions:

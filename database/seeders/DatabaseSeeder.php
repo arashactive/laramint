@@ -32,7 +32,8 @@ class DatabaseSeeder extends Seeder
             // EducationSeeder::class,
             ParticipantSeeder::class,
             PlanSeeder::class,
-            ConfigurationSeed::class
+            ConfigurationSeed::class,
+            BadgeSeeder::class,
         ]);
     }
 }
