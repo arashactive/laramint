@@ -26,7 +26,7 @@ class BadgeRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file' => 'required',
             'min_coins' => 'required|integer|min:0|max:28000',
             'max_coins' => 'required|integer|min:0|max:28000',
         ];

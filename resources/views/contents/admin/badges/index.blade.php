@@ -53,7 +53,7 @@
                                 <td>
                                     {{ $badge->title }}
                                 </td>
-                                <td>{{ $badge->file }}</td>
+                                <td><x-atoms.file-uploaded-render :file="$badge->file" :preview="false" /></td>
                                 <td>{{ number_format($badge->min_coins) }}</td>
                                 <td>{{ number_format($badge->max_coins)  }}</td>
 
