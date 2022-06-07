@@ -12,7 +12,7 @@ class QuizSixTest extends BaseTest
 {
     use QuizTrait;
     private $student_id = 8;
-    private $term = 1;
+    protected $participant = 3;
     private $sessionable = 21;
 
 
@@ -39,7 +39,7 @@ class QuizSixTest extends BaseTest
         $this->student();
         $this->setWorkoutForQuiz();
         $response = $this->get(route('taskLearner', [
-            'term' => $this->term,
+            'participant' => $this->participant,
             'sessionable' => $this->sessionable
         ]));
 
@@ -91,8 +91,7 @@ class QuizSixTest extends BaseTest
 
 
         $this->assertDatabaseHas(Workout::class, [
-            'user_id' => $this->student_id,
-            'term_id' => $this->term,
+            'participant_id' => $this->participant,
             'sessionable_id' => $this->sessionable,
             'is_completed' => 0,
             'is_mentor' => 1

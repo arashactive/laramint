@@ -10,7 +10,7 @@ class ShortAnswerTest extends BaseTest
 {
     use QuizTrait;
     private $student_id = 8;
-    private $term = 1;
+    private $participant = 3;
     private $sessionable = 20;
 
 
@@ -39,7 +39,7 @@ class ShortAnswerTest extends BaseTest
         $this->setWorkoutForQuiz();
         
         $response = $this->get(route('taskLearner', [
-            'term' => $this->term,
+            'participant' => $this->participant,
             'sessionable' => $this->sessionable
         ]));
 
@@ -81,8 +81,7 @@ class ShortAnswerTest extends BaseTest
 
 
         $this->assertDatabaseHas(Workout::class, [
-            'user_id' => $this->student_id,
-            'term_id' => $this->term,
+            'participant_id' => $this->participant,
             'sessionable_id' => $this->sessionable,
             'is_completed' => 0,
             'is_mentor' => 1

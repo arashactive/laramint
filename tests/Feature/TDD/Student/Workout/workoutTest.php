@@ -45,7 +45,7 @@ class workoutTest extends BaseTest
     {
         $this->student();
         $response = $this->get(route('taskLearner', [
-            'term' => 1,
+            'participant' => 3,
             'sessionable' => 1
         ]));
         
@@ -55,8 +55,7 @@ class workoutTest extends BaseTest
         $this->assertDatabaseHas(
             $this->workout,
             [
-                'user_id' => "8",
-                'term_id' => "1",
+                'participant_id' => "3",
                 'sessionable_id' => "1",
                 'is_completed' => "0"
             ]
@@ -74,7 +73,7 @@ class workoutTest extends BaseTest
     {
         $this->student();
         $response = $this->get(route('taskLearner', [
-            'term' => 1,
+            'participant' => 3,
             'sessionable' => 16
         ]));
         
@@ -93,12 +92,12 @@ class workoutTest extends BaseTest
     {
         $this->student();
         $response = $this->post(route('taskLearner', [
-            'term' => 1,
+            'participant' => 3,
             'sessionable' => 16
         ]));
         
 
-        $response->assertRedirect(route('taskLearner', ['term' => 1, 'sessionable' => 16]));
+        $response->assertRedirect(route('taskLearner', ['participant' => 3, 'sessionable' => 16]));
 
     }
 
@@ -112,7 +111,7 @@ class workoutTest extends BaseTest
     {
         $this->student();
         $response = $this->get(route('taskLearner', [
-            'term' => 1,
+            'participant' => 3,
             'sessionable' => 1
         ]));
        
