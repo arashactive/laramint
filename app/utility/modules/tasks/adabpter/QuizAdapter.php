@@ -2,8 +2,8 @@
 
 namespace App\Utility\Modules\Tasks\Adabpter;
 
+use App\Models\Participant;
 use App\Models\Sessionable;
-use App\Models\Term;
 use App\Models\Workout;
 use App\Utility\Modules\Tasks\Services\TaskParent;
 use App\Utility\Workout\WorkoutService;
@@ -17,13 +17,13 @@ class QuizAdapter extends TaskParent
     public $is_mentor = false;
 
 
-    public function Render(Term $term, Sessionable $sessionable)
+    public function Render(Participant $participant, Sessionable $sessionable)
     {
-        $workout = WorkoutService::checkExistWorkout($term->id, $sessionable, $this->user);
+        $workout = WorkoutService::checkExistWorkout($participant->id, $sessionable, $this->user);
         
         if(empty($workout)){
             $model = $sessionable->Model;
-            return view($this->prepare, compact(['term' , 'model', 'sessionable']));
+            return view($this->prepare, compact(['participant' , 'model', 'sessionable']));
         }
         
         $activity = $sessionable->Model;
@@ -32,7 +32,7 @@ class QuizAdapter extends TaskParent
             return redirect()->back()->with('danger', __('for this task, review is not exist.'));
 
         if ($workout->is_completed || $workout->is_mentor)
-            return $this->Review($term, $workout, $activity);
+            return $this->Review($participant, $workout, $activity);
 
         
 
@@ -40,18 +40,19 @@ class QuizAdapter extends TaskParent
 
 
         return view($this->view, compact([
-            'activity', 'workout', 'term'
+            'activity', 'workout', 'participant'
         ]));
     }
 
-    public function Review(Term $term, Workout $workout, $activity)
+    public function Review(Participant $participant, Workout $workout, $activity)
     {
+        
         if (!$this->checkMentorCanBeAccess($workout))
             return redirect()->back()->with('danger', __('for this task, review is not exist.'));
 
 
         return view($this->review, compact([
-            'term', 'workout', 'activity'
+            'participant', 'workout', 'activity'
         ]));
     }
 

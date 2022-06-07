@@ -94,6 +94,6 @@
 
 @livewire('activity.review', [
 'activity' => $activity,
-'term' => $term,
+'participant' => $participant,
 'workout' => $workout
 ])

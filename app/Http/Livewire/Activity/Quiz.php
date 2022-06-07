@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Activity;
 
-use App\Models\Term;
+use App\Models\Participant;
 use App\Models\Workout;
 use App\Utility\Question\QuestionFactory;
 use Livewire\Component;
@@ -10,7 +10,7 @@ use Livewire\Component;
 class Quiz extends Component
 {
     public $activity;
-    public Term $term;
+    public Participant $participant;
 
     public Workout $workout;
 

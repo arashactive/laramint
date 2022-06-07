@@ -59,8 +59,8 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
 */
 Route::prefix('learn')->middleware(['verified'])->group(function () {
 
-    Route::get('/task/{term}/{sessionable}', [WorkoutController::class, 'task'])->name('taskLearner');
-    Route::post('/task/{term}/{sessionable}', [WorkoutController::class, 'prepared'])->name('taskLearnerPrepared');
+    Route::get('/task/{participant}/{sessionable}', [WorkoutController::class, 'task'])->name('taskLearner');
+    Route::post('/task/{participant}/{sessionable}', [WorkoutController::class, 'prepared'])->name('taskLearnerPrepared');
     Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
 
     // my course route

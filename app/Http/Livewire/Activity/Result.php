@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Activity;
 
-use App\Models\Term;
+use App\Models\Participant;
 use App\Models\Workout;
 use Livewire\Component;
 
@@ -10,7 +10,7 @@ class Result extends Component
 {
 
     public $activity;
-    public Term $term;
+    public Participant $participant;
 
     public Workout $workout;
 

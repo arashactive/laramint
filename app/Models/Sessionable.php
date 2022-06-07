@@ -14,4 +14,7 @@ class Sessionable extends Model
     {
         return $this->belongsTo($this->sessionable_type, 'sessionable_id');
     }
+
+
+    
 }

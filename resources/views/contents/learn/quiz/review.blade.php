@@ -26,7 +26,7 @@
 
                 @livewire('activity.result', [
                 'activity' => $activity,
-                'term' => $term,
+                'participant' => $participant,
                 'workout' => $workout
                 ])
             </div>

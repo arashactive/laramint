@@ -32,7 +32,7 @@
 
                                     {{ $slot }}
                                     
-                                    <x-atoms.progress :color="'progress-bar-striped bg-success'" :fill="$term->statistic['workoutDone']" :count="$term->statistic['totalTask']">
+                                    <x-atoms.progress :color="'progress-bar-striped bg-success'" :fill="$term->statistic['workoutDone'] ?? 0" :count="$term->statistic['totalTask'] ?? 0">
                                     </x-atoms.progress>
 
                                 </div>

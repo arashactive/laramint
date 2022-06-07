@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Participant;
+use App\Utility\Modules\Terms\ParticipantInfoGenerator;
 use App\Utility\Modules\Terms\TermModule;
+use Illuminate\Support\Facades\Auth;
 
 class MyCourseController extends Controller
 {
@@ -19,8 +21,7 @@ class MyCourseController extends Controller
 
         $this->authorize('myCourse.index');
 
-        $termModule = new TermModule();
-        $terms = $termModule->getAllTerms();
+        $terms = ParticipantInfoGenerator::getAllTermsForParticipant(Auth::user());
 
         return view('contents.learn.mycourses.list', compact([
             'terms'
@@ -36,11 +37,11 @@ class MyCourseController extends Controller
     public function learn(Participant $participant)
     {
         //$this->authorize('participantAccessToTerm', [$term]);
-        $termModule = new TermModule();
-        $term = $termModule->Participant($participant);
+
+        $participant = ParticipantInfoGenerator::getTermStatistic($participant);
 
         return view('contents.learn.mycourses.show', compact([
-            'term', 'participant'
+            'participant'
         ]));
     }
 }

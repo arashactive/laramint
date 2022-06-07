@@ -14,14 +14,14 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
                 <div class="dropdown-header">{{ __('Managment') }}</div>
                 @can('mentor.list')
-                <x-modules.mentor-comments.new-comment :userId="$term->User->id" :activableType="'App\Models\Term'" :activableId="$term->id" />
+                <x-modules.mentor-comments.new-comment :userId="$participant->User->id" :activableType="'App\Models\Term'" :activableId="$participant->id" />
                 @endcan
             </div>
         </div>
     </div>
 </div>
 
-<x-box.profile-top-header :user="$term->User" :activabel_id="$term->id" :activable_type="'App\Models\Term'" />
+<x-box.profile-top-header :user="$participant->User" :activabel_id="$participant->id" :activable_type="'App\Models\Term'" />
 
 <x-box.profile-review-box />
 
@@ -33,9 +33,9 @@
 
 
 
-        @forelse ($term->Sessions as $session)
+        @forelse ($participant->Term->Sessions as $session)
 
-        <x-box.session-item-for-student :session="$session" />
+        <x-box.session-item-for-student :session="$session" :participant="$participant" />
 
         @empty
 

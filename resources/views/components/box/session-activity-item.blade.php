@@ -20,7 +20,7 @@
                                 <i class="{{ $activity->faIcon }}"></i>
                                 @endif
 
-
+                                
                                 <span class="pl-4">
                                     <a href="{{ $activity->Route }}" class="text-secondary">
 

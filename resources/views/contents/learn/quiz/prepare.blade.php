@@ -28,7 +28,7 @@
                 <p>@lang('duration:') {{ $model->duration }}</p>
                 @endif
 
-                <form action="{{ route( 'taskLearnerPrepared' ,['term'=> $term->id, 'sessionable' => $sessionable->id]) }}" method="POST">
+                <form action="{{ route( 'taskLearnerPrepared' ,['participant'=> $participant->id, 'sessionable' => $sessionable->id]) }}" method="POST">
                     @csrf
                     <input class="btn btn-primary btn-sm" type="submit" value="@lang('Start')" />
                 </form>

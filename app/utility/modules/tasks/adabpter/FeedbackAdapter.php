@@ -2,6 +2,7 @@
 
 namespace App\Utility\Modules\Tasks\Adabpter;
 
+use App\Models\Participant;
 use App\Models\Sessionable;
 use App\Models\Term;
 use App\Utility\Modules\Tasks\Services\TaskParent;
@@ -18,14 +19,14 @@ class FeedbackAdapter extends TaskParent
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function Render(Term $term, Sessionable $sessionable)
+    public function Render(Participant $participant, Sessionable $sessionable)
     {
-        $workout = WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, $this->user);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($participant, $sessionable, $this->user);
         
         $activity = $sessionable->Model;
 
         return view($this->view, compact([
-            'activity', 'workout', 'term'
+            'activity', 'workout', 'participant'
         ]));
     }
 

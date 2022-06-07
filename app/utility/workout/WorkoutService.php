@@ -2,6 +2,7 @@
 
 namespace App\Utility\Workout;
 
+use App\Models\Participant;
 use App\Models\Quiz;
 use App\Models\Sessionable;
 use App\Models\Term;
@@ -12,11 +13,10 @@ use App\Models\WorkoutQuizLog;
 abstract class WorkoutService
 {
 
-    public static function checkExistWorkout(int $term_id, Sessionable $sessionable, User $user): ?Workout
+    public static function checkExistWorkout(int $participant_id, Sessionable $sessionable, User $user): ?Workout
     {
 
-        $workout = Workout::where('user_id', $user->id)
-            ->where('term_id', $term_id)
+        $workout = Workout::where('participant_id', $participant_id)
             ->where('sessionable_id', $sessionable->id)
             ->first();
 
@@ -24,14 +24,13 @@ abstract class WorkoutService
     }
 
 
-    public static function WorkOutSyncForThisExcersice(Term $term, Sessionable $sessionable, User $user): Workout
+    public static function WorkOutSyncForThisExcersice(Participant $participant, Sessionable $sessionable, User $user): Workout
     {
 
-        $workout = self::checkExistWorkout($term->id, $sessionable, $user);
+        $workout = self::checkExistWorkout($participant->id, $sessionable, $user);
         if (empty($workout)) {
             $workout = new Workout();
-            $workout->user_id = $user->id;
-            $workout->term_id = $term->id;
+            $workout->participant_id = $participant->id;
             $workout->sessionable_id = $sessionable->id;
             $workout->date_first_view = now();
             $workout->is_completed = 0;

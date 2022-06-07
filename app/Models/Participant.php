@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
@@ -14,7 +15,7 @@ class Participant extends Pivot
     protected $table = 'term_user';
     protected $guarded = [];
 
-    
+
     /**
      * scopeLearners
      *
@@ -43,5 +44,10 @@ class Participant extends Pivot
     public function Term(): HasOne
     {
         return $this->hasOne(Term::class, 'id', 'term_id');
+    }
+
+    public function Workout(): HasMany
+    {
+        return $this->hasMany(Workout::class, 'id', 'participant_id');
     }
 }

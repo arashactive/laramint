@@ -3,9 +3,10 @@
 namespace App\Utility\Modules\Terms;
 
 use App\Models\Participant;
+use App\Models\Session;
+use App\Models\Term;
 use App\Models\User;
 use App\Models\Workout;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class TermModule
@@ -44,8 +45,6 @@ class TermModule
     }
 
 
-
-
     public function All()
     {
         $terms = $this->user->Terms()->wherePivot('role_id', 4)->get();
@@ -53,9 +52,9 @@ class TermModule
         return $terms;
     }
 
-    public function getTermInfo($term)
+    public function getTermInfo(Term $term)
     {
-        $term->Sessions = $term->Sessions;
+
         foreach ($term->Sessions as $session) {
             $session->relateds = $this->Relateds($session->related, $term->id);
             $session->sessionStatistic = $this->getSessionStatistic($session);
@@ -69,21 +68,20 @@ class TermModule
 
         $term = $this->getTermInfo($participant->Term);
         $term->User = $this->user;
-
+    
         return $term;
     }
 
-    private function getSessionStatistic($session)
+    private function getSessionStatistic(Session $session)
     {
-
         $info = [
             'total' => count($session->Sessionable),
             'workout' => $session->relateds->Info['workout'],
             'duration' => $session->relateds->Info['duration'],
             'score' =>  $session->relateds->Info['workout'] > 0 ? (int)$session->relateds->Info['score'] / $session->relateds->Info['workout'] : 0
         ];
-        
-        return $info;
+
+        return ($info);
     }
 
 
@@ -109,6 +107,7 @@ class TermModule
                 'tasks' => $tasks
             ]
         ];
+
         foreach ($relateds as $related) {
 
             $related->Model = $related->Model;

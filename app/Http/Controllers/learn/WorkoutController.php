@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\learn;
 
 use App\Http\Controllers\Controller;
+use App\Models\Participant;
 use App\Models\Question;
 use App\Models\Sessionable;
-use App\Models\Term;
 use App\Models\Workout;
 use App\Utility\Modules\Tasks\TaskFactory;
 use App\Utility\Question\QuestionFactory;
@@ -21,12 +21,12 @@ class WorkoutController extends Controller
      *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function prepared(Term $term, Sessionable $sessionable)
+    public function prepared(Participant $participant, Sessionable $sessionable)
     {
 
-        WorkoutService::WorkOutSyncForThisExcersice($term, $sessionable, Auth::user());
+        WorkoutService::WorkOutSyncForThisExcersice($participant, $sessionable, Auth::user());
 
-        return redirect(route('taskLearner', ['term' => $term, 'sessionable' => $sessionable]));
+        return redirect(route('taskLearner', ['participant' => $participant, 'sessionable' => $sessionable]));
     }
 
     /**
@@ -34,14 +34,14 @@ class WorkoutController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function task(Term $term, Sessionable $sessionable)
+    public function task(Participant $participant, Sessionable $sessionable)
     {
-
+        
         $className = $sessionable->sessionable_type;
-
+        
         $task = TaskFactory::Build($className);
         $task->set_user(Auth::user());
-        return $task->Render($term, $sessionable);
+        return $task->Render($participant, $sessionable);
     }
 
     /**

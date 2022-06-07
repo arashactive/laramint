@@ -2,6 +2,7 @@
 
 namespace App\Utility\Modules\Tasks\Adabpter;
 
+use App\Models\Participant;
 use App\Models\Sessionable;
 use App\Models\Term;
 use App\Models\Workout;
@@ -19,19 +20,19 @@ class RubricAdapter extends TaskParent
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function Render(Term $term, Sessionable $sessionable)
+    public function Render(Participant $participant, Sessionable $sessionable)
     {
-        $workout = WorkoutService::WorkOutSyncForThisExcersice($term,  $sessionable, $this->user);
+        $workout = WorkoutService::WorkOutSyncForThisExcersice($participant,  $sessionable, $this->user);
 
         $activity = $sessionable->Model;
 
-        $review = $this->Review($term, $workout);
+        $review = $this->Review($workout);
         return view($this->view, compact([
-            'activity', 'workout', 'review'
+            'activity', 'workout', 'review', 'participant'
         ]));
     }
 
-    public function Review(Term $term, Workout $workout): bool
+    public function Review(Workout $workout): bool
     {
         if ($workout->is_completed == 1) {
             return true;

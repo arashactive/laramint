@@ -19,7 +19,7 @@
 
                 @livewire('activity.quiz', [
                 'activity' => $activity,
-                'term' => $term,
+                'participant' => $participant,
                 'workout' => $workout
                 ])
             </div>
