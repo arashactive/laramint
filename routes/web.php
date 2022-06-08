@@ -82,7 +82,7 @@ Route::prefix('mentor')->middleware(['verified'])->group(function () {
     Route::get('/learners', [MyLearnerController::class, 'myLearners'])->name('myLearners');
     Route::get('/learner/{user}', [ParticipantController::class, 'participantTerms'])->name('learnerShowTerms');
     Route::get('/workout/{participant}', [ParticipantController::class, 'participantWorkout'])->name('learnerParticipantWorkout');
-    Route::get('/review/workout/{term}/{workout}', [ParticipantController::class, 'reviewWorkout'])->name('reviewWorkout');
+    Route::get('/review/workout/{participant}/{workout}', [ParticipantController::class, 'reviewWorkout'])->name('reviewWorkout');
     Route::post('/review/update', [ParticipantController::class, 'reviewWorkoutUpdate'])->name('workoutMentorReviewUpdate');
 
     Route::resource('mentor-comments', MentorCommentsController::class);

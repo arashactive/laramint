@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Awobaz\Compoships\Compoships;
+use Awobaz\Compoships\Database\Eloquent\Relations\HasOne;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -43,5 +44,11 @@ class Workout extends Model
     public function User(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+
+    public function Participant(): HasOne
+    {
+        return $this->hasOne(Participant::class);
     }
 }

@@ -23,7 +23,7 @@
                                 <span class="pl-4">
                                     <a @if($workout->is_completed)
                                         href="{{ route('reviewWorkout' , [
-                                            'term' => $workout->term_id,
+                                            'participant' => $workout->participant_id,
                                             'workout' => $workout->id
                                         ]) }}"
                                         @endif >

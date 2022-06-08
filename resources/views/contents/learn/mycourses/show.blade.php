@@ -31,8 +31,6 @@
     <div class="col-12">
 
 
-
-
         @forelse ($participant->Term->Sessions as $session)
 
         <x-box.session-item-for-student :session="$session" :participant="$participant" />

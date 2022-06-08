@@ -25,14 +25,14 @@
                                 </div>
 
                                 <div class="col-4">
-
+                                    
                                     <h6 class="font-weight-bold text-dark">{{ __('Grade') }}</h6>
                                     <hr />
                                     <label>{{ __('Progress Bar:') }}</label>
-                                    <x-atoms.progress :color="'primary'" :fill="$participant->Workout->count() ?? 0" :count="$participant->Term->Sessions->count()  ?? 0" />
+                                    <x-atoms.progress :color="'primary'" :fill="$session->workout_completed ?? 0" :count="$participant->Workout->count() ?? 0" />
                                     <hr />
                                     <span>Average Star:</span>
-                                    <x-atoms.stars :score="$session->sessionStatistic['score']  ?? 0" />
+                                    <x-atoms.stars :score="$session->workout_score ?? 0" />
 
                                 </div>
                             </div>

@@ -7,7 +7,7 @@ use App\Models\Term;
 use App\Models\User;
 use App\Models\Workout;
 use App\Utility\Modules\Tasks\TaskFactory;
-use App\Utility\Modules\Terms\TermModule;
+use App\Utility\Modules\Terms\ParticipantInfoGenerator;
 use Illuminate\Http\Request;
 
 class ParticipantController extends Controller
@@ -21,18 +21,9 @@ class ParticipantController extends Controller
      */
     public function participantTerms(User $user)
     {
+        $terms = ParticipantInfoGenerator::getAllTermsForParticipant($user, true);
 
-        $termsModule = new TermModule();
-
-        $termsModule->User($user);
-        $termsModule->is_mentor = true;
-
-        $terms = $termsModule->getAllTerms();
-
-        $lastActivities = Workout::where('user_id', $user->id)
-            ->limit(10)
-            ->orderby('updated_at', 'desc')
-            ->get();
+        $lastActivities = ParticipantInfoGenerator::getLastActivityForUser($user);
 
 
         return view('contents.mentors.learners.profile', compact(
@@ -93,11 +84,11 @@ class ParticipantController extends Controller
     /**
      * review of term and workout of especific user
      *
-     * @param  Term  $term
+     * @param  Participant  $participant
      * @param  Workout  $workout
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function reviewWorkout(Term $term, Workout $workout)
+    public function reviewWorkout(Participant $participant, Workout $workout)
     {
 
         $className = $workout->Sessionable->sessionable_type;
@@ -105,7 +96,7 @@ class ParticipantController extends Controller
         $task = TaskFactory::Build($className);
         $task->Mentor();
         $task->set_user($workout->User);
-        return $task->Render($term, $workout->Sessionable);
+        return $task->Render($participant, $workout->Sessionable);
     }
 
     /**
@@ -117,20 +108,16 @@ class ParticipantController extends Controller
     public function participantWorkout(Participant $participant)
     {
 
-        $termModule = new TermModule();
-        $termModule->user = $participant->User;
-        $termModule->is_mentor = true;
-
-        $term = $termModule->Participant($participant);
-
+        $participant = ParticipantInfoGenerator::getTermStatistic($participant);
+        
         return view('contents.learn.mycourses.show', compact([
-            'term', 'participant'
+            'participant'
         ]));
     }
 
 
     /**
-     * participantWorkout
+     * reviewWorkoutUpdate
      *
      * @param  Request  $request
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse

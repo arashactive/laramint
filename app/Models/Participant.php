@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
 
 class Participant extends Pivot
 {
@@ -48,6 +50,8 @@ class Participant extends Pivot
 
     public function Workout(): HasMany
     {
-        return $this->hasMany(Workout::class, 'id', 'participant_id');
+        return $this->hasMany(Workout::class, 'participant_id', 'id');
     }
+
+
 }

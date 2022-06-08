@@ -34,4 +34,11 @@ class Quiz extends Model
             ->where('sessionable_id',  $sessionable_id)
             ->where('session_id', $sesison_id);
     }
+
+
+    public function WorkoutForLearner(){
+        return $this->hasOne(Workout::class, 'participant_id', 'id')
+            ->where('user_id', $this->user_id);
+    }
+
 }

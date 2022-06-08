@@ -39,7 +39,7 @@ class MyCourseController extends Controller
         //$this->authorize('participantAccessToTerm', [$term]);
 
         $participant = ParticipantInfoGenerator::getTermStatistic($participant);
-
+        
         return view('contents.learn.mycourses.show', compact([
             'participant'
         ]));
