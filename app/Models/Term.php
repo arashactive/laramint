@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Term extends Model
 {
@@ -76,14 +77,16 @@ class Term extends Model
         $sessions = [$this->Sessions];
         if (!isset($sessions[0])) return;
         foreach ($sessions[0] as $session) {
-
             $activities = array_merge($activities, $session->Related->all());
         }
+
         return new Collection($activities);
     }
 
 
-    public function WorkoutByUser(User $user)
+  
+
+    public function WorkoutByUser(User $user): HasMany
     {
         return $this->hasMany(Workout::class)->where('user_id', $user->id);
     }
