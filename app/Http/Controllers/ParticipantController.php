@@ -34,52 +34,7 @@ class ParticipantController extends Controller
     }
 
 
-    /**
-     * Add user to especific term with dynamic role
-     *
-     * @param  int  $term_id
-     * @param  int  $user_id
-     * @param  int  $role_id
-     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
-     */
-    public function addParticipantToTerm($term_id, $user_id, $role_id)
-    {
-
-        $participantCount = Participant::where('term_id', $term_id)
-            ->where('user_id', $user_id)
-            ->where('role_id', $role_id)
-            ->count();
-
-        if ($participantCount > 0)
-            return redirect(route('term.show', ['term' => $term_id]))
-                ->with('danger', 'user is exist');
-
-        Participant::create([
-            'term_id' => $term_id,
-            'user_id' => $user_id,
-            'role_id' => $role_id,
-        ]);
-
-        // Mail::to(User::findorfail(1))->queue(new ParticipantAddToTerm());
-
-        return redirect(route('term.show', ['term' => $term_id]))
-            ->with('success', __('successfull added'));
-    }
-
-    /**
-     * delete user to especific term with dynamic role
-     *
-     * @param  Term  $term
-     * @param  User  $user
-     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
-     */
-    public function deleteParticipantAsTerm(Term $term, User $user)
-    {
-        $term->Participants()->detach($user);
-
-        return redirect(route('term.show', ['term' => $term->id]))
-            ->with('danger', __('successfull deleted'));
-    }
+   
 
     /**
      * review of term and workout of especific user

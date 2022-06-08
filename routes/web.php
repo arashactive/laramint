@@ -150,9 +150,6 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::get('/feedback/question/delete/{feedbackQuestion}', [FeedbackController::class, 'deleteQuestionAsFeedback'])->name("deleteQuestionAsFeedback");
     Route::get('/session/feedback/{session}/{active_id}', [SessionController::class, 'addFeedbackToSession'])->name("addFeedbackToSession");
 
-    // Participant Routes
-    Route::get('/participant/add/{term_id}/{user_id}/{role_id}', [ParticipantController::class, 'addParticipantToTerm'])->name("addParticipantToTerm");
-    Route::get('/participant/delete/{term}/{user}', [ParticipantController::class, 'deleteParticipantAsTerm'])->name("deleteParticipantAsTerm");
 
     // add session  to term
     Route::get('/addSessionToTerm/{term}/{session}', [TermController::class, 'addSessionToTerm'])->name("addSessionToTerm");
