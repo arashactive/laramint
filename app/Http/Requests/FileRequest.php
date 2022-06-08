@@ -28,21 +28,6 @@ class FileRequest extends FormRequest
             'file' => 'required',
         ];
 
-
-        if ($this->input('fileType') == 'audio') {
-            $rules['file'] = 'mimes:mp3,mp4';
-        }
-
-        if ($this->input('fileType') == 'video') {
-            $rules['file'] = 'mimes:mp4,3gp';
-        }
-
-        if ($this->input('fileType') == 'image') {
-            $rules['file'] = 'mimes:jpg,jpeg,gif';
-        }
-
-        
-
         return $rules;
     }
 }

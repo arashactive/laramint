@@ -49,7 +49,7 @@
                         <div class="col-md-6">
                             <label>File: </label>
                             @livewire('services.media.uploadable',[
-                                    'file' => $badge->file ?: '',
+                                    'file' => $badge->file ?? '',
                                     'path' => 'badges',
                                     'target' => 'badges'
                                 ])

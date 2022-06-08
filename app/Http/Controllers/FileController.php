@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FileRequest;
 use App\Models\File;
 use App\Traits\UploadFiles;
+use Illuminate\Support\Facades\Storage;
+
 
 class FileController extends Controller
 {
@@ -49,7 +51,7 @@ class FileController extends Controller
     }
 
 
-     /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  mixed $request
@@ -57,14 +59,19 @@ class FileController extends Controller
      */
     private function setData($request)
     {
-        $file = $request->file('file');
-        return [
-            'title' => $request->title,
-            'description' => $request->description,
-            'file' => $this->upload($file, $file->extension()),
-            'file_size' => $file->getSize(),
-            'file_type' => $file->extension()
-        ];
+        
+        if (Storage::exists('public/' . $request->file)) {
+            $path = Storage::path('public/' . $request->file);
+            return [
+                'title' => $request->title,
+                'description' => $request->description,
+                'file' => $request->file,
+                'file_size' => Storage::disk('public')->size($request->file),
+                'file_type' => pathinfo($path, PATHINFO_EXTENSION)
+            ];
+        }
+
+        return [];
     }
 
     /**
