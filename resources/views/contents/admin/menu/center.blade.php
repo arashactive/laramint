@@ -56,7 +56,6 @@
         </div>
     </div>
 
-
     <div class="col-2">
         <div class="card border-left-primary shadow">
             <div class="card-body">
@@ -71,6 +70,22 @@
             </div>
         </div>
     </div>
+
+
+
+
+</div>
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>@lang('Manage Assessment')</h3>
+    </div>
+</div>
+
+<div class="row mt-4 mb-4">
+
+    
 
     <div class="col-2">
         <div class="card border-left-primary shadow">
@@ -103,10 +118,6 @@
     </div>
 
 </div>
-
-
-<hr />
-
 
 <div class="card">
     <div class="card-header">
