@@ -18,11 +18,15 @@
 
             </small>
             @if(Auth::user()->hasRole('Super-Admin') || Auth::user()->hasAnyPermission(['participant.edit' , 'participant.delete']))
+            @slot('ButtonLiveWire')
             <small>
-                <button wire:click="deleteParticipantAsTerm({{ $participant->pivot->id }})" class="btn btn-sm btn-danger">
+                <button wire:click="deleteParticipantAsTerm({{ $participant->pivot->id }})" class="btn btn-circle btn-sm btn-danger">
                     <small><i class="fas fa-times text-dark-300"></i></small>
                 </button>
             </small>
+            @endslot
+
+
             @endcan
         </x-box.item>
 

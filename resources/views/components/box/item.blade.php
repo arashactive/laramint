@@ -45,6 +45,11 @@
                                 <i class="fas fa-file text-dark-300"></i>
                             </a>
                             @endif
+
+                            @if(isset($ButtonLiveWire) && $ButtonLiveWire)
+                                {{ $ButtonLiveWire }}
+                            @endif
+
                         </div>
                     </div>
     

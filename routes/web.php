@@ -22,6 +22,7 @@ use App\Http\Controllers\Mentors\MyLearnerController;
 use App\Http\Controllers\Panel\MyCourseController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
@@ -102,6 +103,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
 
     Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
     Route::get('/settings', [SettingController::class, 'index'])->name('settings');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::patch('/setting/{user}', [SettingController::class, 'update'])->name('setting.update');
 
 

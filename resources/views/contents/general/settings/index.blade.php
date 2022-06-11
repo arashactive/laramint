@@ -41,8 +41,3 @@
 
 
 @endsection
-{{-- 
-<div class="row text-center d-flex justify-content-center">
-    <x-buttons.pill name="terms" count="{{ $log->Term->count() }}" theme="dark" />
-    <x-buttons.pill name="course" count="{{ $log->Course->count() }}" theme="warning" />
-</div> --}}
