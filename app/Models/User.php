@@ -68,4 +68,13 @@ class User extends Authenticatable
             'user_id'
         );
     }
+
+
+    public function CoinsLogs()
+    {
+        return $this->hasMany(
+            CoinsLog::class,
+            'user_id'
+        );
+    }
 }
