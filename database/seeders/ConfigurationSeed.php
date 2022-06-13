@@ -43,6 +43,13 @@ class ConfigurationSeed extends Seeder
             'config_category' => 'global'
         ]);
 
+
+        \App\Models\Configuration::factory()->create([
+            'config_type' => 'CoinsForNewUserRegister',
+            'config_value' => json_encode(50),
+            'config_category' => 'global'
+        ]);
+
         
     }
 }

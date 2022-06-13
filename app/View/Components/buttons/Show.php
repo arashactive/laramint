@@ -14,7 +14,7 @@ class Show extends Component
      *
      * @return void
      */
-    public function __construct(int $itemId, string $path, string $text="Show")
+    public function __construct(int $itemId, string $path, string $text = "Show")
     {
         $this->itemId = $itemId;
         $this->path = $path;

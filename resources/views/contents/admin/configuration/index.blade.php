@@ -16,8 +16,19 @@
 
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            @livewire('admin.configuration.no-reply-email')
+        </div>
+    </div>
 
-    @livewire('admin.configuration.no-reply-email')
+    <div class="row">
+        <div class="col">
+            @livewire('admin.configuration.coins.register-new-user')
+
+        </div>
+    </div>
+
 </div>
 
 
