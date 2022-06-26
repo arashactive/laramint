@@ -2,6 +2,7 @@
 
 namespace App\Services\Coins;
 
+use App\Models\Badge;
 use App\Models\User;
 
 class UserCoins
@@ -16,5 +17,25 @@ class UserCoins
         $user->save();
 
         return true;
+    }
+
+
+    /**
+     * getUserBadge
+     *
+     * @param  User $user
+     * @return Badge
+     */
+    public function getUserBadge(User $user): Badge
+    {
+        
+        $badge = Badge::where('min_coins', '>=', $user->coins)
+            ->where('max_coins', '<', $user->coins)
+            ->first();
+
+        if (empty($badge))
+            return Badge::orderby('max_coins', 'desc')->first();
+
+        return $badge;
     }
 }

@@ -20,18 +20,18 @@ class ConfigurationSeed extends Seeder
             'config_category' => 'global'
         ]);
 
-        
+
         \App\Models\Configuration::factory()->create([
             'config_type' => 'NoReplyEmail',
             'config_value' => json_encode([
                 'MAIL_MAILER' => 'smtp',
-                'MAIL_HOST'=>'laramint.com',
-                'MAIL_PORT'=> '465',
-                'MAIL_USERNAME'=> 'no-reply@laramint.com',
-                'MAIL_PASSWORD'=> '*********',
-                'MAIL_ENCRYPTION'=>null,
-                'MAIL_FROM_ADDRESS'=> 'no-reply@laramint.com',
-                'MAIL_FROM_NAME'=>"No-Reply: LMS Gamification",
+                'MAIL_HOST' => 'laramint.com',
+                'MAIL_PORT' => '465',
+                'MAIL_USERNAME' => 'no-reply@laramint.com',
+                'MAIL_PASSWORD' => '*********',
+                'MAIL_ENCRYPTION' => null,
+                'MAIL_FROM_ADDRESS' => 'no-reply@laramint.com',
+                'MAIL_FROM_NAME' => "No-Reply: LMS Gamification",
             ]),
             'config_category' => 'global'
         ]);
@@ -50,6 +50,11 @@ class ConfigurationSeed extends Seeder
             'config_category' => 'global'
         ]);
 
-        
+
+        \App\Models\Configuration::factory()->create([
+            'config_type' => 'ScoreToCoins',
+            'config_value' => 10,
+            'config_category' => 'global'
+        ]);
     }
 }

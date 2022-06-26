@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Coins\UserCoins;
+use App\Utility\Modules\Terms\ParticipantInfoGenerator;
+use Illuminate\Support\Facades\Auth;
 
 class GeneralController extends Controller
 {
@@ -10,8 +13,13 @@ class GeneralController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function dashboard()
+    public function dashboard(UserCoins $userCoins)
     {
-        return view('contents.dashboard.index');
+        $user = Auth::user();
+        $user->badge = $userCoins->getUserBadge($user);
+        
+        $lastTerm = ParticipantInfoGenerator::getLastTermForParticipant($user);
+        
+        return view('contents.dashboard.index', compact('user'));
     }
 }

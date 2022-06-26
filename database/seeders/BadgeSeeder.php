@@ -15,6 +15,11 @@ class BadgeSeeder extends Seeder
      */
     public function run()
     {
-        Badge::factory()->count(10)->create();
+        for ($i = 0; $i <= 1000; $i += 100) {
+            Badge::factory()->create([
+                'min_coins' => $i,
+                'max_coins' => $i + 100
+            ]);
+        }
     }
 }
