@@ -20,6 +20,6 @@ class GeneralController extends Controller
         
         $lastTerm = ParticipantInfoGenerator::getLastTermForParticipant($user);
         
-        return view('contents.dashboard.index', compact('user'));
+        return view('contents.dashboard.index', compact('user', 'lastTerm'));
     }
 }

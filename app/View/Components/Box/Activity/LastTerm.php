@@ -2,18 +2,23 @@
 
 namespace App\View\Components\Box\Activity;
 
+use App\Models\Term;
 use Illuminate\View\Component;
 
 class LastTerm extends Component
 {
+    public Term $term;
+
     /**
-     * Create a new component instance.
+     * __construct
      *
+     * @param  Term|null $term
      * @return void
      */
-    public function __construct()
+    public function __construct(Term $term)
     {
-        //
+        if (!empty($term))
+            $this->term = $term;
     }
 
     /**

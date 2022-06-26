@@ -14,4 +14,7 @@
         <x-box.leader-board.top-learner-score :user="$user" />
     </div>
 </div>
+<div class="row">
+    <x-box.activity.last-term :term="$lastTerm" />
+</div>
 @endsection
