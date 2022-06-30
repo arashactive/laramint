@@ -27,5 +27,6 @@ class LaramintServiceProvider extends ServiceProvider
         $this->app->singleton(ParticipantInfoGenerator::class, function ($app) {
             return new ParticipantInfoGenerator();
         });
+
     }
 }

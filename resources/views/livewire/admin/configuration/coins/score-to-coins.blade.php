@@ -9,8 +9,8 @@
         <div class="form-group">
 
 
-            <label for="coins">{{ __('coins to new user register') }}</label>
-            <input wire:model="config_value" wire:change="config_changed()" type="text" class="form-control" value="{{ $config_value }}">
+            <label for="coins">{{ __('convert score to coins') }}</label>
+            <input wire:model="config_value" wire:change="convertScoreToCoins()" type="text" class="form-control" value="{{ $config_value }}">
             @error('config_value') <span class="alert alert-danger">{{ $message }}</span> @enderror
 
             @if (session()->has('message'))

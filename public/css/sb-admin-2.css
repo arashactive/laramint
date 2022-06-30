@@ -12644,3 +12644,96 @@ table thead th {
 
 
 
+.avatar {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar .avatar-img {
+  border-radius: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 2rem;
+  width: auto;
+}
+
+.avatar-xs {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.avatar-xs .avatar-img {
+  height: 1rem;
+}
+
+.avatar-sm {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.avatar-sm .avatar-img {
+  height: 1.5rem;
+}
+
+.avatar-lg {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.avatar-lg .avatar-img {
+  height: 2.5rem;
+}
+
+.avatar-xl {
+  height: 3rem;
+  width: 3rem;
+}
+
+.avatar-xl .avatar-img {
+  height: 3rem;
+}
+
+.avatar-xxl {
+  height: 3.75rem;
+  width: 3.75rem;
+}
+
+.avatar-xxl .avatar-img {
+  height: 3.75rem;
+}
+
+.avatar-busy::before,
+.avatar-idle::before,
+.avatar-offline::before,
+.avatar-online::before {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: #d4dae3;
+  border: 0.0625rem solid #fff;
+}
+
+.avatar-busy::before {
+  background-color: #e81500;
+}
+
+.avatar-idle::before {
+  background-color: #f4a100;
+}
+
+.avatar-offline::before {
+  background-color: #d4dae3;
+}
+
+.avatar-online::before {
+  background-color: #00ac69;
+}

@@ -5,11 +5,11 @@ namespace App\Http\Livewire\Admin\Configuration\Coins;
 use App\Models\Configuration;
 use Livewire\Component;
 
-class RegisterNewUser extends Component
+class ScoreToCoins extends Component
 {
 
     public int $config_value;
-    private string $typeName = 'CoinsForNewUserRegister';
+    private string $typeName = 'ScoreToCoins';
 
     protected $rules = [
         'config_value' => 'required',
@@ -21,14 +21,13 @@ class RegisterNewUser extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function mount() :void
+    public function mount(): void
     {
         $this->config_value = (int)Configuration::where('config_type', $this->typeName)
             ->first()->config_value;
-
     }
 
-    public function config_changed(): void
+    public function convertScoreToCoins(): void
     {
 
         $this->validate();
@@ -42,8 +41,9 @@ class RegisterNewUser extends Component
         session()->flash('message', __('message/alert.update', ["subject" => 'Coins']));
     }
 
+
     public function render()
     {
-        return view('livewire.admin.configuration.coins.register-new-user');
+        return view('livewire.admin.configuration.coins.score-to-coins');
     }
 }
