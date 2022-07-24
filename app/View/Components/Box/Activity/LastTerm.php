@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 
 class LastTerm extends Component
 {
-    public Term $term;
+    public ?Term $term;
 
     /**
      * __construct
@@ -15,10 +15,13 @@ class LastTerm extends Component
      * @param  Term|null $term
      * @return void
      */
-    public function __construct(Term $term)
+    public function __construct(Term $term = null)
     {
         if (!empty($term))
             $this->term = $term;
+
+        $this->term = null;    
+
     }
 
     /**
