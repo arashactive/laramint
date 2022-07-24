@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Coins;
+namespace App\Services\Units\Coins;
 
 use App\Models\Configuration;
 use App\Models\User;

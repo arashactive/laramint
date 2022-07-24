@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\buttons;
+namespace App\View\Components\Buttons;
 
 use Illuminate\View\Component;
 

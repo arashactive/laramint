@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Coins\UserCoins;
+use App\Services\Units\Coins\UserCoins;
 use App\Utility\Modules\Terms\ParticipantInfoGenerator;
 use Illuminate\Support\Facades\Auth;
 
