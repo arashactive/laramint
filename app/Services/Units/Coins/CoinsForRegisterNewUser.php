@@ -13,8 +13,9 @@ class CoinsForRegisterNewUser extends UserCoins
     protected function setCoins()
     {
         $configuration = Configuration::where('config_type', 'CoinsForNewUserRegister')->first();
-        if ($configuration->config_value > 0)
+        if (isset($configuration) and $configuration->config_value > 0)
             $this->coins = $configuration->config_value;
+        else $this->coins = 0;
     }
 
     public function executed(User $user): bool
