@@ -20,7 +20,6 @@
             <!-- Card Body -->
             <div class="card-body">
                 @livewire('container.participant', [
-                        
                         'term' => $term
                     ])
                 

@@ -15,12 +15,12 @@ class FileFactory extends Factory
      */
     public function definition()
     {
-        Storage::fake('avatars');
+        
 
         return [
             'title' => $this->faker->unique()->name,
             'description' => $this->faker->sentence(),
-            'file' =>  UploadedFile::fake()->image('avatar.jpg'),
+            'file' =>  'avatar.txt',
             'file_size' => $this->faker->numberBetween(1200, 2800),
             'file_type' => 'img'
         ];

@@ -72,7 +72,6 @@ class TermController extends Controller
     {
         $this->authorize('term.show');
 
-
         $departments = $this->getDepartmentsPluck(Department::class);
         $courses = $this->getDepartmentsPluck(Course::class);
         return view('contents.admin.term.show', compact(

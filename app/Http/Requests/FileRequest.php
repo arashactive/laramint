@@ -25,7 +25,7 @@ class FileRequest extends FormRequest
     {
         $rules =  [
             'title' => 'required',
-            'file' => 'required',
+            'file' => 'required|string',
         ];
 
         return $rules;

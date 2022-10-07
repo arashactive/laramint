@@ -3,6 +3,8 @@
 namespace Tests\Feature\TDD;
 
 use App\Http\Requests\FileRequest;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\BaseTest;
 
 class FileManagerTest extends BaseTest
@@ -52,6 +54,8 @@ class FileManagerTest extends BaseTest
      */
     public function test_create_form()
     {
+        Storage::disk('public')->put('avatar.txt', '');
+        
         $this->signIn();
         $this->create();
     }
@@ -63,6 +67,7 @@ class FileManagerTest extends BaseTest
      */
     public function test_update_form()
     {
+        Storage::disk('public')->put('avatar.txt', '');
         $this->signIn();
         $this->update();
     }

@@ -29,6 +29,7 @@ class UserCoins
     public function getUserBadge(User $user): Badge|null
     {
 
+
         $badge = Badge::where('min_coins', '>=', $user->coins)
             ->where('max_coins', '<', $user->coins)
             ->first();
