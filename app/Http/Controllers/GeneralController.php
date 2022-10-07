@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Coins\UserCoins;
+use App\Services\Units\Coins\UserCoins;
 use Illuminate\Support\Facades\Auth;
 
 class GeneralController extends Controller

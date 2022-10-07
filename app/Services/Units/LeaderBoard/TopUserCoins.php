@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\LeaderBoard;
+namespace App\Services\Units\LeaderBoard;
 
 use App\Models\User;
 use Illuminate\Support\Collection;

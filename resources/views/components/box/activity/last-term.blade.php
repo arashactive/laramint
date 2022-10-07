@@ -1,5 +1,5 @@
 <div>
-    @if(empty($term))
+    @if(!isset($term) || empty($term))
     <div class="col-12">
         <div class="alert alert-danger alert-sm">
             {{ __("You don't have any terms, you can add any term that you want.") }}

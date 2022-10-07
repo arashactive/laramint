@@ -2,7 +2,7 @@
 
 namespace App\View\Components\Box\LeaderBoard;
 
-use App\Services\LeaderBoard\TopUserCoins;
+use App\Services\Units\LeaderBoard\TopUserCoins;
 use Illuminate\Support\Facades\App;
 use Illuminate\View\Component;
 

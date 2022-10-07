@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Coins;
+namespace App\Services\Units\Coins;
 
 use App\Models\Badge;
 use App\Models\User;
@@ -26,15 +26,18 @@ class UserCoins
      * @param  User $user
      * @return Badge
      */
-    public function getUserBadge(User $user): Badge
+    public function getUserBadge(User $user): Badge|null
     {
-        
+
         $badge = Badge::where('min_coins', '>=', $user->coins)
             ->where('max_coins', '<', $user->coins)
             ->first();
 
         if (empty($badge))
-            return Badge::orderby('max_coins', 'desc')->first();
+            $badge = Badge::orderby('max_coins', 'desc')->first();
+
+        if (empty($badge))
+            $badge = Badge::factory()->create();
 
         return $badge;
     }

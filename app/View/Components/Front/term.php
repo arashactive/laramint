@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\front;
+namespace App\View\Components\Front;
 
 use App\Models\Term as ModelsTerm;
 use Illuminate\View\Component;

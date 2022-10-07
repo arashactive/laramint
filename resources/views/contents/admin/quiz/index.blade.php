@@ -103,6 +103,7 @@
                                             @endcan
                                             @can('quiz.delete')
                                             <x-DeleteButton itemId="{{ $quiz->id }}" path="quiz.destroy" />
+                                            
                                             @endcan
                                             <div class="dropdown-divider"></div>
                                             @can('quiz.show')

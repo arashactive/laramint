@@ -1,6 +1,6 @@
 <div>     
     <!-- Logout Modal-->
-    <div class="modal fade" id="DeleteModal-{{$itemId}}" tabindex="-1" role="dialog" aria-labelledby="DeleteModal"
+    <div class="modal fade" id="DeleteModal-{{$itemId}}" tabindex="1" role="dialog" aria-labelledby="DeleteModal"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -21,8 +21,5 @@
     </div>
     </div>
 
-    <form id="delete-form-{{ $itemId }}" action="{{ route($path , $itemId) }}" method="POST">        
-        @csrf
-        @method('delete')
-    </form>
+    
 </div>
