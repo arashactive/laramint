@@ -13,7 +13,6 @@ class ConfigurationSeed extends Seeder
      */
     public function run()
     {
-
         \App\Models\Configuration::factory()->create([
             'config_type' => 'SiteName',
             'config_value' => json_encode('Laramint LMS'),
@@ -53,7 +52,7 @@ class ConfigurationSeed extends Seeder
 
         \App\Models\Configuration::factory()->create([
             'config_type' => 'ScoreToCoins',
-            'config_value' => 10,
+            'config_value' => json_encode(10),
             'config_category' => 'global'
         ]);
     }
