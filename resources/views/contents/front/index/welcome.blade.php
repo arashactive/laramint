@@ -2,7 +2,8 @@
 
 
 @section("content")
-
+@php($path = 8)
+@svg($path)
 <div class="container-xxl bg-primary hero-header">
     <div class="container px-lg-5">
         <div class="row g-5 align-items-end">
@@ -78,6 +79,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- About End -->
 
 

@@ -19,7 +19,7 @@ class FrontController extends Controller
         
         $departments = Department::limit(3)->get();
         $courses = Course::with('Department', 'Terms')->get();
-
+        
         return view('contents.front.index.welcome', compact('departments', 'courses'));
     }
 }
