@@ -14,7 +14,7 @@ We are active as an open source platform and provide a perfect place for everyon
 
 website: [Laramint.com](https://laramint.com)
 #
-Demo   : [demo.Laramint.com](http://185.206.231.138/login)
+Demo   : [demo.Laramint.com](http://192.99.245.100/)
 
   
 # Getting started
