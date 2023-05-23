@@ -15,7 +15,6 @@ abstract class Repository
     protected $limitNumber = 5;
 
 
-
     /**
      * The number of models to return for limits.
      *
@@ -26,7 +25,7 @@ abstract class Repository
 
     public function findById($id)
     {
-        return $this->model::find($id);
+        return $this->model::findOrFail($id);
     }
 
     /**
@@ -50,6 +49,16 @@ abstract class Repository
         return $record->update($request);
     }
 
+    /**
+     * store default method for repository
+     * @param int id
+     * @return void
+     */
+    public function destroy( $id)
+    {
+        $record = $this->findById($id);
+        return $record->delete($record);
+    }
 
     /**
      *  Limit Number of department return by default 5

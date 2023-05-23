@@ -9,7 +9,7 @@ use App\Services\Back\Educations\DepartmentAdminService;
 class DepartmentController extends Controller
 {
     protected $service;
-    private $viewPath = 'contents.admin.department';
+    private $path = 'contents.admin.department';
 
     public function __construct(DepartmentAdminService $service)
     {
@@ -24,7 +24,10 @@ class DepartmentController extends Controller
     public function index()
     {
         $this->authorize('department.index');
-        $this->service->index();
+        $departments = $this->service->index();
+        return view($this->path . '.index', [
+            'departments' => $departments
+        ]);
     }
 
     /**
@@ -35,7 +38,7 @@ class DepartmentController extends Controller
     public function create()
     {
         $this->authorize('department.create');
-        return view($this->viewPath . ".form");
+        return view($this->path . ".form");
     }
 
     /**
@@ -66,10 +69,10 @@ class DepartmentController extends Controller
         $this->authorize('department.edit');
         $department = $this->service->edit($department);
         return view(
-            $this->viewPath . ".form",
-            compact(
-                "department"
-            )
+            $this->path . ".form",
+            [
+                'department' => $department
+            ]
         );
     }
 
@@ -77,13 +80,13 @@ class DepartmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  DepartmentRequest  $request
-     * @param  int  $department
+     * @param  int  $department_id
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(DepartmentRequest $request, int $department)
+    public function update(DepartmentRequest $request, int $department_id)
     {
         $this->authorize('department.edit');
-        $this->service->update($request->all(), $department);
+        $this->service->update($request->all(), $department_id);
         return redirect()
             ->route("department.index")
             ->with('warning', __('item updated successfully'));
@@ -92,21 +95,15 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Department  $department
+     * @param  int $department_id
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function destroy(Department $department)
+    public function destroy(int $department_id)
     {
         $this->authorize('department.delete');
-        try {
-            $department->delete();
+        if ($this->service->destroy($department_id))
             return redirect()
                 ->route("department.index")
                 ->with('danger', __('item deleted successfully'));
-        } catch (\Exception $e) {
-            return redirect()
-                ->route("department.index")
-                ->with('danger', __('Delete is not Completed, Please check child of this department'));
-        }
     }
 }
