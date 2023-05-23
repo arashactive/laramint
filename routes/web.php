@@ -1,6 +1,5 @@
 <?php
 
-use App\Actions\Fortify\CreateNewUser;
 use App\Http\Controllers\Acl\PermissionController;
 use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
@@ -107,7 +106,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::patch('/setting/{user}', [SettingController::class, 'update'])->name('setting.update');
 
-
+    // Repository
     Route::resource('department', DepartmentController::class);
     Route::resource('course', CourseController::class);
     Route::resource('term', TermController::class);

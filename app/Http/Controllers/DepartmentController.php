@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
-
+use App\Services\Back\Educations\DepartmentAdminService;
 
 class DepartmentController extends Controller
 {
+    protected $service;
+    private $viewPath = 'contents.admin.department';
+
+    public function __construct(DepartmentAdminService $service)
+    {
+        $this->service = $service;
+    }
 
     /**
      * Display a listing of the resource.
@@ -17,8 +24,7 @@ class DepartmentController extends Controller
     public function index()
     {
         $this->authorize('department.index');
-        $departments = Department::paginate();
-        return view("contents.admin.department.index", compact("departments"));
+        $this->service->index();
     }
 
     /**
@@ -29,7 +35,7 @@ class DepartmentController extends Controller
     public function create()
     {
         $this->authorize('department.create');
-        return view('contents.admin.department.form');
+        return view($this->viewPath . ".form");
     }
 
     /**
@@ -41,7 +47,7 @@ class DepartmentController extends Controller
     public function store(DepartmentRequest $request)
     {
         $this->authorize('department.create');
-        Department::create($request->all());
+        $this->service->store($request->all());
         return redirect()
             ->route("department.index")
             ->with('success', __('item created successfully'));
@@ -52,28 +58,32 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Department  $department
+     * @param  int  $department
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function edit(Department $department)
+    public function edit($department)
     {
         $this->authorize('department.edit');
-        return view('contents.admin.department.form', compact(
-            "department"
-        ));
+        $department = $this->service->edit($department);
+        return view(
+            $this->viewPath . ".form",
+            compact(
+                "department"
+            )
+        );
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  DepartmentRequest  $request
-     * @param  Department  $department
+     * @param  int  $department
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(DepartmentRequest $request, Department $department)
+    public function update(DepartmentRequest $request, int $department)
     {
         $this->authorize('department.edit');
-        $department->update($request->all());
+        $this->service->update($request->all(), $department);
         return redirect()
             ->route("department.index")
             ->with('warning', __('item updated successfully'));
