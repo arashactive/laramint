@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
-use App\Models\Department;
 use App\Models\Plan;
 use App\Services\Front\CourseServices;
 use App\Services\Front\HomeServices;
@@ -31,13 +30,11 @@ class CourseController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function course($id)
+    public function course($id, CourseServices $courseServices)
     {
+        $courseCompactData = $courseServices->getCourseInfo($id);
 
-        $course = Course::with('Terms')->findorfail($id);
-        return view('contents.front.courses.course', compact([
-            "course"
-        ]));
+        return view('contents.front.courses.course', $courseCompactData);
     }
 
 
@@ -47,15 +44,13 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function plans()
+    public function plans(CourseServices $courseServices)
     {
 
-        $plans = Plan::all();
+        $plans = $courseServices->getPlanPageInfo();
         return view(
             'contents.front.plans.index',
-            compact([
-                "plans"
-            ])
+            $plans
         );
     }
 }
