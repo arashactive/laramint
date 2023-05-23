@@ -6,28 +6,22 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Department;
 use App\Models\Plan;
+use App\Services\Front\CourseServices;
+use App\Services\Front\HomeServices;
 
 class CourseController extends Controller
 {
 
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Courses.
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function courses()
+    public function courses(HomeServices $courseServices)
     {
-        // get 3 departments that you made.
-        $departments = Department::limit(10)->get();
-
-        // get 3 departments that you made.
-        $courses = Course::with('Department', 'Terms')->get();
-
-        return view('contents.front.courses.index', compact([
-            "departments",
-            "courses"
-        ]));
+        $homeCompactReturn = $courseServices->homeIndex();
+        return view('contents.front.courses.index', $homeCompactReturn);
     }
 
 
