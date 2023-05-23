@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DepartmentRequest;
-use App\Models\Department;
 use App\Services\Back\Educations\DepartmentAdminService;
 
 class DepartmentController extends Controller
