@@ -53,7 +53,6 @@ class TermSessionController extends Controller
      */
     public function order($from, $move)
     {
-
         $this->authorize('term.update');
         $this->service->order($from, $move);
         return $this->service->redirectBack();

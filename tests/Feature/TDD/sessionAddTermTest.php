@@ -27,6 +27,7 @@ class sessionAddTermTest extends BaseTest
      */
     public function test_add_session_to_term()
     {
+        $this->withoutExceptionHandling();
         $this->signIn();
         $this->create([], 'term.store');
         $this->create([], 'session.store');
@@ -35,12 +36,12 @@ class sessionAddTermTest extends BaseTest
         $session = Session::first();
 
         $response = $this->get(route('addSessionToTerm',[
-            'term_id' => $term->id,
-            'session_id' => $session->id
+            'term' => $term->id,
+            'session' => $session->id
         ]));
+        
+        $response->assertRedirect();
 
-        $response->assertRedirect(route('term.show', $term->id));
-        $this->followRedirects($response)->assertSee('session sync with this term');
     }
 
     

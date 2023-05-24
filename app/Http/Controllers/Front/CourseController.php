@@ -3,23 +3,28 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Course;
-use App\Models\Plan;
 use App\Services\Front\CourseServices;
 use App\Services\Front\HomeServices;
 
 class CourseController extends Controller
 {
+    protected $homeService;
+    protected $courseService;
 
+    public function __construct(HomeServices $homeService, CourseServices $courseService)
+    {
+        $this->homeService = $homeService;
+        $this->courseService = $courseService;
+    }
 
     /**
      * Display a listing of the Courses.
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function courses(HomeServices $courseServices)
+    public function courses()
     {
-        $homeCompactReturn = $courseServices->homeIndex();
+        $homeCompactReturn = $this->homeService->homeIndex();
         return view('contents.front.courses.index', $homeCompactReturn);
     }
 
@@ -30,9 +35,9 @@ class CourseController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function course($id, CourseServices $courseServices)
+    public function course($id)
     {
-        $courseCompactData = $courseServices->getCourseInfo($id);
+        $courseCompactData = $this->courseService->getCourseInfo($id);
 
         return view('contents.front.courses.course', $courseCompactData);
     }
@@ -44,10 +49,10 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function plans(CourseServices $courseServices)
+    public function plans()
     {
 
-        $plans = $courseServices->getPlanPageInfo();
+        $plans = $this->courseService->getPlanPageInfo();
         return view(
             'contents.front.plans.index',
             $plans
