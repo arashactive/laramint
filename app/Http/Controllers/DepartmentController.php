@@ -8,7 +8,6 @@ use App\Services\Back\Educations\DepartmentAdminService;
 class DepartmentController extends Controller
 {
     protected $service;
-    private $path = 'contents.admin.department';
 
     public function __construct(DepartmentAdminService $service)
     {
@@ -24,9 +23,7 @@ class DepartmentController extends Controller
     {
         $this->authorize('department.index');
         $departments = $this->service->index();
-        return view($this->path . '.index', [
-            'departments' => $departments
-        ]);
+        return $this->service->view('index', compact('departments'));
     }
 
     /**
@@ -37,7 +34,7 @@ class DepartmentController extends Controller
     public function create()
     {
         $this->authorize('department.create');
-        return view($this->path . ".form");
+        return $this->service->view('form');
     }
 
     /**
@@ -50,9 +47,7 @@ class DepartmentController extends Controller
     {
         $this->authorize('department.create');
         $this->service->store($request->all());
-        return redirect()
-            ->route("department.index")
-            ->with('success', __('item created successfully'));
+        return $this->service->redirect();
     }
 
 
@@ -60,19 +55,14 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $department
+     * @param  int  $department_id
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function edit($department)
+    public function edit($department_id)
     {
         $this->authorize('department.edit');
-        $department = $this->service->edit($department);
-        return view(
-            $this->path . ".form",
-            [
-                'department' => $department
-            ]
-        );
+        $department = $this->service->findById($department_id);
+        return $this->service->view('form', compact('department'));
     }
 
     /**
@@ -86,9 +76,7 @@ class DepartmentController extends Controller
     {
         $this->authorize('department.edit');
         $this->service->update($request->all(), $department_id);
-        return redirect()
-            ->route("department.index")
-            ->with('warning', __('item updated successfully'));
+        return $this->service->redirect('warning');
     }
 
     /**
@@ -101,8 +89,6 @@ class DepartmentController extends Controller
     {
         $this->authorize('department.delete');
         if ($this->service->destroy($department_id))
-            return redirect()
-                ->route("department.index")
-                ->with('danger', __('item deleted successfully'));
+            return $this->service->redirect('warning');
     }
 }

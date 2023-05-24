@@ -89,6 +89,6 @@ abstract class Repository
             $this->perPage = $perPage;
         }
 
-        return  $this->model::paginate($this->perPage);
+        return $this->model::paginate($this->perPage);
     }
 }

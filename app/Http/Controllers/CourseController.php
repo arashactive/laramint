@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CourseRequest;
-use App\Models\Course;
-use App\Models\Department;
-
+use App\Services\Back\Educations\CourseAdminService;
 
 class CourseController extends Controller
 {
+
+    protected $service;
+
+    public function __construct(CourseAdminService $service)
+    {
+        $this->service = $service;
+    }
 
     /**
      * Display a listing of the resource.
@@ -18,8 +23,8 @@ class CourseController extends Controller
     public function index()
     {
         $this->authorize('course.index');
-        $courses = Course::paginate();
-        return view("contents.admin.courses.index", compact("courses"));
+        $courses = $this->service->index();
+        return $this->service->view('index', compact('courses'));
     }
 
     /**
@@ -30,10 +35,7 @@ class CourseController extends Controller
     public function create()
     {
         $this->authorize('course.create');
-        $departments = $this->getDepartmentsPluck();
-        return view('contents.admin.courses.form', compact(
-            'departments'
-        ));
+        return $this->service->view('form', $this->service->create());
     }
 
     /**
@@ -45,70 +47,47 @@ class CourseController extends Controller
     public function store(CourseRequest $request)
     {
         $this->authorize('course.create');
-        Course::create($request->all());
-        return redirect()
-            ->route("course.index")
-            ->with('success', __('item created successfully'));
+        $this->service->store($request->all());
+        return $this->service->redirect();
     }
-
 
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Course  $course
+     * @param  int  $course_id
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function edit(Course $course)
+    public function edit($course_id)
     {
         $this->authorize('course.edit');
-        $departments = $this->getDepartmentsPluck();
-        return view('contents.admin.courses.form', compact(
-            "course",
-            "departments"
-        ));
+        return $this->service->view('form', $this->service->edit($course_id));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  CourseRequest $request
-     * @param  Course  $course
+     * @param  int  $course_id
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(CourseRequest $request, Course $course)
+    public function update(CourseRequest $request, $course_id)
     {
         $this->authorize('course.edit');
-        $course->update($request->all());
-        return redirect()
-            ->route("course.index")
-            ->with('warning', __('item updated successfully'));
+        $this->service->update($request->all(), $course_id);
+        return $this->service->redirect('warning');
     }
 
     /**
      * Remove the specified course from storage.
      *
-     * @param  Course  $course
+     * @param  int  $course_id
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function destroy(Course $course)
+    public function destroy($course_id)
     {
         $this->authorize('course.delete');
-        $course->delete();
-        return redirect()
-            ->route("course.index")
-            ->with('danger', __('item deleted successfully'));
-    }
-
-
-
-    /**
-     * getDepartmentsPluck
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    private function getDepartmentsPluck()
-    {
-        return Department::pluck('title', 'id');
+        if ($this->service->destroy($course_id))
+            return $this->service->redirect('warning');
     }
 }

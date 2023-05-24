@@ -3,7 +3,7 @@
 namespace App\Services\Traits;
 
 
-trait CrudService
+trait CrudableService
 {
     /**
      * index method
@@ -25,19 +25,7 @@ trait CrudService
         return $this->repository->store($request);
     }
 
-    /**
-     * store default method
-     * @param int $id
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function edit($id)
-    {
-        return $this->repository->findById($id);
-    }
-
-    protected function show()
-    {
-    }
+  
 
     /**
      * store default method

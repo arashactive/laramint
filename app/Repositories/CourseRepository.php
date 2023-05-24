@@ -8,6 +8,13 @@ use App\Repositories\Repository;
 class CourseRepository extends Repository
 {
 
+    protected $model;
+
+    public function __construct()
+    {
+        $this->model = Course::class;
+    }
+    
     /**
      * Begin querying a model with eager loading.
      *

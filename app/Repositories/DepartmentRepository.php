@@ -14,4 +14,14 @@ class DepartmentRepository extends Repository
     {
         $this->model = Department::class;
     }
+
+    /**
+     * getAllByTitleAndId
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function getAllByTitleAndId()
+    {
+        return $this->model::pluck('title', 'id');
+    }
 }
