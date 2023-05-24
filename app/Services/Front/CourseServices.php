@@ -2,9 +2,8 @@
 
 namespace App\Services\Front;
 
-use App\Repositories\CourseRepository;
-use App\Repositories\DepartmentRepository;
-use App\Repositories\PlanRepository;
+use App\Repositories\Contracts\CourseInterfaceRepository;
+use App\Repositories\Contracts\PlanInterfaceRepository;
 
 class CourseServices
 {
@@ -12,8 +11,8 @@ class CourseServices
     private $planRepository;
 
     public function __construct(
-        CourseRepository $courseRepository,
-        PlanRepository $planRepository
+        CourseInterfaceRepository $courseRepository,
+        PlanInterfaceRepository $planRepository
     ) {
         $this->planRepository = $planRepository;
         $this->courseRepository = $courseRepository;

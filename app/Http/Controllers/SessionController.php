@@ -6,12 +6,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SessionRequest;
 use App\Models\Session;
 use App\Models\Sessionable;
-use App\Traits\Sequence;
+
 
 class SessionController extends Controller
 {
-    use Sequence;
-
     /**
      * Display a listing of the resource.
      *

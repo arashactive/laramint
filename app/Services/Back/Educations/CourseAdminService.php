@@ -2,20 +2,26 @@
 
 namespace App\Services\Back\Educations;
 
-use App\Repositories\CourseRepository;
-use App\Repositories\DepartmentRepository;
+use App\Repositories\Contracts\CourseInterfaceRepository;
+use App\Repositories\Contracts\DepartmentInterfaceRepository;
 use App\Services\Back\Services;
 use App\Services\Traits\CrudableService;
 
 class CourseAdminService extends Services
 {
     use CrudableService;
+
     protected $path = 'contents.admin.courses';
     protected $route = 'course';
 
-    public function __construct(CourseRepository $courseRepository)
-    {
+    protected $departmentRepository;
+
+    public function __construct(
+        CourseInterfaceRepository $courseRepository,
+        DepartmentInterfaceRepository $departmentRepository
+    ) {
         $this->repository = $courseRepository;
+        $this->departmentRepository = $departmentRepository;
     }
 
 
@@ -26,8 +32,7 @@ class CourseAdminService extends Services
      */
     public function create()
     {
-        $departmentRepository = new DepartmentRepository();
-        return ['departments' => $departmentRepository->getAllByTitleAndId()];
+        return ['departments' => $this->departmentRepository->getAllByTitleAndId()];
     }
 
     /**
@@ -35,12 +40,12 @@ class CourseAdminService extends Services
      * @param int $course_id
      * @return array
      */
-    public function edit($course_id)
-    {
-        $departmentRepository = new DepartmentRepository();
+    public function edit(
+        $course_id
+    ) {
         return [
             'course' => $this->repository->findById($course_id),
-            'departments' => $departmentRepository->getAllByTitleAndId()
+            'departments' => $this->departmentRepository->getAllByTitleAndId()
         ];
     }
 }

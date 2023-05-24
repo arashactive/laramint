@@ -52,4 +52,16 @@ abstract class Services
             ->route($routeName != '' ? $routeName : $this->route . '.index')
             ->with($messageType, __($this->messageValue[$messageType]));
     }
+
+    /**
+     * Redirect To previus url
+     * @param string $messageType
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     */
+    public function redirectBack($messageType = 'success')
+    {
+        return redirect()
+            ->back()
+            ->with($messageType, __($this->messageValue[$messageType]));
+    }
 }

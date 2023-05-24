@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Models;
 
 use App\Models\Course;
-use App\Repositories\Repository;
+use App\Repositories\Contracts\CourseInterfaceRepository;
+use App\Repositories\BaseRepository;
 
-class CourseRepository extends Repository
+class CourseRepository extends BaseRepository implements CourseInterfaceRepository
 {
 
     protected $model;
 
-    public function __construct()
+    public function __construct(Course $course)
     {
-        $this->model = Course::class;
+        $this->model = $course;
     }
-    
+
     /**
      * Begin querying a model with eager loading.
      *
@@ -36,5 +37,16 @@ class CourseRepository extends Repository
     public function getCourseInfo($course_id)
     {
         return Course::with("Terms")->findorfail($course_id);
+    }
+
+
+    /**
+     * getAllByTitleAndId
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function getAllByTitleAndId()
+    {
+        return $this->model::pluck('title', 'id');
     }
 }

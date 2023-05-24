@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-abstract class Repository
+abstract class BaseRepository
 {
 
     protected $model;
@@ -21,11 +21,22 @@ abstract class Repository
      * @var int
      */
     protected $perPage = 15;
-
+    
+    /**
+     * with
+     *
+     * @param  mixed $relations
+     * @return void
+     */
+    public function with($relations)
+    {
+        $this->model::with($relations);
+        return $this;
+    }
 
     public function findById($id)
     {
-        return $this->model::findOrFail($id);
+        return $this->model->findOrFail($id);
     }
 
     /**
@@ -35,7 +46,7 @@ abstract class Repository
      */
     public function store($request)
     {
-        return  $this->model::create($request);
+        return  $this->model->create($request);
     }
 
     /**
@@ -54,7 +65,7 @@ abstract class Repository
      * @param int id
      * @return void
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
         $record = $this->findById($id);
         return $record->delete($record);

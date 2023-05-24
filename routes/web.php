@@ -7,9 +7,11 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\Badges\BadgeController;
 use App\Http\Controllers\Admin\Menu\CourseManagmentController;
 use App\Http\Controllers\ConfigurationController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\Education\CourseController;
+use App\Http\Controllers\Education\DepartmentController;
+use App\Http\Controllers\Education\Term\TermController;
+use App\Http\Controllers\Education\Term\TermSessionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\Front\CourseController as FrontCourseController;
@@ -28,7 +30,6 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RubricController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SettingController;
-use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -154,9 +155,9 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
 
 
     // add session  to term
-    Route::get('/addSessionToTerm/{term}/{session}', [TermController::class, 'addSessionToTerm'])->name("addSessionToTerm");
-    Route::get('/orderChangeSession/{from}/{move}', [TermController::class, 'orderChangeSession'])->name("orderChangeSession");
-    Route::get('/deleteSessionAsTerm/{term}/{session}', [TermController::class, 'deleteSessionAsTerm'])->name("deleteSessionAsTerm");
+    Route::get('/term/add/{term}/session/{session}', [TermSessionController::class, 'store'])->name("addSessionToTerm");
+    Route::get('/term/remove/{term}/session/{session}', [TermSessionController::class, 'destroy'])->name("deleteSessionAsTerm");
+    Route::get('/term/order/{from}/{move}', [TermSessionController::class, 'order'])->name("orderChangeSession");
 
     // ACL Route
     Route::resource('user', UserController::class)->middleware('role:Super-Admin');

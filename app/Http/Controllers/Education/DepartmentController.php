@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Education;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\DepartmentRequest;
 use App\Services\Back\Educations\DepartmentAdminService;
 

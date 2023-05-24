@@ -2,10 +2,8 @@
 
 namespace Tests\Feature\TDD;
 
-use App\Http\Livewire\Container\SessionPanel;
 use App\Models\Session;
 use App\Models\Term;
-use Livewire\Livewire;
 use Tests\BaseTest;
 
 class sessionAddTermTest extends BaseTest
@@ -37,8 +35,8 @@ class sessionAddTermTest extends BaseTest
         $session = Session::first();
 
         $response = $this->get(route('addSessionToTerm',[
-            'term' => $term->id,
-            'session' => $session->id
+            'term_id' => $term->id,
+            'session_id' => $session->id
         ]));
 
         $response->assertRedirect(route('term.show', $term->id));
