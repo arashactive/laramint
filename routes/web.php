@@ -45,6 +45,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('/about', [FrontController::class, 'about'])->name('about');
+Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
+Route::get('/contact', [FrontController::class, 'contact'])->name('contact');
 
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function () {

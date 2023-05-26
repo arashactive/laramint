@@ -22,5 +22,35 @@ class FrontController extends Controller
         return view('contents.front.index.welcome', $homeCompactReturn);
     }
 
+    /**
+     * Make About Us Page
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function about()
+    {
+        return view('contents.front.index.about');
+    }
+
+    /**
+     * Make Contact Us
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function gallery()
+    {
+        return view('contents.front.index.gallery');
+    }
+
+    /**
+     * Make Contact Us
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function contact()
+    {
+        return view('contents.front.index.contact');
+    }
+
     
 }
