@@ -16,8 +16,26 @@ class StudentDocsCOntroller extends Controller
     public function index()
     {
         $this->authorize('student_doc.index');
-        $student_docs = Badge::paginate();
+        $student_docs = StudentDocs::paginate();
         return view("contents.admin.student_docs.index", compact("student_docs"));
+    }
+
+    public function dashboard()
+    {
+        $this->authorize('student_doc.dashboard');
+        // total
+        $total_applications = StudentDocs::count();
+        // mobile
+        $verified_mobile_applications = StudentDocs::where('is_mobile_verified',1)->count();
+        $not_verified_mobile_applications = StudentDocs::where('is_mobile_verified',0)->count();
+        // email
+        $verified_email_applications = StudentDocs::where('is_email_verified',1)->count();
+        $not_verified_email_applications = StudentDocs::where('is_email_verified',0)->count();
+        $data['label'] = ['Verified Mobiles','Mobile Not Verified', 'Verified Email','Email Not Verified'];
+        $data['data'] = [$verified_mobile_applications,$not_verified_mobile_applications,$verified_email_applications,$not_verified_email_applications];
+        $data['chart_data'] = json_encode($data);
+        return view("contents.admin.student_docs.dashboard", compact("total_applications",'verified_mobile_applications',
+                'not_verified_mobile_applications','verified_email_applications','not_verified_email_applications','data'));
     }
 
     /**

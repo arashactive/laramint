@@ -48,7 +48,7 @@
             <i class="fas fa-fw fa-upload"></i>
             <span>{{ __("Document Upload") }}</span></a>
     </li>
-    <li class="nav-item">
+<!--    <li class="nav-item">
         <x-buttons.create itemId="{{ auth::user()->id }}" path="student_doc.create" />
     </li>
     <li class="nav-item">
@@ -56,7 +56,7 @@
     </li>
     <li class="nav-item">
         <x-EditButton itemId="{{ auth::user()->id }}" path="student_doc.edit" />
-    </li>
+    </li>-->
 
 @endrole
 <!-- Divider -->
@@ -113,9 +113,14 @@
         {{ __('Student Document(s)') }}
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('student_doc.create') }}">
+        <a class="nav-link" href="{{ route('student_doc.index') }}">
             <i class="fas fa-fw fa-upload"></i>
-            <span>{{ __("Document Upload") }}</span></a>
+            <span>{{ __("All Student Document(s)") }}</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.studentDashboard') }}">
+            <i class="fas fa-fw fa-upload"></i>
+            <span>{{ __("Student Dashboard") }}</span></a>
     </li>
 
 <div class="sidebar-heading">
