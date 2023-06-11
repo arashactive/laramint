@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
             PermissionsSeeder::class,
 
             DepartmentSeed::class,
-            CourseSeed::class,
-            TermSeed::class,
+//            CourseSeed::class,
+//            TermSeed::class,
             SessionSeed::class,
 
             DocumentSeed::class,
@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             PlanSeeder::class,
             ConfigurationSeed::class,
             BadgeSeeder::class,
+            LandingPageSeeder::class,
         ]);
     }
 }

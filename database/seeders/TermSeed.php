@@ -128,14 +128,14 @@ class TermSeed extends Seeder
         // teenager department && Got It Starter Course
         # 15
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Starter Term #1',
+            'title' => 'Integrated Software Training Starter Term #1',
             'department_id' => 2,
             'course_id' => 6
         ]);
 
         # 16
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Starter Term #2',
+            'title' => 'Integrated Software Training Starter Term #2',
             'department_id' => 2,
             'course_id' => 6
         ]);
@@ -144,21 +144,21 @@ class TermSeed extends Seeder
         // teenager department && Got It level 1
         # 17
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #1 Term #1',
+            'title' => 'Integrated Software Training Level #1 Term #1',
             'department_id' => 2,
             'course_id' => 2
         ]);
 
         # 18
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #1 Term #2',
+            'title' => 'Integrated Software Training Level #1 Term #2',
             'department_id' => 2,
             'course_id' => 7
         ]);
 
         # 19
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #1 Term #3',
+            'title' => 'Integrated Software Training Level #1 Term #3',
             'department_id' => 2,
             'course_id' => 7
         ]);
@@ -167,21 +167,21 @@ class TermSeed extends Seeder
         // teenager department && Got It level 2
         # 20
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #2 Term #1',
+            'title' => 'Integrated Software Training Level #2 Term #1',
             'department_id' => 2,
             'course_id' => 8
         ]);
 
         # 21
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #2 Term #2',
+            'title' => 'Integrated Software Training Level #2 Term #2',
             'department_id' => 2,
             'course_id' => 8
         ]);
 
         # 22
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #2 Term #3',
+            'title' => 'Integrated Software Training Level #2 Term #3',
             'department_id' => 2,
             'course_id' => 8
         ]);
@@ -190,21 +190,21 @@ class TermSeed extends Seeder
         // teenager department && Got It level 3
         # 23
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #3 Term #1',
+            'title' => 'Integrated Software Training Level #3 Term #1',
             'department_id' => 2,
             'course_id' => 9
         ]);
 
         # 24
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #3 Term #2',
+            'title' => 'Integrated Software Training Level #3 Term #2',
             'department_id' => 2,
             'course_id' => 9
         ]);
 
         # 25
         \App\Models\Term::factory()->create([
-            'title' => 'Teen Level #3 Term #3',
+            'title' => 'Integrated Software Training Level #3 Term #3',
             'department_id' => 2,
             'course_id' => 9
         ]);    
@@ -214,14 +214,14 @@ class TermSeed extends Seeder
         // kids department && Family & Friend Starter
         # 26
         \App\Models\Term::factory()->create([
-            'title' => 'Kids Starter Term #1',
+            'title' => 'Software Training Starter Term #1',
             'department_id' => 3,
             'course_id' => 10
         ]);
 
         # 27
         \App\Models\Term::factory()->create([
-            'title' => 'Kids Starter Term #2',
+            'title' => 'Software Training Starter Term #2',
             'department_id' => 3,
             'course_id' => 10
         ]);

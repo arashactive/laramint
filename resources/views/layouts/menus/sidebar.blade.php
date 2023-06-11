@@ -36,104 +36,139 @@
             <span>{{ __("My Course") }}</span></a>
     </li>
 
+@role('student')
     <!-- Divider -->
     <hr class="sidebar-divider">
-
-
-
-    @can('menu.education')
     <!-- Heading -->
     <div class="sidebar-heading">
-        {{ __('Education') }}
+        {{ __('My Document(s)') }}
     </div>
-
-    @can('mentor.list')
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MentorsCollapse" aria-expanded="true" aria-controls="ACLCollapse">
-            <i class="fas fa-fw fa-clipboard"></i>
-            <span>Learners</span>
-        </a>
-        <div id="MentorsCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+        <a class="nav-link" href="{{ route('student_doc.create') }}">
+            <i class="fas fa-fw fa-upload"></i>
+            <span>{{ __("Document Upload") }}</span></a>
+    </li>
+    <li class="nav-item">
+        <x-buttons.create itemId="{{ auth::user()->id }}" path="student_doc.create" />
+    </li>
+    <li class="nav-item">
+        <x-buttons.show itemId="{{ auth::user()->id }}" path="student_doc.show" />
+    </li>
+    <li class="nav-item">
+        <x-EditButton itemId="{{ auth::user()->id }}" path="student_doc.edit" />
+    </li>
 
-                <a class="collapse-item" href="{{ route('myLearners') }}">{{ __('My Learners') }}</a>
+@endrole
+<!-- Divider -->
+<hr class="sidebar-divider">
 
-            </div>
+
+
+@can('menu.education')
+<!-- Heading -->
+<div class="sidebar-heading">
+    {{ __('Education') }}
+</div>
+
+@can('mentor.list')
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MentorsCollapse" aria-expanded="true" aria-controls="ACLCollapse">
+        <i class="fas fa-fw fa-clipboard"></i>
+        <span>Learners</span>
+    </a>
+    <div id="MentorsCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+
+            <a class="collapse-item" href="{{ route('myLearners') }}">{{ __('My Learners') }}</a>
 
         </div>
 
-    </li>
-    @endcan
+    </div>
 
-    @can('course.index')
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('adminMenuCourse') }}">
-            <i class="fas fa-fw fa-chalkboard-teacher"></i>
-            <span>{{ __("Education Center") }}</span></a>
-    </li>
-    @endcan
+</li>
+@endcan
 
-    @endcan
+@can('course.index')
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('adminMenuCourse') }}">
+        <i class="fas fa-fw fa-chalkboard-teacher"></i>
+        <span>{{ __("Education Center") }}</span></a>
+</li>
+@endcan
 
-
-    @can('menu.education')
-
+@endcan
 
 
+@can('menu.education')
 
-    @role('Super-Admin')
 
+
+
+@role('Super-Admin')
+
+<!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Heading -->
     <div class="sidebar-heading">
-        {{ __('Financial') }}
+        {{ __('Student Document(s)') }}
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Financial" aria-expanded="true" aria-controls="ACLCollapse">
-            <i class="fas fa-fw fa-credit-card"></i>
-            <span>{{ __('Financial') }}</span>
-        </a>
-        <div id="Financial" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('plan.index') }}">{{ __('Plan') }}</a>
+        <a class="nav-link" href="{{ route('student_doc.create') }}">
+            <i class="fas fa-fw fa-upload"></i>
+            <span>{{ __("Document Upload") }}</span></a>
+    </li>
 
-            </div>
+<div class="sidebar-heading">
+    {{ __('Financial') }}
+</div>
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Financial" aria-expanded="true" aria-controls="ACLCollapse">
+        <i class="fas fa-fw fa-credit-card"></i>
+        <span>{{ __('Financial') }}</span>
+    </a>
+    <div id="Financial" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{ route('plan.index') }}">{{ __('Plan') }}</a>
+
         </div>
-    </li>
-
-
-    <div class="sidebar-heading">
-        {{ __('Admin Configuration') }}
     </div>
-    <!-- Nav Item - Admin Setup LMS -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse" aria-expanded="true" aria-controls="ACLCollapse">
-            <i class="fas fa-fw fa-users-cog"></i>
-            <span>ACL</span>
-        </a>
-        <div id="ACLCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('user.index') }}">{{ __('User') }}</a>
-                <a class="collapse-item" href="{{ route('role.index') }}">{{ __('Role') }}</a>
-                <a class="collapse-item" href="{{ route('permission.index') }}">{{ __('Permission') }}</a>
-            </div>
+</li>
+
+
+<div class="sidebar-heading">
+    {{ __('Admin Configuration') }}
+</div>
+<!-- Nav Item - Admin Setup LMS -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ACLCollapse" aria-expanded="true" aria-controls="ACLCollapse">
+        <i class="fas fa-fw fa-users-cog"></i>
+        <span>ACL</span>
+    </a>
+    <div id="ACLCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{ route('user.index') }}">{{ __('User') }}</a>
+            <a class="collapse-item" href="{{ route('role.index') }}">{{ __('Role') }}</a>
+            <a class="collapse-item" href="{{ route('permission.index') }}">{{ __('Permission') }}</a>
         </div>
-    </li>
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('configuration.index') }}">
-            <i class="fas fa-fw fa-book-reader"></i>
-            <span>{{ __("Configuration") }}</span></a>
-    </li>
-
-    @endrole
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-    @endcan
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
+</li>
+
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('configuration.index') }}">
+        <i class="fas fa-fw fa-book-reader"></i>
+        <span>{{ __("Configuration") }}</span></a>
+</li>
+
+@endrole
+
+<!-- Divider -->
+<hr class="sidebar-divider d-none d-md-block">
+@endcan
+<!-- Sidebar Toggler (Sidebar) -->
+<div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+</div>
 
 </ul>
 <!-- End of Sidebar -->

@@ -14,6 +14,7 @@ class Uploadable extends Component
     use WithFileUploads, WithRuleUploaded;
     
 
+    public string $file_name = '';
     public string $path = '';
     public $file;
 
