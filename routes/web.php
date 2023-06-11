@@ -5,6 +5,7 @@ use App\Http\Controllers\Acl\RoleController;
 use App\Http\Controllers\Acl\UserController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\Badges\BadgeController;
+use App\Http\Controllers\Admin\StudentDocsCOntroller as AdminStudentDocsController;
 use App\Http\Controllers\Admin\Menu\CourseManagmentController;
 use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\DocumentController;
@@ -17,6 +18,10 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\Front\CourseController as FrontCourseController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\StudentDocsController;
+use App\Http\Controllers\LandingPagesController;
+use App\Http\Controllers\WhatsAppDigitalSMSAPIController;
+use App\Http\Controllers\OtpMailSMSController;
 use App\Http\Controllers\learn\WorkoutController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\Mentors\MentorCommentsController;
@@ -44,10 +49,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function(){
+//    return view('welcome');
+//})->name('home');
 Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [FrontController::class, 'contact'])->name('contact');
+Route::get('/landing_page/{page_url}', [LandingPagesController::class, 'landing_page_for']);
+Route::post('/verify_mobile/', [WhatsAppDigitalSMSAPIController::class, 'verify_mobile'])->name('verify_mobile');
+//Route::get('/sendSMS/', [WhatsAppDigitalSMSAPIController::class, 'sendSMS']);
+Route::post('/sendSMS/', [OtpMailSMSController::class, 'sendSMS']);
+Route::post('/student_enroll', [LandingPagesController::class, 'store'])->name('student_enroll.store');
+//Route::get('/create_user/{name}/{email}', [LandingPagesController::class, 'create_user']);
+Route::get('/send_mail', [LandingPagesController::class, 'send_mail']);
 
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
@@ -68,6 +83,12 @@ Route::prefix('learn')->middleware(['verified'])->group(function () {
     Route::post('/task/{participant}/{sessionable}', [WorkoutController::class, 'prepared'])->name('taskLearnerPrepared');
     Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
 
+//    // my course route
+//    Route::get('docUpload', [StudentDocsController::class, 'create'])->name('docUpload');
+    Route::resource('student_doc', StudentDocsController::class);
+//    Route::get('student_doc', [StudentDocsController::class, 'create'])->name('student_doc.store');
+//    Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
+    Route::post('/quiz/workout', [WorkoutController::class, 'workout'])->name('quizWorkout');
     // my course route
     Route::get('my/course', [MyCourseController::class, 'myCourse'])->name('myCourse');
     Route::get('my/course/{participant}', [MyCourseController::class, 'learn'])->name('learningCourse');
@@ -124,6 +145,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('feedback', FeedbackController::class);
     Route::resource('plan', PlanController::class);
     Route::resource('badges', BadgeController::class);
+    Route::resource('student_doc', AdminStudentDocsController::class);
 
 
     // signle functions:

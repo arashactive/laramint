@@ -12,17 +12,19 @@
                 <p><i class="fa fa-envelope me-3"></i><a style="color: white" href="mailto:icetagr@gmail.com">icetagr@gmail.com</a></p>
                 <p><i class="fa fa-envelope me-3"></i><a style="color: white" href="mailto:arvindsutail@gmail.com">arvindsutail@gmail.com</a></p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/icetagra"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/groups/617435264962620"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Privacy Policy</a>
+                <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                <a class="btn btn-link" href="{{ route('front.courses') }}">Courses</a>
+                <a class="btn btn-link" href="{{ route('gallery') }}">Gallery</a>
+                <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
+                <a class="btn btn-link" href="{{ route('gallery') }}">Privacy Policy</a>
                 <a class="btn btn-link" href="">Terms & Condition</a>
                 <a class="btn btn-link" href="">Career</a>
             </div>
@@ -38,8 +40,11 @@
                 </div>
                 <div class="row g-2">
                     <p>
-                        <strong>Accredited By</strong> National Institute of Electronics &amp; Information Technology (NIELT)
+                        <strong><u>Accredited By</u></strong> National Institute of Electronics &amp; Information Technology (NIELT)
                         Govt. of India and UPDESCO (U.P. Govt) Authorized Training Center
+                    </p>
+                    <p>
+                        ICET Computer Education, Agra is one of the foremost Technical Institute in the state of U.P. It offers certificate programme in Information Technology stream and aim to provide Quality Technician Education to meet the requirement of the changing education scenario.
                     </p>
                 </div>
             </div>

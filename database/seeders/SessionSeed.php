@@ -18,22 +18,22 @@ class SessionSeed extends Seeder
     {
 
         $sessions = [];
-        #1 Session Adult
+        #1 Session Software Training
         $sessions[] = \App\Models\Session::factory()->create([
             'title' => 'adults | session #1',
         ]);
 
-        #2 Session Adult
+        #2 Session Software Training
         $sessions[] = \App\Models\Session::factory()->create([
             'title' => 'adults | session #2',
         ]);
 
-        #3 Session Adult
+        #3 Session Software Training
         $sessions[] = \App\Models\Session::factory()->create([
             'title' => 'adults | session #3',
         ]);
 
-        #4 Session Adult
+        #4 Session Software Training
         $sessions[] = \App\Models\Session::factory()->create([
             'title' => 'adults | session #4',
         ]);
@@ -41,25 +41,25 @@ class SessionSeed extends Seeder
         $this->sessionsAddToTerm(1, $sessions);
         $sessions = [];
 
-        # Teenage
-        #5 Session Teenage
+        # Custom Software Training
+        #5 Session Custom Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Teenage | session #1',
+            'title' => 'Custom Software Training | session #1',
         ]);
 
-        #6 Session Teenage
+        #6 Session Custom Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Teenage | session #2',
+            'title' => 'Custom Software Training | session #2',
         ]);
 
-        #7 Session Teenage
+        #7 Session Custom Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Teenage | session #3',
+            'title' => 'Custom Software Training | session #3',
         ]);
 
-        #8 Session Teenage
+        #8 Session Custom Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Teenage | session #4',
+            'title' => 'Custom Software Training | session #4',
         ]);
 
 
@@ -67,24 +67,24 @@ class SessionSeed extends Seeder
         $sessions = [];
 
         # kids
-        #9 Session Kids
+        #9 Session Intergrate Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Kids | session #1',
+            'title' => 'Intergrate Software Training | session #1',
         ]);
 
-        #10 Session Kids
+        #10 Session Intergrate Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Kids | session #2',
+            'title' => 'Intergrate Software Training | session #2',
         ]);
 
-        #11 Session Kids
+        #11 Session Intergrate Software Training
         $sessions[] =  \App\Models\Session::factory()->create([
-            'title' => 'Kids | session #3',
+            'title' => 'Intergrate Software Training | session #3',
         ]);
 
-        #12 Session Kids
+        #12 Session Intergrate Software Training
         $sessions[] = \App\Models\Session::factory()->create([
-            'title' => 'Kids | session #4',
+            'title' => 'Intergrate Software Training | session #4',
         ]);
 
         $this->sessionsAddToTerm(3, $sessions);

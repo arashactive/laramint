@@ -15,22 +15,22 @@ class ConfigurationSeed extends Seeder
     {
         \App\Models\Configuration::factory()->create([
             'config_type' => 'SiteName',
-            'config_value' => json_encode('Laramint LMS'),
+            'config_value' => json_encode('ICET Agra'),
             'config_category' => 'global'
         ]);
 
 
         \App\Models\Configuration::factory()->create([
-            'config_type' => 'NoReplyEmail',
+            'config_type' => 'ICETAgra',
             'config_value' => json_encode([
                 'MAIL_MAILER' => 'smtp',
-                'MAIL_HOST' => 'laramint.com',
+                'MAIL_HOST' => 'gmail.com',
                 'MAIL_PORT' => '465',
-                'MAIL_USERNAME' => 'no-reply@laramint.com',
+                'MAIL_USERNAME' => 'arvindsutail@gmail.com',
                 'MAIL_PASSWORD' => '*********',
                 'MAIL_ENCRYPTION' => null,
-                'MAIL_FROM_ADDRESS' => 'no-reply@laramint.com',
-                'MAIL_FROM_NAME' => "No-Reply: LMS Gamification",
+                'MAIL_FROM_ADDRESS' => 'arvindsutail@gmail.com',
+                'MAIL_FROM_NAME' => "ICET Agra",
             ]),
             'config_category' => 'global'
         ]);

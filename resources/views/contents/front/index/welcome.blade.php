@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-
+<a href="http://127.0.0.1:8000/landing_page/free-o-level-2023-24">Click herer</a>
  <!-- Department Start -->
  @if(count($departments) > 1)
  <div class="container-xxl py-5 d-none">
@@ -125,41 +125,51 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
-                        <i class="fa fa-search fa-2x"></i>
+                        <i class="fa fa-book fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">Effective and efficient</h5>
-                    <p class="m-0">Our courses effectively and efficiently teach reading, listening, and speaking skills. Check out our latest research!</p>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                    <h5 class="mb-3">Curriculum</h5>
+                    <p class="m-0">A world class curriculum developed by ICET in close partnership with NIELT offers course like CCC, BCC, OLEVEL. The programmes we offer are desgined by our team of experts, based on the global industry requirements</p>
+                    <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
-                        <i class="fa fa-laptop-code fa-2x"></i>
+                        <i class="fa fa-rupee-sign fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">Personalized learning</h5>
-                    <p class="m-0">Combining the best of AI and language science, lessons are tailored to help you learn at just the right level and pace.</p>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                    <h5 class="mb-3">Cost Effectiveness</h5>
+                    <p class="m-0">At ICET our aim is to bring global expertise and world class knowledge to you in the most cost effective manner. With a strong nation wide network of training centres, we work hard to bring down the cost of training.</p>
+                    <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
-                        <i class="fab fa-facebook-f fa-2x"></i>
+                        <i class="fa fa-bullseye fa-2x"></i>
+                    </div>
+                    <h5 class="mb-3">Objective</h5>
+                    <p class="m-0">For an elite major likes computer science, to attract people joining course, a creation and innovation is needed. ICET give you visual tools to help students approach this field most effectively.</p>
+                    <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
+                </div>
+            </div>
+<!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item d-flex flex-column text-center rounded">
+                    <div class="service-icon flex-shrink-0">
+                        <i class="fab fa- fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Stay motivated</h5>
                     <p class="m-0">We make it easy to form a habit of language learning, with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
                 </div>
-            </div>
+            </div>-->
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
-                        <i class="fa fa-mail-bulk fa-2x"></i>
+                        <i class="fa fa-smile-beam fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Have fun with it!</h5>
                     <p class="m-0">Effective learning doesn’t have to be boring! Build your skills each day with engaging exercises and playful characters.</p>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                    <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
             
@@ -168,24 +178,6 @@
 </div>
 <!-- Service End -->
 
-
-<!-- Newsletter Start -->
-<div class="container-xxl bg-primary newsletter py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5 px-lg-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 text-center">
-                <p class="section-title text-white justify-content-center"><span></span>Newsletter<span></span></p>
-                <h1 class="text-center text-white mb-4">Stay Always In Touch</h1>
-                <p class="text-white mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo</p>
-                <div class="position-relative w-100 mt-3">
-                    <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
-                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Newsletter End -->
 
 
 <!-- Projects Start -->
@@ -231,35 +223,45 @@
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
-        <h1 class="text-center mb-5">What Say Our Students!</h1>
+        <h1 class="text-center mb-5">What Our Students Say!</h1>
         <div class="owl-carousel testimonial-carousel">
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET so far has been the best thing that has happened to me… Its difficult to find such a place where people are so different, so competitive and yet so close to each other… and when it comes to the Institute… its a heaven on earth…”</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-1.jpg" style="width: 65px; height: 65px;">
+                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-1.jpg" style="width: 65px; height: 65px;">-->
                     <div class="ps-4">
-                        <h5 class="mb-1">Student Name</h5>
-                        <span>Web designing</span>
+                        <h5 class="mb-1">Dharmendar</h5>
+                        <!--<span>Web designing</span>-->
                     </div>
                 </div>
             </div>
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET has provided me the platform to accomplish all my dreams. It has given me an opportunity to unleash my full potential and to materialize my career goals. ICET has prepared me to face every battle in corporate world.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-2.jpg" style="width: 65px; height: 65px;">
+                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-2.jpg" style="width: 65px; height: 65px;">-->
                     <div class="ps-4">
-                        <h5 class="mb-1">Student Name</h5>
-                        <span>O Level</span>
+                        <h5 class="mb-1">Neha Thakur</h5>
+                        <!--<span>O Level</span>-->
                     </div>
                 </div>
             </div>
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>I always get a high from the kind of energy that prevails on campus. There is so much to do even when there is nothing to do, from struggling to finish assignments to rushing for maggi at 4am.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">
+                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">-->
                     <div class="ps-4">
-                        <h5 class="mb-1">Student Name</h5>
-                        <span>CCC</span>
+                        <h5 class="mb-1">Akash Jaishwal</h5>
+                        <!--<span>CCC</span>-->
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide gamut of activities ranging from interest groups to online gaming events provide everyone with ample opportunities to go beyond just academics.</p>
+                <div class="d-flex align-items-center">
+                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">-->
+                    <div class="ps-4">
+                        <h5 class="mb-1">Jyoti Sharma</h5>
+                        <!--<span>CCC</span>-->
                     </div>
                 </div>
             </div>

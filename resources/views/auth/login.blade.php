@@ -55,23 +55,28 @@
                                         
                                     </form>
 
+                                    
+                                    
                                     <label>super admin:</label><br/>
-                                    <strong>username: </strong><span>arash.aspx@gmail.com</span><br/>
+                                    <strong>username: </strong><span>arvindsutail@gmail.com</span><br/>
                                     <strong>password: </strong><span>password</span>
                                     <hr>
                                     <label>supervisor:</label><br/>
-                                    <strong>username: </strong><span>supervisor@laramint.com</span><br/>
+                                    <strong>username: </strong><span>supervisor@icetagra.com</span><br/>
                                     <hr>
                                     <label>student:</label><br/>
-                                    <strong>username: </strong><span>student@laramint.com</span><br/>
+                                    <strong>username: </strong><span>student1@icetagra.com</span><br/>
                                     <hr>
 
-                                    {{-- <div class="text-center">
-                                        <a class="small" href="forgot-password">Forgot Password?</a>
+<!--                                     <div class="text-center mb-3">
+                                        <a class="btn btn-user btn-block btn-danger" href="forgot-password">Forgot Password?</a>
+                                    </div>-->
+                                    <div class="text-center mb-4">
+                                        <a class="btn btn-user btn-block btn-secondary" href="register">Create an Account!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register">Create an Account!</a>
-                                    </div> --}}
+                                        <a class="btn btn-user btn-block btn-primary" href="/">Home</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -80,8 +80,14 @@ class PermissionsSeeder extends Seeder
 
         // Super Admin
         $admin = \App\Models\User::factory()->create([
-            'name' => 'Arash Dehghani',
-            'email' => 'arash.aspx@gmail.com',
+            'name' => 'Arvind Sutail',
+            'email' => 'arvindsutail@gmail.com',
+        ]);
+        $admin->assignRole($role1);
+        
+        $admin = \App\Models\User::factory()->create([
+            'name' => 'Monica Mam',
+            'email' => 'icetagr@gmail.com',
         ]);
         $admin->assignRole($role1);
 
@@ -92,21 +98,21 @@ class PermissionsSeeder extends Seeder
         // SuperVisors Adults
         $supervisor = \App\Models\User::factory()->create([
             'name' => 'SuperVisor',
-            'email' => 'supervisor@laramint.com',
+            'email' => 'supervisor@icetagra.com',
         ]);
         $supervisor->assignRole($role2);
 
-        // SuperVisors Kids
+        // SuperVisors Two
         $supervisorKids = \App\Models\User::factory()->create([
-            'name' => 'SuperVisor Kids',
-            'email' => 'kids_supervisor@laramint.com',
+            'name' => 'SuperVisor Two',
+            'email' => 'supervisor2@icetagra.com',
         ]);
         $supervisorKids->assignRole($role2);
 
-        // SuperVisors Teenage
+        // SuperVisors Three
         $supervisorTeenage = \App\Models\User::factory()->create([
-            'name' => 'SuperVisor Teenage',
-            'email' => 'teenage_supervisor@laramint.com',
+            'name' => 'SuperVisor Three',
+            'email' => 'supervisor3@icetagra.com',
         ]);
         $supervisorTeenage->assignRole($role2);
 
@@ -117,22 +123,22 @@ class PermissionsSeeder extends Seeder
 
         // mentor adults
         $mentor = \App\Models\User::factory()->create([
-            'name' => 'mentor',
-            'email' => 'mentor@laramint.com',
+            'name' => 'mentor one',
+            'email' => 'mentor1@icetagra.com',
         ]);
         $mentor->assignRole($role3);
 
         // mentor kids
         $mentorKids = \App\Models\User::factory()->create([
-            'name' => 'mentor kids',
-            'email' => 'kids_mentor@laramint.com',
+            'name' => 'mentor two',
+            'email' => 'mentor2@icetagra.com',
         ]);
         $mentorKids->assignRole($role3);
 
         // mentor teenage
         $mentorTeenage = \App\Models\User::factory()->create([
-            'name' => 'mentor teenage',
-            'email' => 'teenage_mentor@laramint.com',
+            'name' => 'mentor three',
+            'email' => 'mentor3@icetagra.com',
         ]);
         $mentorTeenage->assignRole($role3);
 
@@ -143,26 +149,26 @@ class PermissionsSeeder extends Seeder
         * students Users
         */
 
-        // adult student
+        // student one
         $student = \App\Models\User::factory()->create([
-            'name' => 'student',
-            'email' => 'student@laramint.com',
+            'name' => 'student One',
+            'email' => 'student1@icetagra.com',
         ]);
         $student->assignRole($role4);
 
 
-         // teenage student
+         // student two
          $studentTeenage = \App\Models\User::factory()->create([
-            'name' => 'teenage',
-            'email' => 'teenage@laramint.com',
+            'name' => 'Student Two',
+            'email' => 'student2@icetagra.com',
         ]);
         $studentTeenage->assignRole($role4);
 
         
-         // kids student
+         // student Three
          $studentKids = \App\Models\User::factory()->create([
-            'name' => 'kids',
-            'email' => 'kids@laramint.com',
+            'name' => 'Student Three',
+            'email' => 'student3@icetagra.com',
         ]);
         $studentKids->assignRole($role4);
     }

@@ -20,8 +20,8 @@ class DocumentSeed extends Seeder
         #adult
         #1
         $file = \App\Models\File::factory()->create([
-            'title' => 'Adult Video #1',
-            'description' => 'Adult Video #1',
+            'title' => 'Training Video #1',
+            'description' => 'Training Video #1',
             'file' => 'mp4/xKOV4ySeFiaZPLiDOHNgX7B8zd0zglaA59SLzCDG.mp4',
             'file_size' => '21811717',
             'file_type' => 'mp4'
@@ -31,8 +31,8 @@ class DocumentSeed extends Seeder
         
         #2
         $file =\App\Models\File::factory()->create([
-            'title' => 'Adult Video #2',
-            'description' => 'Adult Video #2',
+            'title' => 'Training Video #2',
+            'description' => 'Training Video #2',
             'file' => 'mp4/qL6j3BRb8QzaE9eNU5oHLBI8jfZZlVcnvZnrXS3p.mp4',
             'file_size' => '39459508',
             'file_type' => 'mp4'
@@ -41,8 +41,8 @@ class DocumentSeed extends Seeder
 
         #3
         $file =\App\Models\File::factory()->create([
-            'title' => 'Adult Video #3',
-            'description' => 'Adult Video #3',
+            'title' => 'Training Video #3',
+            'description' => 'Training Video #3',
             'file' => 'mp4/sonP7sjdDpbBx9AZP2KQaAl9YlolYo3JI6gOshBA.mp4',
             'file_size' => '6334218',
             'file_type' => 'mp4'
@@ -51,8 +51,8 @@ class DocumentSeed extends Seeder
 
         #4
         $file =\App\Models\File::factory()->create([
-            'title' => 'Adult Video #4',
-            'description' => 'Adult Video #4',
+            'title' => 'Training Video #4',
+            'description' => 'Training Video #4',
             'file' => 'mp4/xKOV4ySeFiaZPLiDOHNgX7B8zd0zglaA59SLzCDG.mp4',
             'file_size' => '21811717',
             'file_type' => 'mp4'
@@ -63,8 +63,8 @@ class DocumentSeed extends Seeder
         #kids
         #5
         $file =\App\Models\File::factory()->create([
-            'title' => 'Kids Video #1',
-            'description' => 'Kids Video #1',
+            'title' => 'Integrated Training Video #1',
+            'description' => 'Integrated Training Video #1',
             'file' => 'mp4/B9LiL7uwjnhgapUTIwLBjjlVbz9Xf3iTCrDMSnfp.mp4',
             'file_size' => '20175977',
             'file_type' => 'mp4'
@@ -73,8 +73,8 @@ class DocumentSeed extends Seeder
 
         #6
         $file =\App\Models\File::factory()->create([
-            'title' => 'Kids Video #2',
-            'description' => 'Kids Video #2',
+            'title' => 'Integrated Training Video #2',
+            'description' => 'Integrated Training Video #2',
             'file' => 'mp4/KY2eNP2eaH1WQbmffUhexMs0gWP4W0FKSCa65JJG.mp4',
             'file_size' => '16354492',
             'file_type' => 'mp4'
@@ -83,8 +83,8 @@ class DocumentSeed extends Seeder
 
         #7
         $file =\App\Models\File::factory()->create([
-            'title' => 'Kids Video #3',
-            'description' => 'Kids Video #3',
+            'title' => 'Integrated Training Video #3',
+            'description' => 'Integrated Training Video #3',
             'file' => 'mp4/B9LiL7uwjnhgapUTIwLBjjlVbz9Xf3iTCrDMSnfp.mp4',
             'file_size' => '20175977',
             'file_type' => 'mp4'
@@ -93,8 +93,8 @@ class DocumentSeed extends Seeder
 
         #8
         $file =\App\Models\File::factory()->create([
-            'title' => 'Kids Video #4',
-            'description' => 'Kids Video #4',
+            'title' => 'Integrated Training Video #4',
+            'description' => 'Integrated Training Video #4',
             'file' => 'mp4/KY2eNP2eaH1WQbmffUhexMs0gWP4W0FKSCa65JJG.mp4',
             'file_size' => '16354492',
             'file_type' => 'mp4'
@@ -105,8 +105,8 @@ class DocumentSeed extends Seeder
         #teenage
         #9
         $file =\App\Models\File::factory()->create([
-            'title' => 'Teenage Video #1',
-            'description' => 'Teenage Video #1',
+            'title' => 'Custom Software Training Video #1',
+            'description' => 'Custom Software Training Video #1',
             'file' => 'mp4/KY2eNP2eaH1WQbmffUhexMs0gWP4W0FKSCa65JJG.mp4',
             'file_size' => '21811717',
             'file_type' => 'mp4'
@@ -115,8 +115,8 @@ class DocumentSeed extends Seeder
         
         #10
         $file =\App\Models\File::factory()->create([
-            'title' => 'Teenage Video #2',
-            'description' => 'Teenage Video #2',
+            'title' => 'Custom Software Training Video #2',
+            'description' => 'Custom Software Training Video #2',
             'file' => 'mp4/qL6j3BRb8QzaE9eNU5oHLBI8jfZZlVcnvZnrXS3p.mp4',
             'file_size' => '39459508',
             'file_type' => 'mp4'
@@ -125,8 +125,8 @@ class DocumentSeed extends Seeder
 
         #11
         $file =\App\Models\File::factory()->create([
-            'title' => 'Teenage Video #3',
-            'description' => 'Teenage Video #3',
+            'title' => 'Custom Software Training Video #3',
+            'description' => 'Custom Software Training Video #3',
             'file' => 'mp4/KY2eNP2eaH1WQbmffUhexMs0gWP4W0FKSCa65JJG.mp4',
             'file_size' => '6334218',
             'file_type' => 'mp4'
@@ -135,8 +135,8 @@ class DocumentSeed extends Seeder
 
         #12
         $file =\App\Models\File::factory()->create([
-            'title' => 'Teenage Video #4',
-            'description' => 'Teenage Video #4',
+            'title' => 'Custom Software Training Video #4',
+            'description' => 'Custom Software Training Video #4',
             'file' => 'mp4/xKOV4ySeFiaZPLiDOHNgX7B8zd0zglaA59SLzCDG.mp4',
             'file_size' => '21811717',
             'file_type' => 'mp4'

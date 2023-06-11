@@ -24,7 +24,7 @@
         <div class="form-group row">
             <div class="col-4">
             <x-atoms.file-uploaded-render :file="$file" />
-            <input name="file" type="hidden" class="form-control form-control-user" value="{{ $file ?? '' }}">
+            <input name="{{$file_name ? $file_name : 'file'}}" type="hidden" class="form-control form-control-user" value="{{ $file ?? '' }}">
             </div>
 
         </div>
