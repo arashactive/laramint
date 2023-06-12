@@ -57,15 +57,6 @@
 
                                     
                                     
-<!--                                    <label>super admin:</label><br/>
-                                    <strong>username: </strong><span>arvindsutail@gmail.com</span><br/>
-                                    <strong>password: </strong><span>password</span>
-                                    <hr>
-                                    <label>supervisor:</label><br/>
-                                    <strong>username: </strong><span>supervisor@icetagra.com</span><br/>
-                                    <hr>
-                                    <label>student:</label><br/>
-                                    <strong>username: </strong><span>student1@icetagra.com</span><br/>-->
                                     <hr>
 
 <!--                                     <div class="text-center mb-3">
