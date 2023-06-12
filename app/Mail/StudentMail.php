@@ -33,8 +33,9 @@ class StudentMail extends Mailable
      */
     public function envelope()
     {
+        $mail_subject = $this->mailData['subject'] ? $this->mailData['subject'] : 'Welcome to ICET, Agra';
         return new Envelope(
-            subject: 'Welcome to ICET, Agra',
+            subject: $mail_subject,
         );
     }
 

@@ -47,7 +47,7 @@
                                     {{ $student_doc->name }}
                                 </td>
                                 <td>
-                                    <a title="send reminder on whatsapp" href="https://wa.me/{{ $student_doc->mobile }}?text={{urlencode('Dear Student, Kindly update all your document & validate your mobile')}}" target="_blank"> {{ $student_doc->mobile }}</a>
+                                    <a title="send reminder on whatsapp" href="`https://wa.me/{{ $student_doc->mobile }}?text={{urlencode($whatsAppReminderMsg)}}`" target="_blank"> {{ $student_doc->mobile }}</a>
                                 </td>
                                 <td>
                                     {{ $student_doc->email }}

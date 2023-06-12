@@ -7,6 +7,9 @@ use App\Http\Requests\UpdateOtpMailSMSRequest;
 use App\Models\OtpMailSMS;
 use Illuminate\Http\Request;
 
+use Mail;
+use App\Mail\StudentMail;
+
 class OtpMailSMSController extends Controller
 {
     
@@ -206,6 +209,60 @@ class OtpMailSMSController extends Controller
         }
 
         
+    }
+    
+    public function sendMailOTP(Request $request) {
+        
+        $http_refferer = request()->headers->get('referer');
+        
+        $student_mobile = $request->student_mobile;
+        $student_email = $request->student_email;
+        $user_id = $request->user_id;
+        $otp_code = rand(10001,99999);
+        $mailData['email'] = $student_email;
+        $mailData['subject'] = 'ICET email verification for O Level scheme';
+        $mailData['otp_code'] = $otp_code;
+        $mail_response = Mail::to($mailData['email'])->send(new StudentMail($mailData));
+        if($mail_response){
+            // save to database as well..
+            // check if mobile is already registered..
+            $userOTPRecord = OtpMailSMS::where('mobile',$student_mobile)->orderby('id','desc')->first();
+            if($userOTPRecord){
+                // update
+                $userOTPRecord->update(['mail_otp'=>$otp_code,'mail_otp_sent_at'=>now(),'is_mail_verified'=>0,'mail_otp_from_url'=> urlencode(
+                        $http_refferer)]);
+            }else{
+                // add
+                OtpMailSMS::create(['mail'=>$student_email,'mail_otp'=>$otp_code,'mail_otp_sent_at'=>now(),'is_mail_verified'=>0,'mail_otp_from_url'=> urlencode(
+                        $http_refferer),'mobile'=>$student_mobile]);
+            }
+            $msg = 'Success! OTP shared on your email successfully!';
+//            return redirect()->back()->with('success', $msg);
+            $return_array = ['status_code'=>'success','message'=>$msg];
+        }else{
+            $msg = 'Fail! some error occured.';
+            $return_array = ['status_code'=>'danger','message'=>$msg];
+        }
+        echo json_encode($return_array);
+    }
+    
+    public function validateMailOTP(Request $request) {
+        $student_email = $request->student_email;
+        $email_otp = $request->email_otp;
+        $userOTPRecord = OtpMailSMS::where('mail',$student_email)->orderby('id','desc')->first();
+        $dbMailOTP = $userOTPRecord->mail_otp;
+        if($email_otp==$dbMailOTP){
+            $userOTPRecord->update(['is_mail_verified'=>1,'mail_otp_verified_at'=>now()]);
+            // mail OTP matcjed
+            $msg = 'Success! OTP verified successfully!';
+            $return_array = ['status_code'=>'success','message'=>$msg];
+            
+        }else{
+            // error
+            $msg = 'Fail! some error occured.';
+            $return_array = ['status_code'=>'danger','message'=>$msg];
+        }
+        echo json_encode($return_array);
     }
 
 }

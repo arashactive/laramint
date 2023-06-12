@@ -15,9 +15,10 @@ class StudentDocsCOntroller extends Controller
      */
     public function index()
     {
+        $whatsAppReminderMsg = 'Dear Student,%0aKindly update all your document & validate your mobile. Thanks!%0aICET, Agra';
         $this->authorize('student_doc.index');
         $student_docs = StudentDocs::paginate();
-        return view("contents.admin.student_docs.index", compact("student_docs"));
+        return view("contents.admin.student_docs.index", compact("student_docs",'whatsAppReminderMsg'));
     }
 
     public function dashboard()

@@ -93,7 +93,7 @@ class WhatsAppDigitalSMSAPIController extends Controller
     
     public function verify_mobile(Request $request) {
 
-        $http_refferer = Request::server('HTTP_REFERER'); //request()->headers->get('referer');
+        $http_refferer = request()->headers->get('referer'); //request()->headers->get('referer');
 
         $page_id = $request->page_id;
         $otp_wtp_msg = $this->otp_wtp_msg;

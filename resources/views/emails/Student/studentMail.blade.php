@@ -33,11 +33,18 @@
               <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                 <tr>
                   <td style="padding:0 0 36px 0;color:#153643;">
-                    <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Dear {{$mailData['name']}}</h1>
+                    <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Dear {{$mailData['name'] ?? 'Candidate'}}</h1>
                     <h3 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Welcome to ICET Agra</h3>
+                    
+                    @if($mailData['otp_code'])
+                    
+                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Please find your OTP to verify {{$mailData['otp_code']}}</p>
+                    @else
                     <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">You have successfully uploaded all your documents for the course. As you are new to the system. Please use below mentioned password to login to the portal & email as username or email</p>
                     
                     <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif; background-color: #E2E8F0;">{{$mailData['password']}}</p>
+                    @endif
+                    
                     <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="{{ URL::to('home')}}" style="color:#ee4c50;text-decoration:underline;">ICET Agra</a></p>
                   </td>
                 </tr>
@@ -94,4 +101,3 @@
   </table>
 </body>
 </html>
-<?php die;

@@ -99,7 +99,6 @@ class LandingPagesController extends Controller
                 // now create user if first time entry..
                 $user_doc_id = $student_docs->id;
                 $this->create_user($user_doc_id,$request->name,$request->email);
-                die;
                 return back()
                 ->with('success','You have successfully submitted your document(s). Please check your email.'); 
             }else{
@@ -216,7 +215,7 @@ class LandingPagesController extends Controller
             $student->assignRole($role4);
             
             // now send email for passowrd
-            $this->send_mail(['name'=>$name,'email'=>$email,'password'=>$random_pwd]);
+            $this->send_mail(['name'=>$name,'email'=>$email,'password'=>$random_pwd,'subject'=>'Welcome to ICET Agra']);
 //        }else{
 //            $this->send_mail(['name'=>$name,'email'=>$email,'password'=>$random_pwd]);
         }
