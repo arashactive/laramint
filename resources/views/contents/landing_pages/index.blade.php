@@ -102,6 +102,7 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                         <img src="{{ URL::to('landing_page/assets/img/hero-img.png') }}" class="img-fluid" alt="">
                     </div>
                 </div>
+
             </div>
 
         </section><!-- End Hero -->
