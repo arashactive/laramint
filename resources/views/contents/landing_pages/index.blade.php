@@ -268,7 +268,7 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
         <div class="section-title">
 
-          <h2>Frequently Asked Questions</h2>
+          <h2>Frequently Asked Questions (FAQ) </h2>
           <p>Please go through this section in case of any query or doubt related to enroll to this scheme</p>
         </div>
 
