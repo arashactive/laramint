@@ -299,7 +299,7 @@
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/team-1.jpg" alt="">
                         <h5>Arvind Sutail</h5>
-                        <span>Kids Councellor</span>
+                        <span>Director</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
                         <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
