@@ -15,7 +15,7 @@
                     <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/icetagra"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/groups/617435264962620"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/icet-computer-education-47b91865/"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">

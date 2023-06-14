@@ -19,20 +19,20 @@
         </div>
     </div>
 </div>
- <!-- Department Start -->
- @if(count($departments) > 1)
- <div class="container-xxl py-5 d-none">
-     <div class="container py-5 px-lg-5">
-         <div class="row g-4">
-             @forelse ($departments as $department)
-                 <x-front.department :department="$department"/>
-             @empty
-             @endforelse
-         </div>
-     </div>
- </div>
- @endif
- <!-- Department End -->
+<!-- Department Start -->
+@if(count($departments) > 1)
+<div class="container-xxl py-5 d-none">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-4">
+            @forelse ($departments as $department)
+            <x-front.department :department="$department"/>
+            @empty
+            @endforelse
+        </div>
+    </div>
+</div>
+@endif
+<!-- Department End -->
 
 
 <!-- About Start -->
@@ -42,7 +42,7 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary">ICET Agra<span></span></p>
                 <h1 class="mb-5">We train you with perfection</h1>
-                
+
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
                         <p class="mb-2">Thousands of video examples</p>
@@ -151,16 +151,16 @@
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
-<!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item d-flex flex-column text-center rounded">
-                    <div class="service-icon flex-shrink-0">
-                        <i class="fab fa- fa-2x"></i>
-                    </div>
-                    <h5 class="mb-3">Stay motivated</h5>
-                    <p class="m-0">We make it easy to form a habit of language learning, with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
-                    <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                </div>
-            </div>-->
+            <!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="service-item d-flex flex-column text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="fab fa- fa-2x"></i>
+                                </div>
+                                <h5 class="mb-3">Stay motivated</h5>
+                                <p class="m-0">We make it easy to form a habit of language learning, with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
+                                <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>-->
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
@@ -171,7 +171,7 @@
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -191,7 +191,7 @@
                 <ul class="list-inline mb-5" id="portfolio-flters">
                     <li class="mx-2 active" data-filter="*">All</li>
                     @forelse ($departments as $department)
-                        <li class="mx-2" data-filter=".department-{{ $department->id }}">{{ $department->title }}</li>
+                    <li class="mx-2" data-filter=".department-{{ $department->id }}">{{ $department->title }}</li>
                     @empty
                     @endforelse
                 </ul>
@@ -199,18 +199,18 @@
         </div>
         <div class="row g-3 portfolio-container">
             <!-- course Start -->
-                @if(count($courses) > 1)
-                <div class="container-xxl py-5">
-                    <div class="container py-5 px-lg-5">
-                        <div class="row g-4">
-                            @forelse ($courses as $course)
-                                <x-front.course :course="$course"/>
-                            @empty
-                            @endforelse
-                        </div>
+            @if(count($courses) > 1)
+            <div class="container-xxl py-5">
+                <div class="container py-5 px-lg-5">
+                    <div class="row g-4">
+                        @forelse ($courses as $course)
+                        <x-front.course :course="$course"/>
+                        @empty
+                        @endforelse
                     </div>
                 </div>
-                @endif
+            </div>
+            @endif
             <!-- course End -->
         </div>
     </div>
@@ -276,26 +276,55 @@
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-secondary justify-content-center"><span></span>Work Experience<span></span></p>
-        <h1 class="text-center text-primary-emphasis mb-5">Proudly carried out projects</h1>
+            <h1 class="text-center text-primary-emphasis mb-5">Proudly carried out projects</h1>
         </div>
-    
+
         <div class="row g-4">
+
+            <div class="col-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Voter ID Card</h1> 
+                            <p>Election Office</p> 
+                            <p>Agra, U.P. Govt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-dark rounded">
+                            <h3>IMG Voter ID Card (Election Office Agra, U.P. Govt.)</h3>
+                        </div>
+                        <div class="flip-card-back  bg-light rounded ">
+                            <h3>Voter ID Card (Election Office Agra, U.P. Govt.)</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-12 text-light text-left wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
-                
+
+
+
                 <ul class="list-inline mb-5" id="work-flters">
-                  <li class="mx-2"><i class="bi bi-check"></i>1. Voter ID Card (Election Office Agra, U.P. Govt.)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>2. Berojgaari Bhatta (Reginal Employment Office, Agra, U.P. Govt.)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>3. Kanya Vidhya Dhan (Madhymik Shiksha Parishad, Agra, U.P. Govt.)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>4. Scholarship Data Entry (Madhymik Shiksha Parishad, Agra, U.P. Govt.)   </li>
-                  <li class="mx-2"><i class="bi bi-check"></i>5. Criminal Crime Tracking Networking System CCTNS (Police Dept, Agra  U.P. Govt.)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>6. Lokwani Kendra , Agra (U.P. Govt)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>7. Course on Computer Concepts CCC (Online Exam Center, NIELIT Govt of India)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>8. E- Commerce Training (Handicraft Department, Govt of India)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>9. Authorized Computer Training Institute by UPDESCO (U.P. Govt)</li>
-                  <li class="mx-2"><i class="bi bi-check"></i>10. Authorized Computer Training Institute for O Level by NIELIT (Govt. of India)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>1. Voter ID Card (Election Office Agra, U.P. Govt.)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>2. Berojgaari Bhatta (Reginal Employment Office, Agra, U.P. Govt.)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>3. Kanya Vidhya Dhan (Madhymik Shiksha Parishad, Agra, U.P. Govt.)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>4. Scholarship Data Entry (Madhymik Shiksha Parishad, Agra, U.P. Govt.)   </li>
+                    <li class="mx-2"><i class="bi bi-check"></i>5. Criminal Crime Tracking Networking System CCTNS (Police Dept, Agra  U.P. Govt.)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>6. Lokwani Kendra , Agra (U.P. Govt)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>7. Course on Computer Concepts CCC (Online Exam Center, NIELIT Govt of India)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>8. E- Commerce Training (Handicraft Department, Govt of India)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>9. Authorized Computer Training Institute by UPDESCO (U.P. Govt)</li>
+                    <li class="mx-2"><i class="bi bi-check"></i>10. Authorized Computer Training Institute for O Level by NIELIT (Govt. of India)</li>
                 </ul>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -310,25 +339,25 @@
             <h1 class="text-center mb-5">Our Team Members</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/team-2.jpg" alt="">
-                        <h5>Monika Mam</h5>
-                        <span>Kids Councellor</span>
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/monika.jpeg" alt="">
+                        <h5>Monika Maam</h5>
+                        <span>Sr. Counselor cum Admission Head</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="linkhttps://www.facebook.com/moni.tarun?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>-->
+                        <a class="btn btn-square mx-1" target="_blank" href="https://instagram.com/monitiwari24?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
+                        <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>-->
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item bg-light rounded">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/team-1.jpg" alt="">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/arvind-sutail.jpg" alt="">
                         <h5>Arvind Sutail</h5>
                         <span>Managing Director</span>
                     </div>
@@ -340,7 +369,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light rounded">
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="">
@@ -352,6 +381,21 @@
                         <a class="btn btn-square mx-1" target="_blank" href="https://twitter.com/BrijRajSingh27"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square mx-1" target="_blank" href="https://www.instagram.com/brijrajsingh27/"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-square mx-1" target="_blank" href="https://www.linkedin.com/in/brijrajsingh27/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light rounded">
+                    <div class="text-center border-bottom p-4">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/amaan-ahmed.jpg" alt="">
+                        <h5>Amaan Ahmed</h5>
+                        <span>Sr Programing Faculty</span>
+                    </div>
+                    <div class="d-flex justify-content-center p-4">
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/ahaan.khan.1293?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>-->
+                        <a class="btn btn-square mx-1" target="_blank" href="https://instagram.com/ahaan.khan.1293?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
+                        <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>-->
                     </div>
                 </div>
             </div>
