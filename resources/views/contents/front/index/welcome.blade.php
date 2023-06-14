@@ -19,7 +19,6 @@
         </div>
     </div>
 </div>
-<a href="http://127.0.0.1:8000/landing_page/free-o-level-2023-24">Click herer</a>
  <!-- Department Start -->
  @if(count($departments) > 1)
  <div class="container-xxl py-5 d-none">
@@ -128,7 +127,7 @@
                         <i class="fa fa-book fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Curriculum</h5>
-                    <p class="m-0">A world class curriculum developed by ICET in close partnership with NIELT offers course like CCC, BCC, OLEVEL. The programmes we offer are desgined by our team of experts, based on the global industry requirements</p>
+                    <p class="m-0">A world class curriculum developed by ICET in close partnership with NIELT offers course like CCC, BCC, OLEVEL. The programmes we offer are desgined by our team of experts, based on govt institutes</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
@@ -138,7 +137,7 @@
                         <i class="fa fa-rupee-sign fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Cost Effectiveness</h5>
-                    <p class="m-0">At ICET our aim is to bring global expertise and world class knowledge to you in the most cost effective manner. With a strong nation wide network of training centres, we work hard to bring down the cost of training.</p>
+                    <p class="m-0">Our aim is to bring global expertise and world class knowledge to you in the most cost effective manner. With a strong nation wide network of training centres, we work hard to bring down the cost of training.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
@@ -168,7 +167,7 @@
                         <i class="fa fa-smile-beam fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Have fun with it!</h5>
-                    <p class="m-0">Effective learning doesn’t have to be boring! Build your skills each day with engaging exercises and playful characters.</p>
+                    <p class="m-0">At ICET, We regularly practice it simple to type of language learning, with game-like elements, fun difficulties, and updates every day with drawing in practices and fun loving characters.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
@@ -228,7 +227,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET so far has been the best thing that has happened to me… Its difficult to find such a place where people are so different, so competitive and yet so close to each other… and when it comes to the Institute… its a heaven on earth…”</p>
                 <div class="d-flex align-items-center">
-                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-1.jpg" style="width: 65px; height: 65px;">-->
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-2.jpg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Dharmendar</h5>
                         <!--<span>Web designing</span>-->
@@ -238,7 +237,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET has provided me the platform to accomplish all my dreams. It has given me an opportunity to unleash my full potential and to materialize my career goals. ICET has prepared me to face every battle in corporate world.</p>
                 <div class="d-flex align-items-center">
-                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-2.jpg" style="width: 65px; height: 65px;">-->
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-1.jpg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Neha Thakur</h5>
                         <!--<span>O Level</span>-->
@@ -248,7 +247,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>I always get a high from the kind of energy that prevails on campus. There is so much to do even when there is nothing to do, from struggling to finish assignments to rushing for maggi at 4am.</p>
                 <div class="d-flex align-items-center">
-                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">-->
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Akash Jaishwal</h5>
                         <!--<span>CCC</span>-->
@@ -258,7 +257,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide gamut of activities ranging from interest groups to online gaming events provide everyone with ample opportunities to go beyond just academics.</p>
                 <div class="d-flex align-items-center">
-                    <!--<img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">-->
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-4.jpg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Jyoti Sharma</h5>
                         <!--<span>CCC</span>-->
@@ -270,6 +269,38 @@
 </div>
 <!-- Testimonial End -->
 
+
+<!--Work experience-->
+
+<div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5 px-lg-5">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <p class="section-title text-secondary justify-content-center"><span></span>Work Experience<span></span></p>
+        <h1 class="text-center text-primary-emphasis mb-5">Proudly carried out projects</h1>
+        </div>
+    
+        <div class="row g-4">
+            <div class="col-md-12 text-light text-left wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                
+                <ul class="list-inline mb-5" id="work-flters">
+                  <li class="mx-2"><i class="bi bi-check"></i>1. Voter ID Card (Election Office Agra, U.P. Govt.)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>2. Berojgaari Bhatta (Reginal Employment Office, Agra, U.P. Govt.)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>3. Kanya Vidhya Dhan (Madhymik Shiksha Parishad, Agra, U.P. Govt.)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>4. Scholarship Data Entry (Madhymik Shiksha Parishad, Agra, U.P. Govt.)   </li>
+                  <li class="mx-2"><i class="bi bi-check"></i>5. Criminal Crime Tracking Networking System CCTNS (Police Dept, Agra  U.P. Govt.)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>6. Lokwani Kendra , Agra (U.P. Govt)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>7. Course on Computer Concepts CCC (Online Exam Center, NIELIT Govt of India)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>8. E- Commerce Training (Handicraft Department, Govt of India)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>9. Authorized Computer Training Institute by UPDESCO (U.P. Govt)</li>
+                  <li class="mx-2"><i class="bi bi-check"></i>10. Authorized Computer Training Institute for O Level by NIELIT (Govt. of India)</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--Work experience ends here-->
 
 <!-- Team Start -->
 <div class="container-xxl py-5">
@@ -287,10 +318,10 @@
                         <span>Kids Councellor</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -299,28 +330,28 @@
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/team-1.jpg" alt="">
                         <h5>Arvind Sutail</h5>
-                        <span>Director</span>
+                        <span>Managing Director</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/arvind.sutail.7"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light rounded">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/team-3.jpg" alt="">
-                        <h5>Some Guy</h5>
-                        <span> Trainer</span>
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="">
+                        <h5>Brij Raj Singh</h5>
+                        <span>Software Engineer</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://facebook.com/brijrajsingh27"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://twitter.com/BrijRajSingh27"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.instagram.com/brijrajsingh27/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.linkedin.com/in/brijrajsingh27/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -328,4 +359,5 @@
     </div>
 </div>
 <!-- Team End -->
+
 @endsection

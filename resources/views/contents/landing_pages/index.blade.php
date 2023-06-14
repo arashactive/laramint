@@ -468,8 +468,8 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
                                     </div>
                                     <div class="d-none">
-                                        <input name="referrer_url" type="hidden" value="<?php echo $referrer_url ?>" />
-                                        <input name="last_user_id" type="hidden" value="<?php echo base64_encode($last_user_id) ?>" />
+                                        <input name="referrer_url" id="referrer_url" type="hidden" value="<?php echo $referrer_url ?>" />
+                                        <input name="last_user_id" id="last_user_id" type="hidden" value="<?php echo base64_encode($last_user_id) ?>" />
                                         <input name="is_email_verified" id="is_email_verified" type="hidden" value="0" />
                                         <input name="is_mobile_verified" id="is_mobile_verified" type="hidden" value="0" />
                                     </div>
@@ -480,7 +480,7 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                                     <div class="error-message"></div>
                                     <div class="sent-message">Your message has been sent. Thank you!</div>
                                 </div>
-                                <div class="text-center"><button type="submit">Enroll</button></div>
+                                <div class="text-center"><button type="submit">Enroll Now</button></div>
                             </form>
                         </div>
 
@@ -582,50 +582,67 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
         <script src="{{ URL::to('landing_page/assets/js/main.js') }}"></script>
 
         <script type="text/javascript">
-                            function checkHomePage() {
-                                if (confirm('The Filled details might get wiped out. Are you sure want to go to homepage?')) {
-                                    return true;
-                                } else {
-                                    return false;
-                                }
-                            }
+            
+            function checkMobile(mobile){
+                  $.ajax({
+                        type: 'GET',
+                        dataType: 'html',
+                        url: '/check_mobile',
+                        data: {
+                            mobile: mobile
+                        },
+                        success: function (data) {
+                            // Do some nice animation to show results
+                            $('#searchdata').html(data);
+                        }
+                    });
+            }
+            function checkHomePage() {
+                if (confirm('The Filled details might get wiped out. Are you sure want to go to homepage?')) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
 
-                            $(document).ready(function () {
+        $(document).ready(function () {
 
-                                $("#mobile").keyup(function () {
-                                    var mobile = $("#mobile").val();
-                                    if (mobile.length == 10) {
+            $("#mobile").keyup(function () {
+                var mobile = $("#mobile").val();
+                if (mobile.length == 10) {
+                    // now check if already exists
+                    alert('asdasd');
 
-                                    }
+                }
 
-                                });
+            });
 
-                                $(".docs_forms").hide();
-                                $("#mail_otp").hide();
-                                $("#validate_mail_otp").hide();
+            $(".docs_forms").hide();
+            $("#mail_otp").hide();
+            $("#validate_mail_otp").hide();
 
-                                $("#high_school_marks").on('keyup', function () {
-                                    console.log($(this).length);
-                                    if ($(this).length >= 1 || $(this).val > 1) {
-                                        $("#high_school_grades").hide();
-                                        $("a.high_school_grades_link").hide();
-                                    }
-                                    if ($(this).length == 0 && ($(this).val == 0 || $(this).val != "")) {
-                                        $("#high_school_grades").show();
-                                        $("a.high_school_grades_link").show();
-                                    }
-                                });
+            $("#high_school_marks").on('keyup', function () {
+                console.log($(this).length);
+                if ($(this).length >= 1 || $(this).val > 1) {
+                    $("#high_school_grades").hide();
+                    $("a.high_school_grades_link").hide();
+                }
+                if ($(this).length == 0 && ($(this).val == 0 || $(this).val != "")) {
+                    $("#high_school_grades").show();
+                    $("a.high_school_grades_link").show();
+                }
+            });
 
-                                // show more fields if caste is OBC..
-                                $("#caste_category").on("change", function () {
+            // show more fields if caste is OBC..
+            $("#caste_category").on("change", function () {
 
-                                    if ($(this).val() == '<?php echo $caste_categories_array['OBC'] ?>') {
-                                        $(".docs_forms").show();
-                                    } else {
-                                        $(".docs_forms").hide();
-                                    }
-                                });
-                            });
+                if ($(this).val() == '<?php echo $caste_categories_array['OBC'] ?>') {
+                    $(".docs_forms").show();
+                } else {
+                    $(".docs_forms").hide();
+                }
+            });
+        });
         </script>
         <script type="text/javascript">
             //    $.ajaxSetup({
@@ -634,6 +651,7 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
             //        }
             //    });
             $('body').on('click', '#validate_mobile', function (e) {
+                var referrer_url = $("#referrer_url").val();
                 var student_mobile = $("#mobile").val();
                 if (student_mobile == '') {
                     alert('Kindly enter mobile number first');

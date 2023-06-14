@@ -20,6 +20,7 @@ class FrontController extends Controller
         $homeCompactReturn = $homeServices->homeIndex();
 
         return view('contents.front.index.welcome', $homeCompactReturn);
+//        return view('welcome', $homeCompactReturn);
     }
 
     /**

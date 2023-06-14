@@ -32,10 +32,10 @@
                 <p class="section-title text-white h5 mb-4">Accredited By<span></span></p>
                 <div class="row g-2">
                     <div class="col-6">
-                        <img class="img-fluid" src="{{ URL::to('img/Nielit.png') }}" alt="Image">
+                        <img class="img-fluid" src="{{ URL::to('img/NIELIT-LOGO.png') }}" alt="Image">
                     </div>
                     <div class="col-6">
-                        <img class="img-fluid" width="135px" src="{{ URL::to('img/updesco.png') }}" alt="Image">
+                        <img class="img-fluid" width="135px" src="{{ URL::to('img/UPDESCO-LOGO.png') }}" alt="Image">
                     </div>
                 </div>
                 <div class="row g-2">
@@ -78,7 +78,50 @@
 
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!--Sticky icons to the right-->
+<div class="fixed sticky-top float-right">
+    <ul class="float_menu">
+        
+        <li><i class="fa fa-certificate"></i><a href="{{ URL::to('landing_page/free-o-level-2023-24#contact')}}"><span>Enroll to O-level</span></a></li>
+        <li><i class="fa fa-phone"></i><a href="tel:+91-9719522999"><span>+91 971 952 2999</span>  </a></li>
+        <li><i class="fa fa-envelope"></i><a href="mailto:icetagr@gmail.com"><span>icetagr@gmail.com</span> </a></li>
+        <li><i class="fa fa-share"></i> <span class="fixed_social"> <a href="https://www.facebook.com/groups/617435264962620"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a> <a href="https://twitter.com/icetagra"><i class="bi bi-twitter"></i></a><a href="https://twitter.com/icetagra"><i class="bi bi-linkedin"></i></a> <a href=""><i class="bi bi-youtube"></i></a> </span> </li>
+    </ul>
 </div>
+
+
+<!--Popup for all pages-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Popup for all pages ends here-->
+
+</div>
+
+
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

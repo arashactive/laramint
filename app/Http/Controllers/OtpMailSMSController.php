@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreOtpMailSMSRequest;
 use App\Http\Requests\UpdateOtpMailSMSRequest;
 use App\Models\OtpMailSMS;
+use App\Models\StudentDocs;
 use Illuminate\Http\Request;
 
 use Mail;
@@ -13,7 +14,7 @@ use App\Mail\StudentMail;
 class OtpMailSMSController extends Controller
 {
     
-    public $api_key  = '2QOUj1e5m8KsHk3RvCwybr49qAWhZEFDMz6aLdIJclYSgpVtiup3aQHU9dkEmcJ7nYtjXizrPhRWZfSs';
+    public $api_key  = 'XwyZHQrajqWubf2iNCcsF0REpLGme9IUzdBSMonD4Y36t7vxlh4Hn5qXkx6cieSCVdw1INO3gEQTlMDR';
     public $api_url  = "https://www.fast2sms.com/dev/bulkV2";
     public $otp_wtp_msg = 'Dear Student, Kindly enter OTP code: <otp_code> to verify your account with ICET, Agra';
     
@@ -97,22 +98,26 @@ class OtpMailSMSController extends Controller
 
         $http_refferer = Request::server('HTTP_REFERER'); //request()->headers->get('referer');
 
+        $referrer_url = $request->referrer_url;
+        $last_user_id = $request->last_user_id;
         $page_id = $request->page_id;
         $otp_wtp_msg = $this->otp_wtp_msg;
         $to_mobile = $request->student_mobile;
+
+        $otp_code = rand(10001,99999);        
         
-        $otp_code = rand(10001,99999);
-        // now save the code in DB to match in future..
-        
+        $userOTPRecord = OtpMailSMS::where('mobile',$to_mobile)->orderby('id','desc')->first();
+        print_r($userOTPRecord);die;
         
         $msg = $this->otp_wtp_msg;
         $final_msg = strtr($msg,array('<otp_code>'=>$otp_code));
-        $api_response = $this->sendSMS($to_mobile,$final_msg);
+        $api_response = $this->send_sms($to_mobile,$final_msg);
         $decode_json = json_decode($api_response,true);
         
         if($decode_json['status']==1){
             // success
             // now save the code in DB to match in future..
+            
             
 //            $otp_code
             $msg = $decode_json['message'].'! OTP shared on your whatsApp successfully!';
@@ -220,7 +225,7 @@ class OtpMailSMSController extends Controller
         $user_id = $request->user_id;
         $otp_code = rand(10001,99999);
         $mailData['email'] = $student_email;
-        $mailData['subject'] = 'ICET email verification for O Level scheme';
+        $mailData['subject'] = 'ICET email verification for \'O\' Level scheme';
         $mailData['otp_code'] = $otp_code;
         $mail_response = Mail::to($mailData['email'])->send(new StudentMail($mailData));
         if($mail_response){
@@ -265,4 +270,18 @@ class OtpMailSMSController extends Controller
         echo json_encode($return_array);
     }
 
+    
+    public function checkIfMobileAlreadyExistsValidate($mobile) {
+        $mobile='7618565004';
+        // first of all check if the mobile is already registered
+        $userRecord = StudentDocs::where('mobile',$mobile)->orderby('id','desc')->first();
+        if($userRecord){
+            // record found.. now check if validated as well
+            $is_mobile_verified = $userRecord->is_mobile_verified;
+            if($is_mobile_verified==1){
+                
+            }
+        }
+    }
+    
 }
