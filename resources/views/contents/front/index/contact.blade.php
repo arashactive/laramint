@@ -33,7 +33,9 @@
 
             <div class="col-md-6 col-lg-6">
                 <p>
-                    <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%C2%BD%20C,%20Panchkuiyan%20Road,%20Naalband%20Crossing,%20Near%20Agra%20College%20Law%20Faculty,%20Agra-%20282001+(ICET%20Agra)&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe></div>
+                    <div style="width: 100%">
+                        <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.154724057347!2d77.99819557448373!3d27.182873448430183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974772341cee113%3A0x2e5a5a09e43d177!2sICET%20Computer%20Education!5e0!3m2!1sen!2sin!4v1686776041824!5m2!1sen!2sin&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe>
+                    </div>
                 </p>
             </div>
             
