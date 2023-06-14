@@ -148,7 +148,7 @@ Route::prefix('panel')->middleware(['verified'])->group(function () {
     Route::resource('plan', PlanController::class);
     Route::resource('badges', BadgeController::class);
     Route::get('/student_doc/dashboard', [AdminStudentDocsController::class, 'dashboard'])->name('admin.studentDashboard');
-    Route::resource('student_doc', AdminStudentDocsController::class);
+//    Route::resource('student_doc', AdminStudentDocsController::class);
 
 
     // signle functions:
