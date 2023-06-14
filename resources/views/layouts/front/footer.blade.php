@@ -83,7 +83,7 @@
 <div class="fixed sticky-top float-right">
     <ul class="float_menu">
         
-        <li><i class="fa fa-certificate"></i><a href="{{ URL::to('landing_page/free-o-level-2023-24#contact')}}"><span>Enroll to O-level</span></a></li>
+        <li><i class="fa fa-certificate"></i><a href="#"><span>Enroll to O-level</span></a></li>
         <li><i class="fa fa-phone"></i><a href="tel:+91-9719522999"><span>+91 971 952 2999</span>  </a></li>
         <li><i class="fa fa-envelope"></i><a href="mailto:icetagr@gmail.com"><span>icetagr@gmail.com</span> </a></li>
         <li><i class="fa fa-share"></i> <span class="fixed_social"> <a href="https://www.facebook.com/groups/617435264962620"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a> <a href="https://twitter.com/icetagra"><i class="bi bi-twitter"></i></a><a href="https://twitter.com/icetagra"><i class="bi bi-linkedin"></i></a> <a href=""><i class="bi bi-youtube"></i></a> </span> </li>
@@ -93,9 +93,9 @@
 
 <!--Popup for all pages-->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
-</button>
+</button>-->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
