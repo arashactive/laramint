@@ -272,7 +272,7 @@
 
 <!--Work experience-->
 
-<div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-xxl bg-light fact- py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-secondary justify-content-center"><span></span>Work Experience<span></span></p>
@@ -306,6 +306,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            
+            <div class="col-md-12 text-light text-left wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                
             </div>
             <div class="col-md-12 text-light text-left wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
+use Illuminate\Support\Facades\Hash;
 
 class PermissionsSeeder extends Seeder
 {
@@ -82,6 +83,7 @@ class PermissionsSeeder extends Seeder
         $admin = \App\Models\User::factory()->create([
             'name' => 'Arvind Sutail',
             'email' => 'arvindsutail@gmail.com',
+            'password' => Hash::make('!ceT$tr0ngP@ssword'),
         ]);
         $admin->assignRole($role1);
         

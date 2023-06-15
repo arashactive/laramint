@@ -280,13 +280,18 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
                                     <div class="row col-12">
                                         <div class="col-8">
-                                            <input placeholder="Your Mobile(for e.g., 9897111222)" type="text" class="form-control" name="mobile" id="mobile" required>
+                                            <input placeholder="10 digit Mobile number(for e.g., 9897111222)" type="text" class="form-control" name="mobile" id="mobile" required>
                                         </div>
                                         <div class="col-4">
-                                            <a onclick="" class="btn btn-success" id="validate_mobile" > Validate Mobile</a>
-                                            <span class="success-mobile-update"></span>
-                                            <span class="error-mobile-update"></span>
+                                            <a onclick="" class="btn btn-success" id="validate_mobile" > Get Mobile OTP</a>
+                                            <input placeholder="Enter SMS OTP" type="text" class="form-control" name="sms_otp" id="sms_otp">
+                                            <a onclick="" class="btn btn-success" id="validate_sms_otp" >Validate SMS OTP</a>
                                         </div>
+                                    </div>
+                                    <div class="row col-12">
+                                            
+                                        <span class="success-mobile-update"></span>
+                                            <span class="error-mobile-update"></span>
                                     </div>
                                 </div>
                                 <div class="form-group mt-3">
@@ -297,8 +302,9 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                                         <div class="col-4">
                                             <a onclick="" class="btn btn-success" id="validate_email" >Verify Email OTP</a>
                                             <input placeholder="Enter Email OTP" type="text" class="form-control" name="mail_otp" id="mail_otp">
-                                            <a onclick="" class="btn btn-success" id="validate_mail_otp" >Validate Email OTP</a>
-
+                                            <a onclick="" class="btn btn-success" id="validate_mail_otp" >Validate OTP</a>
+                                        </div>
+                                        <div class="row col-12">
                                             <span class="success-email-update"></span>
                                             <span class="error-email-update"></span>
                                         </div>
@@ -467,14 +473,15 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                                         @endif
 
                                     </div>
-                                    <div class="d-none">
+                                    
+                                    <!-- Documents form end here-->
+                                </div>
+                                <div class="d-none">
                                         <input name="referrer_url" id="referrer_url" type="hidden" value="<?php echo $referrer_url ?>" />
                                         <input name="last_user_id" id="last_user_id" type="hidden" value="<?php echo base64_encode($last_user_id) ?>" />
                                         <input name="is_email_verified" id="is_email_verified" type="hidden" value="0" />
                                         <input name="is_mobile_verified" id="is_mobile_verified" type="hidden" value="0" />
                                     </div>
-                                    <!-- Documents form end here-->
-                                </div>
                                 <div class="my-3">
                                     <div class="loading">Loading</div>
                                     <div class="error-message"></div>
@@ -519,6 +526,39 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
         </main><!-- End #main -->
 
+        <!-- =======  Login Popup ======== -->
+        <!-- Button to Open the Modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Open modal
+</button>-->
+
+<!-- The Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Redirecting to login</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Your mobile & email are already registered!
+        Kindly check your email or contact administrator.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+        <!-- =======  Login Popup Ends here ======== -->
+        
         <!-- ======= Footer ======= -->
         <footer id="footer">
 
@@ -573,11 +613,14 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
         <!-- Vendor JS Files -->
         <script src="{{ URL::to('landing_page/assets/vendor/aos/aos.js') }}"></script>
-        <script src="{{ URL::to('landing_page/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!--<script src="{{ URL::to('landing_page/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>-->
         <script src="{{ URL::to('landing_page/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
         <script src="{{ URL::to('landing_page/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <!--<script src="{{ URL::to('landing_page/assets/vendor/php-email-form/validate.js') }}"></script>-->
 
+        <script src="{{ URL::to('front/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ URL::to('front/lib/lightbox/js/lightbox.min.js') }}"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Template Main JS File -->
         <script src="{{ URL::to('landing_page/assets/js/main.js') }}"></script>
 
@@ -607,19 +650,23 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
         $(document).ready(function () {
 
+            
+            // hiding required fields
+            $(".docs_forms").hide();
+            $("#sms_otp").hide();
+            $("#validate_sms_otp").hide();
+            $("#mail_otp").hide();
+            $("#validate_mail_otp").hide();
+            
+            
             $("#mobile").keyup(function () {
                 var mobile = $("#mobile").val();
                 if (mobile.length == 10) {
                     // now check if already exists
-                    alert('asdasd');
-
+                    isMobileExists(mobile);     
                 }
 
             });
-
-            $(".docs_forms").hide();
-            $("#mail_otp").hide();
-            $("#validate_mail_otp").hide();
 
             $("#high_school_marks").on('keyup', function () {
                 console.log($(this).length);
@@ -643,6 +690,73 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                 }
             });
         });
+        
+        function isMobileExists(student_mobile){
+        
+            if (student_mobile == '') {
+                alert('Kindly enter mobile number first');
+                $("#mobile").focus();
+                return false;
+            } else {
+                //send OTP
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    method: "POST",
+                    url: "{{url('/')}}/isMobileExists",
+                    data: {"student_mobile": student_mobile},
+                }).done(function (json) {
+                    var msg = jQuery.parseJSON(json);
+                    console.log(msg);
+                    var is_email_verified = msg.is_email_verified;
+                    var is_mobile_verified = msg.is_mobile_verified;
+                    
+                    if(is_mobile_verified=='1' && is_email_verified=='1'){
+                        $("#validate_email").addClass('disabled');
+                        $("#validate_mobile").addClass('disabled');
+                        $("#is_email_verified").val('1');
+                        $("#is_mobile_verified").val('1');
+                        $('#loginModal').modal('show');
+                        return false;
+                    }
+                    
+                    if (is_mobile_verified=='1') {
+//                        $('.success-mobile-update').html(msg.status_code + ' ' + msg.message);
+                        $('.success-mobile-update').addClass('text-success').html('Mobile already verified!');
+//                        alert('here we need to verify email & disbale mobile OTP!'); // but disable mobile OTP..
+                        $("#validate_mobile").addClass('disabled');
+                        $("#validate_mobile").addClass('disabled');
+                        $("#is_mobile_verified").val('1');
+//                        $("#validate_email").removeClass('disable');
+                    }else if (is_mobile_verified=='0'){
+//                        alert('here we need to verify mobile & enable mobile OTP!'); // but disable mobile OTP..
+                        $("#validate_mobile").removeClass('disabled');;
+                        $("#is_mobile_verified").val('0');
+//                        $("#validate_email").removeClass('disable');
+                    }
+                    if (is_email_verified=='1') { 
+//                        $('.error-mobile-update').html(msg.status_code + ' ' + msg.message);
+//                        $("#validate_mobile").addClass('disable');
+                        $("#validate_email").addClass('disabled');
+//                        alert('email already verified'); // but disable mobile OTP..
+                        $("#is_email_verified").val('1');
+                    }else if (is_email_verified=='0'){
+                        $("#validate_email").removeClass('disabled');
+//                        alert('email not verified'); // but disable mobile OTP..
+                        $("#is_email_verified").val('0');
+                        
+                    } 
+//                    if(is_m) {
+//                        alert(is_mobile_verified);
+//                        alert(is_email_verified);
+//                        $('.success-mobile-update').html(msg.status_code + ' ' + msg.message);
+//                        alert('here we need to verify finally else!');
+//                    }
+                });
+            }
+        }
+        
         </script>
         <script type="text/javascript">
             //    $.ajaxSetup({
@@ -651,8 +765,17 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
             //        }
             //    });
             $('body').on('click', '#validate_mobile', function (e) {
+                $('.success-mobile-update').html('');
+                $('.error-mobile-update').html('');
                 var referrer_url = $("#referrer_url").val();
+                var last_user_id = $("#last_user_id").val();
+                var student_name = $("#name").val();
                 var student_mobile = $("#mobile").val();
+                if (student_name == '') {
+                    alert('Kindly enter your name first');
+                    $("#name").focus();
+                    return false;
+                }
                 if (student_mobile == '') {
                     alert('Kindly enter mobile number first');
                     $("#mobile").focus();
@@ -665,27 +788,87 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                         },
                         method: "POST",
                         url: "{{url('/')}}/sendSMS",
-                        data: {"student_mobile": student_mobile},
-                    }).done(function (msg) {
-                        console.log(msg);
-                        if (msg.error == 0) {
-                            $('.success-mobile-update').html(msg.status_code + ' ' + msg.message);
+                        data: {"student_mobile": student_mobile,"referrer_url":referrer_url,"last_user_id":last_user_id}
+                    }).done(function (json) {
+                        msg = jQuery.parseJSON(json);
+                        console.log(msg);                        
+                        if (msg.status == 'Success') {
+                            $('.success-mobile-update').addClass('text-success').html(msg.status + '! ' + msg.msg);
+                            
+//                            alert(msg.message);
+                            // now enable OTP button
+                            
+                            
+                            
+                            
+                            $("#validate_mobile").addClass('disabled');
+                            $("#validate_mobile").hide();
+                            $("#sms_otp").show();
+                            $("#sms_otp").focus();
+                            
+                            $("#validate_sms_otp").show();
+                            $("#validate_sms_otp").on('click', function () {
+                                $('.success-mobile-update').html('');
+                                $('.error-mobile-update').html('');
+                                var sms_otp = $("#sms_otp").val();
+                                if (sms_otp == "") {
+                                    $("#sms_otp").focus();
+                                    return false;
+                                }
+                                $.ajax({
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    },
+                                    method: "POST",
+                                    url: "{{url('/')}}/validateSMSOTP",
+                                    data: {"student_mobile": student_mobile, "sms_otp": sms_otp}
+                                }).done(function (json) {
+                                    var msg = jQuery.parseJSON(json);
+                                    console.log(msg);
+                                    if (msg.status_code == 'success') {
+                                        $('.success-mobile-update').addClass('text-' + msg.status_code).html(msg.message);
+                                        $("#mobile").prop("readonly",true);
+                                        $("#is_mobile_verified").val('1');
+//                                        alert(msg.message);
+                                        // now open textbox to validate..
+                                        $("#sms_otp").hide();
+                                        $("#validate_mobile").addClass('disabled');
+                                        $("#validate_sms_otp").hide();
 
-                            alert(msg.message);
+                                    } else {
+//                                        alert(msg.message);
+                                        $('.error-mobile-update').addClass('text-' + msg.status_code).html(msg.message);
+                                    }
+                                });
+                            });
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         } else {
-
-                            alert(msg.status_code);
-                            alert(msg.message);
-                            $('.error-mobile-update').html(msg.status_code + ' ' + msg.message);
+//                            alert(msg.status_code);
+//                            alert(msg.message);
+                            $('.error-mobile-update').addClass('text-danger').html(msg.status + '! ' + msg.msg);
                         }
                     });
                 }
             });
 
             $('body').on('click', '#validate_email', function (e) {
-
+                $('.success-email-update').html('');
+                $('.error-email-update').html('');
                 var student_mobile = $("#mobile").val();
                 var student_email = $("#email").val();
+                if (student_mobile == '') {
+                    alert('Mobile cannot be empty!');
+                    $("#mobile").focus();
+                    return false;
+                }
                 if (student_email == '') {
                     alert('Kindly enter your email first!');
                     $("#email").focus();
@@ -706,12 +889,15 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                         console.log(msg.message);
                         if (msg.status_code == 'success') {
                             $('.success-email-update').addClass('text-' + msg.status_code).html(msg.message);
-                            alert(msg.message);
+//                            alert(msg.message);
                             // now open textbox to validate..
                             $("#validate_email").addClass('disabled');
+                            $("#validate_email").hide();
                             $("#mail_otp").show();
                             $("#validate_mail_otp").show();
                             $("#validate_mail_otp").on('click', function () {
+                                $('.success-email-update').html('');
+                                $('.error-email-update').html('');
                                 var email_otp = $("#mail_otp").val();
                                 if (email_otp == "") {
                                     $("#mail_otp").focus();
@@ -733,10 +919,13 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                                         // now open textbox to validate..
                                         $("#mail_otp").hide();
                                         $("#validate_email").addClass('disabled');
-                                        $("#validate_mail_otp").hide();
+                                        $("#validate_mail_otp").hide();                                        
+                                        $("#email").prop("readonly",true);
+                                        $("#is_email_verified").val('1');
+
 
                                     } else {
-                                        alert(msg.message);
+//                                        alert(msg.message);
                                         $('.error-email-update').addClass('text-' + msg.status_code).html(msg.message);
                                     }
                                 });
@@ -745,8 +934,8 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
 
                         } else {
 
-                            alert(msg.status_code);
-                            alert(msg.message);
+//                            alert(msg.status_code);
+//                            alert(msg.message);
 
                             $('.error-email-update').addClass('text-' + msg.status_code).html(msg.message);
                         }

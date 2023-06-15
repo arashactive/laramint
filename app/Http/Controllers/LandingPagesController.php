@@ -187,14 +187,15 @@ class LandingPagesController extends Controller
     }
     
     public function send_mail($mailData){
-
+//        $sent= false;
         try {
-            Mail::to($mailData['email'])->send(new StudentMail($mailData));
+            $sent_mail = Mail::to($mailData['email'])->send(new StudentMail($mailData));
+//            var_dump($x);
+//            $sent = true;
         } catch (Exception $exc) {
             echo $exc->getMessage();
         }
-
-        dd("Email is sent successfully.");
+//dd('mail sent');
     }
     
     public function create_user($user_doc_id,$name,$email){
@@ -215,7 +216,7 @@ class LandingPagesController extends Controller
             $student->assignRole($role4);
             
             // now send email for passowrd
-            $this->send_mail(['name'=>$name,'email'=>$email,'password'=>$random_pwd,'subject'=>'Welcome to ICET Agra']);
+            $sent = $this->send_mail(['name'=>$name,'email'=>$email,'password'=>$random_pwd,'subject'=>'Welcome to ICET Agra']);
 //        }else{
 //            $this->send_mail(['name'=>$name,'email'=>$email,'password'=>$random_pwd]);
         }

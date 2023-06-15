@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('otp_mail_s_m_s', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->nullable();
+            $table->string('sms_request_id')->nullable();
             $table->string('mobile')->nullable();
             $table->string('mobile_otp')->nullable();
             $table->string('mobile_otp_from_url')->nullable();

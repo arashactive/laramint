@@ -29,7 +29,9 @@ class StudentDocsController extends Controller
     public function create( StudentDocs $student_docs)
     {
         //
+        var_dump(Auth::user()->id);
         $student_uploaded_docs = $student_docs->where('user_id',Auth::user()->id)->first();
+        print($student_uploaded_docs);die;
 //        $this->authorize('student_docs.index');
         $b64FatherIncomeImage =  !empty($student_uploaded_docs->photograph) ? $this->base64_encode_image($student_uploaded_docs->photograph): '';
         $b64PhotographImage =  !empty($student_uploaded_docs->photograph) ? $this->base64_encode_image($student_uploaded_docs->photograph): '';

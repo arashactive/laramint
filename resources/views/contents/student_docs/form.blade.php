@@ -18,12 +18,25 @@
         <div class="card-body">
             <div class="text-center">
                 
+                <div class="table-responsive">
+                    <table class="table table-bordered table-light">
+                        <tr>
+                            <th>Name</th>
+                            <td>
+                                <?php
+                                print_r($student_uploaded_docs);
+                                ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
                 <form class="student_doc" method="POST" action="{{ route('student_doc.store') }}" enctype="multipart/form-data">
 
                     @csrf
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label>Father Income: <?php $photograph_path = Auth::user()->id . "/father_income_certificate" ?></label>
+                            <label>Father Income: <?php $father_income_certificate_path = Auth::user()->id . "/father_income_certificate" ?></label>
                         </div>
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             @if(!empty($b64FatherIncomeImage) && isset($b64FatherIncomeImage))
