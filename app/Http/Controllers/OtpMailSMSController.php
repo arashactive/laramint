@@ -119,8 +119,8 @@ class OtpMailSMSController extends Controller {
                 $send_otp = true;
             }
             if ($send_otp) {
-//            $api_response = $this->send_sms($to_mobile,$otp_code);
-                $api_response = '{"return":true,"request_id":"o5mt2xen9zk046q","message":["SMS sent successfully."]}'; // this is sample result
+            $api_response = $this->send_sms($to_mobile,$otp_code);
+//                $api_response = '{"return":true,"request_id":"o5mt2xen9zk046q","message":["SMS sent successfully."]}'; // this is sample result
 //            echo $api_response;die;
                 $decode_json = json_decode($api_response, true);
 //            print_r($decode_json);die;
