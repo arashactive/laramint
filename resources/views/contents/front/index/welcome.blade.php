@@ -6,6 +6,16 @@
 @svg($path)
 <div class="container-xxl bg-primary hero-header">
     <div class="container px-lg-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="blink-image text-warning text-bold" >
+                    उत्तर प्रदेश सरकार द्वारा <strong>ओ.वि.सी. वर्ग</strong> के छात्र - छात्राओं  के लिए सुनहरा अवसर(2023-24) <u>नि:शुल्क</u> ओ लेवल कंप्यूटर प्रशिक्षण कार्यक्रम
+                    <a class="btn btn-warning" href="{{route('landingPage','free-o-level-2023-24#contact')}}">
+                        <i class="fa fa-arrow-right"></i> {{ __('Click Here') }}
+                    </a>
+                </span>
+            </div>
+        </div>
         <div class="row g-5 align-items-end">
             <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="text-white mb-4 animated slideInDown">Lead to Success with ICET Agra</h1>
