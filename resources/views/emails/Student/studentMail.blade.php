@@ -42,7 +42,9 @@
                     @else
                     <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">You have successfully uploaded all your documents for the course. As you are new to the system. Please use below mentioned password to login to the portal & email as username or email</p>
                     
-                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif; background-color: #E2E8F0;">{{$mailData['password']}}</p>
+                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif; background-color: #e3e3e3;"><strong>E-mail Address:</strong> {{$mailData['email']}}</p>
+                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif; background-color: #e3e3e3;"><strong>Password:</strong> {{$mailData['password']}}</p>
+                    
                     @endif
                     
                     <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="{{ URL::to('home')}}" style="color:#ee4c50;text-decoration:underline;">ICET Agra</a></p>

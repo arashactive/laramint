@@ -19,13 +19,17 @@
             <div class="text-center">
                 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-light">
+                    <table class="table table-bordered table-success table-striped">
                         <tr>
                             <th>Name</th>
                             <td>
-                                <?php
-                                print_r($student_uploaded_docs);
-                                ?>
+                                {{ isset($student_uploaded_docs['name']) ? $student_uploaded_docs['name'] : Auth::user()->name }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>
+                                {{ isset($student_uploaded_docs['email']) ? $student_uploaded_docs['email'] : Auth::user()->email }}
                             </td>
                         </tr>
                     </table>
