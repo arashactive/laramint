@@ -546,12 +546,14 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
       <!-- Modal body -->
       <div class="modal-body">
         Your mobile & email are already registered!
-        Kindly check your email or contact administrator.
+        Kindly check your email for password or contact administrator in case of any issue.
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <a class="btn btn-primary" href="{{ route('login') }}">
+              <i class="fa fa-arrow-right"></i> {{ __('Login ') }}
+          </a>
       </div>
 
     </div>
