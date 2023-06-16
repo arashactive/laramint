@@ -103,7 +103,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="enrollOLevelModalLongTitle">उत्तर प्रदेश सरकार द्वारा ओ.वि.सी. वर्ग के छात्र - छात्राओं  के लिए सुनहरा अवसर(2023-24)</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -118,7 +118,7 @@
           <a class="btn btn-primary" href="{{route('landingPage','free-o-level-2023-24#contact')}}">
               <i class="fa fa-arrow-right"></i> {{ __('Click Here') }}
           </a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
 <!--        <button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
     </div>
