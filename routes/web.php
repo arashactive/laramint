@@ -56,7 +56,7 @@ Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [FrontController::class, 'contact'])->name('contact');
-Route::get('/landing_page/{page_url}', [LandingPagesController::class, 'landing_page_for']);
+Route::get('/landing_page/{page_url}', [LandingPagesController::class, 'landing_page_for'])->name('landingPage');
 //Route::post('/verify_mobile/', [WhatsAppDigitalSMSAPIController::class, 'verify_mobile'])->name('verify_mobile');
 //Route::get('/sendSMS/', [WhatsAppDigitalSMSAPIController::class, 'sendSMS']);
 Route::post('/isMobileExists/', [OtpMailSMSController::class, 'isMobileExists']);

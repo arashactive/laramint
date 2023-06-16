@@ -620,6 +620,10 @@ h6,
   position: relative;
   padding-right: 55px;
   border-bottom: 1px solid #ddd;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 
 }
@@ -631,6 +635,10 @@ h6,
 	color: #000;
   white-space: nowrap;
   opacity: 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   /*float: left;*/
 }
@@ -661,18 +669,30 @@ h6,
 	padding: 10px 20px;
 	display: block;
   display: flex;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 
 }
 
 .float_menu:hover{ 
   width: inherit;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 
 }
 
 .float_menu:hover li a { 
   opacity: 1;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 /*body {

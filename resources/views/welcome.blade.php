@@ -61,9 +61,20 @@
         </div>
         
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    Very Good Evening!
+                    Very Good Afternoon!
                     <br/>My interview is going on.
-                    
+                    Sir, is it visible now?
+                    <br/>
+                    <?php
+                    $array = array(1, 2, 3, 2, 1, 3, 4, 5, 4, 4, 5);
+                    $array_counts = array_count_values($array);
+                    print_r($array_counts);
+                    $count_val = array();
+                    foreach($array as $val){
+                        @$count_val[$val]++;
+                    }
+                    print_r($count_val);
+                    ?>
                 </div>
     </body>
 </html>

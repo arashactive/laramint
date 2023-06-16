@@ -83,7 +83,7 @@
 <div class="fixed sticky-top float-right">
     <ul class="float_menu">
         
-        <li><i class="fa fa-certificate"></i><a href="#"><span>Enroll to O-level</span></a></li>
+        <li><i class="text-warning fa-rotate-by fa fa-certificate"></i><a href="{{route('landingPage','free-o-level-2023-24#contact')}}"><span>Enroll for O-level</span></a></li>
         <li><i class="fa fa-phone"></i><a href="tel:+91-9719522999"><span>+91 971 952 2999</span>  </a></li>
         <li><i class="fa fa-envelope"></i><a href="mailto:icetagr@gmail.com"><span>icetagr@gmail.com</span> </a></li>
         <li><i class="fa fa-share"></i> <span class="fixed_social"> <a href="https://www.facebook.com/groups/617435264962620"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a> <a href="https://twitter.com/icetagra"><i class="bi bi-twitter"></i></a><a href="https://twitter.com/icetagra"><i class="bi bi-linkedin"></i></a> <a href=""><i class="bi bi-youtube"></i></a> </span> </li>
@@ -93,26 +93,33 @@
 
 <!--Popup for all pages-->
 <!-- Button trigger modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollOLevelModalCenter">
   Launch demo modal
 </button>-->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="enrollOLevelModalCenter" tabindex="-1" role="dialog" aria-labelledby="enrollOLevelModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="enrollOLevelModalLongTitle">उत्तर प्रदेश सरकार द्वारा ओ.वि.सी. वर्ग के छात्र - छात्राओं  के लिए सुनहरा अवसर(2023-24)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+          <img src="{{URL::to('course/free-o-level-obc.jpeg')}}" class="img-fluid" />
+          
+      </div>
+        <div class="modal-footer">
+          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+          <a class="btn btn-primary" href="{{route('landingPage','free-o-level-2023-24#contact')}}">
+              <i class="fa fa-arrow-right"></i> {{ __('Click Here') }}
+          </a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+<!--        <button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
     </div>
   </div>
@@ -133,6 +140,7 @@
 <script src="{{ URL::to('front/lib/owlcarousel/owl.carousel.min.js') }}"></script>
 <script src="{{ URL::to('front/lib/isotope/isotope.pkgd.min.js') }}"></script>
 <script src="{{ URL::to('front/lib/lightbox/js/lightbox.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Template Javascript -->
 <script src="{{ URL::to('front/js/main.js') }}"></script>

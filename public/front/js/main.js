@@ -89,6 +89,13 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
+
+
     
 })(jQuery);
 
+$(document).ready(function() {
+    setTimeout(function() {
+      $('#enrollOLevelModalCenter').modal('show').fadeIn(200);
+    }, 30000); // milliseconds
+});
