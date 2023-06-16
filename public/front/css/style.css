@@ -689,6 +689,7 @@ h6,
 
 .float_menu:hover li a { 
   opacity: 1;
+   transition: 1.5s ease-in-out;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
