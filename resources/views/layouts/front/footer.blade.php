@@ -101,17 +101,14 @@
 <div class="modal fade" id="enrollOLevelModalCenter" tabindex="-1" role="dialog" aria-labelledby="enrollOLevelModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="enrollOLevelModalLongTitle">प्रवेश प्रारंभ</h5>
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100" id="enrollOLevelModalLongTitle"><center>प्रवेश प्रारंभ</center></h4>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
           <img src="{{URL::to('course/free-obc-program-O-level-2023-24.jpeg')}}" class="img-fluid" />
-          
-      </div>
-        <div class="modal-footer">
           
       </div>
       <div class="modal-footer">
