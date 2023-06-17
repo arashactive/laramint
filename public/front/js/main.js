@@ -95,7 +95,7 @@
 })(jQuery);
 
 $(document).ready(function() {
-    setTimeout(function() {
+//    setTimeout(function() {
       $('#enrollOLevelModalCenter').modal('show').fadeIn(200);
-    }, 10000); // milliseconds
+//    }, 10000); // milliseconds
 });

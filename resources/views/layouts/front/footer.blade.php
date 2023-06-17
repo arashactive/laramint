@@ -102,7 +102,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="enrollOLevelModalLongTitle">उत्तर प्रदेश सरकार द्वारा ओ.वि.सी. वर्ग के छात्र - छात्राओं  के लिए सुनहरा अवसर(2023-24)</h5>
+        <h5 class="modal-title" id="enrollOLevelModalLongTitle">प्रवेश प्रारंभ</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
