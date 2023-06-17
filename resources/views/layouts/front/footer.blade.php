@@ -108,7 +108,7 @@
         </button>
       </div>
       <div class="modal-body">
-          <img src="{{URL::to('course/free-o-level-obc.jpeg')}}" class="img-fluid" />
+          <img src="{{URL::to('course/free-obc-program-O-level-2023-24.jpeg')}}" class="img-fluid" />
           
       </div>
         <div class="modal-footer">
