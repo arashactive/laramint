@@ -378,9 +378,9 @@
                     </div>
                     <div class="d-flex justify-content-center p-4">
                         <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/arvind.sutail.7"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://twitter.com/SutailArvind"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.instagram.com/arvindsutail/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.linkedin.com/in/arvind-sutail-30964627b/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
