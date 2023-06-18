@@ -113,7 +113,7 @@
         {{ __('Student Document(s)') }}
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('student_doc.index') }}">
+        <a class="nav-link" href="{{ route('admin_student_doc.index') }}">
             <i class="fas fa-fw fa-upload"></i>
             <span>{{ __("All Student Document(s)") }}</span></a>
     </li>
