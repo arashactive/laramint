@@ -389,7 +389,7 @@
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="">
                         <h5>Brij Raj Singh</h5>
-                        <span>Software Engineer</span>
+                        <span>IT Consultant</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
                         <a class="btn btn-square mx-1" target="_blank" href="https://facebook.com/brijrajsingh27"><i class="fab fa-facebook-f"></i></a>
