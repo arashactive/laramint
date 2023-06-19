@@ -5,7 +5,7 @@
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Address<span></span></p>
                 <p><i class="fa fa-map-marker-alt me-3"></i>ICET Computer Education<br/>
-                ½ C, Panchkuiyan Road, Naalband Crossing,<br/>
+                ½ C, Panchkuian Road, Nalband Crossing,<br/>
                 Near Agra College Law Faculty, Agra- 282010<br/>
                 <p><i class="fa fa-phone-alt me-3"></i><a style="color: white" href="tel:+91-9719522999">+91 971 952 2999</a></p>
                 <p><i class="fa fa-phone-alt me-3"></i><a style="color: white" href="tel:+91-9286105060">+91 928 610 5060</a></p>

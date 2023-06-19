@@ -15,7 +15,7 @@
             <div class="col-md-6 col-lg-6">
                 <p class="section-title text-info">Address<span></span></p>
                 <p class=""><i class="fa fa-map-marker-alt me-3"></i>ICET Computer Education<br/>
-                ½ C, Panchkuiyan Road,<br/> Naalband Crossing,<br/>
+                ½ C, Panchkuian Road,<br/> Nalband Crossing,<br/>
                 Near Agra College Law Faculty,<br/> Agra- 282010<br/>
                 </p>
                 <hr width="50%"/>
