@@ -14,19 +14,19 @@
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/icetagra"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/groups/617435264962620"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/arvindsutail/"><i class="fab fa-instagram"></i></a>
                     <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/icet-computer-education-47b91865/"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                <a class="btn btn-link" href="{{ route('home') }}">Home</a>
                 <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
-                <a class="btn btn-link" href="{{ route('front.courses') }}">Courses</a>
+                <!--<a class="btn btn-link" href="{{ route('front.courses') }}">Courses</a>-->
                 <a class="btn btn-link" href="{{ route('gallery') }}">Gallery</a>
                 <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
-                <a class="btn btn-link" href="{{ route('gallery') }}">Privacy Policy</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Career</a>
+<!--                <a class="btn btn-link" href="#">Terms & Condition</a>
+                <a class="btn btn-link" href="#">Career</a>-->
             </div>
             <div class="col-md-12 col-lg-6">
                 <p class="section-title text-white h5 mb-4">Accredited By<span></span></p>
@@ -54,7 +54,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">ICET Agra</a>, All Right Reserved. 
+                    &copy; <a class="border-bottom" href="{{ route('home') }}">ICET Agra</a>, All Right Reserved. 
                     
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     <div class="d-none"> Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
@@ -63,10 +63,10 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
-                        <a href="">Home</a>
-                        <a href="">Cookies</a>
-                        <a href="">Help</a>
-                        <a href="">FQAs</a>
+                        <a href="{{ route('home') }}">Home</a>
+                        <a href="{{ route('about') }}">About</a>
+                        <a href="{{ route('gallery') }}">Gallery</a>
+                        <a href="{{ route('contact') }}">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -86,16 +86,12 @@
         <li><i class="text-warning fa-rotate-by fa fa-certificate"></i><a href="{{route('landingPage','free-o-level-2023-24#contact')}}"><span>Enroll for O-level</span></a></li>
         <li><i class="fa fa-phone"></i><a href="tel:+91-9719522999"><span>+91 971 952 2999</span>  </a></li>
         <li><i class="fa fa-envelope"></i><a href="mailto:icetagr@gmail.com"><span>icetagr@gmail.com</span> </a></li>
-        <li><i class="fa fa-share"></i> <span class="fixed_social"> <a href="https://www.facebook.com/groups/617435264962620"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a> <a href="https://twitter.com/icetagra"><i class="bi bi-twitter"></i></a><a href="https://twitter.com/icetagra"><i class="bi bi-linkedin"></i></a> <a href=""><i class="bi bi-youtube"></i></a> </span> </li>
+        <li><i class="fa fa-share"></i> <span class="fixed_social"> <a href="https://www.facebook.com/groups/617435264962620"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/arvindsutail/"><i class="bi bi-instagram"></i></a> <a href="https://twitter.com/icetagra"><i class="bi bi-twitter"></i></a><a href="https://twitter.com/icetagra"><i class="bi bi-linkedin"></i></a> </span> </li>
     </ul>
 </div>
 
 
 <!--Popup for all pages-->
-<!-- Button trigger modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollOLevelModalCenter">
-  Launch demo modal
-</button>-->
 
 <!-- Modal -->
 <div class="modal fade" id="enrollOLevelModalCenter" tabindex="-1" role="dialog" aria-labelledby="enrollOLevelModalCenterTitle" aria-hidden="true">
@@ -116,7 +112,6 @@
               <i class="fa fa-arrow-right"></i> {{ __('Click Here') }}
           </a>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-<!--        <button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
     </div>
   </div>

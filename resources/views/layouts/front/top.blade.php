@@ -10,8 +10,8 @@
         <div class="navbar-nav mx-auto py-0">
             <a href="{{ route('home') }}" class="nav-item nav-link">Home</a>
             <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
-            <a href="{{ route('front.courses') }}" class="nav-item nav-link">Courses</a>
-            <a href="{{ route('front.plans') }}" class="nav-item nav-link">Plans</a>
+<!--            <a href="{{ route('front.courses') }}" class="nav-item nav-link">Courses</a>
+            <a href="{{ route('front.plans') }}" class="nav-item nav-link">Plans</a>-->
 
             <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
             <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>

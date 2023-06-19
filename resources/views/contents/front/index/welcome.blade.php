@@ -99,7 +99,7 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                 <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">15</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">16</h1>
                 <p class="text-white mb-0">Years Experience</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
@@ -114,7 +114,7 @@
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                 <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">750</h1>
                 <p class="text-white mb-0">Placed Students</p>
             </div>
         </div>
@@ -190,7 +190,7 @@
 
 
 <!-- Projects Start -->
-<div class="container-xxl py-5">
+<div class="container-xxl py-5 d-none">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-secondary justify-content-center"><span></span>Explorer<span></span></p>
@@ -237,7 +237,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET so far has been the best thing that has happened to me… Its difficult to find such a place where people are so different, so competitive and yet so close to each other… and when it comes to the Institute… its a heaven on earth…”</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-2.jpg" style="width: 65px; height: 65px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_2.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Dharmendar</h5>
                         <!--<span>Web designing</span>-->
@@ -247,7 +247,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET has provided me the platform to accomplish all my dreams. It has given me an opportunity to unleash my full potential and to materialize my career goals. ICET has prepared me to face every battle in corporate world.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-1.jpg" style="width: 65px; height: 65px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_1.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Neha Thakur</h5>
                         <!--<span>O Level</span>-->
@@ -257,7 +257,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>I always get a high from the kind of energy that prevails on campus. There is so much to do even when there is nothing to do, from struggling to finish assignments to rushing for maggi at 4am.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-3.jpg" style="width: 65px; height: 65px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_2.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Akash Jaishwal</h5>
                         <!--<span>CCC</span>-->
@@ -267,7 +267,7 @@
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide gamut of activities ranging from interest groups to online gaming events provide everyone with ample opportunities to go beyond just academics.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/testimonial-4.jpg" style="width: 65px; height: 65px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_1.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Jyoti Sharma</h5>
                         <!--<span>CCC</span>-->
@@ -282,7 +282,7 @@
 
 <!--Work experience-->
 
-<div class="container-xxl bg-light fact- py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-xxl bg-light fact- py-5 wow fadeInUp d-none" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-secondary justify-content-center"><span></span>Work Experience<span></span></p>
