@@ -56,22 +56,36 @@
       },
       "hasMap": "https://www.google.com/maps/place/ICET+Computer+Education/@27.1828866,77.9981883,17z/data=!4m14!1m7!3m6!1s0x3974772341cee113:0x2e5a5a09e43d177!2sICET+Computer+Education!8m2!3d27.1828866!4d78.0007632!16s%2Fg%2F11b6btyppx!3m5!1s0x3974772341cee113:0x2e5a5a09e43d177!8m2!3d27.1828866!4d78.0007632!16s%2Fg%2F11b6btyppx?entry=ttu",
        "openingHours": "Mo 09:00-18:30 Tu 09:00-18:30 We 09:00-18:30 Th 09:00-18:30 Fr 09:00-18:30 Sa 09:00-18:30",
-      "review": {
+      "review": 
+      [
+        {
         "@type": "Review",
         "author": {
           "@type": "Person",
-          "name": "Anushka Parmar"
+          "name": "Anushka Parmar",
+          "image": "https://icet.org.in/front/img/anushka-parmar.jpeg"
         },
         "reviewBody": "My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around."
-      },
-      "review": {
+        },
+        {
         "@type": "Review",
         "author": {
           "@type": "Person",
-          "name": "Ashish Kushwah"
+          "name": "Ashish Kushwah",
+          "image": "https://icet.org.in/front/img/Ashish-kushwah.jpg"
         },
-        "reviewBody": "Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way."
-      }
+            "reviewBody": "Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way."
+        },
+        {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Bhoomika Nigota",
+          "image": "https://icet.org.in/front/img/Bhoomika-nigota.jpeg"
+        },
+            "reviewBody": "Best coaching institute, where students get to explore more about the topics. Each and every doubt of the student is cleared with huge patience."
+        }
+      ]
     }
     </script>
 </head>

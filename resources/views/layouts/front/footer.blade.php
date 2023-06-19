@@ -5,8 +5,8 @@
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Address<span></span></p>
                 <p><i class="fa fa-map-marker-alt me-3"></i>ICET Computer Education<br/>
-                ½ C, Panchkuian Road, Nalband Crossing,<br/>
-                Near Agra College Law Faculty, Agra- 282010<br/>
+                    ½ C, Panchkuian Road, Nalband Crossing,<br/>
+                    Near Agra College Law Faculty, Agra- 282010<br/>
                 <p><i class="fa fa-phone-alt me-3"></i><a style="color: white" href="tel:+91-9719522999">+91 971 952 2999</a></p>
                 <p><i class="fa fa-phone-alt me-3"></i><a style="color: white" href="tel:+91-9286105060">+91 928 610 5060</a></p>
                 <p><i class="fa fa-envelope me-3"></i><a style="color: white" href="mailto:icetagr@gmail.com">icetagr@gmail.com</a></p>
@@ -25,8 +25,8 @@
                 <!--<a class="btn btn-link" href="{{ route('front.courses') }}">Courses</a>-->
                 <a class="btn btn-link" href="{{ route('gallery') }}">Gallery</a>
                 <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
-<!--                <a class="btn btn-link" href="#">Terms & Condition</a>
-                <a class="btn btn-link" href="#">Career</a>-->
+                <!--                <a class="btn btn-link" href="#">Terms & Condition</a>
+                                <a class="btn btn-link" href="#">Career</a>-->
             </div>
             <div class="col-md-12 col-lg-6">
                 <p class="section-title text-white h5 mb-4">Accredited By<span></span></p>
@@ -55,10 +55,10 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; <a class="border-bottom" href="{{ route('home') }}">ICET Agra</a>, All Right Reserved. 
-                    
+
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     <div class="d-none"> Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                    Distributed By a <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        Distributed By a <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
@@ -82,7 +82,7 @@
 <!--Sticky icons to the right-->
 <div class="fixed sticky-top float-right">
     <ul class="float_menu">
-        
+
         <li><i class="text-warning fa-rotate-by fa fa-certificate"></i><a href="{{route('landingPage','free-o-level-2023-24#contact')}}"><span>Enroll for O-level</span></a></li>
         <li><i class="fa fa-phone"></i><a href="tel:+91-9719522999"><span>+91 971 952 2999</span>  </a></li>
         <li><i class="fa fa-envelope"></i><a href="mailto:icetagr@gmail.com"><span>icetagr@gmail.com</span> </a></li>
@@ -94,27 +94,27 @@
 <!--Popup for all pages-->
 
 <!-- Modal -->
-<div class="modal fade" id="remove-enrollOLevelModalCenter" tabindex="-1" role="dialog" aria-labelledby="enrollOLevelModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-          <h4 class="modal-title w-100" id="enrollOLevelModalLongTitle"><center>प्रवेश प्रारंभ</center></h4>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <img src="{{URL::to('course/free-obc-program-O-level-2023-24.jpeg')}}" class="img-fluid" />
-          
-      </div>
-      <div class="modal-footer">
-          <a class="btn btn-primary" href="{{route('landingPage','free-o-level-2023-24#contact')}}">
-              <i class="fa fa-arrow-right"></i> {{ __('Click Here') }}
-          </a>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
+<div class="modal fade" id="enrollOLevelModalCenter" tabindex="-1" role="dialog" aria-labelledby="enrollOLevelModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100" id="enrollOLevelModalLongTitle"><center>प्रवेश प्रारंभ</center></h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="{{URL::to('course/free-obc-program-O-level-2023-24.jpeg')}}" class="img-fluid" />
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary" href="{{route('landingPage','free-o-level-2023-24#contact')}}">
+                    <i class="fa fa-arrow-right"></i> {{ __('Click Here') }}
+                </a>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!--Popup for all pages ends here-->
 
@@ -142,26 +142,52 @@
 <script type='application/ld+json'>
 {
   "@context": "http://www.schema.org",
-  "@type": "person",
-  "name": "Brij Raj Singh",
-  "jobTitle": "IT Consultant",
-  "height": "65 inches",
-  "gender": "male",
-  "url": "https://www.linkedin.com/in/brijrajsingh27/",
-  "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
-  "address": {
-     "@type": "PostalAddress",
-     "streetAddress": "Agra",
-     "postOfficeBoxNumber": "Sikandra",
-     "addressLocality": "Agra",
-     "addressRegion": "Uttar Pradesh",
-     "postalCode": "282007",
-     "addressCountry": "India"
-  },
-  "email": "brij.raj.singh2710@gmail.com",
-  "birthDate": "1986-10-27",
-  "birthPlace": "Agra",
-  "nationality": "India",
-  "telephone": "+91-7618565004"
+  [
+      {
+        "@type": "person",
+        "name": "Brij Raj Singh",
+        "jobTitle": "IT Consultant",
+        "height": "65 inches",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/brijrajsingh27/",
+        "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "Agra",
+           "postOfficeBoxNumber": "Sikandra",
+           "addressLocality": "Agra",
+           "addressRegion": "Uttar Pradesh",
+           "postalCode": "282007",
+           "addressCountry": "India"
+        },
+        "email": "brij.raj.singh2710@gmail.com",
+        "birthDate": "1986-10-27",
+        "birthPlace": "Agra",
+        "nationality": "India",
+        "telephone": "+91-7618565004"
+      },
+      {
+        "@type": "person",
+        "name": "Arvind Sutail",
+        "jobTitle": "Managing Director",
+        "height": "72 inches",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
+        "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "½ C, Panchkuian Road",
+           "postOfficeBoxNumber": "Nalband Crossing",
+           "addressLocality": "Agra",
+           "addressRegion": "Uttar Pradesh",
+           "postalCode": "282007",
+           "addressCountry": "India"
+        },
+        "email": "arvindsutail@gmail.com",
+        "birthPlace": "Agra",
+        "nationality": "India",
+        "telephone": "+91-9286105060"
+      }
+  ]
 }
 </script>

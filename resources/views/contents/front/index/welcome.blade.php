@@ -290,7 +290,7 @@
             </div>
             
               <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best coaching institute , Here the student gets to explore more about the topics. Each and every doubt of the student is cleared with huge Patience..
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best coaching institute, where students get to explore more about the topics. Each and every doubt of the student is cleared with huge patience.
 Thank you!</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Bhoomika-nigota.jpeg" style="width: 65px; height: 65px;">
@@ -425,61 +425,61 @@ Thank you!</p>
         </div>
         <div class="row g-4">
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light rounded">
+                <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/monika.jpeg" alt="">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/monika.jpeg" alt="monika">
                         <h5>Monika Maam</h5>
                         <span>Sr. Counselor cum Admission Head</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" target="_blank" href="linkhttps://www.facebook.com/moni.tarun?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/moni.tarun?mibextid=ZbWKwL" itemprop="https://www.facebook.com/moni.tarun?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
                         <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>-->
-                        <a class="btn btn-square mx-1" target="_blank" href="https://instagram.com/monitiwari24?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://instagram.com/monitiwari24?igshid=MzNlNGNkZWQ4Mg==" itemprop="https://instagram.com/monitiwari24?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
                         <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>-->
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item bg-light rounded">
+                <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/arvind-sutail.jpg" alt="">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/arvind-sutail.jpg" alt="arvind">
                         <h5>Arvind Sutail</h5>
                         <span>Managing Director</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/arvind.sutail.7"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href="https://twitter.com/SutailArvind"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href="https://www.instagram.com/arvindsutail/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href="https://www.linkedin.com/in/arvind-sutail-30964627b/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.facebook.com/arvind.sutail.7" href="https://www.facebook.com/arvind.sutail.7"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://twitter.com/SutailArvind" href="https://twitter.com/SutailArvind"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.instagram.com/arvindsutail/" href="https://www.instagram.com/arvindsutail/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.linkedin.com/in/arvind-sutail-30964627b/" href="https://www.linkedin.com/in/arvind-sutail-30964627b/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item bg-light rounded">
+                <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="brijraj">
                         <h5>Brij Raj Singh</h5>
                         <span>IT Consultant</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" target="_blank" href="https://facebook.com/brijrajsingh27"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href="https://twitter.com/BrijRajSingh27"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href="https://www.instagram.com/brijrajsingh27/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" href="https://www.linkedin.com/in/brijrajsingh27/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://facebook.com/brijrajsingh27" href="https://facebook.com/brijrajsingh27"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://twitter.com/BrijRajSingh27" href="https://twitter.com/BrijRajSingh27"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.instagram.com/brijrajsingh27/" href="https://www.instagram.com/brijrajsingh27/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.linkedin.com/in/brijrajsingh27/" href="https://www.linkedin.com/in/brijrajsingh27/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item bg-light rounded">
+                <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/amaan-ahmed.jpg" alt="">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/amaan-ahmed.jpg" alt="amaanahmed">
                         <h5>Amaan Ahmed</h5>
                         <span>Sr Programing Faculty</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/ahaan.khan.1293?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.facebook.com/ahaan.khan.1293?mibextid=ZbWKwL" href="https://www.facebook.com/ahaan.khan.1293?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
                         <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>-->
-                        <a class="btn btn-square mx-1" target="_blank" href="https://instagram.com/ahaan.khan.1293?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://instagram.com/ahaan.khan.1293?igshid=MzNlNGNkZWQ4Mg==" href="https://instagram.com/ahaan.khan.1293?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
                         <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>-->
                     </div>
                 </div>
