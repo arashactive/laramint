@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://icet.org.in/</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/about</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/gallery</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/contact</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/login</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/landing_page/free-o-level-2023-24</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/front/courses</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/register</loc>
+  <lastmod>2023-06-19T10:49:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://icet.org.in/files/obc-free-o-level-course-june-2023.pdf</loc>
+  <lastmod>2023-06-12T07:49:52+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
