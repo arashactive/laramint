@@ -268,7 +268,7 @@
 6) perfect Practical Classes and Theory Classes.
 7) Weekly doubt solution session. !  </p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/babar.jpeg" style="width: 65px; height: 65px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Babar.jpeg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Babar</h5>
                         <span>O Level foundation Course</span>
