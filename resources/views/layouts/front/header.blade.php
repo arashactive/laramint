@@ -56,7 +56,11 @@
       },
       "hasMap": "https://www.google.com/maps/place/ICET+Computer+Education/@27.1828866,77.9981883,17z/data=!4m14!1m7!3m6!1s0x3974772341cee113:0x2e5a5a09e43d177!2sICET+Computer+Education!8m2!3d27.1828866!4d78.0007632!16s%2Fg%2F11b6btyppx!3m5!1s0x3974772341cee113:0x2e5a5a09e43d177!8m2!3d27.1828866!4d78.0007632!16s%2Fg%2F11b6btyppx?entry=ttu",
        "openingHours": "Mo 09:00-18:30 Tu 09:00-18:30 We 09:00-18:30 Th 09:00-18:30 Fr 09:00-18:30 Sa 09:00-18:30",
-      "review": 
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7"
+      },
+        "review": 
       [
         {
          "@type": "Review",
