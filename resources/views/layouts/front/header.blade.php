@@ -1,6 +1,6 @@
 <head itemscope itemtype="https://schema.org/WebPage">
     <meta charset="utf-8">
-    <title>ICET Agra</title>
+    <title>ICET Computer Coaching, Agra | Best computer coaching in Agra</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="best coaching in agra, o level coaching, computer coaching, free coumputer course, online course" name="keywords">
     <meta content="iCET Computer Education, Agra is one of the foremost Technical Institute in the state of U.P. It offers certificate programme in Information Technology stream and aim to provide Quality Technician Education to meet the requirement of the changing education scenario. In today’s computing era, computerization has become an essential requirement for every organization to maintain the quantitative pace of organization as well as to derive the high quality training to students. To overcome the pitfalls of manual systems it is advisable to prefer automatic mode of activities by the organization. iCET is not an institute for masses but an institute of an individual. In this the programmers are set up to impart attractive and impressive abilities to the faith to meet the multiplying growth of opportunities in the expanding IT and service industry. It gives an individual not only the computer training but also the spirit of stepping ahead with optimism, because India’s increase potential in the field of IT is recognized by the whole world. We or iCET scope to the youth to meet with the requirement of the IT Industry. The students are trained through the best faculties in a systematic ways and the trends of today.\n\nFounded in 2007, ICET Computers has been imparting Computer Training Courses to some of the largest Multi National Companies of India.\n\nICET is an Internationally reputed Computer Training Institute of Mumbai, with over 15,000 student base and 20 years of reputation for imparting Quality Education in 43 different Computer Courses: Professional, Short term, Career driven, Job & Business Oriented courses for Students, Professionals, Businessmen, Homemaker, as well as for entire family in the field of Office Automation, MS-Office, Advance Excel, Internet Technology, Web Designing Courses, Graphic Designing, AutoCAD Training, 3D Max Training. Top Class computer training courses are provided in our centres. Our Computer Training Institute has over 100 Computers in total in all our computer training classes. We aim to provide World Class Learning Environment in Latest Software & Hardware Courses. We are proud to have one of the best set-ups in the Industry with strength of over 100 State of the Art Computers. Quality Education Since Last 20 Years Undoubtly the Best Computer Training Institute in Mumbai.\n\nWe offer Fast-Track Courses to students who wish to complete their learning in a short period. We have High Emphasis on Projects and Live Assignments\n" name="description">
@@ -39,6 +39,8 @@
       "logo": "https://icet.org.in/img/site-logo.png",
       "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
       "description": "iCET Computer Education, Agra is one of the foremost Technical Institute in the state of U.P. It offers certificate programme in Information Technology stream and aim to provide Quality Technician Education to meet the requirement of the changing education scenario. In today’s computing era, computerization has become an essential requirement for every organization to maintain the quantitative pace of organization as well as to derive the high quality training to students. To overcome the pitfalls of manual systems it is advisable to prefer automatic mode of activities by the organization. iCET is not an institute for masses but an institute of an individual. In this the programmers are set up to impart attractive and impressive abilities to the faith to meet the multiplying growth of opportunities in the expanding IT and service industry. It gives an individual not only the computer training but also the spirit of stepping ahead with optimism, because India’s increase potential in the field of IT is recognized by the whole world. We or iCET scope to the youth to meet with the requirement of the IT Industry. The students are trained through the best faculties in a systematic ways and the trends of today.\n\nFounded in 2007, ICET Computers has been imparting Computer Training Courses to some of the largest Multi National Companies of India.\n\nICET is an Internationally reputed Computer Training Institute of Mumbai, with over 15,000 student base and 20 years of reputation for imparting Quality Education in 43 different Computer Courses: Professional, Short term, Career driven, Job & Business Oriented courses for Students, Professionals, Businessmen, Homemaker, as well as for entire family in the field of Office Automation, MS-Office, Advance Excel, Internet Technology, Web Designing Courses, Graphic Designing, AutoCAD Training, 3D Max Training. Top Class computer training courses are provided in our centres. Our Computer Training Institute has over 100 Computers in total in all our computer training classes. We aim to provide World Class Learning Environment in Latest Software & Hardware Courses. We are proud to have one of the best set-ups in the Industry with strength of over 100 State of the Art Computers. Quality Education Since Last 20 Years Undoubtly the Best Computer Training Institute in Mumbai.\n\nWe offer Fast-Track Courses to students who wish to complete their learning in a short period. We have High Emphasis on Projects and Live Assignments\n",
+      "telephone": "+91 928 610 5060",
+      "email": "icetagr@gmail.com",
       "address": {
          "@type": "PostalAddress",
          "streetAddress": "½ C, Panchkuian Road, Nalband Crossing, Near Agra College Law Faculty, Agra- ",
@@ -53,7 +55,23 @@
          "longitude": "77.9426308"
       },
       "hasMap": "https://www.google.com/maps/place/ICET+Computer+Education/@27.1828866,77.9981883,17z/data=!4m14!1m7!3m6!1s0x3974772341cee113:0x2e5a5a09e43d177!2sICET+Computer+Education!8m2!3d27.1828866!4d78.0007632!16s%2Fg%2F11b6btyppx!3m5!1s0x3974772341cee113:0x2e5a5a09e43d177!8m2!3d27.1828866!4d78.0007632!16s%2Fg%2F11b6btyppx?entry=ttu",
-       "openingHours": "Mo 09:00-18:30 Tu 09:00-18:30 We 09:00-18:30 Th 09:00-18:30 Fr 09:00-18:30 Sa 09:00-18:30"
+       "openingHours": "Mo 09:00-18:30 Tu 09:00-18:30 We 09:00-18:30 Th 09:00-18:30 Fr 09:00-18:30 Sa 09:00-18:30",
+      "review": {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Anushka Parmar"
+        },
+        "reviewBody": "My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around."
+      }
+      "review": {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Ashish Kushwah"
+        },
+        "reviewBody": "Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way."
+      }
     }
     </script>
 </head>

@@ -237,21 +237,21 @@
             
             
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>My sister recommended that i take O level course at the ICET computer education . With the fact that i have no prior experience with the computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around. </p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/anushka-parmar.jpeg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
-                        <h5 class="mb-1">Anushka parmar</h5>
+                        <h5 class="mb-1">Anushka Parmar</h5>
                         <span>O Level Course</span>
                     </div>
                 </div>
             </div>
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best O-LEVEL choaching in agra Monika ma'am and Arvind sir is very supportive and cooperative, must visit ICET COMPUTER CENTRE</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best O-LEVEL coaching in Agra Monika ma'am and Arvind sir is very supportive and cooperative, must visit ICET COMPUTER CENTRE</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/khushbu-verma.jpeg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
-                        <h5 class="mb-1">Khushbu verma</h5>
+                        <h5 class="mb-1">Khushbu Verma</h5>
                         <span>O Level Course</span>
                     </div>
                 </div>
@@ -279,11 +279,11 @@
             
             
               <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Hi I am Ashish Kushwah I recently applied for O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Ashish-kushwah.jpg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
-                        <h5 class="mb-1">Ashish kushwah</h5>
+                        <h5 class="mb-1">Ashish Kushwah</h5>
                         <span>O Level foundation Course</span>
                     </div>
                 </div>
