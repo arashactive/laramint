@@ -58,7 +58,7 @@
        "openingHours": "Mo 09:00-18:30 Tu 09:00-18:30 We 09:00-18:30 Th 09:00-18:30 Fr 09:00-18:30 Sa 09:00-18:30",
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.7"
+        "ratingValue": "4.7",
         "ratingCount": "23"
       },
         "review": 
