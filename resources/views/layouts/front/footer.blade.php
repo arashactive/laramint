@@ -139,3 +139,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "person",
+  "name": "Brij Raj Singh",
+  "jobTitle": "IT Consultant",
+  "height": "65 inches",
+  "gender": "male",
+  "url": "https://www.linkedin.com/in/brijrajsingh27/",
+  "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
+  "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "Agra",
+     "postOfficeBoxNumber": "Sikandra",
+     "addressLocality": "Agra",
+     "addressRegion": "Uttar Pradesh",
+     "postalCode": "282007",
+     "addressCountry": "India"
+  },
+  "email": "brij.raj.singh2710@gmail.com",
+  "birthDate": "1986-10-27",
+  "birthPlace": "Agra",
+  "nationality": "India",
+  "telephone": "+91-7618565004"
+}
+</script>
