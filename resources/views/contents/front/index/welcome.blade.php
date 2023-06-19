@@ -258,14 +258,14 @@
             </div>
             
                         <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>मेरा नाम बाबर खान है ! में आगरा से हूं...
-👉 ICET Computer Education 🖥️ से कोर्स करने के एडवांटेज 👇
-1) Best Knowledge about your content.
-2) Good Excellence.
-3) Friendly Environment with Teachers.
-4) Advance practice before your exams.
-5) Boost your knowledge and update to your knowledge.
-6) perfect Practical Classes and Theory Classes.
+                <p class="fs-5 small"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>मेरा नाम बाबर खान है ! में आगरा से हूं...
+👉 ICET Computer Education 🖥️ से कोर्स करने के एडवांटेज 👇<br/>
+1) Best Knowledge about your content.<br/>
+2) Good Excellence.<br/>
+3) Friendly Environment with Teachers.<br/>
+4) Advance practice before your exams.<br/>
+5) Boost your knowledge and update to your knowledge.<br/>
+6) perfect Practical Classes and Theory Classes.<br/>
 7) Weekly doubt solution session. !  </p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Babar.jpeg" style="width: 65px; height: 65px;">
