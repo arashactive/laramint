@@ -1,4 +1,4 @@
-<head>
+<head itemscope itemtype="https://schema.org/WebPage">
     <meta charset="utf-8">
     <title>ICET Agra</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">

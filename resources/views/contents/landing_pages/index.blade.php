@@ -499,7 +499,7 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                                     <h4>Address</h4>
                                     <p>ICET Computer Education<br/>
                                         ½ C, Panchkuiyan Road, Naalband Crossing,<br/>
-                                        Near Agra College Law Faculty, Agra- 282001</p>
+                                        Near Agra College Law Faculty, Agra- 282010</p>
                                 </div>
                                 <div class="col-lg-6 info">
                                     <i class="bx bx-phone"></i>
@@ -574,7 +574,7 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                             <p>
                                 ½ C, Panchkuiyan Road, Naalband Crossing,<br>
                                 Near Agra College Law Faculty<br>
-                                Agra - 282001, India <br><br>
+                                Agra - 282010, India <br><br>
                                 <strong>Phone:</strong> <a href="tel:+91-9719522999">+91 971 952 2999</a><br>
                                 <strong>Email:</strong> <a href="mailto:arvindsutail@gmail.com">arvindsutail@gmail.com</a><br>
                             </p>
