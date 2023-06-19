@@ -59,6 +59,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.7"
+        "ratingCount": "23"
       },
         "review": 
       [
