@@ -234,6 +234,73 @@
         <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
         <h1 class="text-center mb-5">What Our Students Say!</h1>
         <div class="owl-carousel testimonial-carousel">
+            
+            
+            <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>My sister recommended that i take O level course at the ICET computer education . With the fact that i have no prior experience with the computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around. </p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/anushka-parmar.jpeg" style="width: 65px; height: 65px;">
+                    <div class="ps-4">
+                        <h5 class="mb-1">Anushka parmar</h5>
+                        <span>O Level Course</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best O-LEVEL choaching in agra Monika ma'am and Arvind sir is very supportive and cooperative, must visit ICET COMPUTER CENTRE</p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/khushbu-verma.jpeg" style="width: 65px; height: 65px;">
+                    <div class="ps-4">
+                        <h5 class="mb-1">Khushbu verma</h5>
+                        <span>O Level Course</span>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>मेरा नाम बाबर खान है ! में आगरा से हूं...
+👉 ICET Computer Education 🖥️ से कोर्स करने के एडवांटेज 👇
+1) Best Knowledge about your content.
+2) Good Excellence.
+3) Friendly Environment with Teachers.
+4) Advance practice before your exams.
+5) Boost your knowledge and update to your knowledge.
+6) perfect Practical Classes and Theory Classes.
+7) Weekly doubt solution session. !  </p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/babar.jpeg" style="width: 65px; height: 65px;">
+                    <div class="ps-4">
+                        <h5 class="mb-1">Babar</h5>
+                        <span>O Level foundation Course</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+              <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Hi I am Ashish Kushwah I recently applied for O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way.</p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Ashish-kushwah.jpg" style="width: 65px; height: 65px;">
+                    <div class="ps-4">
+                        <h5 class="mb-1">Ashish kushwah</h5>
+                        <span>O Level foundation Course</span>
+                    </div>
+                </div>
+            </div>
+            
+              <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best coaching institute , Here the student gets to explore more about the topics. Each and every doubt of the student is cleared with huge Patience..
+Thank you!</p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Bhoomika-nigota.jpeg" style="width: 65px; height: 65px;">
+                    <div class="ps-4">
+                        <h5 class="mb-1">Bhoomika Nigota</h5>
+                        <span>O Level foundation Course</span>
+                    </div>
+                </div>
+            </div>
+            
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET so far has been the best thing that has happened to me… Its difficult to find such a place where people are so different, so competitive and yet so close to each other… and when it comes to the Institute… its a heaven on earth…”</p>
                 <div class="d-flex align-items-center">
@@ -264,6 +331,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide gamut of activities ranging from interest groups to online gaming events provide everyone with ample opportunities to go beyond just academics.</p>
                 <div class="d-flex align-items-center">
@@ -274,6 +342,8 @@
                     </div>
                 </div>
             </div>
+            
+            
         </div>
     </div>
 </div>
