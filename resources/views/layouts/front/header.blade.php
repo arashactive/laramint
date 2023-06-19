@@ -63,7 +63,7 @@
           "name": "Anushka Parmar"
         },
         "reviewBody": "My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around."
-      }
+      },
       "review": {
         "@type": "Review",
         "author": {
