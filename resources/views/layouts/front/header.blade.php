@@ -59,7 +59,11 @@
       "review": 
       [
         {
-        "@type": "Review",
+         "@type": "Review",
+         "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+        },
         "author": {
           "@type": "Person",
           "name": "Anushka Parmar",
@@ -69,6 +73,10 @@
         },
         {
         "@type": "Review",
+         "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+        },
         "author": {
           "@type": "Person",
           "name": "Ashish Kushwah",
@@ -78,6 +86,10 @@
         },
         {
         "@type": "Review",
+         "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+        },
         "author": {
           "@type": "Person",
           "name": "Bhoomika Nigota",
