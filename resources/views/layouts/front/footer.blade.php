@@ -142,8 +142,31 @@
 <script type='application/ld+json'>
 {
   "@context": "http://www.schema.org",
-  [
-      {
+          "@type": "person",
+        "name": "Arvind Sutail",
+        "jobTitle": "Managing Director",
+        "height": "72 inches",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
+        "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "½ C, Panchkuian Road",
+           "postOfficeBoxNumber": "Nalband Crossing",
+           "addressLocality": "Agra",
+           "addressRegion": "Uttar Pradesh",
+           "postalCode": "282007",
+           "addressCountry": "India"
+        },
+        "email": "arvindsutail@gmail.com",
+        "birthPlace": "Agra",
+        "nationality": "India",
+        "telephone": "+91-9286105060"
+}
+</script>
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
         "@type": "person",
         "name": "Brij Raj Singh",
         "jobTitle": "IT Consultant",
@@ -165,29 +188,30 @@
         "birthPlace": "Agra",
         "nationality": "India",
         "telephone": "+91-7618565004"
-      },
-      {
+}
+</script>
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
         "@type": "person",
-        "name": "Arvind Sutail",
-        "jobTitle": "Managing Director",
-        "height": "72 inches",
-        "gender": "male",
-        "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
-        "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
+        "name": "Monika Maam",
+        "jobTitle": "Sr. Counselor cum Admission Head",
+        "height": "62 inches",
+        "gender": "female",
+        "url": "https://www.facebook.com/moni.tarun?mibextid=ZbWKwL",
+        "image": "https://icet.org.in/front/img/monika.jpeg",
         "address": {
            "@type": "PostalAddress",
-           "streetAddress": "½ C, Panchkuian Road",
-           "postOfficeBoxNumber": "Nalband Crossing",
+           "streetAddress": "Agra",
+           "postOfficeBoxNumber": "Agra",
            "addressLocality": "Agra",
            "addressRegion": "Uttar Pradesh",
            "postalCode": "282007",
            "addressCountry": "India"
         },
-        "email": "arvindsutail@gmail.com",
+        
         "birthPlace": "Agra",
         "nationality": "India",
-        "telephone": "+91-9286105060"
-      }
-  ]
+        "telephone": "+91-9719522999"
 }
 </script>
