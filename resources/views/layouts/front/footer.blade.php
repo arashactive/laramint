@@ -44,7 +44,7 @@
                         Govt. of India and UPDESCO (U.P. Govt) Authorized Training Center
                     </p>
                     <p>
-                        ICET Computer Education, Agra is one of the foremost Technical Institute in the state of U.P. It offers certificate programme in Information Technology stream and aim to provide Quality Technician Education to meet the requirement of the changing education scenario.
+                        ICET Computer Education, Agra is one of the foremost Technical Institute in the state of U.P. It offers certificate program in Data Innovation stream and plan to give Quality Specialist Training to meet the prerequisite of the changing schooling situation.
                     </p>
                 </div>
             </div>

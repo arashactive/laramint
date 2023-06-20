@@ -147,7 +147,7 @@
                         <i class="fa fa-rupee-sign fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Cost Effectiveness</h5>
-                    <p class="m-0">Our aim is to bring global expertise and world class knowledge to you in the most cost effective manner. With a strong nation wide network of training centres, we work hard to bring down the cost of training.</p>
+                    <p class="m-0">Our primary objective is to provide you with unparalleled access to global expertise and cutting-edge knowledge while ensuring maximum cost efficiency. We constantly strive to reduce the cost of training without compromising on the quality of our offerings.</p>
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
@@ -237,7 +237,7 @@
             
             
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Daily assignments are given to us to help us learn more and they are a great aid. It's a positive experience all around.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Everyday tasks are given to us to assist us with finding out more and they are an extraordinary guide. It's a positive experience all around.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/anushka-parmar.jpeg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
@@ -279,7 +279,7 @@
             
             
               <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Teachers take care of the students and help them in every possible way.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Educators deal with the understudies and help them every way possible.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Ashish-kushwah.jpg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
@@ -302,7 +302,7 @@ Thank you!</p>
             </div>
             
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET so far has been the best thing that has happened to me… Its difficult to find such a place where people are so different, so competitive and yet so close to each other… and when it comes to the Institute… its a heaven on earth…”</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET up until this point has been the best thing that has happened to me… Its hard to track down such where individuals are so unique, so serious but so near one another… and with regards to the Establishment… its a paradise on the planet… " ICET has given me the stage to achieve everything I could ever hope for. It has offered me a chance to release my maximum capacity and to emerge my vocation objectives.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_2.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
@@ -322,7 +322,7 @@ Thank you!</p>
                 </div>
             </div>
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>I always get a high from the kind of energy that prevails on campus. There is so much to do even when there is nothing to do, from struggling to finish assignments to rushing for maggi at 4am.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>I generally get a high from the sort of energy that persuades grounds. There is such a huge amount to do in any event, when essentially nothing remains to be finished, from battling to complete tasks to scrambling for magie at 4am in the morning.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_2.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
@@ -333,7 +333,7 @@ Thank you!</p>
             </div>
             
             <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide gamut of activities ranging from interest groups to online gaming events provide everyone with ample opportunities to go beyond just academics.</p>
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide array of exercises going from vested parties to web based gaming occasions furnish everybody with sufficient chances to go past scholastics.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_1.svg" style="width: 65px; height: 65px;">
                     <div class="ps-4">
