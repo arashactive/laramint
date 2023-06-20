@@ -944,6 +944,92 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
                 }
             });
         </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2Y2ZTSGHN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2Y2ZTSGHN');
+</script>
+
+<script type='application/ld+json'>
+{
+    "@context": "http://www.schema.org",
+          "@type": "person",
+        "name": "Arvind Sutail",
+        "jobTitle": "Managing Director",
+        "height": "72 inches",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
+        "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "½ C, Panchkuian Road",
+           "postOfficeBoxNumber": "Nalband Crossing",
+           "addressLocality": "Agra",
+           "addressRegion": "Uttar Pradesh",
+           "postalCode": "282007",
+           "addressCountry": "India"
+        },
+        "email": "arvindsutail@gmail.com",
+        "birthPlace": "Agra",
+        "nationality": "India",
+        "telephone": "+91-9286105060"
+}
+</script>
+<script type='application/ld+json'>
+{
+    "@context": "http://www.schema.org",
+        "@type": "person",
+        "name": "Brij Raj Singh",
+        "jobTitle": "IT Consultant",
+        "height": "65 inches",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/brijrajsingh27/",
+        "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "Agra",
+           "postOfficeBoxNumber": "Sikandra",
+           "addressLocality": "Agra",
+           "addressRegion": "Uttar Pradesh",
+           "postalCode": "282007",
+           "addressCountry": "India"
+        },
+        "email": "brij.raj.singh2710@gmail.com",
+        "birthDate": "1986-10-27",
+        "birthPlace": "Agra",
+        "nationality": "India",
+        "telephone": "+91-7618565004"
+}
+</script>
+<script type='application/ld+json'>
+{
+    "@context": "http://www.schema.org",
+        "@type": "person",
+        "name": "Monika Maam",
+        "jobTitle": "Sr. Counselor cum Admission Head",
+        "height": "62 inches",
+        "gender": "female",
+        "url": "https://www.facebook.com/moni.tarun?mibextid=ZbWKwL",
+        "image": "https://icet.org.in/front/img/monika.jpeg",
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "Agra",
+           "postOfficeBoxNumber": "Agra",
+           "addressLocality": "Agra",
+           "addressRegion": "Uttar Pradesh",
+           "postalCode": "282007",
+           "addressCountry": "India"
+        },
+        
+        "birthPlace": "Agra",
+        "nationality": "India",
+        "telephone": "+91-9719522999"
+}
+</script>
     </body>
 
 </html>
