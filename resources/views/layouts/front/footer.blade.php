@@ -106,8 +106,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{URL::to('course/free-obc-program-O-level-2023-24.jpeg')}}" class="img-fluid" />
-
+                
+                <?php 
+                $filename = 'course/free-obc-program-O-level-2023-24.jpeg';
+                $filetype = pathinfo($filename, PATHINFO_EXTENSION);
+                $imgbinary = fread(fopen($filename, "r"), filesize($filename));
+                $file_url = 'data:image/' . $filetype . ';base64,' . base64_encode($imgbinary);
+//                echo $file_url;
+                ?>
+                <img src="{{$file_url}}" class="img-fluid" />
             </div>
             <div class="modal-footer">
                 <a class="btn btn-primary" href="{{route('landingPage','free-o-level-2023-24#contact')}}">

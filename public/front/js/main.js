@@ -95,7 +95,13 @@
 })(jQuery);
 
 $(document).ready(function() {
+    //
+    document.addEventListener('contextmenu', event => event.preventDefault());
 //    setTimeout(function() {
       $('#enrollOLevelModalCenter').modal('show').fadeIn(200);
 //    }, 10000); // milliseconds
-});
+
+    $("img").bind("contextmenu",function(e){
+       return false;
+    }); 
+}); 
