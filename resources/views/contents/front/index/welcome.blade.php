@@ -424,7 +424,7 @@ Thank you!</p>
             <h1 class="text-center mb-5">Our Team Members</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/monika.jpeg" alt="monika">
@@ -439,7 +439,7 @@ Thank you!</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/arvind-sutail.jpg" alt="arvind">
@@ -454,22 +454,24 @@ Thank you!</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="brijraj">
-                        <h5>Brij Raj Singh</h5>
-                        <span>IT Consultant</span>
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/Lavi-lalwani.jpeg" alt="monika">
+                        <h5>Lavi Lalwani</h5>
+                        <span>Role Sr programing faculty</span>
                     </div>
                     <div class="d-flex justify-content-center p-4">
-                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://facebook.com/brijrajsingh27" href="https://facebook.com/brijrajsingh27"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://twitter.com/BrijRajSingh27" href="https://twitter.com/BrijRajSingh27"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.instagram.com/brijrajsingh27/" href="https://www.instagram.com/brijrajsingh27/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.linkedin.com/in/brijrajsingh27/" href="https://www.linkedin.com/in/brijrajsingh27/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.facebook.com/profile.php?id=100093926079059" itemprop="https://www.facebook.com/profile.php?id=100093926079059"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://twitter.com/LaviLalwani21?s=20" itemprop="https://twitter.com/LaviLalwani21?s=20"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" href="https://www.instagram.com/lavi._21?r=nametag" itemprop="https://www.instagram.com/lavi._21?r=nametag"><i class="fab fa-instagram"></i></a>
+                        <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>-->
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
                         <img class="img-fluid rounded-circle mb-4" src="front/img/amaan-ahmed.jpg" alt="amaanahmed">
@@ -481,6 +483,22 @@ Thank you!</p>
                         <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-twitter"></i></a>-->
                         <a class="btn btn-square mx-1" target="_blank" itemprop="https://instagram.com/ahaan.khan.1293?igshid=MzNlNGNkZWQ4Mg==" href="https://instagram.com/ahaan.khan.1293?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
                         <!--<a class="btn btn-square mx-1" target="_blank" href=""><i class="fab fa-linkedin-in"></i></a>-->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
+                    <div class="text-center border-bottom p-4">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="brijraj">
+                        <h5>Brij Raj Singh</h5>
+                        <span>IT Consultant</span>
+                    </div>
+                    <div class="d-flex justify-content-center p-4">
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://facebook.com/brijrajsingh27" href="https://facebook.com/brijrajsingh27"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://twitter.com/BrijRajSingh27" href="https://twitter.com/BrijRajSingh27"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.instagram.com/brijrajsingh27/" href="https://www.instagram.com/brijrajsingh27/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square mx-1" target="_blank" itemprop="https://www.linkedin.com/in/brijrajsingh27/" href="https://www.linkedin.com/in/brijrajsingh27/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>

@@ -52,6 +52,16 @@ class FrontController extends Controller
     {
         return view('contents.front.index.contact');
     }
+    
+    /**
+     * Make News
+     * 
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function news()
+    {
+        return view('contents.front.index.news');
+    }
 
     
 }

@@ -61,11 +61,70 @@
         </div>
         
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    Very Good Afternoon!
+<!--                    Very Good Afternoon!
                     <br/>My interview is going on.
                     Sir, is it visible now?
-                    <br/>
-                    <?php
+                    <br/>-->
+                    <pre><?php
+                    
+                    
+
+/*
+ * Complete the 'encryption' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+function encryption($s) {
+    // Write your code here
+    $length = strlen($s);
+    $sqrt = sqrt($length);
+    $row_count = ceil($sqrt);
+    $col_count = floor($sqrt);
+    
+    $rows = str_split($s,$row_count);
+
+//    print_r($split);
+    $new_array = array();
+    $new_string = '';
+    
+    
+    
+//    echo count($rows);
+    $out = array();
+    $ridx = 0;
+    $cidx = 0;
+
+    foreach($rows as $rowidx => $row){
+        $cols = str_split($row);
+        foreach($cols as $colidx => $val){
+            $out[$colidx][$rowidx] = $val;   
+        }   
+    }
+    foreach($out as $val){
+        $new_string .= implode("",$val);
+    }
+    echo ($new_string);
+                        
+    die;
+}
+
+
+$s = "haveaniceday";
+
+echo "String: ",$s;
+
+echo "<br/>Expected: "
+. "hae and via ecy<br/>"
+        . "<br/>"
+        ;
+
+$result = encryption($s);
+                   
+print_r($result);
+die;
+                    
                     $array = array(1, 2, 3, 2, 1, 3, 4, 5, 4, 4, 5);
                     $array_counts = array_count_values($array);
                     print_r($array_counts);

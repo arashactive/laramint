@@ -23,6 +23,7 @@
                 <a class="btn btn-link" href="{{ route('home') }}">Home</a>
                 <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
                 <!--<a class="btn btn-link" href="{{ route('front.courses') }}">Courses</a>-->
+                <a class="btn btn-link" href="{{ route('front.news') }}">News</a>
                 <a class="btn btn-link" href="{{ route('gallery') }}">Gallery</a>
                 <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
                 <!--                <a class="btn btn-link" href="#">Terms & Condition</a>
@@ -65,6 +66,7 @@
                     <div class="footer-menu">
                         <a href="{{ route('home') }}">Home</a>
                         <a href="{{ route('about') }}">About</a>
+                        <a href="{{ route('front.news') }}">News</a>
                         <a href="{{ route('gallery') }}">Gallery</a>
                         <a href="{{ route('contact') }}">Contact Us</a>
                     </div>
