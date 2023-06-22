@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: 
 Disallow: /cgi-bin/
 Sitemap: https://icet.org.in/sitemap.xml
