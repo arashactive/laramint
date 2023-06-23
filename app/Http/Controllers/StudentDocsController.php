@@ -71,7 +71,7 @@ class StudentDocsController extends Controller
         $high_school_marksheet = (isset($request->high_school_marksheet) && $request->high_school_marksheet!='high_school_marksheet') ?  $request->high_school_marksheet : '' ;
         $intermediate_marksheet = (isset($request->intermediate_marksheet) && $request->intermediate_marksheet!='intermediate_marksheet') ?  $request->intermediate_marksheet : '' ;
         $aadhar_number = (isset($request->aadhar_number) && !empty($request->aadhar_number)) ?  $request->aadhar_number : '' ;
-        $father_income_certificate = (isset($request->father_income_certificate) && !empty($request->father_income_certificate)) ?  $request->father_income_certificate : '' ;
+        $father_income_certificate = (isset($request->father_income_certificate) && $request->father_income_certificate!='father_income_certificate') ?  $request->father_income_certificate : '' ;
         
         
         $student_docs->user_id =  isset($request->last_user_id) ? base64_decode($request->last_user_id) : Auth::user()->id;
