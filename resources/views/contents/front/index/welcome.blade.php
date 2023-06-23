@@ -290,6 +290,17 @@
             </div>
             
               <div class="testimonial-item bg-light rounded my-4">
+                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Nice place to get computer knowledge and awareness. Learn a lot here about computer  in detail.</p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Aman-bajpayee.jpeg" style="width: 65px; height: 65px;">
+                    <div class="ps-4">
+                        <h5 class="mb-1">Aman bajpayee</h5>
+                        <!--<span>O Level foundation Course</span>-->
+                    </div>
+                </div>
+            </div>
+            
+              <div class="testimonial-item bg-light rounded my-4">
                 <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best coaching institute, where students get to explore more about the topics. Each and every doubt of the student is cleared with huge patience.
 Thank you!</p>
                 <div class="d-flex align-items-center">
