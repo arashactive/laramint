@@ -33,10 +33,10 @@
                 <p class="section-title text-white h5 mb-4">Accredited By<span></span></p>
                 <div class="row g-2">
                     <div class="col-6">
-                        <img class="img-fluid" src="{{ URL::to('img/NIELIT-LOGO.png') }}" alt="Image">
+                        <img class="img-fluid" src="{{ URL::to('img/NIELIT-LOGO.webp') }}" alt="Image">
                     </div>
                     <div class="col-6">
-                        <img class="img-fluid" width="135px" src="{{ URL::to('img/UPDESCO-LOGO.png') }}" alt="Image">
+                        <img class="img-fluid" width="135px" src="{{ URL::to('img/UPDESCO-LOGO.webp') }}" alt="Image">
                     </div>
                 </div>
                 <div class="row g-2">
@@ -108,7 +108,7 @@
             <div class="modal-body">
                 
                 <?php 
-                $filename = 'course/free-obc-program-O-level-2023-24.jpeg';
+                $filename = 'course/free-obc-program-O-level-2023-24.webp';
                 $filetype = pathinfo($filename, PATHINFO_EXTENSION);
                 $imgbinary = fread(fopen($filename, "r"), filesize($filename));
                 $file_url = 'data:image/' . $filetype . ';base64,' . base64_encode($imgbinary);
@@ -157,7 +157,7 @@
         "height": "72 inches",
         "gender": "male",
         "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
-        "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
+        "image": "https://icet.org.in/front/img/arvind-sutail.webp",
         "address": {
            "@type": "PostalAddress",
            "streetAddress": "½ C, Panchkuian Road",
@@ -182,7 +182,7 @@
         "height": "65 inches",
         "gender": "male",
         "url": "https://www.linkedin.com/in/brijrajsingh27/",
-        "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
+        "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.webp",
         "address": {
            "@type": "PostalAddress",
            "streetAddress": "Agra",
@@ -208,7 +208,7 @@
         "height": "62 inches",
         "gender": "female",
         "url": "https://www.facebook.com/moni.tarun?mibextid=ZbWKwL",
-        "image": "https://icet.org.in/front/img/monika.jpeg",
+        "image": "https://icet.org.in/front/img/monika.webp",
         "address": {
            "@type": "PostalAddress",
            "streetAddress": "Agra",

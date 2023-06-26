@@ -24,7 +24,7 @@
 <!--                <a href="{{ route('front.courses') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Courses</a>-->
             </div>
             <div class="col-lg-6 text-center text-lg-start">
-                <img class="img-fluid animated zoomIn" src="front/img/hero.png" alt="">
+                <img class="img-fluid animated zoomIn" src="front/img/hero.webp" alt="">
             </div>
         </div>
     </div>
@@ -83,7 +83,7 @@
                 <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="front/img/about.png">
+                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="front/img/about.webp">
             </div>
         </div>
     </div>
@@ -365,7 +365,7 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/monika.jpeg" alt="monika">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/monika.webp" alt="monika">
                         <h5>Monika Maam</h5>
                         <span>Sr. Counselor cum Admission Head</span>
                     </div>
@@ -380,7 +380,7 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/arvind-sutail.jpg" alt="arvind">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/arvind-sutail.webp" alt="arvind">
                         <h5>Arvind Sutail</h5>
                         <span>Managing Director</span>
                     </div>
@@ -395,7 +395,7 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/Lavi-lalwani.jpeg" alt="monika">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/Lavi-lalwani.webp" alt="monika">
                         <h5>Lavi Lalwani</h5>
                         <span>Role Sr programing faculty</span>
                     </div>
@@ -412,7 +412,7 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/amaan-ahmed.jpg" alt="amaanahmed">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/amaan-ahmed.webp" alt="amaanahmed">
                         <h5>Amaan Ahmed</h5>
                         <span>Sr Programing Faculty</span>
                     </div>
@@ -428,7 +428,7 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light rounded" itemscope itemtype="https://schema.org/Person">
                     <div class="text-center border-bottom p-4">
-                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.jpg" alt="brijraj">
+                        <img class="img-fluid rounded-circle mb-4" src="front/img/CTO-Brij-Raj-Singh.webp" alt="brijraj">
                         <h5>Brij Raj Singh</h5>
                         <span>IT Consultant</span>
                     </div>

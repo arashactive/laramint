@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
     <a href="{{ route('home') }}" class="navbar-brand p-0">
         <!--<h1 class="m-0">ICET</h1>-->
-         <img src="{{ URL::to('img/site-logo.png') }}" alt="Logo"> 
+         <img src="{{ URL::to('img/site-logo.webp') }}" alt="Logo"> 
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
