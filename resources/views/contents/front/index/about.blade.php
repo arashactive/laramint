@@ -11,7 +11,12 @@
         <div class="row align-items-center">
             <h1 class="text-center mb-5">A Message from Director's desk</h1>
             <div class="col-12 wow fadeInUp" data-wow-delay="0.6s">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="front/img/director.jpeg">
+                <picture>
+                    <source type="image/webp" srcset="front/img/director.webp">
+                    <source type="image/jpeg" srcset="front/img/director.jpeg">
+                    <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="front/img/director.jpeg">
+                </picture>
+
 
                 <p>
                     <br/>
