@@ -20,37 +20,37 @@ $referrer_url = $_SERVER['HTTP_REFERER'] ?? '';
         <title>Landing Page || {{$page_title}}</title>
         <meta content="iCET Computer Education, Agra is one of the foremost Technical Institute in the state of U.P. It offers certificate program in Data Innovation stream and plan to give Quality Specialist Training to meet the prerequisite of the changing schooling situation. In today’s computing era, computerization has become an essential requirement for every organization to maintain the quantitative pace of organization as well as to derive the high quality training to students. To overcome the pitfalls of manual systems it is advisable to prefer automatic mode of activities by the organization. iCET is not an institute for masses but an institute of an individual. In this the programmers are set up to impart attractive and impressive abilities to the faith to meet the multiplying growth of opportunities in the expanding IT and service industry. It gives an individual not only the computer training but also the spirit of stepping ahead with optimism, because India’s increase potential in the field of IT is recognized by the whole world. We or iCET scope to the youth to meet with the requirement of the IT Industry. The students are trained through the best faculties in a systematic ways and the trends of today.\n\nFounded in 2007, ICET Computers has been imparting Computer Training Courses to some of the largest Multi National Companies of India.\n\nICET is an Internationally reputed Computer Training Institute of Mumbai, with over 15,000 student base and 20 years of reputation for imparting Quality Education in 43 different Computer Courses: Professional, Short term, Career driven, Job & Business Oriented courses for Students, Professionals, Businessmen, Homemaker, as well as for entire family in the field of Office Automation, MS-Office, Advance Excel, Internet Technology, Web Designing Courses, Graphic Designing, AutoCAD Training, 3D Max Training. Top Class computer training courses are provided in our centres. Our Computer Training Institute has over 100 Computers in total in all our computer training classes. We aim to provide World Class Learning Environment in Latest Software & Hardware Courses. We are proud to have one of the best set-ups in the Industry with strength of over 100 State of the Art Computers. Quality Education Since Last 20 Years Undoubtly the Best Computer Training Institute in Mumbai.\n\nWe offer Fast-Track Courses to students who wish to complete their learning in a short period. We have High Emphasis on Projects and Live Assignments\n" name="description">
         <meta content="ICET Agra,
-Computer Center,
-Computer Education in Agra,
-O Level Computer Institute in Agra,
-O Level Computer Center in Agra,
-Best Computer Center in Agra,
-Govt. Computer Center in Agra,
-Govt. Computer Course in Agra,
-OBC Computer Training,
-OBC O Level in Agra,
-Free Computer Course in Agra,
-OBC Free Computer Training In Agra,
-Free OBC Computer Course,
-Pichda Vrag Computer Course O Level In Agra,
-NIELIT Agra,
-computer coaching near me,
-computer classes in agra,
-it computer institute,
-icet institute,
-icet institute agra,
-कंप्यूटर सेण्टर इन आगरा ,
-बेस्ट कंप्यूटर सेण्टर इन आगरा,
-फ्री कंप्यूटर कोर्स इन आगरा,
-ओ लेवल कंप्यूटर कोर्स इन आगरा,
-फ्री ओ लेवल कंप्यूटर कोर्स इन आगरा,
-OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
-सरकारी कंप्यूटर कोर्स प्रोग्राम,
-ओ लेवल फॉर OBC" name="keywords">
+              Computer Center,
+              Computer Education in Agra,
+              O Level Computer Institute in Agra,
+              O Level Computer Center in Agra,
+              Best Computer Center in Agra,
+              Govt. Computer Center in Agra,
+              Govt. Computer Course in Agra,
+              OBC Computer Training,
+              OBC O Level in Agra,
+              Free Computer Course in Agra,
+              OBC Free Computer Training In Agra,
+              Free OBC Computer Course,
+              Pichda Vrag Computer Course O Level In Agra,
+              NIELIT Agra,
+              computer coaching near me,
+              computer classes in agra,
+              it computer institute,
+              icet institute,
+              icet institute agra,
+              कंप्यूटर सेण्टर इन आगरा ,
+              बेस्ट कंप्यूटर सेण्टर इन आगरा,
+              फ्री कंप्यूटर कोर्स इन आगरा,
+              ओ लेवल कंप्यूटर कोर्स इन आगरा,
+              फ्री ओ लेवल कंप्यूटर कोर्स इन आगरा,
+              OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
+              सरकारी कंप्यूटर कोर्स प्रोग्राम,
+              ओ लेवल फॉर OBC" name="keywords">
 
         <!-- Favicons -->
-<!--        <link href="{{ URL::to('landing_page/assets/img/favicon.png') }}" rel="icon">
-        <link href="{{ URL::to('landing_page/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">-->
+        <!--        <link href="{{ URL::to('landing_page/assets/img/favicon.png') }}" rel="icon">
+                <link href="{{ URL::to('landing_page/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">-->
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -84,7 +84,8 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                     <ul>
                         <li><a class="nav-link scrollto active" href="{{route('home')}}" onclick="return checkHomePage();">Home</a></li>
                         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                        <li><a class="getstarted scrollto" href="#contact">Enroll Now</a></li>
+                        <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
+                        <li><a class="getstarted scrollto" href="#contact">Register For O Free Level</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -191,11 +192,38 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
             </section><!-- End App Features Section -->
 
             <!-- ======= Details Section ======= -->
-            
 
 
 
 
+<!-- ======= Testimonials Section ======= -->
+            <section id="testimonials" class="testimonials">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row">
+                        @if(count($testimonials) > 1)
+                        <div class="container-xxl py-2 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="container px-lg-5">
+                                <!--<p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>-->
+                                <h1 class="text-center mb-5">What Our Students Say!</h1>
+                                <div class="owl-carousel testimonial-carousel">
+
+                                    <div class="row g-4">
+                                        @forelse ($testimonials as $testimonial)
+                                        <x-front.testimonial :testimonial="$testimonial"/>
+                                        @empty
+                                        @endforelse
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </section>
+            <!-- ======= End Testimonials Section ======= -->
+                
 
 
 
@@ -290,7 +318,7 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Enroll for the program</h2>
+                        <h2>Register yourself for the program</h2>
                         <p></p>
                     </div>
 
@@ -305,28 +333,28 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                                 </div>
                                 <div class="form-group mt-3">
 
-                                    <div class="row col-12">
-                                        <div class="col-8">
+                                    <div class="row-1 col-12-1">
+                                        <div class="col-12">
                                             <input placeholder="10 digit Mobile number(for e.g., 9897111222)" type="text" class="form-control" name="mobile" id="mobile" required>
                                         </div>
-                                        <div class="col-4">
+                                        <div class=" d-none">
                                             <a onclick="" class="btn btn-success" id="validate_mobile" > Get Mobile OTP</a>
                                             <input placeholder="Enter SMS OTP" type="text" class="form-control" name="sms_otp" id="sms_otp">
                                             <a onclick="" class="btn btn-success" id="validate_sms_otp" >Validate SMS OTP</a>
                                         </div>
                                     </div>
                                     <div class="row col-12">
-                                            
+
                                         <span class="success-mobile-update"></span>
-                                            <span class="error-mobile-update"></span>
+                                        <span class="error-mobile-update"></span>
                                     </div>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <div class="row col-12">
-                                        <div class="col-8">
+                                    <div class="row-w col-12-1">
+                                        <div class="col-12">
                                             <input placeholder="Your Email (for e.g., name@domain.com)" type="email" class="form-control" name="email" id="email" required>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="d-none">
                                             <a onclick="" class="btn btn-success" id="validate_email" >Verify Email OTP</a>
                                             <input placeholder="Enter Email OTP" type="text" class="form-control" name="mail_otp" id="mail_otp">
                                             <a onclick="" class="btn btn-success" id="validate_mail_otp" >Validate OTP</a>
@@ -500,21 +528,21 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                                         @endif
 
                                     </div>
-                                    
+
                                     <!-- Documents form end here-->
                                 </div>
                                 <div class="d-none">
-                                        <input name="referrer_url" id="referrer_url" type="hidden" value="<?php echo $referrer_url ?>" />
-                                        <input name="last_user_id" id="last_user_id" type="hidden" value="<?php echo base64_encode($last_user_id) ?>" />
-                                        <input name="is_email_verified" id="is_email_verified" type="hidden" value="0" />
-                                        <input name="is_mobile_verified" id="is_mobile_verified" type="hidden" value="0" />
-                                    </div>
+                                    <input name="referrer_url" id="referrer_url" type="hidden" value="<?php echo $referrer_url ?>" />
+                                    <input name="last_user_id" id="last_user_id" type="hidden" value="<?php echo base64_encode($last_user_id) ?>" />
+                                    <input name="is_email_verified" id="is_email_verified" type="hidden" value="0" />
+                                    <input name="is_mobile_verified" id="is_mobile_verified" type="hidden" value="0" />
+                                </div>
                                 <div class="my-3">
                                     <div class="loading">Loading</div>
                                     <div class="error-message"></div>
                                     <div class="sent-message">Your message has been sent. Thank you!</div>
                                 </div>
-                                <div class="text-center"><button type="submit">Enroll Now</button></div>
+                                <div class="text-center"><button type="submit">Apply for Free O Level Now</button></div>
                             </form>
                         </div>
 
@@ -551,42 +579,43 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                 </div>
             </section><!-- End Contact Section -->
 
+            
         </main><!-- End #main -->
 
         <!-- =======  Login Popup ======== -->
         <!-- Button to Open the Modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Open modal
-</button>-->
+        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Open modal
+        </button>-->
 
-<!-- The Modal -->
-<div class="modal" id="loginModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+        <!-- The Modal -->
+        <div class="modal" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Redirecting to login</h4>
-      </div>
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Redirecting to login</h4>
+                    </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        Your mobile & email are already registered!
-        Kindly check your email for password or contact administrator in case of any issue.
-      </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Your mobile & email are already registered!
+                        Kindly check your email for password or contact administrator in case of any issue.
+                    </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-          <a class="btn btn-primary" href="{{ route('login') }}">
-              <i class="fa fa-arrow-right"></i> {{ __('Login ') }}
-          </a>
-      </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <a class="btn btn-primary" href="{{ route('login') }}">
+                            <i class="fa fa-arrow-right"></i> {{ __('Login ') }}
+                        </a>
+                    </div>
 
-    </div>
-  </div>
-</div>
+                </div>
+            </div>
+        </div>
         <!-- =======  Login Popup Ends here ======== -->
-        
+
         <!-- ======= Footer ======= -->
         <footer id="footer">
 
@@ -648,143 +677,144 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
 
         <script src="{{ URL::to('front/lib/easing/easing.min.js') }}"></script>
         <script src="{{ URL::to('front/lib/lightbox/js/lightbox.min.js') }}"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Template Main JS File -->
         <script src="{{ URL::to('landing_page/assets/js/main.js') }}"></script>
 
         <script type="text/javascript">
-            
-            function checkMobile(mobile){
-                  $.ajax({
-                        type: 'GET',
-                        dataType: 'html',
-                        url: '/check_mobile',
-                        data: {
-                            mobile: mobile
-                        },
-                        success: function (data) {
-                            // Do some nice animation to show results
-                            $('#searchdata').html(data);
-                        }
-                    });
-            }
-            function checkHomePage() {
-                if (confirm('The Filled details might get wiped out. Are you sure want to go to homepage?')) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
 
-        $(document).ready(function () {
+                            function checkMobile(mobile) {
+                                $.ajax({
+                                    type: 'GET',
+                                    dataType: 'html',
+                                    url: '/check_mobile',
+                                    data: {
+                                        mobile: mobile
+                                    },
+                                    success: function (data) {
+                                        // Do some nice animation to show results
+                                        $('#searchdata').html(data);
+                                    }
+                                });
+                            }
+                            function checkHomePage() {
+                                if (confirm('The Filled details might get wiped out. Are you sure want to go to homepage?')) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
 
-            
-            // hiding required fields
-            $(".docs_forms").hide();
-            $("#sms_otp").hide();
-            $("#validate_sms_otp").hide();
-            $("#mail_otp").hide();
-            $("#validate_mail_otp").hide();
-            
-            
-            $("#mobile").keyup(function () {
-                var mobile = $("#mobile").val();
-                if (mobile.length == 10) {
-                    // now check if already exists
-                    isMobileExists(mobile);     
-                }
+                            $(document).ready(function () {
 
-            });
 
-            $("#high_school_marks").on('keyup', function () {
-                console.log($(this).length);
-                if ($(this).length >= 1 || $(this).val > 1) {
-                    $("#high_school_grades").hide();
-                    $("a.high_school_grades_link").hide();
-                }
-                if ($(this).length == 0 && ($(this).val == 0 || $(this).val != "")) {
-                    $("#high_school_grades").show();
-                    $("a.high_school_grades_link").show();
-                }
-            });
+                                // hiding required fields
+                                $(".docs_forms").hide();
+                                $("#sms_otp").hide();
+                                $("#validate_sms_otp").hide();
+                                $("#mail_otp").hide();
+                                $("#validate_mail_otp").hide();
 
-            // show more fields if caste is OBC..
-            $("#caste_category").on("change", function () {
 
-                if ($(this).val() == '<?php echo $caste_categories_array['OBC'] ?>') {
-                    $(".docs_forms").show();
-                } else {
-                    $(".docs_forms").hide();
-                }
-            });
-        });
-        
-        function isMobileExists(student_mobile){
-        
-            if (student_mobile == '') {
-                alert('Kindly enter mobile number first');
-                $("#mobile").focus();
-                return false;
-            } else {
-                //send OTP
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    method: "POST",
-                    url: "{{url('/')}}/isMobileExists",
-                    data: {"student_mobile": student_mobile},
-                }).done(function (json) {
-                    var msg = jQuery.parseJSON(json);
-                    console.log(msg);
-                    var is_email_verified = msg.is_email_verified;
-                    var is_mobile_verified = msg.is_mobile_verified;
-                    
-                    if(is_mobile_verified=='1' && is_email_verified=='1'){
-                        $("#validate_email").addClass('disabled');
-                        $("#validate_mobile").addClass('disabled');
-                        $("#is_email_verified").val('1');
-                        $("#is_mobile_verified").val('1');
-                        $('#loginModal').modal('show');
-                        return false;
-                    }
-                    
-                    if (is_mobile_verified=='1') {
+                                $("#mobile").keyup(function () {
+                                    var mobile = $("#mobile").val();
+                                    if (mobile.length == 10) {
+                                        // now check if already exists
+                                        isMobileExists(mobile);
+                                    }
+
+                                });
+
+                                $("#high_school_marks").on('keyup', function () {
+                                    console.log($(this).length);
+                                    if ($(this).length >= 1 || $(this).val > 1) {
+                                        $("#high_school_grades").hide();
+                                        $("a.high_school_grades_link").hide();
+                                    }
+                                    if ($(this).length == 0 && ($(this).val == 0 || $(this).val != "")) {
+                                        $("#high_school_grades").show();
+                                        $("a.high_school_grades_link").show();
+                                    }
+                                });
+
+                                // show more fields if caste is OBC..
+                                $("#caste_category").on("change", function () {
+
+                                    if ($(this).val() == '<?php echo $caste_categories_array['OBC'] ?>') {
+                                        $(".docs_forms").show();
+                                    } else {
+                                        $(".docs_forms").hide();
+                                    }
+                                });
+                            });
+
+                            function isMobileExists(student_mobile) {
+
+                                if (student_mobile == '') {
+                                    alert('Kindly enter mobile number first');
+                                    $("#mobile").focus();
+                                    return false;
+                                } else {
+                                    //send OTP
+                                    $.ajax({
+                                        headers: {
+                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                        },
+                                        method: "POST",
+                                        url: "{{url('/')}}/isMobileExists",
+                                        data: {"student_mobile": student_mobile},
+                                    }).done(function (json) {
+                                        var msg = jQuery.parseJSON(json);
+                                        console.log(msg);
+                                        var is_email_verified = msg.is_email_verified;
+                                        var is_mobile_verified = msg.is_mobile_verified;
+
+                                        if (is_mobile_verified == '1' && is_email_verified == '1') {
+                                            $("#validate_email").addClass('disabled');
+                                            $("#validate_mobile").addClass('disabled');
+                                            $("#is_email_verified").val('1');
+                                            $("#is_mobile_verified").val('1');
+                                            $('#loginModal').modal('show');
+                                            return false;
+                                        }
+
+                                        if (is_mobile_verified == '1') {
 //                        $('.success-mobile-update').html(msg.status_code + ' ' + msg.message);
-                        $('.success-mobile-update').addClass('text-success').html('Mobile already verified!');
+                                            $('.success-mobile-update').addClass('text-success').html('Mobile already verified!');
 //                        alert('here we need to verify email & disbale mobile OTP!'); // but disable mobile OTP..
-                        $("#validate_mobile").addClass('disabled');
-                        $("#validate_mobile").addClass('disabled');
-                        $("#is_mobile_verified").val('1');
+                                            $("#validate_mobile").addClass('disabled');
+                                            $("#validate_mobile").addClass('disabled');
+                                            $("#is_mobile_verified").val('1');
 //                        $("#validate_email").removeClass('disable');
-                    }else if (is_mobile_verified=='0'){
+                                        } else if (is_mobile_verified == '0') {
 //                        alert('here we need to verify mobile & enable mobile OTP!'); // but disable mobile OTP..
-                        $("#validate_mobile").removeClass('disabled');;
-                        $("#is_mobile_verified").val('0');
+                                            $("#validate_mobile").removeClass('disabled');
+                                            ;
+                                            $("#is_mobile_verified").val('0');
 //                        $("#validate_email").removeClass('disable');
-                    }
-                    if (is_email_verified=='1') { 
+                                        }
+                                        if (is_email_verified == '1') {
 //                        $('.error-mobile-update').html(msg.status_code + ' ' + msg.message);
 //                        $("#validate_mobile").addClass('disable');
-                        $("#validate_email").addClass('disabled');
+                                            $("#validate_email").addClass('disabled');
 //                        alert('email already verified'); // but disable mobile OTP..
-                        $("#is_email_verified").val('1');
-                    }else if (is_email_verified=='0'){
-                        $("#validate_email").removeClass('disabled');
+                                            $("#is_email_verified").val('1');
+                                        } else if (is_email_verified == '0') {
+                                            $("#validate_email").removeClass('disabled');
 //                        alert('email not verified'); // but disable mobile OTP..
-                        $("#is_email_verified").val('0');
-                        
-                    } 
+                                            $("#is_email_verified").val('0');
+
+                                        }
 //                    if(is_m) {
 //                        alert(is_mobile_verified);
 //                        alert(is_email_verified);
 //                        $('.success-mobile-update').html(msg.status_code + ' ' + msg.message);
 //                        alert('here we need to verify finally else!');
 //                    }
-                });
-            }
-        }
-        
+                                    });
+                                }
+                            }
+
         </script>
         <script type="text/javascript">
             //    $.ajaxSetup({
@@ -816,24 +846,24 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                         },
                         method: "POST",
                         url: "{{url('/')}}/sendSMS",
-                        data: {"student_mobile": student_mobile,"referrer_url":referrer_url,"last_user_id":last_user_id}
+                        data: {"student_mobile": student_mobile, "referrer_url": referrer_url, "last_user_id": last_user_id}
                     }).done(function (json) {
                         msg = jQuery.parseJSON(json);
-                        console.log(msg);                        
+                        console.log(msg);
                         if (msg.status == 'Success') {
                             $('.success-mobile-update').addClass('text-success').html(msg.status + '! ' + msg.msg);
-                            
+
 //                            alert(msg.message);
                             // now enable OTP button
-                            
-                            
-                            
-                            
+
+
+
+
                             $("#validate_mobile").addClass('disabled');
                             $("#validate_mobile").hide();
                             $("#sms_otp").show();
                             $("#sms_otp").focus();
-                            
+
                             $("#validate_sms_otp").show();
                             $("#validate_sms_otp").on('click', function () {
                                 $('.success-mobile-update').html('');
@@ -855,7 +885,7 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                                     console.log(msg);
                                     if (msg.status_code == 'success') {
                                         $('.success-mobile-update').addClass('text-' + msg.status_code).html(msg.message);
-                                        $("#mobile").prop("readonly",true);
+                                        $("#mobile").prop("readonly", true);
                                         $("#is_mobile_verified").val('1');
 //                                        alert(msg.message);
                                         // now open textbox to validate..
@@ -869,15 +899,15 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                                     }
                                 });
                             });
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
+
+
+
+
                         } else {
 //                            alert(msg.status_code);
 //                            alert(msg.message);
@@ -947,8 +977,8 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
                                         // now open textbox to validate..
                                         $("#mail_otp").hide();
                                         $("#validate_email").addClass('disabled');
-                                        $("#validate_mail_otp").hide();                                        
-                                        $("#email").prop("readonly",true);
+                                        $("#validate_mail_otp").hide();
+                                        $("#email").prop("readonly", true);
                                         $("#is_email_verified").val('1');
 
 
@@ -972,104 +1002,106 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
             });
         </script>
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2Y2ZTSGHN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2Y2ZTSGHN"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-  gtag('config', 'G-R2Y2ZTSGHN');
-</script>
+            gtag('config', 'G-R2Y2ZTSGHN');
+        </script>
 
-<script type='application/ld+json'>
-{
-    "@context": "http://www.schema.org",
-          "@type": "person",
-        "name": "Arvind Sutail",
-        "jobTitle": "Managing Director",
-        "height": "72 inches",
-        "gender": "male",
-        "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
-        "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
-        "address": {
-           "@type": "PostalAddress",
-           "streetAddress": "½ C, Panchkuian Road",
-           "postOfficeBoxNumber": "Nalband Crossing",
-           "addressLocality": "Agra",
-           "addressRegion": "Uttar Pradesh",
-           "postalCode": "282007",
-           "addressCountry": "India"
-        },
-        "email": "arvindsutail@gmail.com",
-        "birthPlace": "Agra",
-        "nationality": "India",
-        "telephone": "+91-9286105060"
-}
-</script>
-<script type='application/ld+json'>
-{
-    "@context": "http://www.schema.org",
-        "@type": "person",
-        "name": "Brij Raj Singh",
-        "jobTitle": "IT Consultant",
-        "height": "65 inches",
-        "gender": "male",
-        "url": "https://www.linkedin.com/in/brijrajsingh27/",
-        "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
-        "address": {
-           "@type": "PostalAddress",
-           "streetAddress": "Agra",
-           "postOfficeBoxNumber": "Sikandra",
-           "addressLocality": "Agra",
-           "addressRegion": "Uttar Pradesh",
-           "postalCode": "282007",
-           "addressCountry": "India"
-        },
-        "email": "brij.raj.singh2710@gmail.com",
-        "birthDate": "1986-10-27",
-        "birthPlace": "Agra",
-        "nationality": "India",
-        "telephone": "+91-7618565004"
-}
-</script>
-<script type='application/ld+json'>
-{
-    "@context": "http://www.schema.org",
-        "@type": "person",
-        "name": "Monika Maam",
-        "jobTitle": "Sr. Counselor cum Admission Head",
-        "height": "62 inches",
-        "gender": "female",
-        "url": "https://www.facebook.com/moni.tarun?mibextid=ZbWKwL",
-        "image": "https://icet.org.in/front/img/monika.jpeg",
-        "address": {
-           "@type": "PostalAddress",
-           "streetAddress": "Agra",
-           "postOfficeBoxNumber": "Agra",
-           "addressLocality": "Agra",
-           "addressRegion": "Uttar Pradesh",
-           "postalCode": "282007",
-           "addressCountry": "India"
-        },
-        
-        "birthPlace": "Agra",
-        "nationality": "India",
-        "telephone": "+91-9719522999"
-}
-</script>
-<script>
-    $(document).ready(function() {
-    //
-        document.addEventListener('contextmenu', event => event.preventDefault());
-    //    setTimeout(function() {
-          $('#enrollOLevelModalCenter').modal('show').fadeIn(200);
-    //    }, 10000); // milliseconds
+        <script type='application/ld+json'>
+            {
+            "@context": "http://www.schema.org",
+            "@type": "person",
+            "name": "Arvind Sutail",
+            "jobTitle": "Managing Director",
+            "height": "72 inches",
+            "gender": "male",
+            "url": "https://www.linkedin.com/in/arvind-sutail-30964627b/",
+            "image": "https://icet.org.in/front/img/arvind-sutail.jpg",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "½ C, Panchkuian Road",
+            "postOfficeBoxNumber": "Nalband Crossing",
+            "addressLocality": "Agra",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "282007",
+            "addressCountry": "India"
+            },
+            "email": "arvindsutail@gmail.com",
+            "birthPlace": "Agra",
+            "nationality": "India",
+            "telephone": "+91-9286105060"
+            }
+        </script>
+        <script type='application/ld+json'>
+            {
+            "@context": "http://www.schema.org",
+            "@type": "person",
+            "name": "Brij Raj Singh",
+            "jobTitle": "IT Consultant",
+            "height": "65 inches",
+            "gender": "male",
+            "url": "https://www.linkedin.com/in/brijrajsingh27/",
+            "image": "https://icet.org.in/front/img/CTO-Brij-Raj-Singh.jpg",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Agra",
+            "postOfficeBoxNumber": "Sikandra",
+            "addressLocality": "Agra",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "282007",
+            "addressCountry": "India"
+            },
+            "email": "brij.raj.singh2710@gmail.com",
+            "birthDate": "1986-10-27",
+            "birthPlace": "Agra",
+            "nationality": "India",
+            "telephone": "+91-7618565004"
+            }
+        </script>
+        <script type='application/ld+json'>
+            {
+            "@context": "http://www.schema.org",
+            "@type": "person",
+            "name": "Monika Maam",
+            "jobTitle": "Sr. Counselor cum Admission Head",
+            "height": "62 inches",
+            "gender": "female",
+            "url": "https://www.facebook.com/moni.tarun?mibextid=ZbWKwL",
+            "image": "https://icet.org.in/front/img/monika.jpeg",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Agra",
+            "postOfficeBoxNumber": "Agra",
+            "addressLocality": "Agra",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "282007",
+            "addressCountry": "India"
+            },
 
-        $("img").bind("contextmenu",function(e){
-           return false;
-        }); 
-    }); 
-</script>
+            "birthPlace": "Agra",
+            "nationality": "India",
+            "telephone": "+91-9719522999"
+            }
+        </script>
+        <script>
+            $(document).ready(function () {
+                //
+                document.addEventListener('contextmenu', event => event.preventDefault());
+                //    setTimeout(function() {
+                $('#enrollOLevelModalCenter').modal('show').fadeIn(200);
+                //    }, 10000); // milliseconds
+
+                $("img").bind("contextmenu", function (e) {
+                    return false;
+                });
+            });
+        </script>
     </body>
 
 </html>

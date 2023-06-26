@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 
 use Mail;
 use App\Mail\StudentMail;
+use App\Models\Testimonial;
 
 
 
@@ -174,10 +175,15 @@ class LandingPagesController extends Controller
                 );
             //1 for General, 2 for OBC, 3 for SC, 4 for ST, 5 for Others
             $caste_categories = array(1=>'General',2=>'OBC',3=>'SC',4=>'ST',5=>'Others');
+            $last_user_in_stud_records = StudentDocs::orderby('id', 'desc')->select('user_id')->first();
             $last_user = User::orderby('id', 'desc')->select('id')->first();
             $last_user_id = $last_user->id;
+            if(isset($last_user_in_stud_records) && $last_user_in_stud_records->user_id>$last_user_id){
+                $last_user_id = $last_user_in_stud_records->user_id;
+            }
+            $testimonials = Testimonial::all();
             $last_user_id++;
-            return view("contents.landing_pages.index", compact("page_title",'grades','caste_categories','last_user_id'));
+            return view("contents.landing_pages.index", compact("page_title",'grades','caste_categories','last_user_id','testimonials'));
         }
         else
         {

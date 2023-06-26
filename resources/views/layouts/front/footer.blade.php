@@ -85,7 +85,7 @@
 <div class="fixed sticky-top float-right">
     <ul class="float_menu">
 
-        <li><i class="text-warning fa-rotate-by fa fa-certificate"></i><a href="{{route('landingPage','free-o-level-2023-24#contact')}}"><span>Enroll for O-level</span></a></li>
+        <li><i class="text-warning fa-rotate-by fa fa-certificate"></i><a href="{{route('landingPage','free-o-level-2023-24#contact')}}"><span>Apply for free O-level course</span></a></li>
         <li><i class="fa fa-phone"></i><a href="tel:+91-9719522999"><span>+91 971 952 2999</span>  </a></li>
         <li><i class="fa fa-envelope"></i><a href="mailto:icetagr@gmail.com"><span>icetagr@gmail.com</span> </a></li>
         <li><i class="fa fa-share"></i> <span class="fixed_social"> <a href="https://www.facebook.com/groups/617435264962620"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/arvindsutail/"><i class="bi bi-instagram"></i></a> <a href="https://twitter.com/icetagra"><i class="bi bi-twitter"></i></a><a href="https://twitter.com/icetagra"><i class="bi bi-linkedin"></i></a> </span> </li>
@@ -218,7 +218,7 @@
            "postalCode": "282007",
            "addressCountry": "India"
         },
-        
+        "email": "icetagr@gmail.com",
         "birthPlace": "Agra",
         "nationality": "India",
         "telephone": "+91-9719522999"

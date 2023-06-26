@@ -1,5 +1,6 @@
 <head itemscope itemtype="https://schema.org/WebPage">
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *; script-src 'unsafe-inline' 'self' *;style-src 'unsafe-inline' 'self' *;img-src 'self' data: 'self' *"> 
     <title>ICET Computer Coaching, Agra | Best computer coaching in Agra</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ICET Agra,
@@ -55,7 +56,7 @@ OBC  फ्री कंप्यूटर कोर्स इन आगरा ,
     <!-- Template Stylesheet -->
     <link href="{{ URL::to('front/css/style.css') }}" rel="stylesheet">
     
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script nonce="<?php echo base64_encode(random_bytes(10)) ?>" src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type='application/ld+json'>
     {

@@ -47,9 +47,18 @@
                     
                     @endif
                     
-                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="{{ URL::to('home')}}" style="color:#ee4c50;text-decoration:underline;">ICET Agra</a></p>
+                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Click here to visit the site: <a href="{{ route('home') }}" style="color:#ee4c50;text-decoration:none; background-color: #e3e3e3; border: 2px solid #e3e3e3; border-radius: 5px">ICET Agra</a></p>
                   </td>
                 </tr>
+                  <tr>
+                      <td style="padding:0 0 36px 0;color:#153643;">
+                          <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">In case of any doubt or query please feel free to contact us at </p>
+                          <ul>
+                              <li>Mobile: <a href="tel:+91-9719522999">+91 971 952 2999</a></li>
+                              <li>Email: <a href="mailto:icetagr@gmail.com">icetagr@gmail.com</a></li>
+                          </ul>
+                      </td>
+                  </tr>
 
               </table>
             </td>
@@ -67,10 +76,10 @@
                     <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
                       <tr>
                         <td style="padding:0 0 0 10px;width:38px;">
-                          <a href="http://www.twitter.com/" style="color:#ffffff;"><img src="https://assets.codepen.io/210284/tw_1.png" alt="Twitter" width="38" style="height:auto;display:block;border:0;" /></a>
+                          <a href="https://twitter.com/icetagra" style="color:#ffffff;"><img src="https://assets.codepen.io/210284/tw_1.png" alt="Twitter" width="38" style="height:auto;display:block;border:0;" /></a>
                         </td>
                         <td style="padding:0 0 0 10px;width:38px;">
-                          <a href="http://www.facebook.com/" style="color:#ffffff;"><img src="https://assets.codepen.io/210284/fb_1.png" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
+                          <a href="https://www.facebook.com/groups/617435264962620" style="color:#ffffff;"><img src="https://assets.codepen.io/210284/fb_1.png" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
                         </td>
                       </tr>
                     </table>

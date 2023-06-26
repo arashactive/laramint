@@ -73,7 +73,7 @@
                 </div>
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">Pratical along with training</p>
+                        <p class="mb-2">Practical along with training</p>
                         <p class="mb-2">95%</p>
                     </div>
                     <div class="progress">
@@ -161,16 +161,6 @@
                     <a class="btn btn-square" href=""><i class="fa fa-arrow-down"></i></a>
                 </div>
             </div>
-            <!--            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="service-item d-flex flex-column text-center rounded">
-                                <div class="service-icon flex-shrink-0">
-                                    <i class="fab fa- fa-2x"></i>
-                                </div>
-                                <h5 class="mb-3">Stay motivated</h5>
-                                <p class="m-0">We make it easy to form a habit of language learning, with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
-                                <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>-->
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
@@ -229,6 +219,7 @@
 
 
 <!-- Testimonial Start -->
+@if(count($testimonials) > 1)
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
@@ -236,134 +227,21 @@
         <div class="owl-carousel testimonial-carousel">
             
             
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>My sister recommended that i take O level course at the ICET computer education. With the fact that I have no prior experience with computer languages, each and every trainer presents the topic to me in a way that makes it simple for me to comprehend. Everyday tasks are given to us to assist us with finding out more and they are an extraordinary guide. It's a positive experience all around.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/anushka-parmar.jpeg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Anushka Parmar</h5>
-                        <span>O Level Course</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best O-LEVEL coaching in Agra Monika ma'am and Arvind sir is very supportive and cooperative, must visit ICET COMPUTER CENTRE</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/khushbu-verma.jpeg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Khushbu Verma</h5>
-                        <span>O Level Course</span>
-                    </div>
-                </div>
-            </div>
-            
-                        <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5 small"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>मेरा नाम बाबर खान है ! में आगरा से हूं...
-👉 ICET Computer Education 🖥️ से कोर्स करने के एडवांटेज 👇<br/>
-1) Best Knowledge about your content.<br/>
-2) Good Excellence.<br/>
-3) Friendly Environment with Teachers.<br/>
-4) Advance practice before your exams.<br/>
-5) Boost your knowledge and update to your knowledge.<br/>
-6) perfect Practical Classes and Theory Classes.<br/>
-7) Weekly doubt solution session. !  </p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Babar.jpeg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Babar</h5>
-                        <span>O Level foundation Course</span>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
-              <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Hi, I am Ashish Kushwah I recently applied for an O-LEVEL course at ICET CENTRE Great experience. Amazing learning curve. Educators deal with the understudies and help them every way possible.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Ashish-kushwah.jpg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Ashish Kushwah</h5>
-                        <span>O Level foundation Course</span>
-                    </div>
-                </div>
-            </div>
-            
-              <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Nice place to get computer knowledge and awareness. Learn a lot here about computer  in detail.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Aman-bajpayee.jpeg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Aman bajpayee</h5>
-                        <!--<span>O Level foundation Course</span>-->
-                    </div>
-                </div>
-            </div>
-            
-              <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Best coaching institute, where students get to explore more about the topics. Each and every doubt of the student is cleared with huge patience.
-Thank you!</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="front/img/Bhoomika-nigota.jpeg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Bhoomika Nigota</h5>
-                        <span>O Level foundation Course</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET up until this point has been the best thing that has happened to me… Its hard to track down such where individuals are so unique, so serious but so near one another… and with regards to the Establishment… its a paradise on the planet… " ICET has given me the stage to achieve everything I could ever hope for. It has offered me a chance to release my maximum capacity and to emerge my vocation objectives.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_2.svg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Dharmendar</h5>
-                        <!--<span>Web designing</span>-->
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>ICET has provided me the platform to accomplish all my dreams. It has given me an opportunity to unleash my full potential and to materialize my career goals. ICET has prepared me to face every battle in corporate world.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_1.svg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Neha Thakur</h5>
-                        <!--<span>O Level</span>-->
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>I generally get a high from the sort of energy that persuades grounds. There is such a huge amount to do in any event, when essentially nothing remains to be finished, from battling to complete tasks to scrambling for magie at 4am in the morning.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_2.svg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Akash Jaishwal</h5>
-                        <!--<span>CCC</span>-->
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Life at ICET is full of energy. The wide array of exercises going from vested parties to web based gaming occasions furnish everybody with sufficient chances to go past scholastics.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/undraw_profile_1.svg" style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Jyoti Sharma</h5>
-                        <!--<span>CCC</span>-->
-                    </div>
-                </div>
-            </div>
-            
-            
+                        @forelse ($testimonials as $testimonial)
+                        <x-front.testimonial :testimonial="$testimonial"/>
+                        @empty
+                        @endforelse
+
         </div>
     </div>
 </div>
+@endif
 <!-- Testimonial End -->
 
 
 <!--Work experience-->
 
-<div class="container-xxl bg-light fact- py-5 wow fadeInUp d-none" data-wow-delay="0.1s">
+<div class="container-xxl bg-light fact- py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             <p class="section-title text-secondary justify-content-center"><span></span>Work Experience<span></span></p>
@@ -372,32 +250,81 @@ Thank you!</p>
 
         <div class="row g-4">
 
-            <div class="col-6">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back">
-                            <h1>Voter ID Card</h1> 
-                            <p>Election Office</p> 
-                            <p>Agra, U.P. Govt.</p>
-                        </div>
-                    </div>
+            <div class="col-4 ">
+                <!-- Card -->
+                <div
+                  class="bg-image p-5 text-center shadow-1-strong rounded mb-5"
+                  style="background-image: url('https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg'); background-position: center; background-attachment: fixed;"
+                >
+                  <div class="card-body bg-light rounded">
+                    <h5 class="card-title">Voter ID Card</h5>
+                    <p class="card-text text-dark-300 d-flex justify-content-center align-items-center">
+                       (Election Office Agra, U.P. Govt.)
+                    </p>
+                    <a href="#!" class="btn btn-outline-light">&nbsp;</a>
+                  </div>
                 </div>
+                <!-- Card -->
             </div>
-            <div class="col-6">
-                <div class="flip-card" tabIndex="0">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front bg-dark rounded">
-                            <h3>IMG Voter ID Card (Election Office Agra, U.P. Govt.)</h3>
-                        </div>
-                        <div class="flip-card-back  bg-light rounded ">
-                            <h3>Voter ID Card (Election Office Agra, U.P. Govt.)</h3>
-                        </div>
-                    </div>
+            
+            
+            <div class="col-4 ">
+                <!-- Card -->
+                <div
+                  class="bg-image p-5 text-center shadow-1-strong rounded mb-5"
+                  style="background-image: url('https://sewayojan.up.nic.in/webassets/images/upgovt_mri.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                >
+                  <div class="card-body bg-light rounded">
+                    <h5 class="card-title">Berojgaari Bhatta</h5>
+                    <p class="card-text text-dark-300 d-flex justify-content-center align-items-center">
+                       Berojgaari Bhatta (Regional Employment Office, Agra, U.P. Govt.)
+                    </p>
+                    <a href="#!" class="btn btn-outline-light">&nbsp;</a>
+                  </div>
                 </div>
+                <!-- Card -->
             </div>
+            
+            <div class="col-4 ">
+                <!-- Card -->
+                <div
+                  class="bg-image p-5 text-center shadow-1-strong rounded mb-5"
+                  style="background-image: url('https://www.upmsp.edu.in/images/logonamebig.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                >
+                  <div class="card-body bg-light rounded">
+                    <h5 class="card-title">Kanya Vidhya Dhan</h5>
+                    <p class="card-text text-dark-300 d-flex justify-content-center align-items-center">
+                        (Madhyamik Shiksha Parishad, Agra, U.P. Govt.)
+                    </p>
+                    <a href="#!" class="btn btn-outline-light">&nbsp;</a>
+                  </div>
+                </div>
+                <!-- Card -->
+            </div>
+            
+            
+            
+<!--            <div class="col-3">
+                
+                 Card 
+                <div
+                  class="bg-image card shadow-1-strong"
+                  style="background-image: url('https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg');"
+                >
+                  <div class="card-body text-danger">
+                    <h5 class="card-title">Berojgaari Bhatta</h5>
+                    <p class="card-text">
+                      Berojgaari Bhatta (Regional Employment Office, Agra, U.P. Govt.)
+                    </p>
+                    <a href="#!" class="btn btn-outline-light">Button</a>
+                  </div>
+                </div>
+                 Card 
+            </div>-->
+                
+                
+            </div>
+            
             
             
             <div class="col-md-12 text-light text-left wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">

@@ -180,6 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\LaramintServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
 
     ],
 
