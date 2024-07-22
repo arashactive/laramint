@@ -123,7 +123,7 @@ and below link is my company from Iran that we already use this gamification for
 website: [مهروگشت آریایی](https://mahroogasht.com)
 
 
-website: [تور بانکوک](https://mahroogasht.com/%d8%aa%d9%88%d8%b1-%d8%a2%d8%b3%db%8c%d8%a7/%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/%d8%aa%d9%88%d8%b1-%d9%be%d9%88%da%a9%d8%aa/)
+website: [تور پوکت](https://mahroogasht.com/%d8%aa%d9%88%d8%b1-%d8%a2%d8%b3%db%8c%d8%a7/%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/%d8%aa%d9%88%d8%b1-%d9%be%d9%88%da%a9%d8%aa/)
 
 website: [تور تایلند](https://mahroogasht.com/%d8%aa%d9%88%d8%b1-%d8%a2%d8%b3%db%8c%d8%a7/%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/%d8%aa%d9%88%d8%b1-%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/)
 
