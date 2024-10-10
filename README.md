@@ -122,9 +122,11 @@ and below link is my company from Iran that we already use this gamification for
 
 MahrooGasht: [مهروگشت آریایی](https://mahroogasht.com)
 
-Tour Link: [تور پوکت](https://mahroogasht.com/%d8%aa%d9%88%d8%b1-%d8%a2%d8%b3%db%8c%d8%a7/%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/%d8%aa%d9%88%d8%b1-%d9%be%d9%88%da%a9%d8%aa/)
+Tour Link: [تور پوکت](https://mahroogasht.com/asia/thailand/phuket-tour/)
 
-Tour Link: [تور تایلند](https://mahroogasht.com/%d8%aa%d9%88%d8%b1-%d8%a2%d8%b3%db%8c%d8%a7/%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/%d8%aa%d9%88%d8%b1-%d8%aa%d8%a7%db%8c%d9%84%d9%86%d8%af/)
+Tour Link: [تور تایلند](https://mahroogasht.com/asia/thailand/thailand-tour/)
 
-Tour link: [تور پاتایا](https://tinyurl.com/bdzac5zx)
+Tour Link: [تور پاتایا](https://tinyurl.com/338exrxh)
+
+Tour link: [تور بالی](https://tinyurl.com/mr9wnj5b)
 
